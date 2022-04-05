@@ -1,3 +1,10 @@
+## 1.1.0
+
+- Implement Cron methods.
+- Implement Users methods.
+- Implement Template methods.
+- Fix drone_forbidden_exception export.
+
 ## 1.0.2
 
 - Implement Isolate for parsing Jsons to data classes.
