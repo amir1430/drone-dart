@@ -5,7 +5,7 @@ void main() async {
   // You need to initialize the drone before you can use it.
   // You should provide your token and Drone server address.
   // You can store your instance in a variable to reuse it later.
-  final instance = DroneClient.intit(
+  final instance = DroneClient.init(
     server: '<Your Drone Server Address>',
     token: '<Your Token>',
   );

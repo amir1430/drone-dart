@@ -206,7 +206,7 @@ class DroneClient implements IDroneClient {
   static late DroneClient _instance;
   static DroneClient get instance => _instance;
 
-  static DroneClient intit({
+  static DroneClient init({
     required String server,
     required String token,
     Dio? dio,
