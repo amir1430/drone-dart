@@ -3,6 +3,8 @@ import 'package:dio/dio.dart';
 import 'exception/exception.dart';
 import 'models/models.dart';
 import 'services/drone_interceptor.dart';
+import 'utils/http_method.dart';
+import 'utils/isolate.dart';
 import 'utils/uri_helper.dart';
 
 abstract class IDroneClient {
@@ -658,7 +660,7 @@ class DroneClient implements IDroneClient {
   Future<List<Repo>> userRepos({
     bool? latest,
   }) async {
-    return await _request(
+    return await _request<Repo, List<Repo>>(
       path: DroneUriHelper.getUrl(
         path: '/api/user/repos',
         queryParameters: <String, dynamic>{
@@ -737,45 +739,22 @@ class DroneClient implements IDroneClient {
     }
 
     try {
-      if (response.data is List) {
-        return response.data.map<T>((e) => parser!(e)).toList();
-      }
-      if (response.data is Map<String, dynamic>) {
-        return parser!(response.data) as R;
+      if (response.data is List<dynamic> ||
+          response.data is Map<String, dynamic>) {
+        final jsonParserIsolate = JsonPareserIsolate<T, R>(
+          data: response.data,
+          parser: parser!,
+        );
+        final parsed = await jsonParserIsolate.parse();
+        return parsed;
       }
       return response.data;
     } catch (e) {
+      print(e);
       throw const JsonDeserializationException();
     }
   }
 
   @override
   String toString() => 'DroneClient(server: $server, token: $token)';
-}
-
-typedef JsonParser<R> = R Function(dynamic data);
-
-enum HttpMethod {
-  get,
-  post,
-  put,
-  delete,
-  patch,
-}
-
-extension HttpMethodX on HttpMethod {
-  String get name {
-    switch (this) {
-      case HttpMethod.get:
-        return 'GET';
-      case HttpMethod.post:
-        return 'POST';
-      case HttpMethod.put:
-        return 'PUT';
-      case HttpMethod.delete:
-        return 'DELETE';
-      case HttpMethod.patch:
-        return 'PATCH';
-    }
-  }
 }
