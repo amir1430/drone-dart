@@ -2,7 +2,7 @@ name: drone_dart
 description: >
   Dart client for the Drone Ci API. This package give you ability to integrate with Drone Ci API easily in any platform using Dart language
   and build your own interface and a lot more.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/amir1430/drone-dart
 
 environment:
