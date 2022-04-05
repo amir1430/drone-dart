@@ -1,6 +1,6 @@
 name: drone_dart
 description: Dart client for the Drone API.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/amir1430/drone-dart
 
 environment:
