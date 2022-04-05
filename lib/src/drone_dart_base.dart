@@ -59,35 +59,35 @@ abstract class IDroneClient {
     required String build,
   });
 
-  void cronCreate({
+  Future<Cron> cronCreate({
     required String owner,
     required String repo,
-    required CronRequestBody cronRequestBody,
+    required Cron cronRequestBody,
   });
-  void cronDelete({
+  Future<void> cronDelete({
     required String owner,
     required String repo,
     required String name,
   });
-  void cronInfo({
+  Future<Cron> cronInfo({
     required String owner,
     required String repo,
     required String name,
   });
-  void cronList({
+  Future<List<Cron>> cronList({
     required String owner,
     required String repo,
   });
-  void cronTrigger({
+  Future<CronTrigger?> cronTrigger({
     required String owner,
     required String repo,
     required String name,
   });
-  void cronUpdate({
+  Future<Cron> cronUpdate({
     required String owner,
     required String repo,
     required String name,
-    required CronRequestBody requestBody,
+    required Cron requestBody,
   });
 
   Future<Repo> repoChown({
@@ -143,23 +143,24 @@ abstract class IDroneClient {
     required Secret requestBody,
   });
 
-  void templateCreate({
-    required TemplateRequestBody requestBody,
+  Future<Template> templateCreate({
+    required Template requestBody,
   });
-  void templateDelete({
+  Future<void> templateDelete({
     required String namespace,
     required String name,
   });
-  void templateInfo({
+  Future<Template> templateInfo({
     required String namespace,
     required String name,
   });
-  void templateList({
+  Future<List<Template>> templateList({
     required String namespace,
   });
-  void templateUpdate({
+  Future<Template> templateUpdate({
     required String namespace,
     required String name,
+    required Template requestBody,
   });
 
   Future<List<Repo>> userFeed();
@@ -169,17 +170,17 @@ abstract class IDroneClient {
   Future<User> userInfo();
   Future<List<Repo>> userSync();
 
-  void usersCreate({
+  Future<User> usersCreate({
     required UserRequestBody requestBody,
   });
-  void usersDelete({
+  Future<void> usersDelete({
     required String login,
   });
-  void usersInfo({
+  Future<User> usersInfo({
     required String login,
   });
-  void usersList();
-  void usersUpdate({
+  Future<List<User>> usersList();
+  Future<User> usersUpdate({
     required String login,
     required UserRequestBody requestBody,
   });
@@ -362,58 +363,99 @@ class DroneClient implements IDroneClient {
     );
   }
 
+  /// POST /api/repos/{owner}/{repo}/cron
   @override
-  void cronCreate({
+  Future<Cron> cronCreate({
     required String owner,
     required String repo,
-    required CronRequestBody cronRequestBody,
-  }) {
-    throw UnimplementedError();
+    required Cron cronRequestBody,
+  }) async {
+    return await _request(
+      path: DroneUriHelper.getUrl(
+        path: '/api/repos/$owner/$repo/cron',
+      ),
+      method: HttpMethod.post,
+      parser: (d) => Cron.fromJson(d),
+      body: cronRequestBody.toJson(),
+    );
   }
 
+  /// DELETE /api/repos/{owner}/{repo}/cron/{name}
   @override
-  void cronDelete({
+  Future<void> cronDelete({
     required String owner,
     required String repo,
     required String name,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    await _request(
+      path: DroneUriHelper.getUrl(
+        path: '/api/repos/$owner/$repo/cron/$name',
+      ),
+      method: HttpMethod.delete,
+    );
   }
 
+  /// GET /api/repos/{owner}/{repo}/cron/{name}
   @override
-  void cronInfo({
+  Future<Cron> cronInfo({
     required String owner,
     required String repo,
     required String name,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    return await _request(
+      path: DroneUriHelper.getUrl(
+        path: '/api/repos/$owner/$repo/cron/$name',
+      ),
+      parser: (d) => Cron.fromJson(d),
+    );
   }
 
+  /// GET /api/repos/{owner}/{repo}/cron
   @override
-  void cronList({
+  Future<List<Cron>> cronList({
     required String owner,
     required String repo,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    return await _request<Cron, List<Cron>>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/repos/$owner/$repo/cron',
+      ),
+      parser: (d) => Cron.fromJson(d),
+    );
   }
 
+  // POST /api/repos/{owner}/{repo}/cron/{name}
   @override
-  void cronTrigger({
+  Future<CronTrigger?> cronTrigger({
     required String owner,
     required String repo,
     required String name,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    return await _request(
+      path: DroneUriHelper.getUrl(
+        path: '/api/repos/$owner/$repo/cron/$name',
+      ),
+      method: HttpMethod.post,
+      parser: (d) => Cron.fromJson(d),
+    );
   }
 
+  // PATCH /api/repos/{owner}/{repo}/cron/{name}
   @override
-  void cronUpdate({
+  Future<Cron> cronUpdate({
     required String owner,
     required String repo,
     required String name,
-    required CronRequestBody requestBody,
-  }) {
-    throw UnimplementedError();
+    required Cron requestBody,
+  }) async {
+    return await _request(
+      path: DroneUriHelper.getUrl(
+        path: '/api/repos/$owner/$repo/cron/$name',
+      ),
+      method: HttpMethod.patch,
+      parser: (d) => Cron.fromJson(d),
+      body: requestBody.toJson(),
+    );
   }
 
   /// POST /api/repos/{owner}/{repo}/chown
@@ -525,7 +567,7 @@ class DroneClient implements IDroneClient {
     required String repo,
     required Secret requestBody,
   }) async {
-    return await _request(
+    return await _request<Secret, Secret>(
       path: DroneUriHelper.getUrl(
         path: '/api/repos/$owner/$repo/secrets',
       ),
@@ -542,7 +584,7 @@ class DroneClient implements IDroneClient {
     required String repo,
     required String secret,
   }) async {
-    return await _request(
+    await _request(
       path: DroneUriHelper.getUrl(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
@@ -557,7 +599,7 @@ class DroneClient implements IDroneClient {
     required String repo,
     required String secret,
   }) async {
-    return await _request(
+    return await _request<Secret, Secret>(
       path: DroneUriHelper.getUrl(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
@@ -571,7 +613,7 @@ class DroneClient implements IDroneClient {
     required String owner,
     required String repo,
   }) async {
-    return await _request(
+    return await _request<Secret, List<Secret>>(
       path: DroneUriHelper.getUrl(
         path: '/api/repos/$owner/$repo/secrets',
       ),
@@ -587,7 +629,7 @@ class DroneClient implements IDroneClient {
     required String secret,
     required Secret requestBody,
   }) async {
-    return await _request(
+    return await _request<Secret, Secret>(
       path: DroneUriHelper.getUrl(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
@@ -597,40 +639,77 @@ class DroneClient implements IDroneClient {
     );
   }
 
+  /// POST /api/templates/
   @override
-  void templateCreate({
-    required TemplateRequestBody requestBody,
-  }) {
-    throw UnimplementedError();
+  Future<Template> templateCreate({
+    required Template requestBody,
+  }) async {
+    return await _request<Template, Template>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/templates',
+      ),
+      body: requestBody.toJson(),
+      method: HttpMethod.post,
+      parser: (d) => Template.fromJson(d),
+    );
   }
 
+  /// DELETE /api/templates/{namespace}/{name}
   @override
-  void templateDelete({
+  Future<void> templateDelete({
     required String namespace,
     required String name,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    await _request(
+      path: DroneUriHelper.getUrl(
+        path: '/api/templates/$namespace/$name',
+      ),
+      method: HttpMethod.delete,
+    );
   }
 
+  ///GET /api/templates/{namespace}/{name}
   @override
-  void templateInfo({
+  Future<Template> templateInfo({
     required String namespace,
     required String name,
-  }) {
-    throw UnimplementedError();
+  }) async {
+    return await _request<Template, Template>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/templates/$namespace/$name',
+      ),
+      parser: (d) => Template.fromJson(d),
+    );
   }
 
+  /// GET /api/templates/{namespace}
   @override
-  void templateList({required String namespace}) {
-    throw UnimplementedError();
+  Future<List<Template>> templateList({
+    required String namespace,
+  }) async {
+    return await _request<Template, List<Template>>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/templates/$namespace',
+      ),
+      parser: (d) => Template.fromJson(d),
+    );
   }
 
+  /// PATCH /api/templates/{namespace}/{name}
   @override
-  void templateUpdate({
+  Future<Template> templateUpdate({
     required String namespace,
     required String name,
-  }) {
-    throw UnimplementedError();
+    required Template requestBody,
+  }) async {
+    return await _request<Template, Template>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/templates/$namespace/$name',
+      ),
+      body: requestBody.toJson(),
+      method: HttpMethod.patch,
+      parser: (d) => Template.fromJson(d),
+    );
   }
 
   /// GET /api/user/builds
@@ -683,29 +762,89 @@ class DroneClient implements IDroneClient {
     );
   }
 
+  /// ``` dart
+  /// const requestBody = UserRequestBody(
+  ///   active: true,
+  ///   avatarUrl: 'image.png',
+  ///   email: 'example@gmail.com',
+  ///   login: 'name',
+  ///);
+  /// ```
+  /// POST /api/users
   @override
-  void usersCreate({
+  Future<User> usersCreate({
     required UserRequestBody requestBody,
-  }) {}
+  }) async {
+    return await _request<User, User>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/users',
+      ),
+      body: requestBody.toJson(),
+      method: HttpMethod.post,
+      parser: (d) => User.fromJson(d),
+    );
+  }
 
+  /// DELETE /api/users/{login}
   @override
-  void usersDelete({
+  Future<void> usersDelete({
     required String login,
-  }) {}
+  }) async {
+    await _request(
+      path: DroneUriHelper.getUrl(
+        path: '/api/users/$login',
+      ),
+      method: HttpMethod.delete,
+    );
+  }
 
+  /// GET /api/users/{login}
   @override
-  void usersInfo({
+  Future<User> usersInfo({
     required String login,
-  }) {}
+  }) {
+    return _request<User, User>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/users/$login',
+      ),
+      parser: (d) => User.fromJson(d),
+    );
+  }
 
+  /// GET /api/users
   @override
-  void usersList() {}
+  Future<List<User>> usersList() async {
+    return await _request<User, List<User>>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/users',
+      ),
+      parser: (d) => User.fromJson(d),
+    );
+  }
 
+  /// ``` dart
+  /// const login='name';
+  /// const requestBody = UserRequestBody(
+  ///   active: true,
+  ///   avatarUrl: 'image.png',
+  ///   email: 'example@gmail.com',
+  ///);
+  /// ```
+  /// PATCH /api/users/{login}
   @override
-  void usersUpdate({
+  Future<User> usersUpdate({
     required String login,
     required UserRequestBody requestBody,
-  }) {}
+  }) async {
+    return await _request<User, User>(
+      path: DroneUriHelper.getUrl(
+        path: '/api/users/$login',
+      ),
+      body: requestBody.toJson(),
+      method: HttpMethod.patch,
+      parser: (d) => User.fromJson(d),
+    );
+  }
 
   Future<R> _request<T, R>({
     required String path,
@@ -722,6 +861,7 @@ class DroneClient implements IDroneClient {
           method: method.name,
         ),
       );
+      print(response);
     } catch (e) {
       throw const DroneRequestException();
     }

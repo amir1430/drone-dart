@@ -7,31 +7,31 @@ part of 'user_model.dart';
 // **************************************************************************
 
 _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+      id: json['id'] as int,
       login: json['login'] as String,
       email: json['email'] as String,
+      machine: json['machine'] as bool,
+      admin: json['admin'] as bool,
+      active: json['active'] as bool,
       avatar: json['avatar'] as String,
-      id: json['id'] as int,
+      syncing: json['syncing'] as bool,
       synced: json['synced'] as int,
       created: json['created'] as int,
       updated: json['updated'] as int,
       lastLogin: json['last_login'] as int,
-      machine: json['machine'] as bool,
-      admin: json['admin'] as bool,
-      active: json['active'] as bool,
-      syncing: json['syncing'] as bool,
     );
 
 Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+      'id': instance.id,
       'login': instance.login,
       'email': instance.email,
+      'machine': instance.machine,
+      'admin': instance.admin,
+      'active': instance.active,
       'avatar': instance.avatar,
-      'id': instance.id,
+      'syncing': instance.syncing,
       'synced': instance.synced,
       'created': instance.created,
       'updated': instance.updated,
       'last_login': instance.lastLogin,
-      'machine': instance.machine,
-      'admin': instance.admin,
-      'active': instance.active,
-      'syncing': instance.syncing,
     };
