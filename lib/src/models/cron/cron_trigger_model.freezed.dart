@@ -161,8 +161,6 @@ abstract class $CronTriggerCopyWith<$Res> {
       int? updated,
       int? version,
       Permission? permissions});
-
-  $PermissionCopyWith<$Res>? get permissions;
 }
 
 /// @nodoc
@@ -309,17 +307,6 @@ class _$CronTriggerCopyWithImpl<$Res> implements $CronTriggerCopyWith<$Res> {
               as Permission?,
     ));
   }
-
-  @override
-  $PermissionCopyWith<$Res>? get permissions {
-    if (_value.permissions == null) {
-      return null;
-    }
-
-    return $PermissionCopyWith<$Res>(_value.permissions!, (value) {
-      return _then(_value.copyWith(permissions: value));
-    });
-  }
 }
 
 /// @nodoc
@@ -356,9 +343,6 @@ abstract class _$CronTriggerCopyWith<$Res>
       int? updated,
       int? version,
       Permission? permissions});
-
-  @override
-  $PermissionCopyWith<$Res>? get permissions;
 }
 
 /// @nodoc
