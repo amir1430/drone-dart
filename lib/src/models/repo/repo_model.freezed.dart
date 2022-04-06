@@ -193,7 +193,6 @@ abstract class $RepoCopyWith<$Res> {
       Permission? permissions,
       Build? build});
 
-  $PermissionCopyWith<$Res>? get permissions;
   $BuildCopyWith<$Res>? get build;
 }
 
@@ -368,17 +367,6 @@ class _$RepoCopyWithImpl<$Res> implements $RepoCopyWith<$Res> {
   }
 
   @override
-  $PermissionCopyWith<$Res>? get permissions {
-    if (_value.permissions == null) {
-      return null;
-    }
-
-    return $PermissionCopyWith<$Res>(_value.permissions!, (value) {
-      return _then(_value.copyWith(permissions: value));
-    });
-  }
-
-  @override
   $BuildCopyWith<$Res>? get build {
     if (_value.build == null) {
       return null;
@@ -428,8 +416,6 @@ abstract class _$RepoCopyWith<$Res> implements $RepoCopyWith<$Res> {
       Permission? permissions,
       Build? build});
 
-  @override
-  $PermissionCopyWith<$Res>? get permissions;
   @override
   $BuildCopyWith<$Res>? get build;
 }
