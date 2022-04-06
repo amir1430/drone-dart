@@ -2,10 +2,8 @@ import 'package:dio/dio.dart';
 
 import 'exception/exception.dart';
 import 'models/models.dart';
-import 'services/drone_interceptor.dart';
 import 'utils/http_method.dart';
 import 'utils/isolate.dart';
-import 'utils/uri_helper.dart';
 
 abstract class IDroneClient {
   void buildApprove({
@@ -197,10 +195,7 @@ class DroneClient implements IDroneClient {
                 baseUrl: server,
                 validateStatus: (_) => true,
               ),
-            )
-          ..interceptors.add(
-            DroneInterceptor(token),
-          );
+            );
 
   factory DroneClient() => instance;
 
@@ -240,15 +235,13 @@ class DroneClient implements IDroneClient {
     Map<String, dynamic>? parameters,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
-        path: DroneUriHelper.getUrl(
-          path: '/repos/$namespace/$name/builds',
-          queryParameters: <String, dynamic>{
-            if (commit != null) 'commit': commit,
-            if (branch != null) 'branch': branch,
-            if (parameters != null) ...parameters,
-          },
-        ),
+      path: Uri(
+        path: '/api/repos/$namespace/$name/builds',
+        queryParameters: <String, dynamic>{
+          if (commit != null) 'commit': commit,
+          if (branch != null) 'branch': branch,
+          if (parameters != null) ...parameters,
+        },
       ),
       method: HttpMethod.post,
       parser: (d) => Build.fromJson(d),
@@ -271,7 +264,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
       parser: (d) => Build.fromJson(d),
@@ -285,7 +278,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request<Build, List<Build>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/builds',
       ),
       parser: (d) => Build.fromJson(d),
@@ -302,7 +295,7 @@ class DroneClient implements IDroneClient {
     required String step,
   }) async {
     return await _request<LogModel, List<LogModel>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build/logs/$stage/$step',
       ),
       parser: (d) => LogModel.fromJson(d),
@@ -319,7 +312,7 @@ class DroneClient implements IDroneClient {
     Map<String, dynamic>? parameters,
   }) async {
     return await _request<Build, Build?>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build/promote',
         queryParameters: <String, dynamic>{
           'target': target,
@@ -339,7 +332,7 @@ class DroneClient implements IDroneClient {
     required String build,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
       method: HttpMethod.post,
@@ -355,7 +348,7 @@ class DroneClient implements IDroneClient {
     required String build,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
       method: HttpMethod.delete,
@@ -371,7 +364,7 @@ class DroneClient implements IDroneClient {
     required Cron cronRequestBody,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/cron',
       ),
       method: HttpMethod.post,
@@ -388,7 +381,7 @@ class DroneClient implements IDroneClient {
     required String name,
   }) async {
     await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
       method: HttpMethod.delete,
@@ -403,7 +396,7 @@ class DroneClient implements IDroneClient {
     required String name,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
       parser: (d) => Cron.fromJson(d),
@@ -417,7 +410,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request<Cron, List<Cron>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/cron',
       ),
       parser: (d) => Cron.fromJson(d),
@@ -432,7 +425,7 @@ class DroneClient implements IDroneClient {
     required String name,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
       method: HttpMethod.post,
@@ -449,7 +442,7 @@ class DroneClient implements IDroneClient {
     required Cron requestBody,
   }) async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
       method: HttpMethod.patch,
@@ -465,7 +458,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request<Repo, Repo>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/chown',
       ),
       method: HttpMethod.post,
@@ -480,7 +473,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request<Repo, Repo>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
       method: HttpMethod.delete,
@@ -495,7 +488,7 @@ class DroneClient implements IDroneClient {
     required String name,
   }) async {
     return await _request<Repo, Repo>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$name',
       ),
       method: HttpMethod.post,
@@ -510,7 +503,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request<Repo, Repo>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
       parser: (d) => Repo.fromJson(d),
@@ -521,7 +514,7 @@ class DroneClient implements IDroneClient {
   @override
   Future<List<Repo>> repoList() async {
     return await _request<Repo, List<Repo>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/user/repos',
       ),
       parser: (d) => Repo.fromJson(d),
@@ -535,7 +528,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request<Repo, Repo>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/repair',
       ),
       method: HttpMethod.post,
@@ -551,7 +544,7 @@ class DroneClient implements IDroneClient {
     required RepoRequestBody requestBody,
   }) async {
     return await _request<Repo, Repo>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
       body: requestBody.toJson(),
@@ -568,7 +561,7 @@ class DroneClient implements IDroneClient {
     required Secret requestBody,
   }) async {
     return await _request<Secret, Secret>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/secrets',
       ),
       body: requestBody.toJson(),
@@ -585,7 +578,7 @@ class DroneClient implements IDroneClient {
     required String secret,
   }) async {
     await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
       method: HttpMethod.delete,
@@ -600,7 +593,7 @@ class DroneClient implements IDroneClient {
     required String secret,
   }) async {
     return await _request<Secret, Secret>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
       parser: (d) => Secret.fromJson(d),
@@ -614,7 +607,7 @@ class DroneClient implements IDroneClient {
     required String repo,
   }) async {
     return await _request<Secret, List<Secret>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/secrets',
       ),
       parser: (d) => Secret.fromJson(d),
@@ -630,7 +623,7 @@ class DroneClient implements IDroneClient {
     required Secret requestBody,
   }) async {
     return await _request<Secret, Secret>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
       body: requestBody.toJson(),
@@ -645,7 +638,7 @@ class DroneClient implements IDroneClient {
     required Template requestBody,
   }) async {
     return await _request<Template, Template>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/templates',
       ),
       body: requestBody.toJson(),
@@ -661,7 +654,7 @@ class DroneClient implements IDroneClient {
     required String name,
   }) async {
     await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/templates/$namespace/$name',
       ),
       method: HttpMethod.delete,
@@ -675,7 +668,7 @@ class DroneClient implements IDroneClient {
     required String name,
   }) async {
     return await _request<Template, Template>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/templates/$namespace/$name',
       ),
       parser: (d) => Template.fromJson(d),
@@ -688,7 +681,7 @@ class DroneClient implements IDroneClient {
     required String namespace,
   }) async {
     return await _request<Template, List<Template>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/templates/$namespace',
       ),
       parser: (d) => Template.fromJson(d),
@@ -703,7 +696,7 @@ class DroneClient implements IDroneClient {
     required Template requestBody,
   }) async {
     return await _request<Template, Template>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/templates/$namespace/$name',
       ),
       body: requestBody.toJson(),
@@ -716,7 +709,7 @@ class DroneClient implements IDroneClient {
   @override
   Future<List<Repo>> userFeed() async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/user/builds',
       ),
       parser: (d) => Repo.fromJson(d),
@@ -727,7 +720,7 @@ class DroneClient implements IDroneClient {
   @override
   Future<User> userInfo() async {
     return await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/user',
       ),
       parser: (d) => User.fromJson(d),
@@ -740,7 +733,7 @@ class DroneClient implements IDroneClient {
     bool? latest,
   }) async {
     return await _request<Repo, List<Repo>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/user/repos',
         queryParameters: <String, dynamic>{
           'latest': latest,
@@ -754,7 +747,7 @@ class DroneClient implements IDroneClient {
   @override
   Future<List<Repo>> userSync() async {
     return await _request<Repo, List<Repo>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/user/repos',
       ),
       method: HttpMethod.post,
@@ -776,7 +769,7 @@ class DroneClient implements IDroneClient {
     required UserRequestBody requestBody,
   }) async {
     return await _request<User, User>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/users',
       ),
       body: requestBody.toJson(),
@@ -791,7 +784,7 @@ class DroneClient implements IDroneClient {
     required String login,
   }) async {
     await _request(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/users/$login',
       ),
       method: HttpMethod.delete,
@@ -804,7 +797,7 @@ class DroneClient implements IDroneClient {
     required String login,
   }) {
     return _request<User, User>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/users/$login',
       ),
       parser: (d) => User.fromJson(d),
@@ -815,7 +808,7 @@ class DroneClient implements IDroneClient {
   @override
   Future<List<User>> usersList() async {
     return await _request<User, List<User>>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/users',
       ),
       parser: (d) => User.fromJson(d),
@@ -837,7 +830,7 @@ class DroneClient implements IDroneClient {
     required UserRequestBody requestBody,
   }) async {
     return await _request<User, User>(
-      path: DroneUriHelper.getUrl(
+      path: Uri(
         path: '/api/users/$login',
       ),
       body: requestBody.toJson(),
@@ -847,23 +840,30 @@ class DroneClient implements IDroneClient {
   }
 
   Future<R> _request<T, R>({
-    required String path,
+    required Uri path,
     JsonParser<T>? parser,
     Map<String, dynamic>? body,
     HttpMethod method = HttpMethod.get,
   }) async {
     late final Response response;
+    print(path);
     try {
-      response = await _dioClient.request(
+      response = await _dioClient.requestUri(
         path,
         data: body,
         options: Options(
           method: method.name,
+          headers: {
+            'Authorization': 'Bearer $token',
+          },
         ),
       );
-      print(response);
     } catch (e) {
       throw const DroneRequestException();
+    }
+
+    if (response.statusCode == 401) {
+      throw const DroneUnauthorizedException();
     }
 
     if (response.statusCode == 403) {

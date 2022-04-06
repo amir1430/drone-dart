@@ -23,15 +23,15 @@ class _$StepTearOff {
   const _$StepTearOff();
 
   _Step call(
-      {required int id,
-      @JsonKey(name: 'step_id') required int stepId,
-      required int number,
-      required String name,
-      required String status,
-      @JsonKey(name: 'exit_code') required int exitCode,
-      required int started,
-      required int stopped,
-      required int version}) {
+      {int? id,
+      @JsonKey(name: 'step_id') int? stepId,
+      int? number,
+      String? name,
+      String? status,
+      @JsonKey(name: 'exit_code') int? exitCode,
+      int? started,
+      int? stopped,
+      int? version}) {
     return _Step(
       id: id,
       stepId: stepId,
@@ -55,17 +55,17 @@ const $Step = _$StepTearOff();
 
 /// @nodoc
 mixin _$Step {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'step_id')
-  int get stepId => throw _privateConstructorUsedError;
-  int get number => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
+  int? get stepId => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
   @JsonKey(name: 'exit_code')
-  int get exitCode => throw _privateConstructorUsedError;
-  int get started => throw _privateConstructorUsedError;
-  int get stopped => throw _privateConstructorUsedError;
-  int get version => throw _privateConstructorUsedError;
+  int? get exitCode => throw _privateConstructorUsedError;
+  int? get started => throw _privateConstructorUsedError;
+  int? get stopped => throw _privateConstructorUsedError;
+  int? get version => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -77,15 +77,15 @@ abstract class $StepCopyWith<$Res> {
   factory $StepCopyWith(Step value, $Res Function(Step) then) =
       _$StepCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      @JsonKey(name: 'step_id') int stepId,
-      int number,
-      String name,
-      String status,
-      @JsonKey(name: 'exit_code') int exitCode,
-      int started,
-      int stopped,
-      int version});
+      {int? id,
+      @JsonKey(name: 'step_id') int? stepId,
+      int? number,
+      String? name,
+      String? status,
+      @JsonKey(name: 'exit_code') int? exitCode,
+      int? started,
+      int? stopped,
+      int? version});
 }
 
 /// @nodoc
@@ -112,39 +112,39 @@ class _$StepCopyWithImpl<$Res> implements $StepCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stepId: stepId == freezed
           ? _value.stepId
           : stepId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       exitCode: exitCode == freezed
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       started: started == freezed
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stopped: stopped == freezed
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -155,15 +155,15 @@ abstract class _$StepCopyWith<$Res> implements $StepCopyWith<$Res> {
       __$StepCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      @JsonKey(name: 'step_id') int stepId,
-      int number,
-      String name,
-      String status,
-      @JsonKey(name: 'exit_code') int exitCode,
-      int started,
-      int stopped,
-      int version});
+      {int? id,
+      @JsonKey(name: 'step_id') int? stepId,
+      int? number,
+      String? name,
+      String? status,
+      @JsonKey(name: 'exit_code') int? exitCode,
+      int? started,
+      int? stopped,
+      int? version});
 }
 
 /// @nodoc
@@ -191,39 +191,39 @@ class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stepId: stepId == freezed
           ? _value.stepId
           : stepId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       exitCode: exitCode == freezed
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       started: started == freezed
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stopped: stopped == freezed
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -232,38 +232,38 @@ class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Step implements _Step {
   const _$_Step(
-      {required this.id,
-      @JsonKey(name: 'step_id') required this.stepId,
-      required this.number,
-      required this.name,
-      required this.status,
-      @JsonKey(name: 'exit_code') required this.exitCode,
-      required this.started,
-      required this.stopped,
-      required this.version});
+      {this.id,
+      @JsonKey(name: 'step_id') this.stepId,
+      this.number,
+      this.name,
+      this.status,
+      @JsonKey(name: 'exit_code') this.exitCode,
+      this.started,
+      this.stopped,
+      this.version});
 
   factory _$_Step.fromJson(Map<String, dynamic> json) => _$$_StepFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   @JsonKey(name: 'step_id')
-  final int stepId;
+  final int? stepId;
   @override
-  final int number;
+  final int? number;
   @override
-  final String name;
+  final String? name;
   @override
-  final String status;
+  final String? status;
   @override
   @JsonKey(name: 'exit_code')
-  final int exitCode;
+  final int? exitCode;
   @override
-  final int started;
+  final int? started;
   @override
-  final int stopped;
+  final int? stopped;
   @override
-  final int version;
+  final int? version;
 
   @override
   String toString() {
@@ -312,38 +312,38 @@ class _$_Step implements _Step {
 
 abstract class _Step implements Step {
   const factory _Step(
-      {required int id,
-      @JsonKey(name: 'step_id') required int stepId,
-      required int number,
-      required String name,
-      required String status,
-      @JsonKey(name: 'exit_code') required int exitCode,
-      required int started,
-      required int stopped,
-      required int version}) = _$_Step;
+      {int? id,
+      @JsonKey(name: 'step_id') int? stepId,
+      int? number,
+      String? name,
+      String? status,
+      @JsonKey(name: 'exit_code') int? exitCode,
+      int? started,
+      int? stopped,
+      int? version}) = _$_Step;
 
   factory _Step.fromJson(Map<String, dynamic> json) = _$_Step.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   @JsonKey(name: 'step_id')
-  int get stepId;
+  int? get stepId;
   @override
-  int get number;
+  int? get number;
   @override
-  String get name;
+  String? get name;
   @override
-  String get status;
+  String? get status;
   @override
   @JsonKey(name: 'exit_code')
-  int get exitCode;
+  int? get exitCode;
   @override
-  int get started;
+  int? get started;
   @override
-  int get stopped;
+  int? get stopped;
   @override
-  int get version;
+  int? get version;
   @override
   @JsonKey(ignore: true)
   _$StepCopyWith<_Step> get copyWith => throw _privateConstructorUsedError;

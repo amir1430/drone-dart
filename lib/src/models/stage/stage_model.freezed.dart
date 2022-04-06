@@ -23,27 +23,27 @@ class _$StageTearOff {
   const _$StageTearOff();
 
   _Stage call(
-      {required int id,
-      @JsonKey(name: 'repo_id') required int repoId,
-      @JsonKey(name: 'build_id') required int buildId,
-      required int number,
-      required String name,
-      required String kind,
-      required String type,
-      required String status,
-      required bool errignore,
-      @JsonKey(name: 'exit_code') required int exitCode,
+      {int? id,
+      @JsonKey(name: 'repo_id') int? repoId,
+      @JsonKey(name: 'build_id') int? buildId,
+      int? number,
+      String? name,
+      String? kind,
+      String? type,
+      String? status,
+      bool? errignore,
+      @JsonKey(name: 'exit_code') int? exitCode,
       String? machine,
-      required String os,
-      required String arch,
-      required int started,
-      required int stopped,
-      required int created,
-      required int updated,
-      required int version,
-      @JsonKey(name: 'on_success') required bool onSuccess,
-      @JsonKey(name: 'on_failure') required bool onFailure,
-      required List<Step>? steps}) {
+      String? os,
+      String? arch,
+      int? started,
+      int? stopped,
+      int? created,
+      int? updated,
+      int? version,
+      @JsonKey(name: 'on_success') bool? onSuccess,
+      @JsonKey(name: 'on_failure') bool? onFailure,
+      List<Step>? steps}) {
     return _Stage(
       id: id,
       repoId: repoId,
@@ -79,31 +79,31 @@ const $Stage = _$StageTearOff();
 
 /// @nodoc
 mixin _$Stage {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'repo_id')
-  int get repoId => throw _privateConstructorUsedError;
+  int? get repoId => throw _privateConstructorUsedError;
   @JsonKey(name: 'build_id')
-  int get buildId => throw _privateConstructorUsedError;
-  int get number => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get kind => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
-  bool get errignore => throw _privateConstructorUsedError;
+  int? get buildId => throw _privateConstructorUsedError;
+  int? get number => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get kind => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  String? get status => throw _privateConstructorUsedError;
+  bool? get errignore => throw _privateConstructorUsedError;
   @JsonKey(name: 'exit_code')
-  int get exitCode => throw _privateConstructorUsedError;
+  int? get exitCode => throw _privateConstructorUsedError;
   String? get machine => throw _privateConstructorUsedError;
-  String get os => throw _privateConstructorUsedError;
-  String get arch => throw _privateConstructorUsedError;
-  int get started => throw _privateConstructorUsedError;
-  int get stopped => throw _privateConstructorUsedError;
-  int get created => throw _privateConstructorUsedError;
-  int get updated => throw _privateConstructorUsedError;
-  int get version => throw _privateConstructorUsedError;
+  String? get os => throw _privateConstructorUsedError;
+  String? get arch => throw _privateConstructorUsedError;
+  int? get started => throw _privateConstructorUsedError;
+  int? get stopped => throw _privateConstructorUsedError;
+  int? get created => throw _privateConstructorUsedError;
+  int? get updated => throw _privateConstructorUsedError;
+  int? get version => throw _privateConstructorUsedError;
   @JsonKey(name: 'on_success')
-  bool get onSuccess => throw _privateConstructorUsedError;
+  bool? get onSuccess => throw _privateConstructorUsedError;
   @JsonKey(name: 'on_failure')
-  bool get onFailure => throw _privateConstructorUsedError;
+  bool? get onFailure => throw _privateConstructorUsedError;
   List<Step>? get steps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -116,26 +116,26 @@ abstract class $StageCopyWith<$Res> {
   factory $StageCopyWith(Stage value, $Res Function(Stage) then) =
       _$StageCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      @JsonKey(name: 'repo_id') int repoId,
-      @JsonKey(name: 'build_id') int buildId,
-      int number,
-      String name,
-      String kind,
-      String type,
-      String status,
-      bool errignore,
-      @JsonKey(name: 'exit_code') int exitCode,
+      {int? id,
+      @JsonKey(name: 'repo_id') int? repoId,
+      @JsonKey(name: 'build_id') int? buildId,
+      int? number,
+      String? name,
+      String? kind,
+      String? type,
+      String? status,
+      bool? errignore,
+      @JsonKey(name: 'exit_code') int? exitCode,
       String? machine,
-      String os,
-      String arch,
-      int started,
-      int stopped,
-      int created,
-      int updated,
-      int version,
-      @JsonKey(name: 'on_success') bool onSuccess,
-      @JsonKey(name: 'on_failure') bool onFailure,
+      String? os,
+      String? arch,
+      int? started,
+      int? stopped,
+      int? created,
+      int? updated,
+      int? version,
+      @JsonKey(name: 'on_success') bool? onSuccess,
+      @JsonKey(name: 'on_failure') bool? onFailure,
       List<Step>? steps});
 }
 
@@ -175,43 +175,43 @@ class _$StageCopyWithImpl<$Res> implements $StageCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       repoId: repoId == freezed
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       buildId: buildId == freezed
           ? _value.buildId
           : buildId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       errignore: errignore == freezed
           ? _value.errignore
           : errignore // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       exitCode: exitCode == freezed
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       machine: machine == freezed
           ? _value.machine
           : machine // ignore: cast_nullable_to_non_nullable
@@ -219,39 +219,39 @@ class _$StageCopyWithImpl<$Res> implements $StageCopyWith<$Res> {
       os: os == freezed
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       arch: arch == freezed
           ? _value.arch
           : arch // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       started: started == freezed
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stopped: stopped == freezed
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       onSuccess: onSuccess == freezed
           ? _value.onSuccess
           : onSuccess // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       onFailure: onFailure == freezed
           ? _value.onFailure
           : onFailure // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       steps: steps == freezed
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -266,26 +266,26 @@ abstract class _$StageCopyWith<$Res> implements $StageCopyWith<$Res> {
       __$StageCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      @JsonKey(name: 'repo_id') int repoId,
-      @JsonKey(name: 'build_id') int buildId,
-      int number,
-      String name,
-      String kind,
-      String type,
-      String status,
-      bool errignore,
-      @JsonKey(name: 'exit_code') int exitCode,
+      {int? id,
+      @JsonKey(name: 'repo_id') int? repoId,
+      @JsonKey(name: 'build_id') int? buildId,
+      int? number,
+      String? name,
+      String? kind,
+      String? type,
+      String? status,
+      bool? errignore,
+      @JsonKey(name: 'exit_code') int? exitCode,
       String? machine,
-      String os,
-      String arch,
-      int started,
-      int stopped,
-      int created,
-      int updated,
-      int version,
-      @JsonKey(name: 'on_success') bool onSuccess,
-      @JsonKey(name: 'on_failure') bool onFailure,
+      String? os,
+      String? arch,
+      int? started,
+      int? stopped,
+      int? created,
+      int? updated,
+      int? version,
+      @JsonKey(name: 'on_success') bool? onSuccess,
+      @JsonKey(name: 'on_failure') bool? onFailure,
       List<Step>? steps});
 }
 
@@ -326,43 +326,43 @@ class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       repoId: repoId == freezed
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       buildId: buildId == freezed
           ? _value.buildId
           : buildId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       number: number == freezed
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       errignore: errignore == freezed
           ? _value.errignore
           : errignore // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       exitCode: exitCode == freezed
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       machine: machine == freezed
           ? _value.machine
           : machine // ignore: cast_nullable_to_non_nullable
@@ -370,39 +370,39 @@ class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
       os: os == freezed
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       arch: arch == freezed
           ? _value.arch
           : arch // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       started: started == freezed
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       stopped: stopped == freezed
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       onSuccess: onSuccess == freezed
           ? _value.onSuccess
           : onSuccess // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       onFailure: onFailure == freezed
           ? _value.onFailure
           : onFailure // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       steps: steps == freezed
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -415,76 +415,76 @@ class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Stage implements _Stage {
   const _$_Stage(
-      {required this.id,
-      @JsonKey(name: 'repo_id') required this.repoId,
-      @JsonKey(name: 'build_id') required this.buildId,
-      required this.number,
-      required this.name,
-      required this.kind,
-      required this.type,
-      required this.status,
-      required this.errignore,
-      @JsonKey(name: 'exit_code') required this.exitCode,
+      {this.id,
+      @JsonKey(name: 'repo_id') this.repoId,
+      @JsonKey(name: 'build_id') this.buildId,
+      this.number,
+      this.name,
+      this.kind,
+      this.type,
+      this.status,
+      this.errignore,
+      @JsonKey(name: 'exit_code') this.exitCode,
       this.machine,
-      required this.os,
-      required this.arch,
-      required this.started,
-      required this.stopped,
-      required this.created,
-      required this.updated,
-      required this.version,
-      @JsonKey(name: 'on_success') required this.onSuccess,
-      @JsonKey(name: 'on_failure') required this.onFailure,
-      required this.steps});
+      this.os,
+      this.arch,
+      this.started,
+      this.stopped,
+      this.created,
+      this.updated,
+      this.version,
+      @JsonKey(name: 'on_success') this.onSuccess,
+      @JsonKey(name: 'on_failure') this.onFailure,
+      this.steps});
 
   factory _$_Stage.fromJson(Map<String, dynamic> json) =>
       _$$_StageFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   @JsonKey(name: 'repo_id')
-  final int repoId;
+  final int? repoId;
   @override
   @JsonKey(name: 'build_id')
-  final int buildId;
+  final int? buildId;
   @override
-  final int number;
+  final int? number;
   @override
-  final String name;
+  final String? name;
   @override
-  final String kind;
+  final String? kind;
   @override
-  final String type;
+  final String? type;
   @override
-  final String status;
+  final String? status;
   @override
-  final bool errignore;
+  final bool? errignore;
   @override
   @JsonKey(name: 'exit_code')
-  final int exitCode;
+  final int? exitCode;
   @override
   final String? machine;
   @override
-  final String os;
+  final String? os;
   @override
-  final String arch;
+  final String? arch;
   @override
-  final int started;
+  final int? started;
   @override
-  final int stopped;
+  final int? stopped;
   @override
-  final int created;
+  final int? created;
   @override
-  final int updated;
+  final int? updated;
   @override
-  final int version;
+  final int? version;
   @override
   @JsonKey(name: 'on_success')
-  final bool onSuccess;
+  final bool? onSuccess;
   @override
   @JsonKey(name: 'on_failure')
-  final bool onFailure;
+  final bool? onFailure;
   @override
   final List<Step>? steps;
 
@@ -560,75 +560,75 @@ class _$_Stage implements _Stage {
 
 abstract class _Stage implements Stage {
   const factory _Stage(
-      {required int id,
-      @JsonKey(name: 'repo_id') required int repoId,
-      @JsonKey(name: 'build_id') required int buildId,
-      required int number,
-      required String name,
-      required String kind,
-      required String type,
-      required String status,
-      required bool errignore,
-      @JsonKey(name: 'exit_code') required int exitCode,
+      {int? id,
+      @JsonKey(name: 'repo_id') int? repoId,
+      @JsonKey(name: 'build_id') int? buildId,
+      int? number,
+      String? name,
+      String? kind,
+      String? type,
+      String? status,
+      bool? errignore,
+      @JsonKey(name: 'exit_code') int? exitCode,
       String? machine,
-      required String os,
-      required String arch,
-      required int started,
-      required int stopped,
-      required int created,
-      required int updated,
-      required int version,
-      @JsonKey(name: 'on_success') required bool onSuccess,
-      @JsonKey(name: 'on_failure') required bool onFailure,
-      required List<Step>? steps}) = _$_Stage;
+      String? os,
+      String? arch,
+      int? started,
+      int? stopped,
+      int? created,
+      int? updated,
+      int? version,
+      @JsonKey(name: 'on_success') bool? onSuccess,
+      @JsonKey(name: 'on_failure') bool? onFailure,
+      List<Step>? steps}) = _$_Stage;
 
   factory _Stage.fromJson(Map<String, dynamic> json) = _$_Stage.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   @JsonKey(name: 'repo_id')
-  int get repoId;
+  int? get repoId;
   @override
   @JsonKey(name: 'build_id')
-  int get buildId;
+  int? get buildId;
   @override
-  int get number;
+  int? get number;
   @override
-  String get name;
+  String? get name;
   @override
-  String get kind;
+  String? get kind;
   @override
-  String get type;
+  String? get type;
   @override
-  String get status;
+  String? get status;
   @override
-  bool get errignore;
+  bool? get errignore;
   @override
   @JsonKey(name: 'exit_code')
-  int get exitCode;
+  int? get exitCode;
   @override
   String? get machine;
   @override
-  String get os;
+  String? get os;
   @override
-  String get arch;
+  String? get arch;
   @override
-  int get started;
+  int? get started;
   @override
-  int get stopped;
+  int? get stopped;
   @override
-  int get created;
+  int? get created;
   @override
-  int get updated;
+  int? get updated;
   @override
-  int get version;
+  int? get version;
   @override
   @JsonKey(name: 'on_success')
-  bool get onSuccess;
+  bool? get onSuccess;
   @override
   @JsonKey(name: 'on_failure')
-  bool get onFailure;
+  bool? get onFailure;
   @override
   List<Step>? get steps;
   @override

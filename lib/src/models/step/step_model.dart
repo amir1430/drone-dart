@@ -6,15 +6,15 @@ part 'step_model.g.dart';
 @freezed
 class Step with _$Step {
   const factory Step({
-    required int id,
-    @JsonKey(name: 'step_id') required int stepId,
-    required int number,
-    required String name,
-    required String status,
-    @JsonKey(name: 'exit_code') required int exitCode,
-    required int started,
-    required int stopped,
-    required int version,
+    int? id,
+    @JsonKey(name: 'step_id') int? stepId,
+    int? number,
+    String? name,
+    String? status,
+    @JsonKey(name: 'exit_code') int? exitCode,
+    int? started,
+    int? stopped,
+    int? version,
   }) = _Step;
 
   factory Step.fromJson(Map<String, dynamic> json) => _$StepFromJson(json);

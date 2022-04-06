@@ -23,45 +23,35 @@ class _$RepoTearOff {
   const _$RepoTearOff();
 
   _Repo call(
-      {required int id,
-      required String uid,
-      @JsonKey(name: 'user_id')
-          required int userId,
-      required String namespace,
-      required String name,
-      required String slug,
-      required String scm,
-      @JsonKey(name: 'git_http_url')
-          required String gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url')
-          required String gitSshUrl,
-      required String link,
-      @JsonKey(name: 'default_branch')
-          required String defaultBranch,
-      required bool private,
-      required String visibility,
-      required bool active,
-      @JsonKey(name: 'config_path')
-          required String configPath,
-      required bool trusted,
-      required bool protected,
-      @JsonKey(name: 'ignore_forks')
-          required bool ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests')
-          required bool ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests')
-          required bool autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes')
-          required bool autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running')
-          required bool autoCancelRunning,
-      required int timeout,
-      required int counter,
-      required int synced,
-      required int created,
-      required int updated,
-      required int version,
-      required bool archived,
+      {int? id,
+      String? uid,
+      @JsonKey(name: 'user_id') int? userId,
+      String? namespace,
+      String? name,
+      String? slug,
+      String? scm,
+      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
+      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
+      String? link,
+      @JsonKey(name: 'default_branch') String? defaultBranch,
+      bool? private,
+      String? visibility,
+      bool? active,
+      @JsonKey(name: 'config_path') String? configPath,
+      bool? trusted,
+      bool? protected,
+      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
+      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
+      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
+      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
+      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
+      int? timeout,
+      int? counter,
+      int? synced,
+      int? created,
+      int? updated,
+      int? version,
+      bool? archived,
       Permission? permissions,
       Build? build}) {
     return _Repo(
@@ -109,45 +99,45 @@ const $Repo = _$RepoTearOff();
 
 /// @nodoc
 mixin _$Repo {
-  int get id => throw _privateConstructorUsedError;
-  String get uid => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
   @JsonKey(name: 'user_id')
-  int get userId => throw _privateConstructorUsedError;
-  String get namespace => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get slug => throw _privateConstructorUsedError;
-  String get scm => throw _privateConstructorUsedError;
+  int? get userId => throw _privateConstructorUsedError;
+  String? get namespace => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get slug => throw _privateConstructorUsedError;
+  String? get scm => throw _privateConstructorUsedError;
   @JsonKey(name: 'git_http_url')
-  String get gitHttpUrl => throw _privateConstructorUsedError;
+  String? get gitHttpUrl => throw _privateConstructorUsedError;
   @JsonKey(name: 'git_ssh_url')
-  String get gitSshUrl => throw _privateConstructorUsedError;
-  String get link => throw _privateConstructorUsedError;
+  String? get gitSshUrl => throw _privateConstructorUsedError;
+  String? get link => throw _privateConstructorUsedError;
   @JsonKey(name: 'default_branch')
-  String get defaultBranch => throw _privateConstructorUsedError;
-  bool get private => throw _privateConstructorUsedError;
-  String get visibility => throw _privateConstructorUsedError;
-  bool get active => throw _privateConstructorUsedError;
+  String? get defaultBranch => throw _privateConstructorUsedError;
+  bool? get private => throw _privateConstructorUsedError;
+  String? get visibility => throw _privateConstructorUsedError;
+  bool? get active => throw _privateConstructorUsedError;
   @JsonKey(name: 'config_path')
-  String get configPath => throw _privateConstructorUsedError;
-  bool get trusted => throw _privateConstructorUsedError;
-  bool get protected => throw _privateConstructorUsedError;
+  String? get configPath => throw _privateConstructorUsedError;
+  bool? get trusted => throw _privateConstructorUsedError;
+  bool? get protected => throw _privateConstructorUsedError;
   @JsonKey(name: 'ignore_forks')
-  bool get ignoreForks => throw _privateConstructorUsedError;
+  bool? get ignoreForks => throw _privateConstructorUsedError;
   @JsonKey(name: 'ignore_pull_requests')
-  bool get ignorePullRequests => throw _privateConstructorUsedError;
+  bool? get ignorePullRequests => throw _privateConstructorUsedError;
   @JsonKey(name: 'auto_cancel_pull_requests')
-  bool get autoCancelPullRequests => throw _privateConstructorUsedError;
+  bool? get autoCancelPullRequests => throw _privateConstructorUsedError;
   @JsonKey(name: 'auto_cancel_pushes')
-  bool get autoCancelPushes => throw _privateConstructorUsedError;
+  bool? get autoCancelPushes => throw _privateConstructorUsedError;
   @JsonKey(name: 'auto_cancel_running')
-  bool get autoCancelRunning => throw _privateConstructorUsedError;
-  int get timeout => throw _privateConstructorUsedError;
-  int get counter => throw _privateConstructorUsedError;
-  int get synced => throw _privateConstructorUsedError;
-  int get created => throw _privateConstructorUsedError;
-  int get updated => throw _privateConstructorUsedError;
-  int get version => throw _privateConstructorUsedError;
-  bool get archived => throw _privateConstructorUsedError;
+  bool? get autoCancelRunning => throw _privateConstructorUsedError;
+  int? get timeout => throw _privateConstructorUsedError;
+  int? get counter => throw _privateConstructorUsedError;
+  int? get synced => throw _privateConstructorUsedError;
+  int? get created => throw _privateConstructorUsedError;
+  int? get updated => throw _privateConstructorUsedError;
+  int? get version => throw _privateConstructorUsedError;
+  bool? get archived => throw _privateConstructorUsedError;
   Permission? get permissions => throw _privateConstructorUsedError;
   Build? get build => throw _privateConstructorUsedError;
 
@@ -161,35 +151,35 @@ abstract class $RepoCopyWith<$Res> {
   factory $RepoCopyWith(Repo value, $Res Function(Repo) then) =
       _$RepoCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      String uid,
-      @JsonKey(name: 'user_id') int userId,
-      String namespace,
-      String name,
-      String slug,
-      String scm,
-      @JsonKey(name: 'git_http_url') String gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String gitSshUrl,
-      String link,
-      @JsonKey(name: 'default_branch') String defaultBranch,
-      bool private,
-      String visibility,
-      bool active,
-      @JsonKey(name: 'config_path') String configPath,
-      bool trusted,
-      bool protected,
-      @JsonKey(name: 'ignore_forks') bool ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests') bool autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes') bool autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running') bool autoCancelRunning,
-      int timeout,
-      int counter,
-      int synced,
-      int created,
-      int updated,
-      int version,
-      bool archived,
+      {int? id,
+      String? uid,
+      @JsonKey(name: 'user_id') int? userId,
+      String? namespace,
+      String? name,
+      String? slug,
+      String? scm,
+      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
+      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
+      String? link,
+      @JsonKey(name: 'default_branch') String? defaultBranch,
+      bool? private,
+      String? visibility,
+      bool? active,
+      @JsonKey(name: 'config_path') String? configPath,
+      bool? trusted,
+      bool? protected,
+      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
+      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
+      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
+      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
+      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
+      int? timeout,
+      int? counter,
+      int? synced,
+      int? created,
+      int? updated,
+      int? version,
+      bool? archived,
       Permission? permissions,
       Build? build});
 
@@ -242,119 +232,119 @@ class _$RepoCopyWithImpl<$Res> implements $RepoCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       namespace: namespace == freezed
           ? _value.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       slug: slug == freezed
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       scm: scm == freezed
           ? _value.scm
           : scm // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       gitHttpUrl: gitHttpUrl == freezed
           ? _value.gitHttpUrl
           : gitHttpUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       gitSshUrl: gitSshUrl == freezed
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       defaultBranch: defaultBranch == freezed
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       private: private == freezed
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       active: active == freezed
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       configPath: configPath == freezed
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       trusted: trusted == freezed
           ? _value.trusted
           : trusted // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       protected: protected == freezed
           ? _value.protected
           : protected // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ignoreForks: ignoreForks == freezed
           ? _value.ignoreForks
           : ignoreForks // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ignorePullRequests: ignorePullRequests == freezed
           ? _value.ignorePullRequests
           : ignorePullRequests // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       autoCancelPullRequests: autoCancelPullRequests == freezed
           ? _value.autoCancelPullRequests
           : autoCancelPullRequests // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       autoCancelPushes: autoCancelPushes == freezed
           ? _value.autoCancelPushes
           : autoCancelPushes // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       autoCancelRunning: autoCancelRunning == freezed
           ? _value.autoCancelRunning
           : autoCancelRunning // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       timeout: timeout == freezed
           ? _value.timeout
           : timeout // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       archived: archived == freezed
           ? _value.archived
           : archived // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
@@ -384,35 +374,35 @@ abstract class _$RepoCopyWith<$Res> implements $RepoCopyWith<$Res> {
       __$RepoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      String uid,
-      @JsonKey(name: 'user_id') int userId,
-      String namespace,
-      String name,
-      String slug,
-      String scm,
-      @JsonKey(name: 'git_http_url') String gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String gitSshUrl,
-      String link,
-      @JsonKey(name: 'default_branch') String defaultBranch,
-      bool private,
-      String visibility,
-      bool active,
-      @JsonKey(name: 'config_path') String configPath,
-      bool trusted,
-      bool protected,
-      @JsonKey(name: 'ignore_forks') bool ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests') bool autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes') bool autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running') bool autoCancelRunning,
-      int timeout,
-      int counter,
-      int synced,
-      int created,
-      int updated,
-      int version,
-      bool archived,
+      {int? id,
+      String? uid,
+      @JsonKey(name: 'user_id') int? userId,
+      String? namespace,
+      String? name,
+      String? slug,
+      String? scm,
+      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
+      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
+      String? link,
+      @JsonKey(name: 'default_branch') String? defaultBranch,
+      bool? private,
+      String? visibility,
+      bool? active,
+      @JsonKey(name: 'config_path') String? configPath,
+      bool? trusted,
+      bool? protected,
+      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
+      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
+      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
+      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
+      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
+      int? timeout,
+      int? counter,
+      int? synced,
+      int? created,
+      int? updated,
+      int? version,
+      bool? archived,
       Permission? permissions,
       Build? build});
 
@@ -467,119 +457,119 @@ class __$RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       userId: userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       namespace: namespace == freezed
           ? _value.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       slug: slug == freezed
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       scm: scm == freezed
           ? _value.scm
           : scm // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       gitHttpUrl: gitHttpUrl == freezed
           ? _value.gitHttpUrl
           : gitHttpUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       gitSshUrl: gitSshUrl == freezed
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       defaultBranch: defaultBranch == freezed
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       private: private == freezed
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       active: active == freezed
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       configPath: configPath == freezed
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       trusted: trusted == freezed
           ? _value.trusted
           : trusted // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       protected: protected == freezed
           ? _value.protected
           : protected // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ignoreForks: ignoreForks == freezed
           ? _value.ignoreForks
           : ignoreForks // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       ignorePullRequests: ignorePullRequests == freezed
           ? _value.ignorePullRequests
           : ignorePullRequests // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       autoCancelPullRequests: autoCancelPullRequests == freezed
           ? _value.autoCancelPullRequests
           : autoCancelPullRequests // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       autoCancelPushes: autoCancelPushes == freezed
           ? _value.autoCancelPushes
           : autoCancelPushes // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       autoCancelRunning: autoCancelRunning == freezed
           ? _value.autoCancelRunning
           : autoCancelRunning // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       timeout: timeout == freezed
           ? _value.timeout
           : timeout // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       archived: archived == freezed
           ? _value.archived
           : archived // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
@@ -596,118 +586,108 @@ class __$RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Repo implements _Repo {
   const _$_Repo(
-      {required this.id,
-      required this.uid,
-      @JsonKey(name: 'user_id')
-          required this.userId,
-      required this.namespace,
-      required this.name,
-      required this.slug,
-      required this.scm,
-      @JsonKey(name: 'git_http_url')
-          required this.gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url')
-          required this.gitSshUrl,
-      required this.link,
-      @JsonKey(name: 'default_branch')
-          required this.defaultBranch,
-      required this.private,
-      required this.visibility,
-      required this.active,
-      @JsonKey(name: 'config_path')
-          required this.configPath,
-      required this.trusted,
-      required this.protected,
-      @JsonKey(name: 'ignore_forks')
-          required this.ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests')
-          required this.ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests')
-          required this.autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes')
-          required this.autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running')
-          required this.autoCancelRunning,
-      required this.timeout,
-      required this.counter,
-      required this.synced,
-      required this.created,
-      required this.updated,
-      required this.version,
-      required this.archived,
+      {this.id,
+      this.uid,
+      @JsonKey(name: 'user_id') this.userId,
+      this.namespace,
+      this.name,
+      this.slug,
+      this.scm,
+      @JsonKey(name: 'git_http_url') this.gitHttpUrl,
+      @JsonKey(name: 'git_ssh_url') this.gitSshUrl,
+      this.link,
+      @JsonKey(name: 'default_branch') this.defaultBranch,
+      this.private,
+      this.visibility,
+      this.active,
+      @JsonKey(name: 'config_path') this.configPath,
+      this.trusted,
+      this.protected,
+      @JsonKey(name: 'ignore_forks') this.ignoreForks,
+      @JsonKey(name: 'ignore_pull_requests') this.ignorePullRequests,
+      @JsonKey(name: 'auto_cancel_pull_requests') this.autoCancelPullRequests,
+      @JsonKey(name: 'auto_cancel_pushes') this.autoCancelPushes,
+      @JsonKey(name: 'auto_cancel_running') this.autoCancelRunning,
+      this.timeout,
+      this.counter,
+      this.synced,
+      this.created,
+      this.updated,
+      this.version,
+      this.archived,
       this.permissions,
       this.build});
 
   factory _$_Repo.fromJson(Map<String, dynamic> json) => _$$_RepoFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
-  final String uid;
+  final String? uid;
   @override
   @JsonKey(name: 'user_id')
-  final int userId;
+  final int? userId;
   @override
-  final String namespace;
+  final String? namespace;
   @override
-  final String name;
+  final String? name;
   @override
-  final String slug;
+  final String? slug;
   @override
-  final String scm;
+  final String? scm;
   @override
   @JsonKey(name: 'git_http_url')
-  final String gitHttpUrl;
+  final String? gitHttpUrl;
   @override
   @JsonKey(name: 'git_ssh_url')
-  final String gitSshUrl;
+  final String? gitSshUrl;
   @override
-  final String link;
+  final String? link;
   @override
   @JsonKey(name: 'default_branch')
-  final String defaultBranch;
+  final String? defaultBranch;
   @override
-  final bool private;
+  final bool? private;
   @override
-  final String visibility;
+  final String? visibility;
   @override
-  final bool active;
+  final bool? active;
   @override
   @JsonKey(name: 'config_path')
-  final String configPath;
+  final String? configPath;
   @override
-  final bool trusted;
+  final bool? trusted;
   @override
-  final bool protected;
+  final bool? protected;
   @override
   @JsonKey(name: 'ignore_forks')
-  final bool ignoreForks;
+  final bool? ignoreForks;
   @override
   @JsonKey(name: 'ignore_pull_requests')
-  final bool ignorePullRequests;
+  final bool? ignorePullRequests;
   @override
   @JsonKey(name: 'auto_cancel_pull_requests')
-  final bool autoCancelPullRequests;
+  final bool? autoCancelPullRequests;
   @override
   @JsonKey(name: 'auto_cancel_pushes')
-  final bool autoCancelPushes;
+  final bool? autoCancelPushes;
   @override
   @JsonKey(name: 'auto_cancel_running')
-  final bool autoCancelRunning;
+  final bool? autoCancelRunning;
   @override
-  final int timeout;
+  final int? timeout;
   @override
-  final int counter;
+  final int? counter;
   @override
-  final int synced;
+  final int? synced;
   @override
-  final int created;
+  final int? created;
   @override
-  final int updated;
+  final int? updated;
   @override
-  final int version;
+  final int? version;
   @override
-  final bool archived;
+  final bool? archived;
   @override
   final Permission? permissions;
   @override
@@ -815,118 +795,108 @@ class _$_Repo implements _Repo {
 
 abstract class _Repo implements Repo {
   const factory _Repo(
-      {required int id,
-      required String uid,
-      @JsonKey(name: 'user_id')
-          required int userId,
-      required String namespace,
-      required String name,
-      required String slug,
-      required String scm,
-      @JsonKey(name: 'git_http_url')
-          required String gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url')
-          required String gitSshUrl,
-      required String link,
-      @JsonKey(name: 'default_branch')
-          required String defaultBranch,
-      required bool private,
-      required String visibility,
-      required bool active,
-      @JsonKey(name: 'config_path')
-          required String configPath,
-      required bool trusted,
-      required bool protected,
-      @JsonKey(name: 'ignore_forks')
-          required bool ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests')
-          required bool ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests')
-          required bool autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes')
-          required bool autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running')
-          required bool autoCancelRunning,
-      required int timeout,
-      required int counter,
-      required int synced,
-      required int created,
-      required int updated,
-      required int version,
-      required bool archived,
+      {int? id,
+      String? uid,
+      @JsonKey(name: 'user_id') int? userId,
+      String? namespace,
+      String? name,
+      String? slug,
+      String? scm,
+      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
+      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
+      String? link,
+      @JsonKey(name: 'default_branch') String? defaultBranch,
+      bool? private,
+      String? visibility,
+      bool? active,
+      @JsonKey(name: 'config_path') String? configPath,
+      bool? trusted,
+      bool? protected,
+      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
+      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
+      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
+      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
+      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
+      int? timeout,
+      int? counter,
+      int? synced,
+      int? created,
+      int? updated,
+      int? version,
+      bool? archived,
       Permission? permissions,
       Build? build}) = _$_Repo;
 
   factory _Repo.fromJson(Map<String, dynamic> json) = _$_Repo.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
-  String get uid;
+  String? get uid;
   @override
   @JsonKey(name: 'user_id')
-  int get userId;
+  int? get userId;
   @override
-  String get namespace;
+  String? get namespace;
   @override
-  String get name;
+  String? get name;
   @override
-  String get slug;
+  String? get slug;
   @override
-  String get scm;
+  String? get scm;
   @override
   @JsonKey(name: 'git_http_url')
-  String get gitHttpUrl;
+  String? get gitHttpUrl;
   @override
   @JsonKey(name: 'git_ssh_url')
-  String get gitSshUrl;
+  String? get gitSshUrl;
   @override
-  String get link;
+  String? get link;
   @override
   @JsonKey(name: 'default_branch')
-  String get defaultBranch;
+  String? get defaultBranch;
   @override
-  bool get private;
+  bool? get private;
   @override
-  String get visibility;
+  String? get visibility;
   @override
-  bool get active;
+  bool? get active;
   @override
   @JsonKey(name: 'config_path')
-  String get configPath;
+  String? get configPath;
   @override
-  bool get trusted;
+  bool? get trusted;
   @override
-  bool get protected;
+  bool? get protected;
   @override
   @JsonKey(name: 'ignore_forks')
-  bool get ignoreForks;
+  bool? get ignoreForks;
   @override
   @JsonKey(name: 'ignore_pull_requests')
-  bool get ignorePullRequests;
+  bool? get ignorePullRequests;
   @override
   @JsonKey(name: 'auto_cancel_pull_requests')
-  bool get autoCancelPullRequests;
+  bool? get autoCancelPullRequests;
   @override
   @JsonKey(name: 'auto_cancel_pushes')
-  bool get autoCancelPushes;
+  bool? get autoCancelPushes;
   @override
   @JsonKey(name: 'auto_cancel_running')
-  bool get autoCancelRunning;
+  bool? get autoCancelRunning;
   @override
-  int get timeout;
+  int? get timeout;
   @override
-  int get counter;
+  int? get counter;
   @override
-  int get synced;
+  int? get synced;
   @override
-  int get created;
+  int? get created;
   @override
-  int get updated;
+  int? get updated;
   @override
-  int get version;
+  int? get version;
   @override
-  bool get archived;
+  bool? get archived;
   @override
   Permission? get permissions;
   @override
