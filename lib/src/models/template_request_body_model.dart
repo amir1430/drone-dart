@@ -8,16 +8,16 @@ class Template {
 
   // create consutrctor for TemplateRequestBody
   const Template({
-    this.id,
-    this.name,
-    this.data,
-    this.namespace,
+    this.id = 0,
+    this.name = '',
+    this.data = '',
+    this.namespace = '',
   });
 
-  final int? id;
-  final String? name;
-  final String? data;
-  final String? namespace;
+  final int id;
+  final String name;
+  final String data;
+  final String namespace;
 
 // create a fromJson method
 
@@ -29,5 +29,10 @@ class Template {
       'data': data,
       'namespace': namespace,
     };
+  }
+
+  @override
+  String toString() {
+    return 'Template(id: $id, name: $name, data: $data, namespace: $namespace)';
   }
 }

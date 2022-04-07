@@ -7,7 +7,7 @@ import 'utils/http_method.dart';
 import 'utils/isolate.dart';
 
 abstract class IDroneClient {
-  Stream<Repo>? stream();
+  Stream<Repo> stream();
 
   void buildApprove({
     required String owner,
@@ -65,7 +65,7 @@ abstract class IDroneClient {
   Future<Cron> cronCreate({
     required String owner,
     required String repo,
-    required Cron cronRequestBody,
+    required Cron requestBody,
   });
   Future<void> cronDelete({
     required String owner,
@@ -168,7 +168,7 @@ abstract class IDroneClient {
 
   Future<List<Repo>> userFeed();
   Future<List<Repo>> userRepos({
-    bool? latest,
+    bool latest = true,
   });
   Future<User> userInfo();
   Future<List<Repo>> userSync();
@@ -220,7 +220,7 @@ class DroneClient implements IDroneClient {
   late String token;
 
   @override
-  Stream<Repo>? stream() async* {
+  Stream<Repo> stream() async* {
     final response = await _dioClient.request<ResponseBody>(
       '$server/api/stream',
       options: Options(
@@ -303,6 +303,7 @@ class DroneClient implements IDroneClient {
     int page = 1,
     int perPage = 25,
   }) async {
+    assert(perPage >= 0 && perPage <= 100);
     return await _request<Build, List<Build>>(
       path: Uri(path: '/api/repos/$owner/$repo/builds', queryParameters: {
         'page': '$page',
@@ -388,15 +389,21 @@ class DroneClient implements IDroneClient {
   Future<Cron> cronCreate({
     required String owner,
     required String repo,
-    required Cron cronRequestBody,
+    required Cron requestBody,
   }) async {
+    assert(
+      requestBody.name.isNotEmpty &&
+          requestBody.expr.isNotEmpty &&
+          requestBody.branch.isNotEmpty,
+      'You should provide [name,expr,branch]',
+    );
     return await _request(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron',
       ),
       method: HttpMethod.post,
       parser: (d) => Cron.fromJson(d),
-      body: cronRequestBody.toJson(),
+      body: requestBody.toJson(),
     );
   }
 
@@ -587,6 +594,11 @@ class DroneClient implements IDroneClient {
     required String repo,
     required Secret requestBody,
   }) async {
+    assert(
+      requestBody.name.isNotEmpty && requestBody.data.isNotEmpty,
+      'You should provide [name, data]',
+    );
+
     return await _request<Secret, Secret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets',
@@ -649,6 +661,10 @@ class DroneClient implements IDroneClient {
     required String secret,
     required Secret requestBody,
   }) async {
+    assert(
+      requestBody.data.isNotEmpty,
+      'You should provider [name]',
+    );
     return await _request<Secret, Secret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
@@ -664,9 +680,16 @@ class DroneClient implements IDroneClient {
   Future<Template> templateCreate({
     required Template requestBody,
   }) async {
+    assert(
+      requestBody.data.isNotEmpty &&
+          requestBody.name.isNotEmpty &&
+          requestBody.namespace.isNotEmpty,
+      'You should provide [name, namespace, data]',
+    );
+
     return await _request<Template, Template>(
       path: Uri(
-        path: '/api/templates',
+        path: '/api/templates/${requestBody.namespace}',
       ),
       body: requestBody.toJson(),
       method: HttpMethod.post,
@@ -757,7 +780,7 @@ class DroneClient implements IDroneClient {
   /// GET /api/user/repos?latest=true
   @override
   Future<List<Repo>> userRepos({
-    bool? latest,
+    bool latest = true,
   }) async {
     return await _request<Repo, List<Repo>>(
       path: Uri(
@@ -795,6 +818,13 @@ class DroneClient implements IDroneClient {
   Future<User> usersCreate({
     required UserRequestBody requestBody,
   }) async {
+    assert(
+      requestBody.login.isNotEmpty &&
+          requestBody.avatarUrl.isNotEmpty &&
+          requestBody.email.isNotEmpty,
+      'You should provide [login, avatarUrl, email]',
+    );
+
     return await _request<User, User>(
       path: Uri(
         path: '/api/users',
@@ -873,7 +903,6 @@ class DroneClient implements IDroneClient {
     HttpMethod method = HttpMethod.get,
   }) async {
     late final Response response;
-    print(path);
     try {
       response = await _dioClient.requestUri(
         path,
@@ -885,30 +914,28 @@ class DroneClient implements IDroneClient {
           },
         ),
       );
-      print(response.data);
-      print(response.statusCode);
     } catch (e) {
-      throw const DroneRequestException();
+      throw DroneException.requestException(message: '$e');
     }
 
     if (response.statusCode == 400) {
-      throw const DroneInvalidRequestException();
+      throw const DroneException.invalidRequestBodyException();
     }
 
     if (response.statusCode == 401) {
-      throw const DroneUnauthorizedException();
+      throw const DroneException.unauthorizedException();
     }
 
     if (response.statusCode == 403) {
-      throw const DroneForbiddenException();
+      throw const DroneException.forbiddenException();
     }
 
     if (response.statusCode == 404 || response.statusCode == 405) {
-      throw const DroneNotFoundException();
+      throw const DroneException.notFound();
     }
 
     if (response.statusCode! >= 500) {
-      throw const DroneInternalException();
+      throw DroneException.internalException(message: '${response.data}');
     }
 
     try {
@@ -923,8 +950,7 @@ class DroneClient implements IDroneClient {
       }
       return response.data;
     } catch (e) {
-      print(e);
-      throw const JsonDeserializationException();
+      throw DroneException.jsonDeserializationException(message: '$e');
     }
   }
 
