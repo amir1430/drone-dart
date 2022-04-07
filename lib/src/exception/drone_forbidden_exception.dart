@@ -1,9 +1,9 @@
-class DroneForbiddenException implements Exception {
-  const DroneForbiddenException({
-    this.message = 'Forbidden 403. The requested resource is forbidden.',
-  });
+import 'package:drone_dart/drone_dart.dart';
 
-  final String message;
+class DroneForbiddenException extends DroneException {
+  const DroneForbiddenException({
+    String message = 'Forbidden 403. The requested resource is forbidden.',
+  }) : super(message: message);
 
   @override
   String toString() => 'DroneForbiddenException: $message';

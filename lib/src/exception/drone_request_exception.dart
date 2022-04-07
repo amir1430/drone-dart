@@ -1,9 +1,9 @@
-class DroneRequestException implements Exception {
-  const DroneRequestException({
-    this.message = 'Http request Exception',
-  });
+import 'package:drone_dart/drone_dart.dart';
 
-  final String message;
+class DroneRequestException extends DroneException {
+  const DroneRequestException({
+    String message = 'Http request Exception',
+  }) : super(message: message);
 
   @override
   String toString() => 'DroneRequestException: $message';

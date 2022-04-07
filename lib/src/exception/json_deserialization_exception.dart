@@ -1,9 +1,9 @@
-class JsonDeserializationException implements Exception {
-  const JsonDeserializationException({
-    this.message = 'Exception on deserializing json',
-  });
+import 'package:drone_dart/drone_dart.dart';
 
-  final String message;
+class JsonDeserializationException extends DroneException {
+  const JsonDeserializationException({
+    String message = 'Exception on deserializing json',
+  }) : super(message: message);
 
   @override
   String toString() => 'JsonDeserializationException: $message';

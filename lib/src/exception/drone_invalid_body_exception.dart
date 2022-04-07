@@ -1,9 +1,9 @@
-class DroneInvalidRequestException implements Exception {
-  const DroneInvalidRequestException({
-    this.message = 'Invalid 400. You missed some fields.',
-  });
+import 'package:drone_dart/drone_dart.dart';
 
-  final String message;
+class DroneInvalidRequestException extends DroneException {
+  const DroneInvalidRequestException({
+    String message = 'Invalid 400. You missed some fields.',
+  }) : super(message: message);
 
   @override
   String toString() => 'DroneForbiddenException: $message';

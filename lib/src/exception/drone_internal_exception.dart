@@ -1,9 +1,9 @@
-class DroneInternalException implements Exception {
-  const DroneInternalException({
-    this.message = 'Internal 500. An internal server error occurred.',
-  });
+import 'package:drone_dart/drone_dart.dart';
 
-  final String message;
+class DroneInternalException extends DroneException {
+  const DroneInternalException({
+    String message = 'Internal 500. An internal server error occurred.',
+  }) : super(message: message);
 
   @override
   String toString() => 'DroneInternalException: $message';
