@@ -1,9 +1,14 @@
+import 'dart:async';
+
 import 'package:dio/dio.dart';
 import 'package:drone_dart/drone_dart.dart';
+import 'package:drone_dart/src/utils/event_source.dart';
 import 'utils/http_method.dart';
 import 'utils/isolate.dart';
 
 abstract class IDroneClient {
+  Stream<Repo>? stream();
+
   void buildApprove({
     required String owner,
     required String repo,
@@ -196,7 +201,6 @@ class DroneClient implements IDroneClient {
             );
 
   factory DroneClient() => instance;
-
   static late DroneClient _instance;
   static DroneClient get instance => _instance;
 
@@ -210,10 +214,30 @@ class DroneClient implements IDroneClient {
   }
 
   final Dio _dioClient;
-
   late String server;
-
   late String token;
+
+  @override
+  Stream<Repo>? stream() async* {
+    final response = await _dioClient.request<ResponseBody>(
+      '$server/api/stream',
+      options: Options(
+        responseType: ResponseType.stream,
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      ),
+    );
+    final stream = response.data?.stream
+        .cast<List<int>>()
+        .transform(EventToRepoTransformer());
+
+    if (stream != null) {
+      await for (final repo in stream) {
+        yield repo;
+      }
+    }
+  }
 
   /// POST /api/repos/{owner}/{repo}/builds/{build}/approve
   @override

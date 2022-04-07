@@ -36,12 +36,12 @@ void main() {
         expect(createSubject().copyWith(), equals(createSubject()));
       });
 
-      test('reurn of object when null provided', () {
-        expect(
-          createSubject().copyWith(admin: null, read: null, write: null),
-          equals(createSubject()),
-        );
-      });
+      // test('reurn of object when null provided', () {
+      //   expect(
+      //     createSubject().copyWith(admin: null, read: null, write: null),
+      //     equals(createSubject()),
+      //   );
+      // });
       test('replace all non-null parameters', () {
         expect(
           createSubject().copyWith(admin: true, read: true, write: true),
