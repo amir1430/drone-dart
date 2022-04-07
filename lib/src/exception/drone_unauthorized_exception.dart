@@ -1,9 +1,9 @@
-class DroneUnauthorizedException implements Exception {
-  const DroneUnauthorizedException({
-    this.message = 'Unauthorized',
-  });
+import 'package:drone_dart/drone_dart.dart';
 
-  final String message;
+class DroneUnauthorizedException extends DroneException {
+  const DroneUnauthorizedException({
+    String message = 'Unauthorized',
+  }) : super(message: message);
 
   @override
   String toString() => 'DroneRequestException: $message';

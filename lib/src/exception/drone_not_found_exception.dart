@@ -1,9 +1,10 @@
-class DroneNotFoundException implements Exception {
-  const DroneNotFoundException({
-    this.message = 'Not Found 404. The requested resource could not be found.',
-  });
+import 'package:drone_dart/drone_dart.dart';
 
-  final String message;
+class DroneNotFoundException extends DroneException {
+  const DroneNotFoundException({
+    String message =
+        'Not Found 404. The requested resource could not be found.',
+  }) : super(message: message);
 
   @override
   String toString() => 'DroneNoutFoundException: $message';
