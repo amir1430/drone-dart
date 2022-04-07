@@ -1,52 +1,16 @@
-class Permission {
-  const Permission({
-    required this.read,
-    required this.write,
-    required this.admin,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  factory Permission.fromJson(Map<String, dynamic> map) {
-    return Permission(
-      read: map['read'] ?? false,
-      write: map['write'] ?? false,
-      admin: map['admin'] ?? false,
-    );
-  }
+part 'permissions_model.freezed.dart';
+part 'permissions_model.g.dart';
 
-  final bool read;
-  final bool write;
-  final bool admin;
+@freezed
+class Permission with _$Permission {
+  const factory Permission({
+    @Default(false) bool read,
+    @Default(false) bool write,
+    @Default(false) bool admin,
+  }) = _Permission;
 
-  Permission copyWith({
-    bool? read,
-    bool? write,
-    bool? admin,
-  }) {
-    return Permission(
-      read: read ?? this.read,
-      write: write ?? this.write,
-      admin: admin ?? this.admin,
-    );
-  }
-
-  Map<String, dynamic> toJson() {
-    return {
-      'read': read,
-      'write': write,
-      'admin': admin,
-    };
-  }
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is Permission &&
-        other.read == read &&
-        other.write == write &&
-        other.admin == admin;
-  }
-
-  @override
-  int get hashCode => read.hashCode ^ write.hashCode ^ admin.hashCode;
+  factory Permission.fromJson(Map<String, dynamic> json) =>
+      _$PermissionFromJson(json);
 }

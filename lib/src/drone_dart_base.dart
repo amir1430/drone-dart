@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
-
+import 'package:drone_dart/drone_dart.dart';
 import 'exception/exception.dart';
-import 'models/models.dart';
 import 'utils/http_method.dart';
 import 'utils/isolate.dart';
 
@@ -858,8 +857,14 @@ class DroneClient implements IDroneClient {
           },
         ),
       );
+      print(response.data);
+      print(response.statusCode);
     } catch (e) {
       throw const DroneRequestException();
+    }
+
+    if (response.statusCode == 400) {
+      throw const DroneInvalidRequestException();
     }
 
     if (response.statusCode == 401) {

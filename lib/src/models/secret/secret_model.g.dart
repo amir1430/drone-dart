@@ -7,17 +7,17 @@ part of 'secret_model.dart';
 // **************************************************************************
 
 _$_Secret _$$_SecretFromJson(Map<String, dynamic> json) => _$_Secret(
-      id: json['id'] as int?,
-      repoId: json['repo_id'] as int?,
-      name: json['name'] as String?,
-      data: json['data'] as String?,
-      pullRequest: json['pull_request'] as bool?,
+      name: json['name'] as String? ?? '',
+      data: json['data'] as String? ?? '',
+      repoId: json['repo_id'] as int? ?? 0,
+      id: json['id'] as int? ?? 0,
+      pullRequest: json['pull_request'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$$_SecretToJson(_$_Secret instance) => <String, dynamic>{
-      'id': instance.id,
-      'repo_id': instance.repoId,
       'name': instance.name,
       'data': instance.data,
+      'repo_id': instance.repoId,
+      'id': instance.id,
       'pull_request': instance.pullRequest,
     };

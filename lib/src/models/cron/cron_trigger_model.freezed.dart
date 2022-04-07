@@ -23,36 +23,34 @@ class _$CronTriggerTearOff {
   const _$CronTriggerTearOff();
 
   _CronTrigger call(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      Permission? permissions}) {
+      {String uid = '',
+      String namespace = '',
+      String name = '',
+      String slug = '',
+      String scm = '',
+      String gitHttpUrl = '',
+      String gitSshUrl = '',
+      String link = '',
+      String defaultBranch = '',
+      String visibility = '',
+      String configPath = '',
+      int id = 0,
+      int userId = 0,
+      int counter = 0,
+      int synced = 0,
+      int created = 0,
+      int updated = 0,
+      int version = 0,
+      int timeout = 0,
+      bool private = false,
+      bool active = false,
+      bool trusted = false,
+      bool protected = false,
+      bool ignoreForks = false,
+      bool ignorePullRequests = false,
+      Permission permissions = const Permission()}) {
     return _CronTrigger(
-      id: id,
       uid: uid,
-      userId: userId,
       namespace: namespace,
       name: name,
       slug: slug,
@@ -61,20 +59,22 @@ class _$CronTriggerTearOff {
       gitSshUrl: gitSshUrl,
       link: link,
       defaultBranch: defaultBranch,
-      private: private,
       visibility: visibility,
-      active: active,
       configPath: configPath,
-      trusted: trusted,
-      protected: protected,
-      ignoreForks: ignoreForks,
-      ignorePullRequests: ignorePullRequests,
-      timeout: timeout,
+      id: id,
+      userId: userId,
       counter: counter,
       synced: synced,
       created: created,
       updated: updated,
       version: version,
+      timeout: timeout,
+      private: private,
+      active: active,
+      trusted: trusted,
+      protected: protected,
+      ignoreForks: ignoreForks,
+      ignorePullRequests: ignorePullRequests,
       permissions: permissions,
     );
   }
@@ -89,39 +89,32 @@ const $CronTrigger = _$CronTriggerTearOff();
 
 /// @nodoc
 mixin _$CronTrigger {
-  int? get id => throw _privateConstructorUsedError;
-  String? get uid => throw _privateConstructorUsedError;
-  @JsonKey(name: 'user_id')
-  int? get userId => throw _privateConstructorUsedError;
-  String? get namespace => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
-  String? get scm => throw _privateConstructorUsedError;
-  @JsonKey(name: 'git_http_url')
-  String? get gitHttpUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'git_ssh_url')
-  String? get gitSshUrl => throw _privateConstructorUsedError;
-  String? get link => throw _privateConstructorUsedError;
-  @JsonKey(name: 'default_branch')
-  String? get defaultBranch => throw _privateConstructorUsedError;
-  bool? get private => throw _privateConstructorUsedError;
-  String? get visibility => throw _privateConstructorUsedError;
-  bool? get active => throw _privateConstructorUsedError;
-  @JsonKey(name: 'config_path')
-  String? get configPath => throw _privateConstructorUsedError;
-  bool? get trusted => throw _privateConstructorUsedError;
-  bool? get protected => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ignore_forks')
-  bool? get ignoreForks => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ignore_pull_requests')
-  bool? get ignorePullRequests => throw _privateConstructorUsedError;
-  int? get timeout => throw _privateConstructorUsedError;
-  int? get counter => throw _privateConstructorUsedError;
-  int? get synced => throw _privateConstructorUsedError;
-  int? get created => throw _privateConstructorUsedError;
-  int? get updated => throw _privateConstructorUsedError;
-  int? get version => throw _privateConstructorUsedError;
-  Permission? get permissions => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
+  String get namespace => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
+  String get scm => throw _privateConstructorUsedError;
+  String get gitHttpUrl => throw _privateConstructorUsedError;
+  String get gitSshUrl => throw _privateConstructorUsedError;
+  String get link => throw _privateConstructorUsedError;
+  String get defaultBranch => throw _privateConstructorUsedError;
+  String get visibility => throw _privateConstructorUsedError;
+  String get configPath => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  int get userId => throw _privateConstructorUsedError;
+  int get counter => throw _privateConstructorUsedError;
+  int get synced => throw _privateConstructorUsedError;
+  int get created => throw _privateConstructorUsedError;
+  int get updated => throw _privateConstructorUsedError;
+  int get version => throw _privateConstructorUsedError;
+  int get timeout => throw _privateConstructorUsedError;
+  bool get private => throw _privateConstructorUsedError;
+  bool get active => throw _privateConstructorUsedError;
+  bool get trusted => throw _privateConstructorUsedError;
+  bool get protected => throw _privateConstructorUsedError;
+  bool get ignoreForks => throw _privateConstructorUsedError;
+  bool get ignorePullRequests => throw _privateConstructorUsedError;
+  Permission get permissions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -135,32 +128,34 @@ abstract class $CronTriggerCopyWith<$Res> {
           CronTrigger value, $Res Function(CronTrigger) then) =
       _$CronTriggerCopyWithImpl<$Res>;
   $Res call(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      Permission? permissions});
+      {String uid,
+      String namespace,
+      String name,
+      String slug,
+      String scm,
+      String gitHttpUrl,
+      String gitSshUrl,
+      String link,
+      String defaultBranch,
+      String visibility,
+      String configPath,
+      int id,
+      int userId,
+      int counter,
+      int synced,
+      int created,
+      int updated,
+      int version,
+      int timeout,
+      bool private,
+      bool active,
+      bool trusted,
+      bool protected,
+      bool ignoreForks,
+      bool ignorePullRequests,
+      Permission permissions});
+
+  $PermissionCopyWith<$Res> get permissions;
 }
 
 /// @nodoc
@@ -173,9 +168,7 @@ class _$CronTriggerCopyWithImpl<$Res> implements $CronTriggerCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? uid = freezed,
-    Object? userId = freezed,
     Object? namespace = freezed,
     Object? name = freezed,
     Object? slug = freezed,
@@ -184,128 +177,137 @@ class _$CronTriggerCopyWithImpl<$Res> implements $CronTriggerCopyWith<$Res> {
     Object? gitSshUrl = freezed,
     Object? link = freezed,
     Object? defaultBranch = freezed,
-    Object? private = freezed,
     Object? visibility = freezed,
-    Object? active = freezed,
     Object? configPath = freezed,
-    Object? trusted = freezed,
-    Object? protected = freezed,
-    Object? ignoreForks = freezed,
-    Object? ignorePullRequests = freezed,
-    Object? timeout = freezed,
+    Object? id = freezed,
+    Object? userId = freezed,
     Object? counter = freezed,
     Object? synced = freezed,
     Object? created = freezed,
     Object? updated = freezed,
     Object? version = freezed,
+    Object? timeout = freezed,
+    Object? private = freezed,
+    Object? active = freezed,
+    Object? trusted = freezed,
+    Object? protected = freezed,
+    Object? ignoreForks = freezed,
+    Object? ignorePullRequests = freezed,
     Object? permissions = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
       namespace: namespace == freezed
           ? _value.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       slug: slug == freezed
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       scm: scm == freezed
           ? _value.scm
           : scm // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gitHttpUrl: gitHttpUrl == freezed
           ? _value.gitHttpUrl
           : gitHttpUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gitSshUrl: gitSshUrl == freezed
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       defaultBranch: defaultBranch == freezed
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
-              as String?,
-      private: private == freezed
-          ? _value.private
-          : private // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as String?,
-      active: active == freezed
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
       configPath: configPath == freezed
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      trusted: trusted == freezed
-          ? _value.trusted
-          : trusted // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      protected: protected == freezed
-          ? _value.protected
-          : protected // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignoreForks: ignoreForks == freezed
-          ? _value.ignoreForks
-          : ignoreForks // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignorePullRequests: ignorePullRequests == freezed
-          ? _value.ignorePullRequests
-          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      timeout: timeout == freezed
-          ? _value.timeout
-          : timeout // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      timeout: timeout == freezed
+          ? _value.timeout
+          : timeout // ignore: cast_nullable_to_non_nullable
+              as int,
+      private: private == freezed
+          ? _value.private
+          : private // ignore: cast_nullable_to_non_nullable
+              as bool,
+      active: active == freezed
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool,
+      trusted: trusted == freezed
+          ? _value.trusted
+          : trusted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      protected: protected == freezed
+          ? _value.protected
+          : protected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ignoreForks: ignoreForks == freezed
+          ? _value.ignoreForks
+          : ignoreForks // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ignorePullRequests: ignorePullRequests == freezed
+          ? _value.ignorePullRequests
+          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
+              as bool,
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission?,
+              as Permission,
     ));
+  }
+
+  @override
+  $PermissionCopyWith<$Res> get permissions {
+    return $PermissionCopyWith<$Res>(_value.permissions, (value) {
+      return _then(_value.copyWith(permissions: value));
+    });
   }
 }
 
@@ -317,32 +319,35 @@ abstract class _$CronTriggerCopyWith<$Res>
       __$CronTriggerCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      Permission? permissions});
+      {String uid,
+      String namespace,
+      String name,
+      String slug,
+      String scm,
+      String gitHttpUrl,
+      String gitSshUrl,
+      String link,
+      String defaultBranch,
+      String visibility,
+      String configPath,
+      int id,
+      int userId,
+      int counter,
+      int synced,
+      int created,
+      int updated,
+      int version,
+      int timeout,
+      bool private,
+      bool active,
+      bool trusted,
+      bool protected,
+      bool ignoreForks,
+      bool ignorePullRequests,
+      Permission permissions});
+
+  @override
+  $PermissionCopyWith<$Res> get permissions;
 }
 
 /// @nodoc
@@ -357,9 +362,7 @@ class __$CronTriggerCopyWithImpl<$Res> extends _$CronTriggerCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? uid = freezed,
-    Object? userId = freezed,
     Object? namespace = freezed,
     Object? name = freezed,
     Object? slug = freezed,
@@ -368,228 +371,250 @@ class __$CronTriggerCopyWithImpl<$Res> extends _$CronTriggerCopyWithImpl<$Res>
     Object? gitSshUrl = freezed,
     Object? link = freezed,
     Object? defaultBranch = freezed,
-    Object? private = freezed,
     Object? visibility = freezed,
-    Object? active = freezed,
     Object? configPath = freezed,
-    Object? trusted = freezed,
-    Object? protected = freezed,
-    Object? ignoreForks = freezed,
-    Object? ignorePullRequests = freezed,
-    Object? timeout = freezed,
+    Object? id = freezed,
+    Object? userId = freezed,
     Object? counter = freezed,
     Object? synced = freezed,
     Object? created = freezed,
     Object? updated = freezed,
     Object? version = freezed,
+    Object? timeout = freezed,
+    Object? private = freezed,
+    Object? active = freezed,
+    Object? trusted = freezed,
+    Object? protected = freezed,
+    Object? ignoreForks = freezed,
+    Object? ignorePullRequests = freezed,
     Object? permissions = freezed,
   }) {
     return _then(_CronTrigger(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
       namespace: namespace == freezed
           ? _value.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       slug: slug == freezed
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       scm: scm == freezed
           ? _value.scm
           : scm // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gitHttpUrl: gitHttpUrl == freezed
           ? _value.gitHttpUrl
           : gitHttpUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       gitSshUrl: gitSshUrl == freezed
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       link: link == freezed
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       defaultBranch: defaultBranch == freezed
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
-              as String?,
-      private: private == freezed
-          ? _value.private
-          : private // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as String?,
-      active: active == freezed
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
       configPath: configPath == freezed
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      trusted: trusted == freezed
-          ? _value.trusted
-          : trusted // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      protected: protected == freezed
-          ? _value.protected
-          : protected // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignoreForks: ignoreForks == freezed
-          ? _value.ignoreForks
-          : ignoreForks // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignorePullRequests: ignorePullRequests == freezed
-          ? _value.ignorePullRequests
-          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      timeout: timeout == freezed
-          ? _value.timeout
-          : timeout // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      timeout: timeout == freezed
+          ? _value.timeout
+          : timeout // ignore: cast_nullable_to_non_nullable
+              as int,
+      private: private == freezed
+          ? _value.private
+          : private // ignore: cast_nullable_to_non_nullable
+              as bool,
+      active: active == freezed
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool,
+      trusted: trusted == freezed
+          ? _value.trusted
+          : trusted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      protected: protected == freezed
+          ? _value.protected
+          : protected // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ignoreForks: ignoreForks == freezed
+          ? _value.ignoreForks
+          : ignoreForks // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ignorePullRequests: ignorePullRequests == freezed
+          ? _value.ignorePullRequests
+          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
+              as bool,
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission?,
+              as Permission,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_CronTrigger implements _CronTrigger {
   const _$_CronTrigger(
-      {this.id,
-      this.uid,
-      @JsonKey(name: 'user_id') this.userId,
-      this.namespace,
-      this.name,
-      this.slug,
-      this.scm,
-      @JsonKey(name: 'git_http_url') this.gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') this.gitSshUrl,
-      this.link,
-      @JsonKey(name: 'default_branch') this.defaultBranch,
-      this.private,
-      this.visibility,
-      this.active,
-      @JsonKey(name: 'config_path') this.configPath,
-      this.trusted,
-      this.protected,
-      @JsonKey(name: 'ignore_forks') this.ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') this.ignorePullRequests,
-      this.timeout,
-      this.counter,
-      this.synced,
-      this.created,
-      this.updated,
-      this.version,
-      this.permissions});
+      {this.uid = '',
+      this.namespace = '',
+      this.name = '',
+      this.slug = '',
+      this.scm = '',
+      this.gitHttpUrl = '',
+      this.gitSshUrl = '',
+      this.link = '',
+      this.defaultBranch = '',
+      this.visibility = '',
+      this.configPath = '',
+      this.id = 0,
+      this.userId = 0,
+      this.counter = 0,
+      this.synced = 0,
+      this.created = 0,
+      this.updated = 0,
+      this.version = 0,
+      this.timeout = 0,
+      this.private = false,
+      this.active = false,
+      this.trusted = false,
+      this.protected = false,
+      this.ignoreForks = false,
+      this.ignorePullRequests = false,
+      this.permissions = const Permission()});
 
   factory _$_CronTrigger.fromJson(Map<String, dynamic> json) =>
       _$$_CronTriggerFromJson(json);
 
+  @JsonKey()
   @override
-  final int? id;
+  final String uid;
+  @JsonKey()
   @override
-  final String? uid;
+  final String namespace;
+  @JsonKey()
   @override
-  @JsonKey(name: 'user_id')
-  final int? userId;
+  final String name;
+  @JsonKey()
   @override
-  final String? namespace;
+  final String slug;
+  @JsonKey()
   @override
-  final String? name;
+  final String scm;
+  @JsonKey()
   @override
-  final String? slug;
+  final String gitHttpUrl;
+  @JsonKey()
   @override
-  final String? scm;
+  final String gitSshUrl;
+  @JsonKey()
   @override
-  @JsonKey(name: 'git_http_url')
-  final String? gitHttpUrl;
+  final String link;
+  @JsonKey()
   @override
-  @JsonKey(name: 'git_ssh_url')
-  final String? gitSshUrl;
+  final String defaultBranch;
+  @JsonKey()
   @override
-  final String? link;
+  final String visibility;
+  @JsonKey()
   @override
-  @JsonKey(name: 'default_branch')
-  final String? defaultBranch;
+  final String configPath;
+  @JsonKey()
   @override
-  final bool? private;
+  final int id;
+  @JsonKey()
   @override
-  final String? visibility;
+  final int userId;
+  @JsonKey()
   @override
-  final bool? active;
+  final int counter;
+  @JsonKey()
   @override
-  @JsonKey(name: 'config_path')
-  final String? configPath;
+  final int synced;
+  @JsonKey()
   @override
-  final bool? trusted;
+  final int created;
+  @JsonKey()
   @override
-  final bool? protected;
+  final int updated;
+  @JsonKey()
   @override
-  @JsonKey(name: 'ignore_forks')
-  final bool? ignoreForks;
+  final int version;
+  @JsonKey()
   @override
-  @JsonKey(name: 'ignore_pull_requests')
-  final bool? ignorePullRequests;
+  final int timeout;
+  @JsonKey()
   @override
-  final int? timeout;
+  final bool private;
+  @JsonKey()
   @override
-  final int? counter;
+  final bool active;
+  @JsonKey()
   @override
-  final int? synced;
+  final bool trusted;
+  @JsonKey()
   @override
-  final int? created;
+  final bool protected;
+  @JsonKey()
   @override
-  final int? updated;
+  final bool ignoreForks;
+  @JsonKey()
   @override
-  final int? version;
+  final bool ignorePullRequests;
+  @JsonKey()
   @override
-  final Permission? permissions;
+  final Permission permissions;
 
   @override
   String toString() {
-    return 'CronTrigger(id: $id, uid: $uid, userId: $userId, namespace: $namespace, name: $name, slug: $slug, scm: $scm, gitHttpUrl: $gitHttpUrl, gitSshUrl: $gitSshUrl, link: $link, defaultBranch: $defaultBranch, private: $private, visibility: $visibility, active: $active, configPath: $configPath, trusted: $trusted, protected: $protected, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, timeout: $timeout, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, permissions: $permissions)';
+    return 'CronTrigger(uid: $uid, namespace: $namespace, name: $name, slug: $slug, scm: $scm, gitHttpUrl: $gitHttpUrl, gitSshUrl: $gitSshUrl, link: $link, defaultBranch: $defaultBranch, visibility: $visibility, configPath: $configPath, id: $id, userId: $userId, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, timeout: $timeout, private: $private, active: $active, trusted: $trusted, protected: $protected, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, permissions: $permissions)';
   }
 
   @override
@@ -597,9 +622,7 @@ class _$_CronTrigger implements _CronTrigger {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _CronTrigger &&
-            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.namespace, namespace) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.slug, slug) &&
@@ -610,24 +633,26 @@ class _$_CronTrigger implements _CronTrigger {
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality()
                 .equals(other.defaultBranch, defaultBranch) &&
-            const DeepCollectionEquality().equals(other.private, private) &&
             const DeepCollectionEquality()
                 .equals(other.visibility, visibility) &&
-            const DeepCollectionEquality().equals(other.active, active) &&
             const DeepCollectionEquality()
                 .equals(other.configPath, configPath) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
+            const DeepCollectionEquality().equals(other.counter, counter) &&
+            const DeepCollectionEquality().equals(other.synced, synced) &&
+            const DeepCollectionEquality().equals(other.created, created) &&
+            const DeepCollectionEquality().equals(other.updated, updated) &&
+            const DeepCollectionEquality().equals(other.version, version) &&
+            const DeepCollectionEquality().equals(other.timeout, timeout) &&
+            const DeepCollectionEquality().equals(other.private, private) &&
+            const DeepCollectionEquality().equals(other.active, active) &&
             const DeepCollectionEquality().equals(other.trusted, trusted) &&
             const DeepCollectionEquality().equals(other.protected, protected) &&
             const DeepCollectionEquality()
                 .equals(other.ignoreForks, ignoreForks) &&
             const DeepCollectionEquality()
                 .equals(other.ignorePullRequests, ignorePullRequests) &&
-            const DeepCollectionEquality().equals(other.timeout, timeout) &&
-            const DeepCollectionEquality().equals(other.counter, counter) &&
-            const DeepCollectionEquality().equals(other.synced, synced) &&
-            const DeepCollectionEquality().equals(other.created, created) &&
-            const DeepCollectionEquality().equals(other.updated, updated) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
             const DeepCollectionEquality()
                 .equals(other.permissions, permissions));
   }
@@ -635,9 +660,7 @@ class _$_CronTrigger implements _CronTrigger {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(uid),
-        const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(namespace),
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(slug),
@@ -646,20 +669,22 @@ class _$_CronTrigger implements _CronTrigger {
         const DeepCollectionEquality().hash(gitSshUrl),
         const DeepCollectionEquality().hash(link),
         const DeepCollectionEquality().hash(defaultBranch),
-        const DeepCollectionEquality().hash(private),
         const DeepCollectionEquality().hash(visibility),
-        const DeepCollectionEquality().hash(active),
         const DeepCollectionEquality().hash(configPath),
-        const DeepCollectionEquality().hash(trusted),
-        const DeepCollectionEquality().hash(protected),
-        const DeepCollectionEquality().hash(ignoreForks),
-        const DeepCollectionEquality().hash(ignorePullRequests),
-        const DeepCollectionEquality().hash(timeout),
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(counter),
         const DeepCollectionEquality().hash(synced),
         const DeepCollectionEquality().hash(created),
         const DeepCollectionEquality().hash(updated),
         const DeepCollectionEquality().hash(version),
+        const DeepCollectionEquality().hash(timeout),
+        const DeepCollectionEquality().hash(private),
+        const DeepCollectionEquality().hash(active),
+        const DeepCollectionEquality().hash(trusted),
+        const DeepCollectionEquality().hash(protected),
+        const DeepCollectionEquality().hash(ignoreForks),
+        const DeepCollectionEquality().hash(ignorePullRequests),
         const DeepCollectionEquality().hash(permissions)
       ]);
 
@@ -676,95 +701,88 @@ class _$_CronTrigger implements _CronTrigger {
 
 abstract class _CronTrigger implements CronTrigger {
   const factory _CronTrigger(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      Permission? permissions}) = _$_CronTrigger;
+      {String uid,
+      String namespace,
+      String name,
+      String slug,
+      String scm,
+      String gitHttpUrl,
+      String gitSshUrl,
+      String link,
+      String defaultBranch,
+      String visibility,
+      String configPath,
+      int id,
+      int userId,
+      int counter,
+      int synced,
+      int created,
+      int updated,
+      int version,
+      int timeout,
+      bool private,
+      bool active,
+      bool trusted,
+      bool protected,
+      bool ignoreForks,
+      bool ignorePullRequests,
+      Permission permissions}) = _$_CronTrigger;
 
   factory _CronTrigger.fromJson(Map<String, dynamic> json) =
       _$_CronTrigger.fromJson;
 
   @override
-  int? get id;
+  String get uid;
   @override
-  String? get uid;
+  String get namespace;
   @override
-  @JsonKey(name: 'user_id')
-  int? get userId;
+  String get name;
   @override
-  String? get namespace;
+  String get slug;
   @override
-  String? get name;
+  String get scm;
   @override
-  String? get slug;
+  String get gitHttpUrl;
   @override
-  String? get scm;
+  String get gitSshUrl;
   @override
-  @JsonKey(name: 'git_http_url')
-  String? get gitHttpUrl;
+  String get link;
   @override
-  @JsonKey(name: 'git_ssh_url')
-  String? get gitSshUrl;
+  String get defaultBranch;
   @override
-  String? get link;
+  String get visibility;
   @override
-  @JsonKey(name: 'default_branch')
-  String? get defaultBranch;
+  String get configPath;
   @override
-  bool? get private;
+  int get id;
   @override
-  String? get visibility;
+  int get userId;
   @override
-  bool? get active;
+  int get counter;
   @override
-  @JsonKey(name: 'config_path')
-  String? get configPath;
+  int get synced;
   @override
-  bool? get trusted;
+  int get created;
   @override
-  bool? get protected;
+  int get updated;
   @override
-  @JsonKey(name: 'ignore_forks')
-  bool? get ignoreForks;
+  int get version;
   @override
-  @JsonKey(name: 'ignore_pull_requests')
-  bool? get ignorePullRequests;
+  int get timeout;
   @override
-  int? get timeout;
+  bool get private;
   @override
-  int? get counter;
+  bool get active;
   @override
-  int? get synced;
+  bool get trusted;
   @override
-  int? get created;
+  bool get protected;
   @override
-  int? get updated;
+  bool get ignoreForks;
   @override
-  int? get version;
+  bool get ignorePullRequests;
   @override
-  Permission? get permissions;
+  Permission get permissions;
   @override
   @JsonKey(ignore: true)
   _$CronTriggerCopyWith<_CronTrigger> get copyWith =>

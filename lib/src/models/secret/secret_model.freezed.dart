@@ -23,16 +23,16 @@ class _$SecretTearOff {
   const _$SecretTearOff();
 
   _Secret call(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? name,
-      String? data,
-      @JsonKey(name: 'pull_request') bool? pullRequest}) {
+      {String name = '',
+      String data = '',
+      int repoId = 0,
+      int id = 0,
+      bool pullRequest = false}) {
     return _Secret(
-      id: id,
-      repoId: repoId,
       name: name,
       data: data,
+      repoId: repoId,
+      id: id,
       pullRequest: pullRequest,
     );
   }
@@ -47,13 +47,11 @@ const $Secret = _$SecretTearOff();
 
 /// @nodoc
 mixin _$Secret {
-  int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'repo_id')
-  int? get repoId => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get data => throw _privateConstructorUsedError;
-  @JsonKey(name: 'pull_request')
-  bool? get pullRequest => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get data => throw _privateConstructorUsedError;
+  int get repoId => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  bool get pullRequest => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -64,12 +62,7 @@ mixin _$Secret {
 abstract class $SecretCopyWith<$Res> {
   factory $SecretCopyWith(Secret value, $Res Function(Secret) then) =
       _$SecretCopyWithImpl<$Res>;
-  $Res call(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? name,
-      String? data,
-      @JsonKey(name: 'pull_request') bool? pullRequest});
+  $Res call({String name, String data, int repoId, int id, bool pullRequest});
 }
 
 /// @nodoc
@@ -82,33 +75,33 @@ class _$SecretCopyWithImpl<$Res> implements $SecretCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? repoId = freezed,
     Object? name = freezed,
     Object? data = freezed,
+    Object? repoId = freezed,
+    Object? id = freezed,
     Object? pullRequest = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      repoId: repoId == freezed
-          ? _value.repoId
-          : repoId // ignore: cast_nullable_to_non_nullable
-              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      repoId: repoId == freezed
+          ? _value.repoId
+          : repoId // ignore: cast_nullable_to_non_nullable
+              as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       pullRequest: pullRequest == freezed
           ? _value.pullRequest
           : pullRequest // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
@@ -118,12 +111,7 @@ abstract class _$SecretCopyWith<$Res> implements $SecretCopyWith<$Res> {
   factory _$SecretCopyWith(_Secret value, $Res Function(_Secret) then) =
       __$SecretCopyWithImpl<$Res>;
   @override
-  $Res call(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? name,
-      String? data,
-      @JsonKey(name: 'pull_request') bool? pullRequest});
+  $Res call({String name, String data, int repoId, int id, bool pullRequest});
 }
 
 /// @nodoc
@@ -137,66 +125,70 @@ class __$SecretCopyWithImpl<$Res> extends _$SecretCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? repoId = freezed,
     Object? name = freezed,
     Object? data = freezed,
+    Object? repoId = freezed,
+    Object? id = freezed,
     Object? pullRequest = freezed,
   }) {
     return _then(_Secret(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      repoId: repoId == freezed
-          ? _value.repoId
-          : repoId // ignore: cast_nullable_to_non_nullable
-              as int?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       data: data == freezed
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      repoId: repoId == freezed
+          ? _value.repoId
+          : repoId // ignore: cast_nullable_to_non_nullable
+              as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       pullRequest: pullRequest == freezed
           ? _value.pullRequest
           : pullRequest // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_Secret implements _Secret {
   const _$_Secret(
-      {this.id,
-      @JsonKey(name: 'repo_id') this.repoId,
-      this.name,
-      this.data,
-      @JsonKey(name: 'pull_request') this.pullRequest});
+      {this.name = '',
+      this.data = '',
+      this.repoId = 0,
+      this.id = 0,
+      this.pullRequest = false});
 
   factory _$_Secret.fromJson(Map<String, dynamic> json) =>
       _$$_SecretFromJson(json);
 
+  @JsonKey()
   @override
-  final int? id;
+  final String name;
+  @JsonKey()
   @override
-  @JsonKey(name: 'repo_id')
-  final int? repoId;
+  final String data;
+  @JsonKey()
   @override
-  final String? name;
+  final int repoId;
+  @JsonKey()
   @override
-  final String? data;
+  final int id;
+  @JsonKey()
   @override
-  @JsonKey(name: 'pull_request')
-  final bool? pullRequest;
+  final bool pullRequest;
 
   @override
   String toString() {
-    return 'Secret(id: $id, repoId: $repoId, name: $name, data: $data, pullRequest: $pullRequest)';
+    return 'Secret(name: $name, data: $data, repoId: $repoId, id: $id, pullRequest: $pullRequest)';
   }
 
   @override
@@ -204,10 +196,10 @@ class _$_Secret implements _Secret {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Secret &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.repoId, repoId) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.data, data) &&
+            const DeepCollectionEquality().equals(other.repoId, repoId) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality()
                 .equals(other.pullRequest, pullRequest));
   }
@@ -215,10 +207,10 @@ class _$_Secret implements _Secret {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(repoId),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(data),
+      const DeepCollectionEquality().hash(repoId),
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(pullRequest));
 
   @JsonKey(ignore: true)
@@ -234,26 +226,24 @@ class _$_Secret implements _Secret {
 
 abstract class _Secret implements Secret {
   const factory _Secret(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? name,
-      String? data,
-      @JsonKey(name: 'pull_request') bool? pullRequest}) = _$_Secret;
+      {String name,
+      String data,
+      int repoId,
+      int id,
+      bool pullRequest}) = _$_Secret;
 
   factory _Secret.fromJson(Map<String, dynamic> json) = _$_Secret.fromJson;
 
   @override
-  int? get id;
+  String get name;
   @override
-  @JsonKey(name: 'repo_id')
-  int? get repoId;
+  String get data;
   @override
-  String? get name;
+  int get repoId;
   @override
-  String? get data;
+  int get id;
   @override
-  @JsonKey(name: 'pull_request')
-  bool? get pullRequest;
+  bool get pullRequest;
   @override
   @JsonKey(ignore: true)
   _$SecretCopyWith<_Secret> get copyWith => throw _privateConstructorUsedError;

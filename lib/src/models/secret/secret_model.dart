@@ -5,12 +5,13 @@ part 'secret_model.g.dart';
 
 @freezed
 class Secret with _$Secret {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Secret({
-    int? id,
-    @JsonKey(name: 'repo_id') int? repoId,
-    String? name,
-    String? data,
-    @JsonKey(name: 'pull_request') bool? pullRequest,
+    @Default('') String name,
+    @Default('') String data,
+    @Default(0) int repoId,
+    @Default(0) int id,
+    @Default(false) bool pullRequest,
   }) = _Secret;
 
   factory Secret.fromJson(Map<String, dynamic> json) => _$SecretFromJson(json);

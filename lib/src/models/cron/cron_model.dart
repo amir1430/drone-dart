@@ -5,16 +5,17 @@ part 'cron_model.g.dart';
 
 @freezed
 class Cron with _$Cron {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Cron({
-    int? id,
-    @JsonKey(name: 'repo_id') int? repoId,
-    String? name,
-    String? expr,
-    String? branch,
-    int? next,
-    int? pref,
-    int? created,
-    int? updated,
+    @Default('') String name,
+    @Default('') String expr,
+    @Default('') String branch,
+    @Default(0) int id,
+    @Default(0) int repoId,
+    @Default(0) int next,
+    @Default(0) int pref,
+    @Default(0) int created,
+    @Default(0) int updated,
   }) = _Cron;
 
   factory Cron.fromJson(Map<String, dynamic> json) => _$CronFromJson(json);
