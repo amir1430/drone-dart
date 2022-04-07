@@ -23,55 +23,55 @@ class _$BuildTearOff {
   const _$BuildTearOff();
 
   _Build call(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? trigger,
-      int? number,
-      String? status,
-      String? event,
-      String? action,
-      String? link,
-      int? timestamp,
-      String? message,
-      String? before,
-      String? after,
-      String? ref,
-      @JsonKey(name: 'source_repo') String? sourceRepo,
-      String? source,
-      String? target,
-      @JsonKey(name: 'author_login') String? authorLogin,
-      @JsonKey(name: 'author_name') String? authorName,
-      @JsonKey(name: 'author_email') String? authorEmail,
-      @JsonKey(name: 'author_avatar') String? authorAvatar,
-      String? sender,
-      int? started,
-      int? finished,
-      int? created,
-      int? updated,
-      int? version,
-      List<Stage>? stages}) {
+      {String sourceRepo = '',
+      String authorLogin = '',
+      String authorName = '',
+      String authorEmail = '',
+      String authorAvatar = '',
+      String trigger = '',
+      String status = '',
+      String event = '',
+      String action = '',
+      String link = '',
+      String message = '',
+      String before = '',
+      String after = '',
+      String ref = '',
+      String source = '',
+      String target = '',
+      String sender = '',
+      int repoId = 0,
+      int id = 0,
+      int number = 0,
+      int timestamp = 0,
+      int started = 0,
+      int finished = 0,
+      int created = 0,
+      int updated = 0,
+      int version = 0,
+      List<Stage> stages = const []}) {
     return _Build(
-      id: id,
-      repoId: repoId,
-      trigger: trigger,
-      number: number,
-      status: status,
-      event: event,
-      action: action,
-      link: link,
-      timestamp: timestamp,
-      message: message,
-      before: before,
-      after: after,
-      ref: ref,
       sourceRepo: sourceRepo,
-      source: source,
-      target: target,
       authorLogin: authorLogin,
       authorName: authorName,
       authorEmail: authorEmail,
       authorAvatar: authorAvatar,
+      trigger: trigger,
+      status: status,
+      event: event,
+      action: action,
+      link: link,
+      message: message,
+      before: before,
+      after: after,
+      ref: ref,
+      source: source,
+      target: target,
       sender: sender,
+      repoId: repoId,
+      id: id,
+      number: number,
+      timestamp: timestamp,
       started: started,
       finished: finished,
       created: created,
@@ -91,39 +91,33 @@ const $Build = _$BuildTearOff();
 
 /// @nodoc
 mixin _$Build {
-  int? get id => throw _privateConstructorUsedError;
-  @JsonKey(name: 'repo_id')
-  int? get repoId => throw _privateConstructorUsedError;
-  String? get trigger => throw _privateConstructorUsedError;
-  int? get number => throw _privateConstructorUsedError;
-  String? get status => throw _privateConstructorUsedError;
-  String? get event => throw _privateConstructorUsedError;
-  String? get action => throw _privateConstructorUsedError;
-  String? get link => throw _privateConstructorUsedError;
-  int? get timestamp => throw _privateConstructorUsedError;
-  String? get message => throw _privateConstructorUsedError;
-  String? get before => throw _privateConstructorUsedError;
-  String? get after => throw _privateConstructorUsedError;
-  String? get ref => throw _privateConstructorUsedError;
-  @JsonKey(name: 'source_repo')
-  String? get sourceRepo => throw _privateConstructorUsedError;
-  String? get source => throw _privateConstructorUsedError;
-  String? get target => throw _privateConstructorUsedError;
-  @JsonKey(name: 'author_login')
-  String? get authorLogin => throw _privateConstructorUsedError;
-  @JsonKey(name: 'author_name')
-  String? get authorName => throw _privateConstructorUsedError;
-  @JsonKey(name: 'author_email')
-  String? get authorEmail => throw _privateConstructorUsedError;
-  @JsonKey(name: 'author_avatar')
-  String? get authorAvatar => throw _privateConstructorUsedError;
-  String? get sender => throw _privateConstructorUsedError;
-  int? get started => throw _privateConstructorUsedError;
-  int? get finished => throw _privateConstructorUsedError;
-  int? get created => throw _privateConstructorUsedError;
-  int? get updated => throw _privateConstructorUsedError;
-  int? get version => throw _privateConstructorUsedError;
-  List<Stage>? get stages => throw _privateConstructorUsedError;
+  String get sourceRepo => throw _privateConstructorUsedError;
+  String get authorLogin => throw _privateConstructorUsedError;
+  String get authorName => throw _privateConstructorUsedError;
+  String get authorEmail => throw _privateConstructorUsedError;
+  String get authorAvatar => throw _privateConstructorUsedError;
+  String get trigger => throw _privateConstructorUsedError;
+  String get status => throw _privateConstructorUsedError;
+  String get event => throw _privateConstructorUsedError;
+  String get action => throw _privateConstructorUsedError;
+  String get link => throw _privateConstructorUsedError;
+  String get message => throw _privateConstructorUsedError;
+  String get before => throw _privateConstructorUsedError;
+  String get after => throw _privateConstructorUsedError;
+  String get ref => throw _privateConstructorUsedError;
+  String get source => throw _privateConstructorUsedError;
+  String get target => throw _privateConstructorUsedError;
+  String get sender => throw _privateConstructorUsedError;
+  int get repoId => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  int get number => throw _privateConstructorUsedError;
+  int get timestamp => throw _privateConstructorUsedError;
+  int get started => throw _privateConstructorUsedError;
+  int get finished => throw _privateConstructorUsedError;
+  int get created => throw _privateConstructorUsedError;
+  int get updated => throw _privateConstructorUsedError;
+  int get version => throw _privateConstructorUsedError;
+  List<Stage> get stages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -135,33 +129,33 @@ abstract class $BuildCopyWith<$Res> {
   factory $BuildCopyWith(Build value, $Res Function(Build) then) =
       _$BuildCopyWithImpl<$Res>;
   $Res call(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? trigger,
-      int? number,
-      String? status,
-      String? event,
-      String? action,
-      String? link,
-      int? timestamp,
-      String? message,
-      String? before,
-      String? after,
-      String? ref,
-      @JsonKey(name: 'source_repo') String? sourceRepo,
-      String? source,
-      String? target,
-      @JsonKey(name: 'author_login') String? authorLogin,
-      @JsonKey(name: 'author_name') String? authorName,
-      @JsonKey(name: 'author_email') String? authorEmail,
-      @JsonKey(name: 'author_avatar') String? authorAvatar,
-      String? sender,
-      int? started,
-      int? finished,
-      int? created,
-      int? updated,
-      int? version,
-      List<Stage>? stages});
+      {String sourceRepo,
+      String authorLogin,
+      String authorName,
+      String authorEmail,
+      String authorAvatar,
+      String trigger,
+      String status,
+      String event,
+      String action,
+      String link,
+      String message,
+      String before,
+      String after,
+      String ref,
+      String source,
+      String target,
+      String sender,
+      int repoId,
+      int id,
+      int number,
+      int timestamp,
+      int started,
+      int finished,
+      int created,
+      int updated,
+      int version,
+      List<Stage> stages});
 }
 
 /// @nodoc
@@ -174,27 +168,27 @@ class _$BuildCopyWithImpl<$Res> implements $BuildCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? repoId = freezed,
-    Object? trigger = freezed,
-    Object? number = freezed,
-    Object? status = freezed,
-    Object? event = freezed,
-    Object? action = freezed,
-    Object? link = freezed,
-    Object? timestamp = freezed,
-    Object? message = freezed,
-    Object? before = freezed,
-    Object? after = freezed,
-    Object? ref = freezed,
     Object? sourceRepo = freezed,
-    Object? source = freezed,
-    Object? target = freezed,
     Object? authorLogin = freezed,
     Object? authorName = freezed,
     Object? authorEmail = freezed,
     Object? authorAvatar = freezed,
+    Object? trigger = freezed,
+    Object? status = freezed,
+    Object? event = freezed,
+    Object? action = freezed,
+    Object? link = freezed,
+    Object? message = freezed,
+    Object? before = freezed,
+    Object? after = freezed,
+    Object? ref = freezed,
+    Object? source = freezed,
+    Object? target = freezed,
     Object? sender = freezed,
+    Object? repoId = freezed,
+    Object? id = freezed,
+    Object? number = freezed,
+    Object? timestamp = freezed,
     Object? started = freezed,
     Object? finished = freezed,
     Object? created = freezed,
@@ -203,114 +197,114 @@ class _$BuildCopyWithImpl<$Res> implements $BuildCopyWith<$Res> {
     Object? stages = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      repoId: repoId == freezed
-          ? _value.repoId
-          : repoId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      trigger: trigger == freezed
-          ? _value.trigger
-          : trigger // ignore: cast_nullable_to_non_nullable
-              as String?,
-      number: number == freezed
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      event: event == freezed
-          ? _value.event
-          : event // ignore: cast_nullable_to_non_nullable
-              as String?,
-      action: action == freezed
-          ? _value.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timestamp: timestamp == freezed
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      before: before == freezed
-          ? _value.before
-          : before // ignore: cast_nullable_to_non_nullable
-              as String?,
-      after: after == freezed
-          ? _value.after
-          : after // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ref: ref == freezed
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
       sourceRepo: sourceRepo == freezed
           ? _value.sourceRepo
           : sourceRepo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: source == freezed
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      target: target == freezed
-          ? _value.target
-          : target // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorLogin: authorLogin == freezed
           ? _value.authorLogin
           : authorLogin // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorName: authorName == freezed
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorEmail: authorEmail == freezed
           ? _value.authorEmail
           : authorEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorAvatar: authorAvatar == freezed
           ? _value.authorAvatar
           : authorAvatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      trigger: trigger == freezed
+          ? _value.trigger
+          : trigger // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      event: event == freezed
+          ? _value.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as String,
+      action: action == freezed
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as String,
+      link: link == freezed
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      before: before == freezed
+          ? _value.before
+          : before // ignore: cast_nullable_to_non_nullable
+              as String,
+      after: after == freezed
+          ? _value.after
+          : after // ignore: cast_nullable_to_non_nullable
+              as String,
+      ref: ref == freezed
+          ? _value.ref
+          : ref // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: source == freezed
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      target: target == freezed
+          ? _value.target
+          : target // ignore: cast_nullable_to_non_nullable
+              as String,
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      repoId: repoId == freezed
+          ? _value.repoId
+          : repoId // ignore: cast_nullable_to_non_nullable
+              as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
       started: started == freezed
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       finished: finished == freezed
           ? _value.finished
           : finished // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       stages: stages == freezed
           ? _value.stages
           : stages // ignore: cast_nullable_to_non_nullable
-              as List<Stage>?,
+              as List<Stage>,
     ));
   }
 }
@@ -321,33 +315,33 @@ abstract class _$BuildCopyWith<$Res> implements $BuildCopyWith<$Res> {
       __$BuildCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? trigger,
-      int? number,
-      String? status,
-      String? event,
-      String? action,
-      String? link,
-      int? timestamp,
-      String? message,
-      String? before,
-      String? after,
-      String? ref,
-      @JsonKey(name: 'source_repo') String? sourceRepo,
-      String? source,
-      String? target,
-      @JsonKey(name: 'author_login') String? authorLogin,
-      @JsonKey(name: 'author_name') String? authorName,
-      @JsonKey(name: 'author_email') String? authorEmail,
-      @JsonKey(name: 'author_avatar') String? authorAvatar,
-      String? sender,
-      int? started,
-      int? finished,
-      int? created,
-      int? updated,
-      int? version,
-      List<Stage>? stages});
+      {String sourceRepo,
+      String authorLogin,
+      String authorName,
+      String authorEmail,
+      String authorAvatar,
+      String trigger,
+      String status,
+      String event,
+      String action,
+      String link,
+      String message,
+      String before,
+      String after,
+      String ref,
+      String source,
+      String target,
+      String sender,
+      int repoId,
+      int id,
+      int number,
+      int timestamp,
+      int started,
+      int finished,
+      int created,
+      int updated,
+      int version,
+      List<Stage> stages});
 }
 
 /// @nodoc
@@ -361,27 +355,27 @@ class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
-    Object? repoId = freezed,
-    Object? trigger = freezed,
-    Object? number = freezed,
-    Object? status = freezed,
-    Object? event = freezed,
-    Object? action = freezed,
-    Object? link = freezed,
-    Object? timestamp = freezed,
-    Object? message = freezed,
-    Object? before = freezed,
-    Object? after = freezed,
-    Object? ref = freezed,
     Object? sourceRepo = freezed,
-    Object? source = freezed,
-    Object? target = freezed,
     Object? authorLogin = freezed,
     Object? authorName = freezed,
     Object? authorEmail = freezed,
     Object? authorAvatar = freezed,
+    Object? trigger = freezed,
+    Object? status = freezed,
+    Object? event = freezed,
+    Object? action = freezed,
+    Object? link = freezed,
+    Object? message = freezed,
+    Object? before = freezed,
+    Object? after = freezed,
+    Object? ref = freezed,
+    Object? source = freezed,
+    Object? target = freezed,
     Object? sender = freezed,
+    Object? repoId = freezed,
+    Object? id = freezed,
+    Object? number = freezed,
+    Object? timestamp = freezed,
     Object? started = freezed,
     Object? finished = freezed,
     Object? created = freezed,
@@ -390,217 +384,239 @@ class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
     Object? stages = freezed,
   }) {
     return _then(_Build(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      repoId: repoId == freezed
-          ? _value.repoId
-          : repoId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      trigger: trigger == freezed
-          ? _value.trigger
-          : trigger // ignore: cast_nullable_to_non_nullable
-              as String?,
-      number: number == freezed
-          ? _value.number
-          : number // ignore: cast_nullable_to_non_nullable
-              as int?,
-      status: status == freezed
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as String?,
-      event: event == freezed
-          ? _value.event
-          : event // ignore: cast_nullable_to_non_nullable
-              as String?,
-      action: action == freezed
-          ? _value.action
-          : action // ignore: cast_nullable_to_non_nullable
-              as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
-      timestamp: timestamp == freezed
-          ? _value.timestamp
-          : timestamp // ignore: cast_nullable_to_non_nullable
-              as int?,
-      message: message == freezed
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String?,
-      before: before == freezed
-          ? _value.before
-          : before // ignore: cast_nullable_to_non_nullable
-              as String?,
-      after: after == freezed
-          ? _value.after
-          : after // ignore: cast_nullable_to_non_nullable
-              as String?,
-      ref: ref == freezed
-          ? _value.ref
-          : ref // ignore: cast_nullable_to_non_nullable
-              as String?,
       sourceRepo: sourceRepo == freezed
           ? _value.sourceRepo
           : sourceRepo // ignore: cast_nullable_to_non_nullable
-              as String?,
-      source: source == freezed
-          ? _value.source
-          : source // ignore: cast_nullable_to_non_nullable
-              as String?,
-      target: target == freezed
-          ? _value.target
-          : target // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorLogin: authorLogin == freezed
           ? _value.authorLogin
           : authorLogin // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorName: authorName == freezed
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorEmail: authorEmail == freezed
           ? _value.authorEmail
           : authorEmail // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       authorAvatar: authorAvatar == freezed
           ? _value.authorAvatar
           : authorAvatar // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      trigger: trigger == freezed
+          ? _value.trigger
+          : trigger // ignore: cast_nullable_to_non_nullable
+              as String,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as String,
+      event: event == freezed
+          ? _value.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as String,
+      action: action == freezed
+          ? _value.action
+          : action // ignore: cast_nullable_to_non_nullable
+              as String,
+      link: link == freezed
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      before: before == freezed
+          ? _value.before
+          : before // ignore: cast_nullable_to_non_nullable
+              as String,
+      after: after == freezed
+          ? _value.after
+          : after // ignore: cast_nullable_to_non_nullable
+              as String,
+      ref: ref == freezed
+          ? _value.ref
+          : ref // ignore: cast_nullable_to_non_nullable
+              as String,
+      source: source == freezed
+          ? _value.source
+          : source // ignore: cast_nullable_to_non_nullable
+              as String,
+      target: target == freezed
+          ? _value.target
+          : target // ignore: cast_nullable_to_non_nullable
+              as String,
       sender: sender == freezed
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      repoId: repoId == freezed
+          ? _value.repoId
+          : repoId // ignore: cast_nullable_to_non_nullable
+              as int,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      number: number == freezed
+          ? _value.number
+          : number // ignore: cast_nullable_to_non_nullable
+              as int,
+      timestamp: timestamp == freezed
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
       started: started == freezed
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       finished: finished == freezed
           ? _value.finished
           : finished // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       stages: stages == freezed
           ? _value.stages
           : stages // ignore: cast_nullable_to_non_nullable
-              as List<Stage>?,
+              as List<Stage>,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_Build implements _Build {
   const _$_Build(
-      {this.id,
-      @JsonKey(name: 'repo_id') this.repoId,
-      this.trigger,
-      this.number,
-      this.status,
-      this.event,
-      this.action,
-      this.link,
-      this.timestamp,
-      this.message,
-      this.before,
-      this.after,
-      this.ref,
-      @JsonKey(name: 'source_repo') this.sourceRepo,
-      this.source,
-      this.target,
-      @JsonKey(name: 'author_login') this.authorLogin,
-      @JsonKey(name: 'author_name') this.authorName,
-      @JsonKey(name: 'author_email') this.authorEmail,
-      @JsonKey(name: 'author_avatar') this.authorAvatar,
-      this.sender,
-      this.started,
-      this.finished,
-      this.created,
-      this.updated,
-      this.version,
-      this.stages});
+      {this.sourceRepo = '',
+      this.authorLogin = '',
+      this.authorName = '',
+      this.authorEmail = '',
+      this.authorAvatar = '',
+      this.trigger = '',
+      this.status = '',
+      this.event = '',
+      this.action = '',
+      this.link = '',
+      this.message = '',
+      this.before = '',
+      this.after = '',
+      this.ref = '',
+      this.source = '',
+      this.target = '',
+      this.sender = '',
+      this.repoId = 0,
+      this.id = 0,
+      this.number = 0,
+      this.timestamp = 0,
+      this.started = 0,
+      this.finished = 0,
+      this.created = 0,
+      this.updated = 0,
+      this.version = 0,
+      this.stages = const []});
 
   factory _$_Build.fromJson(Map<String, dynamic> json) =>
       _$$_BuildFromJson(json);
 
+  @JsonKey()
   @override
-  final int? id;
+  final String sourceRepo;
+  @JsonKey()
   @override
-  @JsonKey(name: 'repo_id')
-  final int? repoId;
+  final String authorLogin;
+  @JsonKey()
   @override
-  final String? trigger;
+  final String authorName;
+  @JsonKey()
   @override
-  final int? number;
+  final String authorEmail;
+  @JsonKey()
   @override
-  final String? status;
+  final String authorAvatar;
+  @JsonKey()
   @override
-  final String? event;
+  final String trigger;
+  @JsonKey()
   @override
-  final String? action;
+  final String status;
+  @JsonKey()
   @override
-  final String? link;
+  final String event;
+  @JsonKey()
   @override
-  final int? timestamp;
+  final String action;
+  @JsonKey()
   @override
-  final String? message;
+  final String link;
+  @JsonKey()
   @override
-  final String? before;
+  final String message;
+  @JsonKey()
   @override
-  final String? after;
+  final String before;
+  @JsonKey()
   @override
-  final String? ref;
+  final String after;
+  @JsonKey()
   @override
-  @JsonKey(name: 'source_repo')
-  final String? sourceRepo;
+  final String ref;
+  @JsonKey()
   @override
-  final String? source;
+  final String source;
+  @JsonKey()
   @override
-  final String? target;
+  final String target;
+  @JsonKey()
   @override
-  @JsonKey(name: 'author_login')
-  final String? authorLogin;
+  final String sender;
+  @JsonKey()
   @override
-  @JsonKey(name: 'author_name')
-  final String? authorName;
+  final int repoId;
+  @JsonKey()
   @override
-  @JsonKey(name: 'author_email')
-  final String? authorEmail;
+  final int id;
+  @JsonKey()
   @override
-  @JsonKey(name: 'author_avatar')
-  final String? authorAvatar;
+  final int number;
+  @JsonKey()
   @override
-  final String? sender;
+  final int timestamp;
+  @JsonKey()
   @override
-  final int? started;
+  final int started;
+  @JsonKey()
   @override
-  final int? finished;
+  final int finished;
+  @JsonKey()
   @override
-  final int? created;
+  final int created;
+  @JsonKey()
   @override
-  final int? updated;
+  final int updated;
+  @JsonKey()
   @override
-  final int? version;
+  final int version;
+  @JsonKey()
   @override
-  final List<Stage>? stages;
+  final List<Stage> stages;
 
   @override
   String toString() {
-    return 'Build(id: $id, repoId: $repoId, trigger: $trigger, number: $number, status: $status, event: $event, action: $action, link: $link, timestamp: $timestamp, message: $message, before: $before, after: $after, ref: $ref, sourceRepo: $sourceRepo, source: $source, target: $target, authorLogin: $authorLogin, authorName: $authorName, authorEmail: $authorEmail, authorAvatar: $authorAvatar, sender: $sender, started: $started, finished: $finished, created: $created, updated: $updated, version: $version, stages: $stages)';
+    return 'Build(sourceRepo: $sourceRepo, authorLogin: $authorLogin, authorName: $authorName, authorEmail: $authorEmail, authorAvatar: $authorAvatar, trigger: $trigger, status: $status, event: $event, action: $action, link: $link, message: $message, before: $before, after: $after, ref: $ref, source: $source, target: $target, sender: $sender, repoId: $repoId, id: $id, number: $number, timestamp: $timestamp, started: $started, finished: $finished, created: $created, updated: $updated, version: $version, stages: $stages)';
   }
 
   @override
@@ -608,23 +624,8 @@ class _$_Build implements _Build {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Build &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.repoId, repoId) &&
-            const DeepCollectionEquality().equals(other.trigger, trigger) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.event, event) &&
-            const DeepCollectionEquality().equals(other.action, action) &&
-            const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
-            const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality().equals(other.before, before) &&
-            const DeepCollectionEquality().equals(other.after, after) &&
-            const DeepCollectionEquality().equals(other.ref, ref) &&
             const DeepCollectionEquality()
                 .equals(other.sourceRepo, sourceRepo) &&
-            const DeepCollectionEquality().equals(other.source, source) &&
-            const DeepCollectionEquality().equals(other.target, target) &&
             const DeepCollectionEquality()
                 .equals(other.authorLogin, authorLogin) &&
             const DeepCollectionEquality()
@@ -633,7 +634,22 @@ class _$_Build implements _Build {
                 .equals(other.authorEmail, authorEmail) &&
             const DeepCollectionEquality()
                 .equals(other.authorAvatar, authorAvatar) &&
+            const DeepCollectionEquality().equals(other.trigger, trigger) &&
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other.event, event) &&
+            const DeepCollectionEquality().equals(other.action, action) &&
+            const DeepCollectionEquality().equals(other.link, link) &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.before, before) &&
+            const DeepCollectionEquality().equals(other.after, after) &&
+            const DeepCollectionEquality().equals(other.ref, ref) &&
+            const DeepCollectionEquality().equals(other.source, source) &&
+            const DeepCollectionEquality().equals(other.target, target) &&
             const DeepCollectionEquality().equals(other.sender, sender) &&
+            const DeepCollectionEquality().equals(other.repoId, repoId) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.number, number) &&
+            const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
             const DeepCollectionEquality().equals(other.started, started) &&
             const DeepCollectionEquality().equals(other.finished, finished) &&
             const DeepCollectionEquality().equals(other.created, created) &&
@@ -645,27 +661,27 @@ class _$_Build implements _Build {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(repoId),
-        const DeepCollectionEquality().hash(trigger),
-        const DeepCollectionEquality().hash(number),
-        const DeepCollectionEquality().hash(status),
-        const DeepCollectionEquality().hash(event),
-        const DeepCollectionEquality().hash(action),
-        const DeepCollectionEquality().hash(link),
-        const DeepCollectionEquality().hash(timestamp),
-        const DeepCollectionEquality().hash(message),
-        const DeepCollectionEquality().hash(before),
-        const DeepCollectionEquality().hash(after),
-        const DeepCollectionEquality().hash(ref),
         const DeepCollectionEquality().hash(sourceRepo),
-        const DeepCollectionEquality().hash(source),
-        const DeepCollectionEquality().hash(target),
         const DeepCollectionEquality().hash(authorLogin),
         const DeepCollectionEquality().hash(authorName),
         const DeepCollectionEquality().hash(authorEmail),
         const DeepCollectionEquality().hash(authorAvatar),
+        const DeepCollectionEquality().hash(trigger),
+        const DeepCollectionEquality().hash(status),
+        const DeepCollectionEquality().hash(event),
+        const DeepCollectionEquality().hash(action),
+        const DeepCollectionEquality().hash(link),
+        const DeepCollectionEquality().hash(message),
+        const DeepCollectionEquality().hash(before),
+        const DeepCollectionEquality().hash(after),
+        const DeepCollectionEquality().hash(ref),
+        const DeepCollectionEquality().hash(source),
+        const DeepCollectionEquality().hash(target),
         const DeepCollectionEquality().hash(sender),
+        const DeepCollectionEquality().hash(repoId),
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(number),
+        const DeepCollectionEquality().hash(timestamp),
         const DeepCollectionEquality().hash(started),
         const DeepCollectionEquality().hash(finished),
         const DeepCollectionEquality().hash(created),
@@ -687,96 +703,90 @@ class _$_Build implements _Build {
 
 abstract class _Build implements Build {
   const factory _Build(
-      {int? id,
-      @JsonKey(name: 'repo_id') int? repoId,
-      String? trigger,
-      int? number,
-      String? status,
-      String? event,
-      String? action,
-      String? link,
-      int? timestamp,
-      String? message,
-      String? before,
-      String? after,
-      String? ref,
-      @JsonKey(name: 'source_repo') String? sourceRepo,
-      String? source,
-      String? target,
-      @JsonKey(name: 'author_login') String? authorLogin,
-      @JsonKey(name: 'author_name') String? authorName,
-      @JsonKey(name: 'author_email') String? authorEmail,
-      @JsonKey(name: 'author_avatar') String? authorAvatar,
-      String? sender,
-      int? started,
-      int? finished,
-      int? created,
-      int? updated,
-      int? version,
-      List<Stage>? stages}) = _$_Build;
+      {String sourceRepo,
+      String authorLogin,
+      String authorName,
+      String authorEmail,
+      String authorAvatar,
+      String trigger,
+      String status,
+      String event,
+      String action,
+      String link,
+      String message,
+      String before,
+      String after,
+      String ref,
+      String source,
+      String target,
+      String sender,
+      int repoId,
+      int id,
+      int number,
+      int timestamp,
+      int started,
+      int finished,
+      int created,
+      int updated,
+      int version,
+      List<Stage> stages}) = _$_Build;
 
   factory _Build.fromJson(Map<String, dynamic> json) = _$_Build.fromJson;
 
   @override
-  int? get id;
+  String get sourceRepo;
   @override
-  @JsonKey(name: 'repo_id')
-  int? get repoId;
+  String get authorLogin;
   @override
-  String? get trigger;
+  String get authorName;
   @override
-  int? get number;
+  String get authorEmail;
   @override
-  String? get status;
+  String get authorAvatar;
   @override
-  String? get event;
+  String get trigger;
   @override
-  String? get action;
+  String get status;
   @override
-  String? get link;
+  String get event;
   @override
-  int? get timestamp;
+  String get action;
   @override
-  String? get message;
+  String get link;
   @override
-  String? get before;
+  String get message;
   @override
-  String? get after;
+  String get before;
   @override
-  String? get ref;
+  String get after;
   @override
-  @JsonKey(name: 'source_repo')
-  String? get sourceRepo;
+  String get ref;
   @override
-  String? get source;
+  String get source;
   @override
-  String? get target;
+  String get target;
   @override
-  @JsonKey(name: 'author_login')
-  String? get authorLogin;
+  String get sender;
   @override
-  @JsonKey(name: 'author_name')
-  String? get authorName;
+  int get repoId;
   @override
-  @JsonKey(name: 'author_email')
-  String? get authorEmail;
+  int get id;
   @override
-  @JsonKey(name: 'author_avatar')
-  String? get authorAvatar;
+  int get number;
   @override
-  String? get sender;
+  int get timestamp;
   @override
-  int? get started;
+  int get started;
   @override
-  int? get finished;
+  int get finished;
   @override
-  int? get created;
+  int get created;
   @override
-  int? get updated;
+  int get updated;
   @override
-  int? get version;
+  int get version;
   @override
-  List<Stage>? get stages;
+  List<Stage> get stages;
   @override
   @JsonKey(ignore: true)
   _$BuildCopyWith<_Build> get copyWith => throw _privateConstructorUsedError;

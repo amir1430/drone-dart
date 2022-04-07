@@ -5,16 +5,17 @@ part 'step_model.g.dart';
 
 @freezed
 class Step with _$Step {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory Step({
-    int? id,
-    @JsonKey(name: 'step_id') int? stepId,
-    int? number,
-    String? name,
-    String? status,
-    @JsonKey(name: 'exit_code') int? exitCode,
-    int? started,
-    int? stopped,
-    int? version,
+    @Default('') String name,
+    @Default('') String status,
+    @Default(0) int stepId,
+    @Default(0) int exitCode,
+    @Default(0) int id,
+    @Default(0) int number,
+    @Default(0) int started,
+    @Default(0) int stopped,
+    @Default(0) int version,
   }) = _Step;
 
   factory Step.fromJson(Map<String, dynamic> json) => _$StepFromJson(json);

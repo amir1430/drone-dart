@@ -5,19 +5,20 @@ part 'user_model.g.dart';
 
 @freezed
 class User with _$User {
+  @JsonSerializable(fieldRename: FieldRename.snake)
   const factory User({
-    required int id,
-    required String login,
-    required String email,
-    required bool machine,
-    required bool admin,
-    required bool active,
-    required String avatar,
-    required bool syncing,
-    required int synced,
-    required int created,
-    required int updated,
-    @JsonKey(name: 'last_login') required int lastLogin,
+    @Default('') String login,
+    @Default('') String email,
+    @Default('') String avatar,
+    @Default(0) int id,
+    @Default(0) int synced,
+    @Default(0) int created,
+    @Default(0) int updated,
+    @Default(0) int lastLogin,
+    @Default(false) bool machine,
+    @Default(false) bool admin,
+    @Default(false) bool active,
+    @Default(false) bool syncing,
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);

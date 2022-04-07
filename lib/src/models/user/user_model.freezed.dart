@@ -23,31 +23,31 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {required int id,
-      required String login,
-      required String email,
-      required bool machine,
-      required bool admin,
-      required bool active,
-      required String avatar,
-      required bool syncing,
-      required int synced,
-      required int created,
-      required int updated,
-      @JsonKey(name: 'last_login') required int lastLogin}) {
+      {String login = '',
+      String email = '',
+      String avatar = '',
+      int id = 0,
+      int synced = 0,
+      int created = 0,
+      int updated = 0,
+      int lastLogin = 0,
+      bool machine = false,
+      bool admin = false,
+      bool active = false,
+      bool syncing = false}) {
     return _User(
-      id: id,
       login: login,
       email: email,
-      machine: machine,
-      admin: admin,
-      active: active,
       avatar: avatar,
-      syncing: syncing,
+      id: id,
       synced: synced,
       created: created,
       updated: updated,
       lastLogin: lastLogin,
+      machine: machine,
+      admin: admin,
+      active: active,
+      syncing: syncing,
     );
   }
 
@@ -61,19 +61,18 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  int get id => throw _privateConstructorUsedError;
   String get login => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  bool get machine => throw _privateConstructorUsedError;
-  bool get admin => throw _privateConstructorUsedError;
-  bool get active => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
-  bool get syncing => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   int get synced => throw _privateConstructorUsedError;
   int get created => throw _privateConstructorUsedError;
   int get updated => throw _privateConstructorUsedError;
-  @JsonKey(name: 'last_login')
   int get lastLogin => throw _privateConstructorUsedError;
+  bool get machine => throw _privateConstructorUsedError;
+  bool get admin => throw _privateConstructorUsedError;
+  bool get active => throw _privateConstructorUsedError;
+  bool get syncing => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -85,18 +84,18 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call(
-      {int id,
-      String login,
+      {String login,
       String email,
-      bool machine,
-      bool admin,
-      bool active,
       String avatar,
-      bool syncing,
+      int id,
       int synced,
       int created,
       int updated,
-      @JsonKey(name: 'last_login') int lastLogin});
+      int lastLogin,
+      bool machine,
+      bool admin,
+      bool active,
+      bool syncing});
 }
 
 /// @nodoc
@@ -109,24 +108,20 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? login = freezed,
     Object? email = freezed,
-    Object? machine = freezed,
-    Object? admin = freezed,
-    Object? active = freezed,
     Object? avatar = freezed,
-    Object? syncing = freezed,
+    Object? id = freezed,
     Object? synced = freezed,
     Object? created = freezed,
     Object? updated = freezed,
     Object? lastLogin = freezed,
+    Object? machine = freezed,
+    Object? admin = freezed,
+    Object? active = freezed,
+    Object? syncing = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       login: login == freezed
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
@@ -135,26 +130,14 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      machine: machine == freezed
-          ? _value.machine
-          : machine // ignore: cast_nullable_to_non_nullable
-              as bool,
-      admin: admin == freezed
-          ? _value.admin
-          : admin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      active: active == freezed
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as bool,
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as String,
-      syncing: syncing == freezed
-          ? _value.syncing
-          : syncing // ignore: cast_nullable_to_non_nullable
-              as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
@@ -171,6 +154,22 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as int,
+      machine: machine == freezed
+          ? _value.machine
+          : machine // ignore: cast_nullable_to_non_nullable
+              as bool,
+      admin: admin == freezed
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
+              as bool,
+      active: active == freezed
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool,
+      syncing: syncing == freezed
+          ? _value.syncing
+          : syncing // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -181,18 +180,18 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id,
-      String login,
+      {String login,
       String email,
-      bool machine,
-      bool admin,
-      bool active,
       String avatar,
-      bool syncing,
+      int id,
       int synced,
       int created,
       int updated,
-      @JsonKey(name: 'last_login') int lastLogin});
+      int lastLogin,
+      bool machine,
+      bool admin,
+      bool active,
+      bool syncing});
 }
 
 /// @nodoc
@@ -206,24 +205,20 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? login = freezed,
     Object? email = freezed,
-    Object? machine = freezed,
-    Object? admin = freezed,
-    Object? active = freezed,
     Object? avatar = freezed,
-    Object? syncing = freezed,
+    Object? id = freezed,
     Object? synced = freezed,
     Object? created = freezed,
     Object? updated = freezed,
     Object? lastLogin = freezed,
+    Object? machine = freezed,
+    Object? admin = freezed,
+    Object? active = freezed,
+    Object? syncing = freezed,
   }) {
     return _then(_User(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int,
       login: login == freezed
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
@@ -232,26 +227,14 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      machine: machine == freezed
-          ? _value.machine
-          : machine // ignore: cast_nullable_to_non_nullable
-              as bool,
-      admin: admin == freezed
-          ? _value.admin
-          : admin // ignore: cast_nullable_to_non_nullable
-              as bool,
-      active: active == freezed
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as bool,
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as String,
-      syncing: syncing == freezed
-          ? _value.syncing
-          : syncing // ignore: cast_nullable_to_non_nullable
-              as bool,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
@@ -268,58 +251,86 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as int,
+      machine: machine == freezed
+          ? _value.machine
+          : machine // ignore: cast_nullable_to_non_nullable
+              as bool,
+      admin: admin == freezed
+          ? _value.admin
+          : admin // ignore: cast_nullable_to_non_nullable
+              as bool,
+      active: active == freezed
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool,
+      syncing: syncing == freezed
+          ? _value.syncing
+          : syncing // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_User implements _User {
   const _$_User(
-      {required this.id,
-      required this.login,
-      required this.email,
-      required this.machine,
-      required this.admin,
-      required this.active,
-      required this.avatar,
-      required this.syncing,
-      required this.synced,
-      required this.created,
-      required this.updated,
-      @JsonKey(name: 'last_login') required this.lastLogin});
+      {this.login = '',
+      this.email = '',
+      this.avatar = '',
+      this.id = 0,
+      this.synced = 0,
+      this.created = 0,
+      this.updated = 0,
+      this.lastLogin = 0,
+      this.machine = false,
+      this.admin = false,
+      this.active = false,
+      this.syncing = false});
 
   factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
-  @override
-  final int id;
+  @JsonKey()
   @override
   final String login;
+  @JsonKey()
   @override
   final String email;
-  @override
-  final bool machine;
-  @override
-  final bool admin;
-  @override
-  final bool active;
+  @JsonKey()
   @override
   final String avatar;
+  @JsonKey()
   @override
-  final bool syncing;
+  final int id;
+  @JsonKey()
   @override
   final int synced;
+  @JsonKey()
   @override
   final int created;
+  @JsonKey()
   @override
   final int updated;
+  @JsonKey()
   @override
-  @JsonKey(name: 'last_login')
   final int lastLogin;
+  @JsonKey()
+  @override
+  final bool machine;
+  @JsonKey()
+  @override
+  final bool admin;
+  @JsonKey()
+  @override
+  final bool active;
+  @JsonKey()
+  @override
+  final bool syncing;
 
   @override
   String toString() {
-    return 'User(id: $id, login: $login, email: $email, machine: $machine, admin: $admin, active: $active, avatar: $avatar, syncing: $syncing, synced: $synced, created: $created, updated: $updated, lastLogin: $lastLogin)';
+    return 'User(login: $login, email: $email, avatar: $avatar, id: $id, synced: $synced, created: $created, updated: $updated, lastLogin: $lastLogin, machine: $machine, admin: $admin, active: $active, syncing: $syncing)';
   }
 
   @override
@@ -327,35 +338,35 @@ class _$_User implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _User &&
-            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.login, login) &&
             const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.machine, machine) &&
-            const DeepCollectionEquality().equals(other.admin, admin) &&
-            const DeepCollectionEquality().equals(other.active, active) &&
             const DeepCollectionEquality().equals(other.avatar, avatar) &&
-            const DeepCollectionEquality().equals(other.syncing, syncing) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.synced, synced) &&
             const DeepCollectionEquality().equals(other.created, created) &&
             const DeepCollectionEquality().equals(other.updated, updated) &&
-            const DeepCollectionEquality().equals(other.lastLogin, lastLogin));
+            const DeepCollectionEquality().equals(other.lastLogin, lastLogin) &&
+            const DeepCollectionEquality().equals(other.machine, machine) &&
+            const DeepCollectionEquality().equals(other.admin, admin) &&
+            const DeepCollectionEquality().equals(other.active, active) &&
+            const DeepCollectionEquality().equals(other.syncing, syncing));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(login),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(machine),
-      const DeepCollectionEquality().hash(admin),
-      const DeepCollectionEquality().hash(active),
       const DeepCollectionEquality().hash(avatar),
-      const DeepCollectionEquality().hash(syncing),
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(synced),
       const DeepCollectionEquality().hash(created),
       const DeepCollectionEquality().hash(updated),
-      const DeepCollectionEquality().hash(lastLogin));
+      const DeepCollectionEquality().hash(lastLogin),
+      const DeepCollectionEquality().hash(machine),
+      const DeepCollectionEquality().hash(admin),
+      const DeepCollectionEquality().hash(active),
+      const DeepCollectionEquality().hash(syncing));
 
   @JsonKey(ignore: true)
   @override
@@ -370,37 +381,29 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required int id,
-      required String login,
-      required String email,
-      required bool machine,
-      required bool admin,
-      required bool active,
-      required String avatar,
-      required bool syncing,
-      required int synced,
-      required int created,
-      required int updated,
-      @JsonKey(name: 'last_login') required int lastLogin}) = _$_User;
+      {String login,
+      String email,
+      String avatar,
+      int id,
+      int synced,
+      int created,
+      int updated,
+      int lastLogin,
+      bool machine,
+      bool admin,
+      bool active,
+      bool syncing}) = _$_User;
 
   factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
-  @override
-  int get id;
   @override
   String get login;
   @override
   String get email;
   @override
-  bool get machine;
-  @override
-  bool get admin;
-  @override
-  bool get active;
-  @override
   String get avatar;
   @override
-  bool get syncing;
+  int get id;
   @override
   int get synced;
   @override
@@ -408,8 +411,15 @@ abstract class _User implements User {
   @override
   int get updated;
   @override
-  @JsonKey(name: 'last_login')
   int get lastLogin;
+  @override
+  bool get machine;
+  @override
+  bool get admin;
+  @override
+  bool get active;
+  @override
+  bool get syncing;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

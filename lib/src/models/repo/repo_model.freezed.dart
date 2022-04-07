@@ -23,67 +23,67 @@ class _$RepoTearOff {
   const _$RepoTearOff();
 
   _Repo call(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      bool? archived,
-      Permission? permissions,
-      Build? build}) {
+      {String gitSshUrl = '',
+      String gitHttpUrl = '',
+      String defaultBranch = '',
+      String configPath = '',
+      String uid = '',
+      String namespace = '',
+      String name = '',
+      String slug = '',
+      String scm = '',
+      String link = '',
+      String visibility = '',
+      int id = 0,
+      int userId = 0,
+      int timeout = 0,
+      int counter = 0,
+      int synced = 0,
+      int created = 0,
+      int updated = 0,
+      int version = 0,
+      bool ignoreForks = false,
+      bool ignorePullRequests = false,
+      bool autoCancelPullRequests = false,
+      bool autoCancelPushes = false,
+      bool autoCancelRunning = false,
+      bool archived = false,
+      bool private = false,
+      bool active = false,
+      bool trusted = false,
+      bool protected = false,
+      Permission permissions = const Permission(),
+      Build build = const Build()}) {
     return _Repo(
-      id: id,
+      gitSshUrl: gitSshUrl,
+      gitHttpUrl: gitHttpUrl,
+      defaultBranch: defaultBranch,
+      configPath: configPath,
       uid: uid,
-      userId: userId,
       namespace: namespace,
       name: name,
       slug: slug,
       scm: scm,
-      gitHttpUrl: gitHttpUrl,
-      gitSshUrl: gitSshUrl,
       link: link,
-      defaultBranch: defaultBranch,
-      private: private,
       visibility: visibility,
-      active: active,
-      configPath: configPath,
-      trusted: trusted,
-      protected: protected,
-      ignoreForks: ignoreForks,
-      ignorePullRequests: ignorePullRequests,
-      autoCancelPullRequests: autoCancelPullRequests,
-      autoCancelPushes: autoCancelPushes,
-      autoCancelRunning: autoCancelRunning,
+      id: id,
+      userId: userId,
       timeout: timeout,
       counter: counter,
       synced: synced,
       created: created,
       updated: updated,
       version: version,
+      ignoreForks: ignoreForks,
+      ignorePullRequests: ignorePullRequests,
+      autoCancelPullRequests: autoCancelPullRequests,
+      autoCancelPushes: autoCancelPushes,
+      autoCancelRunning: autoCancelRunning,
       archived: archived,
+      private: private,
+      active: active,
+      trusted: trusted,
+      protected: protected,
       permissions: permissions,
       build: build,
     );
@@ -99,47 +99,37 @@ const $Repo = _$RepoTearOff();
 
 /// @nodoc
 mixin _$Repo {
-  int? get id => throw _privateConstructorUsedError;
-  String? get uid => throw _privateConstructorUsedError;
-  @JsonKey(name: 'user_id')
-  int? get userId => throw _privateConstructorUsedError;
-  String? get namespace => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
-  String? get slug => throw _privateConstructorUsedError;
-  String? get scm => throw _privateConstructorUsedError;
-  @JsonKey(name: 'git_http_url')
-  String? get gitHttpUrl => throw _privateConstructorUsedError;
-  @JsonKey(name: 'git_ssh_url')
-  String? get gitSshUrl => throw _privateConstructorUsedError;
-  String? get link => throw _privateConstructorUsedError;
-  @JsonKey(name: 'default_branch')
-  String? get defaultBranch => throw _privateConstructorUsedError;
-  bool? get private => throw _privateConstructorUsedError;
-  String? get visibility => throw _privateConstructorUsedError;
-  bool? get active => throw _privateConstructorUsedError;
-  @JsonKey(name: 'config_path')
-  String? get configPath => throw _privateConstructorUsedError;
-  bool? get trusted => throw _privateConstructorUsedError;
-  bool? get protected => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ignore_forks')
-  bool? get ignoreForks => throw _privateConstructorUsedError;
-  @JsonKey(name: 'ignore_pull_requests')
-  bool? get ignorePullRequests => throw _privateConstructorUsedError;
-  @JsonKey(name: 'auto_cancel_pull_requests')
-  bool? get autoCancelPullRequests => throw _privateConstructorUsedError;
-  @JsonKey(name: 'auto_cancel_pushes')
-  bool? get autoCancelPushes => throw _privateConstructorUsedError;
-  @JsonKey(name: 'auto_cancel_running')
-  bool? get autoCancelRunning => throw _privateConstructorUsedError;
-  int? get timeout => throw _privateConstructorUsedError;
-  int? get counter => throw _privateConstructorUsedError;
-  int? get synced => throw _privateConstructorUsedError;
-  int? get created => throw _privateConstructorUsedError;
-  int? get updated => throw _privateConstructorUsedError;
-  int? get version => throw _privateConstructorUsedError;
-  bool? get archived => throw _privateConstructorUsedError;
-  Permission? get permissions => throw _privateConstructorUsedError;
-  Build? get build => throw _privateConstructorUsedError;
+  String get gitSshUrl => throw _privateConstructorUsedError;
+  String get gitHttpUrl => throw _privateConstructorUsedError;
+  String get defaultBranch => throw _privateConstructorUsedError;
+  String get configPath => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
+  String get namespace => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
+  String get slug => throw _privateConstructorUsedError;
+  String get scm => throw _privateConstructorUsedError;
+  String get link => throw _privateConstructorUsedError;
+  String get visibility => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  int get userId => throw _privateConstructorUsedError;
+  int get timeout => throw _privateConstructorUsedError;
+  int get counter => throw _privateConstructorUsedError;
+  int get synced => throw _privateConstructorUsedError;
+  int get created => throw _privateConstructorUsedError;
+  int get updated => throw _privateConstructorUsedError;
+  int get version => throw _privateConstructorUsedError;
+  bool get ignoreForks => throw _privateConstructorUsedError;
+  bool get ignorePullRequests => throw _privateConstructorUsedError;
+  bool get autoCancelPullRequests => throw _privateConstructorUsedError;
+  bool get autoCancelPushes => throw _privateConstructorUsedError;
+  bool get autoCancelRunning => throw _privateConstructorUsedError;
+  bool get archived => throw _privateConstructorUsedError;
+  bool get private => throw _privateConstructorUsedError;
+  bool get active => throw _privateConstructorUsedError;
+  bool get trusted => throw _privateConstructorUsedError;
+  bool get protected => throw _privateConstructorUsedError;
+  Permission get permissions => throw _privateConstructorUsedError;
+  Build get build => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -151,39 +141,40 @@ abstract class $RepoCopyWith<$Res> {
   factory $RepoCopyWith(Repo value, $Res Function(Repo) then) =
       _$RepoCopyWithImpl<$Res>;
   $Res call(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      bool? archived,
-      Permission? permissions,
-      Build? build});
+      {String gitSshUrl,
+      String gitHttpUrl,
+      String defaultBranch,
+      String configPath,
+      String uid,
+      String namespace,
+      String name,
+      String slug,
+      String scm,
+      String link,
+      String visibility,
+      int id,
+      int userId,
+      int timeout,
+      int counter,
+      int synced,
+      int created,
+      int updated,
+      int version,
+      bool ignoreForks,
+      bool ignorePullRequests,
+      bool autoCancelPullRequests,
+      bool autoCancelPushes,
+      bool autoCancelRunning,
+      bool archived,
+      bool private,
+      bool active,
+      bool trusted,
+      bool protected,
+      Permission permissions,
+      Build build});
 
-  $BuildCopyWith<$Res>? get build;
+  $PermissionCopyWith<$Res> get permissions;
+  $BuildCopyWith<$Res> get build;
 }
 
 /// @nodoc
@@ -196,173 +187,176 @@ class _$RepoCopyWithImpl<$Res> implements $RepoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
+    Object? gitSshUrl = freezed,
+    Object? gitHttpUrl = freezed,
+    Object? defaultBranch = freezed,
+    Object? configPath = freezed,
     Object? uid = freezed,
-    Object? userId = freezed,
     Object? namespace = freezed,
     Object? name = freezed,
     Object? slug = freezed,
     Object? scm = freezed,
-    Object? gitHttpUrl = freezed,
-    Object? gitSshUrl = freezed,
     Object? link = freezed,
-    Object? defaultBranch = freezed,
-    Object? private = freezed,
     Object? visibility = freezed,
-    Object? active = freezed,
-    Object? configPath = freezed,
-    Object? trusted = freezed,
-    Object? protected = freezed,
-    Object? ignoreForks = freezed,
-    Object? ignorePullRequests = freezed,
-    Object? autoCancelPullRequests = freezed,
-    Object? autoCancelPushes = freezed,
-    Object? autoCancelRunning = freezed,
+    Object? id = freezed,
+    Object? userId = freezed,
     Object? timeout = freezed,
     Object? counter = freezed,
     Object? synced = freezed,
     Object? created = freezed,
     Object? updated = freezed,
     Object? version = freezed,
+    Object? ignoreForks = freezed,
+    Object? ignorePullRequests = freezed,
+    Object? autoCancelPullRequests = freezed,
+    Object? autoCancelPushes = freezed,
+    Object? autoCancelRunning = freezed,
     Object? archived = freezed,
+    Object? private = freezed,
+    Object? active = freezed,
+    Object? trusted = freezed,
+    Object? protected = freezed,
     Object? permissions = freezed,
     Object? build = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      namespace: namespace == freezed
-          ? _value.namespace
-          : namespace // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: slug == freezed
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scm: scm == freezed
-          ? _value.scm
-          : scm // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gitHttpUrl: gitHttpUrl == freezed
-          ? _value.gitHttpUrl
-          : gitHttpUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
       gitSshUrl: gitSshUrl == freezed
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      gitHttpUrl: gitHttpUrl == freezed
+          ? _value.gitHttpUrl
+          : gitHttpUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       defaultBranch: defaultBranch == freezed
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
-              as String?,
-      private: private == freezed
-          ? _value.private
-          : private // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      visibility: visibility == freezed
-          ? _value.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as String?,
-      active: active == freezed
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
       configPath: configPath == freezed
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      trusted: trusted == freezed
-          ? _value.trusted
-          : trusted // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      protected: protected == freezed
-          ? _value.protected
-          : protected // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignoreForks: ignoreForks == freezed
-          ? _value.ignoreForks
-          : ignoreForks // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignorePullRequests: ignorePullRequests == freezed
-          ? _value.ignorePullRequests
-          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      autoCancelPullRequests: autoCancelPullRequests == freezed
-          ? _value.autoCancelPullRequests
-          : autoCancelPullRequests // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      autoCancelPushes: autoCancelPushes == freezed
-          ? _value.autoCancelPushes
-          : autoCancelPushes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      autoCancelRunning: autoCancelRunning == freezed
-          ? _value.autoCancelRunning
-          : autoCancelRunning // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      namespace: namespace == freezed
+          ? _value.namespace
+          : namespace // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: slug == freezed
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      scm: scm == freezed
+          ? _value.scm
+          : scm // ignore: cast_nullable_to_non_nullable
+              as String,
+      link: link == freezed
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      visibility: visibility == freezed
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
       timeout: timeout == freezed
           ? _value.timeout
           : timeout // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      ignoreForks: ignoreForks == freezed
+          ? _value.ignoreForks
+          : ignoreForks // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ignorePullRequests: ignorePullRequests == freezed
+          ? _value.ignorePullRequests
+          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
+              as bool,
+      autoCancelPullRequests: autoCancelPullRequests == freezed
+          ? _value.autoCancelPullRequests
+          : autoCancelPullRequests // ignore: cast_nullable_to_non_nullable
+              as bool,
+      autoCancelPushes: autoCancelPushes == freezed
+          ? _value.autoCancelPushes
+          : autoCancelPushes // ignore: cast_nullable_to_non_nullable
+              as bool,
+      autoCancelRunning: autoCancelRunning == freezed
+          ? _value.autoCancelRunning
+          : autoCancelRunning // ignore: cast_nullable_to_non_nullable
+              as bool,
       archived: archived == freezed
           ? _value.archived
           : archived // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
+      private: private == freezed
+          ? _value.private
+          : private // ignore: cast_nullable_to_non_nullable
+              as bool,
+      active: active == freezed
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool,
+      trusted: trusted == freezed
+          ? _value.trusted
+          : trusted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      protected: protected == freezed
+          ? _value.protected
+          : protected // ignore: cast_nullable_to_non_nullable
+              as bool,
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission?,
+              as Permission,
       build: build == freezed
           ? _value.build
           : build // ignore: cast_nullable_to_non_nullable
-              as Build?,
+              as Build,
     ));
   }
 
   @override
-  $BuildCopyWith<$Res>? get build {
-    if (_value.build == null) {
-      return null;
-    }
+  $PermissionCopyWith<$Res> get permissions {
+    return $PermissionCopyWith<$Res>(_value.permissions, (value) {
+      return _then(_value.copyWith(permissions: value));
+    });
+  }
 
-    return $BuildCopyWith<$Res>(_value.build!, (value) {
+  @override
+  $BuildCopyWith<$Res> get build {
+    return $BuildCopyWith<$Res>(_value.build, (value) {
       return _then(_value.copyWith(build: value));
     });
   }
@@ -374,40 +368,42 @@ abstract class _$RepoCopyWith<$Res> implements $RepoCopyWith<$Res> {
       __$RepoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      bool? archived,
-      Permission? permissions,
-      Build? build});
+      {String gitSshUrl,
+      String gitHttpUrl,
+      String defaultBranch,
+      String configPath,
+      String uid,
+      String namespace,
+      String name,
+      String slug,
+      String scm,
+      String link,
+      String visibility,
+      int id,
+      int userId,
+      int timeout,
+      int counter,
+      int synced,
+      int created,
+      int updated,
+      int version,
+      bool ignoreForks,
+      bool ignorePullRequests,
+      bool autoCancelPullRequests,
+      bool autoCancelPushes,
+      bool autoCancelRunning,
+      bool archived,
+      bool private,
+      bool active,
+      bool trusted,
+      bool protected,
+      Permission permissions,
+      Build build});
 
   @override
-  $BuildCopyWith<$Res>? get build;
+  $PermissionCopyWith<$Res> get permissions;
+  @override
+  $BuildCopyWith<$Res> get build;
 }
 
 /// @nodoc
@@ -421,281 +417,303 @@ class __$RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
+    Object? gitSshUrl = freezed,
+    Object? gitHttpUrl = freezed,
+    Object? defaultBranch = freezed,
+    Object? configPath = freezed,
     Object? uid = freezed,
-    Object? userId = freezed,
     Object? namespace = freezed,
     Object? name = freezed,
     Object? slug = freezed,
     Object? scm = freezed,
-    Object? gitHttpUrl = freezed,
-    Object? gitSshUrl = freezed,
     Object? link = freezed,
-    Object? defaultBranch = freezed,
-    Object? private = freezed,
     Object? visibility = freezed,
-    Object? active = freezed,
-    Object? configPath = freezed,
-    Object? trusted = freezed,
-    Object? protected = freezed,
-    Object? ignoreForks = freezed,
-    Object? ignorePullRequests = freezed,
-    Object? autoCancelPullRequests = freezed,
-    Object? autoCancelPushes = freezed,
-    Object? autoCancelRunning = freezed,
+    Object? id = freezed,
+    Object? userId = freezed,
     Object? timeout = freezed,
     Object? counter = freezed,
     Object? synced = freezed,
     Object? created = freezed,
     Object? updated = freezed,
     Object? version = freezed,
+    Object? ignoreForks = freezed,
+    Object? ignorePullRequests = freezed,
+    Object? autoCancelPullRequests = freezed,
+    Object? autoCancelPushes = freezed,
+    Object? autoCancelRunning = freezed,
     Object? archived = freezed,
+    Object? private = freezed,
+    Object? active = freezed,
+    Object? trusted = freezed,
+    Object? protected = freezed,
     Object? permissions = freezed,
     Object? build = freezed,
   }) {
     return _then(_Repo(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as String?,
-      userId: userId == freezed
-          ? _value.userId
-          : userId // ignore: cast_nullable_to_non_nullable
-              as int?,
-      namespace: namespace == freezed
-          ? _value.namespace
-          : namespace // ignore: cast_nullable_to_non_nullable
-              as String?,
-      name: name == freezed
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      slug: slug == freezed
-          ? _value.slug
-          : slug // ignore: cast_nullable_to_non_nullable
-              as String?,
-      scm: scm == freezed
-          ? _value.scm
-          : scm // ignore: cast_nullable_to_non_nullable
-              as String?,
-      gitHttpUrl: gitHttpUrl == freezed
-          ? _value.gitHttpUrl
-          : gitHttpUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
       gitSshUrl: gitSshUrl == freezed
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
-              as String?,
-      link: link == freezed
-          ? _value.link
-          : link // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+      gitHttpUrl: gitHttpUrl == freezed
+          ? _value.gitHttpUrl
+          : gitHttpUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       defaultBranch: defaultBranch == freezed
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
-              as String?,
-      private: private == freezed
-          ? _value.private
-          : private // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      visibility: visibility == freezed
-          ? _value.visibility
-          : visibility // ignore: cast_nullable_to_non_nullable
-              as String?,
-      active: active == freezed
-          ? _value.active
-          : active // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
       configPath: configPath == freezed
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
-              as String?,
-      trusted: trusted == freezed
-          ? _value.trusted
-          : trusted // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      protected: protected == freezed
-          ? _value.protected
-          : protected // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignoreForks: ignoreForks == freezed
-          ? _value.ignoreForks
-          : ignoreForks // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      ignorePullRequests: ignorePullRequests == freezed
-          ? _value.ignorePullRequests
-          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      autoCancelPullRequests: autoCancelPullRequests == freezed
-          ? _value.autoCancelPullRequests
-          : autoCancelPullRequests // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      autoCancelPushes: autoCancelPushes == freezed
-          ? _value.autoCancelPushes
-          : autoCancelPushes // ignore: cast_nullable_to_non_nullable
-              as bool?,
-      autoCancelRunning: autoCancelRunning == freezed
-          ? _value.autoCancelRunning
-          : autoCancelRunning // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      namespace: namespace == freezed
+          ? _value.namespace
+          : namespace // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: name == freezed
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      slug: slug == freezed
+          ? _value.slug
+          : slug // ignore: cast_nullable_to_non_nullable
+              as String,
+      scm: scm == freezed
+          ? _value.scm
+          : scm // ignore: cast_nullable_to_non_nullable
+              as String,
+      link: link == freezed
+          ? _value.link
+          : link // ignore: cast_nullable_to_non_nullable
+              as String,
+      visibility: visibility == freezed
+          ? _value.visibility
+          : visibility // ignore: cast_nullable_to_non_nullable
+              as String,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int,
       timeout: timeout == freezed
           ? _value.timeout
           : timeout // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       counter: counter == freezed
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       synced: synced == freezed
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       created: created == freezed
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       updated: updated == freezed
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       version: version == freezed
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
+      ignoreForks: ignoreForks == freezed
+          ? _value.ignoreForks
+          : ignoreForks // ignore: cast_nullable_to_non_nullable
+              as bool,
+      ignorePullRequests: ignorePullRequests == freezed
+          ? _value.ignorePullRequests
+          : ignorePullRequests // ignore: cast_nullable_to_non_nullable
+              as bool,
+      autoCancelPullRequests: autoCancelPullRequests == freezed
+          ? _value.autoCancelPullRequests
+          : autoCancelPullRequests // ignore: cast_nullable_to_non_nullable
+              as bool,
+      autoCancelPushes: autoCancelPushes == freezed
+          ? _value.autoCancelPushes
+          : autoCancelPushes // ignore: cast_nullable_to_non_nullable
+              as bool,
+      autoCancelRunning: autoCancelRunning == freezed
+          ? _value.autoCancelRunning
+          : autoCancelRunning // ignore: cast_nullable_to_non_nullable
+              as bool,
       archived: archived == freezed
           ? _value.archived
           : archived // ignore: cast_nullable_to_non_nullable
-              as bool?,
+              as bool,
+      private: private == freezed
+          ? _value.private
+          : private // ignore: cast_nullable_to_non_nullable
+              as bool,
+      active: active == freezed
+          ? _value.active
+          : active // ignore: cast_nullable_to_non_nullable
+              as bool,
+      trusted: trusted == freezed
+          ? _value.trusted
+          : trusted // ignore: cast_nullable_to_non_nullable
+              as bool,
+      protected: protected == freezed
+          ? _value.protected
+          : protected // ignore: cast_nullable_to_non_nullable
+              as bool,
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission?,
+              as Permission,
       build: build == freezed
           ? _value.build
           : build // ignore: cast_nullable_to_non_nullable
-              as Build?,
+              as Build,
     ));
   }
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(fieldRename: FieldRename.snake)
 class _$_Repo implements _Repo {
   const _$_Repo(
-      {this.id,
-      this.uid,
-      @JsonKey(name: 'user_id') this.userId,
-      this.namespace,
-      this.name,
-      this.slug,
-      this.scm,
-      @JsonKey(name: 'git_http_url') this.gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') this.gitSshUrl,
-      this.link,
-      @JsonKey(name: 'default_branch') this.defaultBranch,
-      this.private,
-      this.visibility,
-      this.active,
-      @JsonKey(name: 'config_path') this.configPath,
-      this.trusted,
-      this.protected,
-      @JsonKey(name: 'ignore_forks') this.ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') this.ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests') this.autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes') this.autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running') this.autoCancelRunning,
-      this.timeout,
-      this.counter,
-      this.synced,
-      this.created,
-      this.updated,
-      this.version,
-      this.archived,
-      this.permissions,
-      this.build});
+      {this.gitSshUrl = '',
+      this.gitHttpUrl = '',
+      this.defaultBranch = '',
+      this.configPath = '',
+      this.uid = '',
+      this.namespace = '',
+      this.name = '',
+      this.slug = '',
+      this.scm = '',
+      this.link = '',
+      this.visibility = '',
+      this.id = 0,
+      this.userId = 0,
+      this.timeout = 0,
+      this.counter = 0,
+      this.synced = 0,
+      this.created = 0,
+      this.updated = 0,
+      this.version = 0,
+      this.ignoreForks = false,
+      this.ignorePullRequests = false,
+      this.autoCancelPullRequests = false,
+      this.autoCancelPushes = false,
+      this.autoCancelRunning = false,
+      this.archived = false,
+      this.private = false,
+      this.active = false,
+      this.trusted = false,
+      this.protected = false,
+      this.permissions = const Permission(),
+      this.build = const Build()});
 
   factory _$_Repo.fromJson(Map<String, dynamic> json) => _$$_RepoFromJson(json);
 
+  @JsonKey()
   @override
-  final int? id;
+  final String gitSshUrl;
+  @JsonKey()
   @override
-  final String? uid;
+  final String gitHttpUrl;
+  @JsonKey()
   @override
-  @JsonKey(name: 'user_id')
-  final int? userId;
+  final String defaultBranch;
+  @JsonKey()
   @override
-  final String? namespace;
+  final String configPath;
+  @JsonKey()
   @override
-  final String? name;
+  final String uid;
+  @JsonKey()
   @override
-  final String? slug;
+  final String namespace;
+  @JsonKey()
   @override
-  final String? scm;
+  final String name;
+  @JsonKey()
   @override
-  @JsonKey(name: 'git_http_url')
-  final String? gitHttpUrl;
+  final String slug;
+  @JsonKey()
   @override
-  @JsonKey(name: 'git_ssh_url')
-  final String? gitSshUrl;
+  final String scm;
+  @JsonKey()
   @override
-  final String? link;
+  final String link;
+  @JsonKey()
   @override
-  @JsonKey(name: 'default_branch')
-  final String? defaultBranch;
+  final String visibility;
+  @JsonKey()
   @override
-  final bool? private;
+  final int id;
+  @JsonKey()
   @override
-  final String? visibility;
+  final int userId;
+  @JsonKey()
   @override
-  final bool? active;
+  final int timeout;
+  @JsonKey()
   @override
-  @JsonKey(name: 'config_path')
-  final String? configPath;
+  final int counter;
+  @JsonKey()
   @override
-  final bool? trusted;
+  final int synced;
+  @JsonKey()
   @override
-  final bool? protected;
+  final int created;
+  @JsonKey()
   @override
-  @JsonKey(name: 'ignore_forks')
-  final bool? ignoreForks;
+  final int updated;
+  @JsonKey()
   @override
-  @JsonKey(name: 'ignore_pull_requests')
-  final bool? ignorePullRequests;
+  final int version;
+  @JsonKey()
   @override
-  @JsonKey(name: 'auto_cancel_pull_requests')
-  final bool? autoCancelPullRequests;
+  final bool ignoreForks;
+  @JsonKey()
   @override
-  @JsonKey(name: 'auto_cancel_pushes')
-  final bool? autoCancelPushes;
+  final bool ignorePullRequests;
+  @JsonKey()
   @override
-  @JsonKey(name: 'auto_cancel_running')
-  final bool? autoCancelRunning;
+  final bool autoCancelPullRequests;
+  @JsonKey()
   @override
-  final int? timeout;
+  final bool autoCancelPushes;
+  @JsonKey()
   @override
-  final int? counter;
+  final bool autoCancelRunning;
+  @JsonKey()
   @override
-  final int? synced;
+  final bool archived;
+  @JsonKey()
   @override
-  final int? created;
+  final bool private;
+  @JsonKey()
   @override
-  final int? updated;
+  final bool active;
+  @JsonKey()
   @override
-  final int? version;
+  final bool trusted;
+  @JsonKey()
   @override
-  final bool? archived;
+  final bool protected;
+  @JsonKey()
   @override
-  final Permission? permissions;
+  final Permission permissions;
+  @JsonKey()
   @override
-  final Build? build;
+  final Build build;
 
   @override
   String toString() {
-    return 'Repo(id: $id, uid: $uid, userId: $userId, namespace: $namespace, name: $name, slug: $slug, scm: $scm, gitHttpUrl: $gitHttpUrl, gitSshUrl: $gitSshUrl, link: $link, defaultBranch: $defaultBranch, private: $private, visibility: $visibility, active: $active, configPath: $configPath, trusted: $trusted, protected: $protected, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, autoCancelPullRequests: $autoCancelPullRequests, autoCancelPushes: $autoCancelPushes, autoCancelRunning: $autoCancelRunning, timeout: $timeout, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, archived: $archived, permissions: $permissions, build: $build)';
+    return 'Repo(gitSshUrl: $gitSshUrl, gitHttpUrl: $gitHttpUrl, defaultBranch: $defaultBranch, configPath: $configPath, uid: $uid, namespace: $namespace, name: $name, slug: $slug, scm: $scm, link: $link, visibility: $visibility, id: $id, userId: $userId, timeout: $timeout, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, autoCancelPullRequests: $autoCancelPullRequests, autoCancelPushes: $autoCancelPushes, autoCancelRunning: $autoCancelRunning, archived: $archived, private: $private, active: $active, trusted: $trusted, protected: $protected, permissions: $permissions, build: $build)';
   }
 
   @override
@@ -703,27 +721,29 @@ class _$_Repo implements _Repo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Repo &&
-            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.gitSshUrl, gitSshUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.gitHttpUrl, gitHttpUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.defaultBranch, defaultBranch) &&
+            const DeepCollectionEquality()
+                .equals(other.configPath, configPath) &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.userId, userId) &&
             const DeepCollectionEquality().equals(other.namespace, namespace) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.slug, slug) &&
             const DeepCollectionEquality().equals(other.scm, scm) &&
-            const DeepCollectionEquality()
-                .equals(other.gitHttpUrl, gitHttpUrl) &&
-            const DeepCollectionEquality().equals(other.gitSshUrl, gitSshUrl) &&
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality()
-                .equals(other.defaultBranch, defaultBranch) &&
-            const DeepCollectionEquality().equals(other.private, private) &&
-            const DeepCollectionEquality()
                 .equals(other.visibility, visibility) &&
-            const DeepCollectionEquality().equals(other.active, active) &&
-            const DeepCollectionEquality()
-                .equals(other.configPath, configPath) &&
-            const DeepCollectionEquality().equals(other.trusted, trusted) &&
-            const DeepCollectionEquality().equals(other.protected, protected) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.userId, userId) &&
+            const DeepCollectionEquality().equals(other.timeout, timeout) &&
+            const DeepCollectionEquality().equals(other.counter, counter) &&
+            const DeepCollectionEquality().equals(other.synced, synced) &&
+            const DeepCollectionEquality().equals(other.created, created) &&
+            const DeepCollectionEquality().equals(other.updated, updated) &&
+            const DeepCollectionEquality().equals(other.version, version) &&
             const DeepCollectionEquality()
                 .equals(other.ignoreForks, ignoreForks) &&
             const DeepCollectionEquality()
@@ -734,13 +754,11 @@ class _$_Repo implements _Repo {
                 .equals(other.autoCancelPushes, autoCancelPushes) &&
             const DeepCollectionEquality()
                 .equals(other.autoCancelRunning, autoCancelRunning) &&
-            const DeepCollectionEquality().equals(other.timeout, timeout) &&
-            const DeepCollectionEquality().equals(other.counter, counter) &&
-            const DeepCollectionEquality().equals(other.synced, synced) &&
-            const DeepCollectionEquality().equals(other.created, created) &&
-            const DeepCollectionEquality().equals(other.updated, updated) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
             const DeepCollectionEquality().equals(other.archived, archived) &&
+            const DeepCollectionEquality().equals(other.private, private) &&
+            const DeepCollectionEquality().equals(other.active, active) &&
+            const DeepCollectionEquality().equals(other.trusted, trusted) &&
+            const DeepCollectionEquality().equals(other.protected, protected) &&
             const DeepCollectionEquality()
                 .equals(other.permissions, permissions) &&
             const DeepCollectionEquality().equals(other.build, build));
@@ -749,35 +767,35 @@ class _$_Repo implements _Repo {
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(gitSshUrl),
+        const DeepCollectionEquality().hash(gitHttpUrl),
+        const DeepCollectionEquality().hash(defaultBranch),
+        const DeepCollectionEquality().hash(configPath),
         const DeepCollectionEquality().hash(uid),
-        const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(namespace),
         const DeepCollectionEquality().hash(name),
         const DeepCollectionEquality().hash(slug),
         const DeepCollectionEquality().hash(scm),
-        const DeepCollectionEquality().hash(gitHttpUrl),
-        const DeepCollectionEquality().hash(gitSshUrl),
         const DeepCollectionEquality().hash(link),
-        const DeepCollectionEquality().hash(defaultBranch),
-        const DeepCollectionEquality().hash(private),
         const DeepCollectionEquality().hash(visibility),
-        const DeepCollectionEquality().hash(active),
-        const DeepCollectionEquality().hash(configPath),
-        const DeepCollectionEquality().hash(trusted),
-        const DeepCollectionEquality().hash(protected),
-        const DeepCollectionEquality().hash(ignoreForks),
-        const DeepCollectionEquality().hash(ignorePullRequests),
-        const DeepCollectionEquality().hash(autoCancelPullRequests),
-        const DeepCollectionEquality().hash(autoCancelPushes),
-        const DeepCollectionEquality().hash(autoCancelRunning),
+        const DeepCollectionEquality().hash(id),
+        const DeepCollectionEquality().hash(userId),
         const DeepCollectionEquality().hash(timeout),
         const DeepCollectionEquality().hash(counter),
         const DeepCollectionEquality().hash(synced),
         const DeepCollectionEquality().hash(created),
         const DeepCollectionEquality().hash(updated),
         const DeepCollectionEquality().hash(version),
+        const DeepCollectionEquality().hash(ignoreForks),
+        const DeepCollectionEquality().hash(ignorePullRequests),
+        const DeepCollectionEquality().hash(autoCancelPullRequests),
+        const DeepCollectionEquality().hash(autoCancelPushes),
+        const DeepCollectionEquality().hash(autoCancelRunning),
         const DeepCollectionEquality().hash(archived),
+        const DeepCollectionEquality().hash(private),
+        const DeepCollectionEquality().hash(active),
+        const DeepCollectionEquality().hash(trusted),
+        const DeepCollectionEquality().hash(protected),
         const DeepCollectionEquality().hash(permissions),
         const DeepCollectionEquality().hash(build)
       ]);
@@ -795,112 +813,102 @@ class _$_Repo implements _Repo {
 
 abstract class _Repo implements Repo {
   const factory _Repo(
-      {int? id,
-      String? uid,
-      @JsonKey(name: 'user_id') int? userId,
-      String? namespace,
-      String? name,
-      String? slug,
-      String? scm,
-      @JsonKey(name: 'git_http_url') String? gitHttpUrl,
-      @JsonKey(name: 'git_ssh_url') String? gitSshUrl,
-      String? link,
-      @JsonKey(name: 'default_branch') String? defaultBranch,
-      bool? private,
-      String? visibility,
-      bool? active,
-      @JsonKey(name: 'config_path') String? configPath,
-      bool? trusted,
-      bool? protected,
-      @JsonKey(name: 'ignore_forks') bool? ignoreForks,
-      @JsonKey(name: 'ignore_pull_requests') bool? ignorePullRequests,
-      @JsonKey(name: 'auto_cancel_pull_requests') bool? autoCancelPullRequests,
-      @JsonKey(name: 'auto_cancel_pushes') bool? autoCancelPushes,
-      @JsonKey(name: 'auto_cancel_running') bool? autoCancelRunning,
-      int? timeout,
-      int? counter,
-      int? synced,
-      int? created,
-      int? updated,
-      int? version,
-      bool? archived,
-      Permission? permissions,
-      Build? build}) = _$_Repo;
+      {String gitSshUrl,
+      String gitHttpUrl,
+      String defaultBranch,
+      String configPath,
+      String uid,
+      String namespace,
+      String name,
+      String slug,
+      String scm,
+      String link,
+      String visibility,
+      int id,
+      int userId,
+      int timeout,
+      int counter,
+      int synced,
+      int created,
+      int updated,
+      int version,
+      bool ignoreForks,
+      bool ignorePullRequests,
+      bool autoCancelPullRequests,
+      bool autoCancelPushes,
+      bool autoCancelRunning,
+      bool archived,
+      bool private,
+      bool active,
+      bool trusted,
+      bool protected,
+      Permission permissions,
+      Build build}) = _$_Repo;
 
   factory _Repo.fromJson(Map<String, dynamic> json) = _$_Repo.fromJson;
 
   @override
-  int? get id;
+  String get gitSshUrl;
   @override
-  String? get uid;
+  String get gitHttpUrl;
   @override
-  @JsonKey(name: 'user_id')
-  int? get userId;
+  String get defaultBranch;
   @override
-  String? get namespace;
+  String get configPath;
   @override
-  String? get name;
+  String get uid;
   @override
-  String? get slug;
+  String get namespace;
   @override
-  String? get scm;
+  String get name;
   @override
-  @JsonKey(name: 'git_http_url')
-  String? get gitHttpUrl;
+  String get slug;
   @override
-  @JsonKey(name: 'git_ssh_url')
-  String? get gitSshUrl;
+  String get scm;
   @override
-  String? get link;
+  String get link;
   @override
-  @JsonKey(name: 'default_branch')
-  String? get defaultBranch;
+  String get visibility;
   @override
-  bool? get private;
+  int get id;
   @override
-  String? get visibility;
+  int get userId;
   @override
-  bool? get active;
+  int get timeout;
   @override
-  @JsonKey(name: 'config_path')
-  String? get configPath;
+  int get counter;
   @override
-  bool? get trusted;
+  int get synced;
   @override
-  bool? get protected;
+  int get created;
   @override
-  @JsonKey(name: 'ignore_forks')
-  bool? get ignoreForks;
+  int get updated;
   @override
-  @JsonKey(name: 'ignore_pull_requests')
-  bool? get ignorePullRequests;
+  int get version;
   @override
-  @JsonKey(name: 'auto_cancel_pull_requests')
-  bool? get autoCancelPullRequests;
+  bool get ignoreForks;
   @override
-  @JsonKey(name: 'auto_cancel_pushes')
-  bool? get autoCancelPushes;
+  bool get ignorePullRequests;
   @override
-  @JsonKey(name: 'auto_cancel_running')
-  bool? get autoCancelRunning;
+  bool get autoCancelPullRequests;
   @override
-  int? get timeout;
+  bool get autoCancelPushes;
   @override
-  int? get counter;
+  bool get autoCancelRunning;
   @override
-  int? get synced;
+  bool get archived;
   @override
-  int? get created;
+  bool get private;
   @override
-  int? get updated;
+  bool get active;
   @override
-  int? get version;
+  bool get trusted;
   @override
-  bool? get archived;
+  bool get protected;
   @override
-  Permission? get permissions;
+  Permission get permissions;
   @override
-  Build? get build;
+  Build get build;
   @override
   @JsonKey(ignore: true)
   _$RepoCopyWith<_Repo> get copyWith => throw _privateConstructorUsedError;
