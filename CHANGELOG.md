@@ -1,3 +1,9 @@
+## 1.1.1
+
+- Implement Drone stream api.
+- Fix bugs in data classes.
+- Fix imports and exports.
+
 ## 1.1.0
 
 - Implement Cron methods.

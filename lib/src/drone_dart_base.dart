@@ -12,7 +12,7 @@ abstract class IDroneClient {
   void buildApprove({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   });
   Future<Build> buildCreate({
     required String namespace,
@@ -24,40 +24,42 @@ abstract class IDroneClient {
   void buildDecline({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   });
   Future<Build> buildInfo({
     required String owner,
-    required String build,
+    required int build,
     required String repo,
   });
   Future<List<Build>> buildList({
     required String owner,
     required String repo,
+    int page = 1,
+    int perPage = 25,
   });
   Future<List<LogModel>> buildLog({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
     required String stage,
     required String step,
   });
   Future<Build?> buildPromote({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
     required String target,
     Map<String, dynamic>? parameters,
   });
   Future<Build> buildRestart({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   });
   Future<Build> buildStop({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   });
 
   Future<Cron> cronCreate({
@@ -244,7 +246,7 @@ class DroneClient implements IDroneClient {
   void buildApprove({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   }) {}
 
   /// POST /api/repos/{namespace}/{name}/builds?branch={branch}&commit={commit}&{key=value}
@@ -275,14 +277,14 @@ class DroneClient implements IDroneClient {
   void buildDecline({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   }) {}
 
   // GET /api/repos/{owner}/{repo}/builds/{build}
   @override
   Future<Build> buildInfo({
     required String owner,
-    required String build,
+    required int build,
     required String repo,
   }) async {
     return await _request(
@@ -298,11 +300,14 @@ class DroneClient implements IDroneClient {
   Future<List<Build>> buildList({
     required String owner,
     required String repo,
+    int page = 1,
+    int perPage = 25,
   }) async {
     return await _request<Build, List<Build>>(
-      path: Uri(
-        path: '/api/repos/$owner/$repo/builds',
-      ),
+      path: Uri(path: '/api/repos/$owner/$repo/builds', queryParameters: {
+        'page': '$page',
+        'per_page': '$perPage',
+      }),
       parser: (d) => Build.fromJson(d),
     );
   }
@@ -312,7 +317,7 @@ class DroneClient implements IDroneClient {
   Future<List<LogModel>> buildLog({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
     required String stage,
     required String step,
   }) async {
@@ -329,7 +334,7 @@ class DroneClient implements IDroneClient {
   Future<Build?> buildPromote({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
     required String target,
     Map<String, dynamic>? parameters,
   }) async {
@@ -351,7 +356,7 @@ class DroneClient implements IDroneClient {
   Future<Build> buildRestart({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   }) async {
     return await _request(
       path: Uri(
@@ -367,7 +372,7 @@ class DroneClient implements IDroneClient {
   Future<Build> buildStop({
     required String owner,
     required String repo,
-    required String build,
+    required int build,
   }) async {
     return await _request(
       path: Uri(
