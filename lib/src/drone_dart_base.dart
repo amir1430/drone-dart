@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:drone_dart/drone_dart.dart';
-import 'exception/exception.dart';
 import 'utils/http_method.dart';
 import 'utils/isolate.dart';
 
