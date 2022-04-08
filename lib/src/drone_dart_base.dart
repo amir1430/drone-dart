@@ -190,34 +190,56 @@ abstract class IDroneClient {
 }
 
 class DroneClient implements IDroneClient {
-  DroneClient._(
-    this.server,
-    this.token, {
-    Dio? dioClient,
-  }) : _dioClient = dioClient ??
-            Dio(
-              BaseOptions(
-                baseUrl: server,
-                validateStatus: (_) => true,
-              ),
-            );
+  DroneClient({
+    required this.server,
+    required this.token,
+    Dio? dio,
+  }) : _dioClient = dio ??
+            Dio(BaseOptions(
+              baseUrl: server,
+              validateStatus: (_) => true,
+            ));
 
-  factory DroneClient() => instance;
-  static late DroneClient _instance;
-  static DroneClient get instance => _instance;
-
-  static DroneClient init({
-    required String server,
-    required String token,
+  DroneClient copyWith({
+    String? server,
+    String? token,
     Dio? dio,
   }) {
-    _instance = DroneClient._(server, token, dioClient: dio);
-    return _instance;
+    return DroneClient(
+      server: server ?? this.server,
+      token: token ?? this.token,
+      dio: dio ?? _dioClient,
+    );
   }
 
+  // DroneClient._(
+  //   this.server,
+  //   this.token, {
+  //   Dio? dioClient,
+  // }) : _dioClient = dioClient ??
+  //           Dio(
+  //             BaseOptions(
+  //               baseUrl: server,
+  //               validateStatus: (_) => true,
+  //             ),
+  //           );
+
+  // factory DroneClient() => instance;
+  // static late DroneClient _instance;
+  // static DroneClient get instance => _instance;
+
+  // static DroneClient init({
+  //   required String server,
+  //   required String token,
+  //   Dio? dio,
+  // }) {
+  //   _instance = DroneClient._(server, token, dioClient: dio);
+  //   return _instance;
+  // }
+
   final Dio _dioClient;
-  late String server;
-  late String token;
+  final String server;
+  final String token;
 
   @override
   Stream<Repo> stream() async* {
@@ -771,7 +793,7 @@ class DroneClient implements IDroneClient {
   Future<User> userInfo() async {
     return await _request(
       path: Uri(
-        path: '/api/user',
+        path: '/api/user/token',
       ),
       parser: (d) => User.fromJson(d),
     );

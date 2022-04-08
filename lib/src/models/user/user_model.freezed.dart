@@ -26,6 +26,7 @@ class _$UserTearOff {
       {String login = '',
       String email = '',
       String avatar = '',
+      String token = '',
       int id = 0,
       int synced = 0,
       int created = 0,
@@ -39,6 +40,7 @@ class _$UserTearOff {
       login: login,
       email: email,
       avatar: avatar,
+      token: token,
       id: id,
       synced: synced,
       created: created,
@@ -64,6 +66,7 @@ mixin _$User {
   String get login => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
+  String get token => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   int get synced => throw _privateConstructorUsedError;
   int get created => throw _privateConstructorUsedError;
@@ -87,6 +90,7 @@ abstract class $UserCopyWith<$Res> {
       {String login,
       String email,
       String avatar,
+      String token,
       int id,
       int synced,
       int created,
@@ -111,6 +115,7 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
     Object? login = freezed,
     Object? email = freezed,
     Object? avatar = freezed,
+    Object? token = freezed,
     Object? id = freezed,
     Object? synced = freezed,
     Object? created = freezed,
@@ -133,6 +138,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
               as String,
       id: id == freezed
           ? _value.id
@@ -183,6 +192,7 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       {String login,
       String email,
       String avatar,
+      String token,
       int id,
       int synced,
       int created,
@@ -208,6 +218,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? login = freezed,
     Object? email = freezed,
     Object? avatar = freezed,
+    Object? token = freezed,
     Object? id = freezed,
     Object? synced = freezed,
     Object? created = freezed,
@@ -230,6 +241,10 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
       avatar: avatar == freezed
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
+              as String,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
               as String,
       id: id == freezed
           ? _value.id
@@ -279,6 +294,7 @@ class _$_User implements _User {
       {this.login = '',
       this.email = '',
       this.avatar = '',
+      this.token = '',
       this.id = 0,
       this.synced = 0,
       this.created = 0,
@@ -300,6 +316,9 @@ class _$_User implements _User {
   @JsonKey()
   @override
   final String avatar;
+  @JsonKey()
+  @override
+  final String token;
   @JsonKey()
   @override
   final int id;
@@ -330,7 +349,7 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(login: $login, email: $email, avatar: $avatar, id: $id, synced: $synced, created: $created, updated: $updated, lastLogin: $lastLogin, machine: $machine, admin: $admin, active: $active, syncing: $syncing)';
+    return 'User(login: $login, email: $email, avatar: $avatar, token: $token, id: $id, synced: $synced, created: $created, updated: $updated, lastLogin: $lastLogin, machine: $machine, admin: $admin, active: $active, syncing: $syncing)';
   }
 
   @override
@@ -341,6 +360,7 @@ class _$_User implements _User {
             const DeepCollectionEquality().equals(other.login, login) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.avatar, avatar) &&
+            const DeepCollectionEquality().equals(other.token, token) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.synced, synced) &&
             const DeepCollectionEquality().equals(other.created, created) &&
@@ -358,6 +378,7 @@ class _$_User implements _User {
       const DeepCollectionEquality().hash(login),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(avatar),
+      const DeepCollectionEquality().hash(token),
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(synced),
       const DeepCollectionEquality().hash(created),
@@ -384,6 +405,7 @@ abstract class _User implements User {
       {String login,
       String email,
       String avatar,
+      String token,
       int id,
       int synced,
       int created,
@@ -402,6 +424,8 @@ abstract class _User implements User {
   String get email;
   @override
   String get avatar;
+  @override
+  String get token;
   @override
   int get id;
   @override

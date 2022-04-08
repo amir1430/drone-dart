@@ -18,53 +18,53 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$DroneExceptionTearOff {
   const _$DroneExceptionTearOff();
 
-  _NotFound notFound(
-      {String? message =
+  NotFound notFound(
+      {String message =
           'Not Found 404. The requested resource could not be found.'}) {
-    return _NotFound(
+    return NotFound(
       message: message,
     );
   }
 
-  _RequestException requestException(
-      {String? message = 'Http request Exception'}) {
-    return _RequestException(
+  RequestException requestException(
+      {String message = 'Http request Exception'}) {
+    return RequestException(
       message: message,
     );
   }
 
-  _ForbiddenException forbiddenException(
-      {String? message =
+  ForbiddenException forbiddenException(
+      {String message =
           'Forbidden 403. The requested resource is forbidden.'}) {
-    return _ForbiddenException(
+    return ForbiddenException(
       message: message,
     );
   }
 
-  _InternalException internalException(
+  InternalException internalException(
       {String message = 'Internal 500. An internal server error occurred.'}) {
-    return _InternalException(
+    return InternalException(
       message: message,
     );
   }
 
-  _InvalidRequestBodyException invalidRequestBodyException(
-      {String? message = 'Invalid 400. You missed some fields.'}) {
-    return _InvalidRequestBodyException(
+  InvalidRequestBodyException invalidRequestBodyException(
+      {String message = 'Invalid 400. You missed some fields.'}) {
+    return InvalidRequestBodyException(
       message: message,
     );
   }
 
-  _UnauthorizedException unauthorizedException(
-      {String? message = 'Unauthorized'}) {
-    return _UnauthorizedException(
+  UnauthorizedException unauthorizedException(
+      {String message = 'Unauthorized'}) {
+    return UnauthorizedException(
       message: message,
     );
   }
 
-  _JsonDeserializationException jsonDeserializationException(
-      {String? message = 'Exception on deserializing json'}) {
-    return _JsonDeserializationException(
+  JsonDeserializationException jsonDeserializationException(
+      {String message = 'Exception on deserializing json'}) {
+    return JsonDeserializationException(
       message: message,
     );
   }
@@ -75,80 +75,86 @@ const $DroneException = _$DroneExceptionTearOff();
 
 /// @nodoc
 mixin _$DroneException {
+  String get message => throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $DroneExceptionCopyWith<DroneException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -157,6 +163,7 @@ abstract class $DroneExceptionCopyWith<$Res> {
   factory $DroneExceptionCopyWith(
           DroneException value, $Res Function(DroneException) then) =
       _$DroneExceptionCopyWithImpl<$Res>;
+  $Res call({String message});
 }
 
 /// @nodoc
@@ -167,47 +174,61 @@ class _$DroneExceptionCopyWithImpl<$Res>
   final DroneException _value;
   // ignore: unused_field
   final $Res Function(DroneException) _then;
-}
-
-/// @nodoc
-abstract class _$NotFoundCopyWith<$Res> {
-  factory _$NotFoundCopyWith(_NotFound value, $Res Function(_NotFound) then) =
-      __$NotFoundCopyWithImpl<$Res>;
-  $Res call({String? message});
-}
-
-/// @nodoc
-class __$NotFoundCopyWithImpl<$Res> extends _$DroneExceptionCopyWithImpl<$Res>
-    implements _$NotFoundCopyWith<$Res> {
-  __$NotFoundCopyWithImpl(_NotFound _value, $Res Function(_NotFound) _then)
-      : super(_value, (v) => _then(v as _NotFound));
-
-  @override
-  _NotFound get _value => super._value as _NotFound;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_NotFound(
+    return _then(_value.copyWith(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $NotFoundCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory $NotFoundCopyWith(NotFound value, $Res Function(NotFound) then) =
+      _$NotFoundCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
+}
+
+/// @nodoc
+class _$NotFoundCopyWithImpl<$Res> extends _$DroneExceptionCopyWithImpl<$Res>
+    implements $NotFoundCopyWith<$Res> {
+  _$NotFoundCopyWithImpl(NotFound _value, $Res Function(NotFound) _then)
+      : super(_value, (v) => _then(v as NotFound));
+
+  @override
+  NotFound get _value => super._value as NotFound;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(NotFound(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_NotFound implements _NotFound {
-  const _$_NotFound(
+class _$NotFound implements NotFound {
+  const _$NotFound(
       {this.message =
           'Not Found 404. The requested resource could not be found.'});
 
   @JsonKey()
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString() {
@@ -218,7 +239,7 @@ class _$_NotFound implements _NotFound {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _NotFound &&
+            other is NotFound &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -228,19 +249,19 @@ class _$_NotFound implements _NotFound {
 
   @JsonKey(ignore: true)
   @override
-  _$NotFoundCopyWith<_NotFound> get copyWith =>
-      __$NotFoundCopyWithImpl<_NotFound>(this, _$identity);
+  $NotFoundCopyWith<NotFound> get copyWith =>
+      _$NotFoundCopyWithImpl<NotFound>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) {
     return notFound(message);
   }
@@ -248,13 +269,13 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) {
     return notFound?.call(message);
   }
@@ -262,13 +283,13 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -280,15 +301,15 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) {
     return notFound(this);
@@ -297,14 +318,14 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) {
     return notFound?.call(this);
@@ -313,14 +334,14 @@ class _$_NotFound implements _NotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) {
@@ -331,55 +352,59 @@ class _$_NotFound implements _NotFound {
   }
 }
 
-abstract class _NotFound implements DroneException {
-  const factory _NotFound({String? message}) = _$_NotFound;
+abstract class NotFound implements DroneException {
+  const factory NotFound({String message}) = _$NotFound;
 
-  String? get message;
+  @override
+  String get message;
+  @override
   @JsonKey(ignore: true)
-  _$NotFoundCopyWith<_NotFound> get copyWith =>
+  $NotFoundCopyWith<NotFound> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$RequestExceptionCopyWith<$Res> {
-  factory _$RequestExceptionCopyWith(
-          _RequestException value, $Res Function(_RequestException) then) =
-      __$RequestExceptionCopyWithImpl<$Res>;
-  $Res call({String? message});
+abstract class $RequestExceptionCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory $RequestExceptionCopyWith(
+          RequestException value, $Res Function(RequestException) then) =
+      _$RequestExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$RequestExceptionCopyWithImpl<$Res>
+class _$RequestExceptionCopyWithImpl<$Res>
     extends _$DroneExceptionCopyWithImpl<$Res>
-    implements _$RequestExceptionCopyWith<$Res> {
-  __$RequestExceptionCopyWithImpl(
-      _RequestException _value, $Res Function(_RequestException) _then)
-      : super(_value, (v) => _then(v as _RequestException));
+    implements $RequestExceptionCopyWith<$Res> {
+  _$RequestExceptionCopyWithImpl(
+      RequestException _value, $Res Function(RequestException) _then)
+      : super(_value, (v) => _then(v as RequestException));
 
   @override
-  _RequestException get _value => super._value as _RequestException;
+  RequestException get _value => super._value as RequestException;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_RequestException(
+    return _then(RequestException(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_RequestException implements _RequestException {
-  const _$_RequestException({this.message = 'Http request Exception'});
+class _$RequestException implements RequestException {
+  const _$RequestException({this.message = 'Http request Exception'});
 
   @JsonKey()
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString() {
@@ -390,7 +415,7 @@ class _$_RequestException implements _RequestException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RequestException &&
+            other is RequestException &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -400,19 +425,19 @@ class _$_RequestException implements _RequestException {
 
   @JsonKey(ignore: true)
   @override
-  _$RequestExceptionCopyWith<_RequestException> get copyWith =>
-      __$RequestExceptionCopyWithImpl<_RequestException>(this, _$identity);
+  $RequestExceptionCopyWith<RequestException> get copyWith =>
+      _$RequestExceptionCopyWithImpl<RequestException>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) {
     return requestException(message);
   }
@@ -420,13 +445,13 @@ class _$_RequestException implements _RequestException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) {
     return requestException?.call(message);
   }
@@ -434,13 +459,13 @@ class _$_RequestException implements _RequestException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) {
     if (requestException != null) {
@@ -452,15 +477,15 @@ class _$_RequestException implements _RequestException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) {
     return requestException(this);
@@ -469,14 +494,14 @@ class _$_RequestException implements _RequestException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) {
     return requestException?.call(this);
@@ -485,14 +510,14 @@ class _$_RequestException implements _RequestException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) {
@@ -503,56 +528,60 @@ class _$_RequestException implements _RequestException {
   }
 }
 
-abstract class _RequestException implements DroneException {
-  const factory _RequestException({String? message}) = _$_RequestException;
+abstract class RequestException implements DroneException {
+  const factory RequestException({String message}) = _$RequestException;
 
-  String? get message;
+  @override
+  String get message;
+  @override
   @JsonKey(ignore: true)
-  _$RequestExceptionCopyWith<_RequestException> get copyWith =>
+  $RequestExceptionCopyWith<RequestException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ForbiddenExceptionCopyWith<$Res> {
-  factory _$ForbiddenExceptionCopyWith(
-          _ForbiddenException value, $Res Function(_ForbiddenException) then) =
-      __$ForbiddenExceptionCopyWithImpl<$Res>;
-  $Res call({String? message});
+abstract class $ForbiddenExceptionCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory $ForbiddenExceptionCopyWith(
+          ForbiddenException value, $Res Function(ForbiddenException) then) =
+      _$ForbiddenExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$ForbiddenExceptionCopyWithImpl<$Res>
+class _$ForbiddenExceptionCopyWithImpl<$Res>
     extends _$DroneExceptionCopyWithImpl<$Res>
-    implements _$ForbiddenExceptionCopyWith<$Res> {
-  __$ForbiddenExceptionCopyWithImpl(
-      _ForbiddenException _value, $Res Function(_ForbiddenException) _then)
-      : super(_value, (v) => _then(v as _ForbiddenException));
+    implements $ForbiddenExceptionCopyWith<$Res> {
+  _$ForbiddenExceptionCopyWithImpl(
+      ForbiddenException _value, $Res Function(ForbiddenException) _then)
+      : super(_value, (v) => _then(v as ForbiddenException));
 
   @override
-  _ForbiddenException get _value => super._value as _ForbiddenException;
+  ForbiddenException get _value => super._value as ForbiddenException;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_ForbiddenException(
+    return _then(ForbiddenException(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_ForbiddenException implements _ForbiddenException {
-  const _$_ForbiddenException(
+class _$ForbiddenException implements ForbiddenException {
+  const _$ForbiddenException(
       {this.message = 'Forbidden 403. The requested resource is forbidden.'});
 
   @JsonKey()
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString() {
@@ -563,7 +592,7 @@ class _$_ForbiddenException implements _ForbiddenException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ForbiddenException &&
+            other is ForbiddenException &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -573,19 +602,19 @@ class _$_ForbiddenException implements _ForbiddenException {
 
   @JsonKey(ignore: true)
   @override
-  _$ForbiddenExceptionCopyWith<_ForbiddenException> get copyWith =>
-      __$ForbiddenExceptionCopyWithImpl<_ForbiddenException>(this, _$identity);
+  $ForbiddenExceptionCopyWith<ForbiddenException> get copyWith =>
+      _$ForbiddenExceptionCopyWithImpl<ForbiddenException>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) {
     return forbiddenException(message);
   }
@@ -593,13 +622,13 @@ class _$_ForbiddenException implements _ForbiddenException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) {
     return forbiddenException?.call(message);
   }
@@ -607,13 +636,13 @@ class _$_ForbiddenException implements _ForbiddenException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) {
     if (forbiddenException != null) {
@@ -625,15 +654,15 @@ class _$_ForbiddenException implements _ForbiddenException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) {
     return forbiddenException(this);
@@ -642,14 +671,14 @@ class _$_ForbiddenException implements _ForbiddenException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) {
     return forbiddenException?.call(this);
@@ -658,14 +687,14 @@ class _$_ForbiddenException implements _ForbiddenException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) {
@@ -676,39 +705,43 @@ class _$_ForbiddenException implements _ForbiddenException {
   }
 }
 
-abstract class _ForbiddenException implements DroneException {
-  const factory _ForbiddenException({String? message}) = _$_ForbiddenException;
+abstract class ForbiddenException implements DroneException {
+  const factory ForbiddenException({String message}) = _$ForbiddenException;
 
-  String? get message;
+  @override
+  String get message;
+  @override
   @JsonKey(ignore: true)
-  _$ForbiddenExceptionCopyWith<_ForbiddenException> get copyWith =>
+  $ForbiddenExceptionCopyWith<ForbiddenException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InternalExceptionCopyWith<$Res> {
-  factory _$InternalExceptionCopyWith(
-          _InternalException value, $Res Function(_InternalException) then) =
-      __$InternalExceptionCopyWithImpl<$Res>;
+abstract class $InternalExceptionCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory $InternalExceptionCopyWith(
+          InternalException value, $Res Function(InternalException) then) =
+      _$InternalExceptionCopyWithImpl<$Res>;
+  @override
   $Res call({String message});
 }
 
 /// @nodoc
-class __$InternalExceptionCopyWithImpl<$Res>
+class _$InternalExceptionCopyWithImpl<$Res>
     extends _$DroneExceptionCopyWithImpl<$Res>
-    implements _$InternalExceptionCopyWith<$Res> {
-  __$InternalExceptionCopyWithImpl(
-      _InternalException _value, $Res Function(_InternalException) _then)
-      : super(_value, (v) => _then(v as _InternalException));
+    implements $InternalExceptionCopyWith<$Res> {
+  _$InternalExceptionCopyWithImpl(
+      InternalException _value, $Res Function(InternalException) _then)
+      : super(_value, (v) => _then(v as InternalException));
 
   @override
-  _InternalException get _value => super._value as _InternalException;
+  InternalException get _value => super._value as InternalException;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_InternalException(
+    return _then(InternalException(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -719,8 +752,8 @@ class __$InternalExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InternalException implements _InternalException {
-  const _$_InternalException(
+class _$InternalException implements InternalException {
+  const _$InternalException(
       {this.message = 'Internal 500. An internal server error occurred.'});
 
   @JsonKey()
@@ -736,7 +769,7 @@ class _$_InternalException implements _InternalException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _InternalException &&
+            other is InternalException &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -746,19 +779,19 @@ class _$_InternalException implements _InternalException {
 
   @JsonKey(ignore: true)
   @override
-  _$InternalExceptionCopyWith<_InternalException> get copyWith =>
-      __$InternalExceptionCopyWithImpl<_InternalException>(this, _$identity);
+  $InternalExceptionCopyWith<InternalException> get copyWith =>
+      _$InternalExceptionCopyWithImpl<InternalException>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) {
     return internalException(message);
   }
@@ -766,13 +799,13 @@ class _$_InternalException implements _InternalException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) {
     return internalException?.call(message);
   }
@@ -780,13 +813,13 @@ class _$_InternalException implements _InternalException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) {
     if (internalException != null) {
@@ -798,15 +831,15 @@ class _$_InternalException implements _InternalException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) {
     return internalException(this);
@@ -815,14 +848,14 @@ class _$_InternalException implements _InternalException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) {
     return internalException?.call(this);
@@ -831,14 +864,14 @@ class _$_InternalException implements _InternalException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) {
@@ -849,59 +882,62 @@ class _$_InternalException implements _InternalException {
   }
 }
 
-abstract class _InternalException implements DroneException {
-  const factory _InternalException({String message}) = _$_InternalException;
+abstract class InternalException implements DroneException {
+  const factory InternalException({String message}) = _$InternalException;
 
+  @override
   String get message;
+  @override
   @JsonKey(ignore: true)
-  _$InternalExceptionCopyWith<_InternalException> get copyWith =>
+  $InternalExceptionCopyWith<InternalException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InvalidRequestBodyExceptionCopyWith<$Res> {
-  factory _$InvalidRequestBodyExceptionCopyWith(
-          _InvalidRequestBodyException value,
-          $Res Function(_InvalidRequestBodyException) then) =
-      __$InvalidRequestBodyExceptionCopyWithImpl<$Res>;
-  $Res call({String? message});
+abstract class $InvalidRequestBodyExceptionCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory $InvalidRequestBodyExceptionCopyWith(
+          InvalidRequestBodyException value,
+          $Res Function(InvalidRequestBodyException) then) =
+      _$InvalidRequestBodyExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$InvalidRequestBodyExceptionCopyWithImpl<$Res>
+class _$InvalidRequestBodyExceptionCopyWithImpl<$Res>
     extends _$DroneExceptionCopyWithImpl<$Res>
-    implements _$InvalidRequestBodyExceptionCopyWith<$Res> {
-  __$InvalidRequestBodyExceptionCopyWithImpl(
-      _InvalidRequestBodyException _value,
-      $Res Function(_InvalidRequestBodyException) _then)
-      : super(_value, (v) => _then(v as _InvalidRequestBodyException));
+    implements $InvalidRequestBodyExceptionCopyWith<$Res> {
+  _$InvalidRequestBodyExceptionCopyWithImpl(InvalidRequestBodyException _value,
+      $Res Function(InvalidRequestBodyException) _then)
+      : super(_value, (v) => _then(v as InvalidRequestBodyException));
 
   @override
-  _InvalidRequestBodyException get _value =>
-      super._value as _InvalidRequestBodyException;
+  InvalidRequestBodyException get _value =>
+      super._value as InvalidRequestBodyException;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_InvalidRequestBodyException(
+    return _then(InvalidRequestBodyException(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
-  const _$_InvalidRequestBodyException(
+class _$InvalidRequestBodyException implements InvalidRequestBodyException {
+  const _$InvalidRequestBodyException(
       {this.message = 'Invalid 400. You missed some fields.'});
 
   @JsonKey()
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString() {
@@ -912,7 +948,7 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _InvalidRequestBodyException &&
+            other is InvalidRequestBodyException &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -922,20 +958,20 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
 
   @JsonKey(ignore: true)
   @override
-  _$InvalidRequestBodyExceptionCopyWith<_InvalidRequestBodyException>
-      get copyWith => __$InvalidRequestBodyExceptionCopyWithImpl<
-          _InvalidRequestBodyException>(this, _$identity);
+  $InvalidRequestBodyExceptionCopyWith<InvalidRequestBodyException>
+      get copyWith => _$InvalidRequestBodyExceptionCopyWithImpl<
+          InvalidRequestBodyException>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) {
     return invalidRequestBodyException(message);
   }
@@ -943,13 +979,13 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) {
     return invalidRequestBodyException?.call(message);
   }
@@ -957,13 +993,13 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) {
     if (invalidRequestBodyException != null) {
@@ -975,15 +1011,15 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) {
     return invalidRequestBodyException(this);
@@ -992,14 +1028,14 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) {
     return invalidRequestBodyException?.call(this);
@@ -1008,14 +1044,14 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) {
@@ -1026,56 +1062,60 @@ class _$_InvalidRequestBodyException implements _InvalidRequestBodyException {
   }
 }
 
-abstract class _InvalidRequestBodyException implements DroneException {
-  const factory _InvalidRequestBodyException({String? message}) =
-      _$_InvalidRequestBodyException;
+abstract class InvalidRequestBodyException implements DroneException {
+  const factory InvalidRequestBodyException({String message}) =
+      _$InvalidRequestBodyException;
 
-  String? get message;
+  @override
+  String get message;
+  @override
   @JsonKey(ignore: true)
-  _$InvalidRequestBodyExceptionCopyWith<_InvalidRequestBodyException>
+  $InvalidRequestBodyExceptionCopyWith<InvalidRequestBodyException>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UnauthorizedExceptionCopyWith<$Res> {
-  factory _$UnauthorizedExceptionCopyWith(_UnauthorizedException value,
-          $Res Function(_UnauthorizedException) then) =
-      __$UnauthorizedExceptionCopyWithImpl<$Res>;
-  $Res call({String? message});
+abstract class $UnauthorizedExceptionCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory $UnauthorizedExceptionCopyWith(UnauthorizedException value,
+          $Res Function(UnauthorizedException) then) =
+      _$UnauthorizedExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$UnauthorizedExceptionCopyWithImpl<$Res>
+class _$UnauthorizedExceptionCopyWithImpl<$Res>
     extends _$DroneExceptionCopyWithImpl<$Res>
-    implements _$UnauthorizedExceptionCopyWith<$Res> {
-  __$UnauthorizedExceptionCopyWithImpl(_UnauthorizedException _value,
-      $Res Function(_UnauthorizedException) _then)
-      : super(_value, (v) => _then(v as _UnauthorizedException));
+    implements $UnauthorizedExceptionCopyWith<$Res> {
+  _$UnauthorizedExceptionCopyWithImpl(
+      UnauthorizedException _value, $Res Function(UnauthorizedException) _then)
+      : super(_value, (v) => _then(v as UnauthorizedException));
 
   @override
-  _UnauthorizedException get _value => super._value as _UnauthorizedException;
+  UnauthorizedException get _value => super._value as UnauthorizedException;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_UnauthorizedException(
+    return _then(UnauthorizedException(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_UnauthorizedException implements _UnauthorizedException {
-  const _$_UnauthorizedException({this.message = 'Unauthorized'});
+class _$UnauthorizedException implements UnauthorizedException {
+  const _$UnauthorizedException({this.message = 'Unauthorized'});
 
   @JsonKey()
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString() {
@@ -1086,7 +1126,7 @@ class _$_UnauthorizedException implements _UnauthorizedException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UnauthorizedException &&
+            other is UnauthorizedException &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -1096,20 +1136,20 @@ class _$_UnauthorizedException implements _UnauthorizedException {
 
   @JsonKey(ignore: true)
   @override
-  _$UnauthorizedExceptionCopyWith<_UnauthorizedException> get copyWith =>
-      __$UnauthorizedExceptionCopyWithImpl<_UnauthorizedException>(
+  $UnauthorizedExceptionCopyWith<UnauthorizedException> get copyWith =>
+      _$UnauthorizedExceptionCopyWithImpl<UnauthorizedException>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) {
     return unauthorizedException(message);
   }
@@ -1117,13 +1157,13 @@ class _$_UnauthorizedException implements _UnauthorizedException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) {
     return unauthorizedException?.call(message);
   }
@@ -1131,13 +1171,13 @@ class _$_UnauthorizedException implements _UnauthorizedException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) {
     if (unauthorizedException != null) {
@@ -1149,15 +1189,15 @@ class _$_UnauthorizedException implements _UnauthorizedException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) {
     return unauthorizedException(this);
@@ -1166,14 +1206,14 @@ class _$_UnauthorizedException implements _UnauthorizedException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) {
     return unauthorizedException?.call(this);
@@ -1182,14 +1222,14 @@ class _$_UnauthorizedException implements _UnauthorizedException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) {
@@ -1200,60 +1240,64 @@ class _$_UnauthorizedException implements _UnauthorizedException {
   }
 }
 
-abstract class _UnauthorizedException implements DroneException {
-  const factory _UnauthorizedException({String? message}) =
-      _$_UnauthorizedException;
+abstract class UnauthorizedException implements DroneException {
+  const factory UnauthorizedException({String message}) =
+      _$UnauthorizedException;
 
-  String? get message;
+  @override
+  String get message;
+  @override
   @JsonKey(ignore: true)
-  _$UnauthorizedExceptionCopyWith<_UnauthorizedException> get copyWith =>
+  $UnauthorizedExceptionCopyWith<UnauthorizedException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$JsonDeserializationExceptionCopyWith<$Res> {
-  factory _$JsonDeserializationExceptionCopyWith(
-          _JsonDeserializationException value,
-          $Res Function(_JsonDeserializationException) then) =
-      __$JsonDeserializationExceptionCopyWithImpl<$Res>;
-  $Res call({String? message});
+abstract class $JsonDeserializationExceptionCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory $JsonDeserializationExceptionCopyWith(
+          JsonDeserializationException value,
+          $Res Function(JsonDeserializationException) then) =
+      _$JsonDeserializationExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
 }
 
 /// @nodoc
-class __$JsonDeserializationExceptionCopyWithImpl<$Res>
+class _$JsonDeserializationExceptionCopyWithImpl<$Res>
     extends _$DroneExceptionCopyWithImpl<$Res>
-    implements _$JsonDeserializationExceptionCopyWith<$Res> {
-  __$JsonDeserializationExceptionCopyWithImpl(
-      _JsonDeserializationException _value,
-      $Res Function(_JsonDeserializationException) _then)
-      : super(_value, (v) => _then(v as _JsonDeserializationException));
+    implements $JsonDeserializationExceptionCopyWith<$Res> {
+  _$JsonDeserializationExceptionCopyWithImpl(
+      JsonDeserializationException _value,
+      $Res Function(JsonDeserializationException) _then)
+      : super(_value, (v) => _then(v as JsonDeserializationException));
 
   @override
-  _JsonDeserializationException get _value =>
-      super._value as _JsonDeserializationException;
+  JsonDeserializationException get _value =>
+      super._value as JsonDeserializationException;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_JsonDeserializationException(
+    return _then(JsonDeserializationException(
       message: message == freezed
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_JsonDeserializationException implements _JsonDeserializationException {
-  const _$_JsonDeserializationException(
+class _$JsonDeserializationException implements JsonDeserializationException {
+  const _$JsonDeserializationException(
       {this.message = 'Exception on deserializing json'});
 
   @JsonKey()
   @override
-  final String? message;
+  final String message;
 
   @override
   String toString() {
@@ -1264,7 +1308,7 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _JsonDeserializationException &&
+            other is JsonDeserializationException &&
             const DeepCollectionEquality().equals(other.message, message));
   }
 
@@ -1274,20 +1318,20 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
 
   @JsonKey(ignore: true)
   @override
-  _$JsonDeserializationExceptionCopyWith<_JsonDeserializationException>
-      get copyWith => __$JsonDeserializationExceptionCopyWithImpl<
-          _JsonDeserializationException>(this, _$identity);
+  $JsonDeserializationExceptionCopyWith<JsonDeserializationException>
+      get copyWith => _$JsonDeserializationExceptionCopyWithImpl<
+          JsonDeserializationException>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String? message) notFound,
-    required TResult Function(String? message) requestException,
-    required TResult Function(String? message) forbiddenException,
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
     required TResult Function(String message) internalException,
-    required TResult Function(String? message) invalidRequestBodyException,
-    required TResult Function(String? message) unauthorizedException,
-    required TResult Function(String? message) jsonDeserializationException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
   }) {
     return jsonDeserializationException(message);
   }
@@ -1295,13 +1339,13 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
   }) {
     return jsonDeserializationException?.call(message);
   }
@@ -1309,13 +1353,13 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String? message)? notFound,
-    TResult Function(String? message)? requestException,
-    TResult Function(String? message)? forbiddenException,
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
     TResult Function(String message)? internalException,
-    TResult Function(String? message)? invalidRequestBodyException,
-    TResult Function(String? message)? unauthorizedException,
-    TResult Function(String? message)? jsonDeserializationException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
     required TResult orElse(),
   }) {
     if (jsonDeserializationException != null) {
@@ -1327,15 +1371,15 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_NotFound value) notFound,
-    required TResult Function(_RequestException value) requestException,
-    required TResult Function(_ForbiddenException value) forbiddenException,
-    required TResult Function(_InternalException value) internalException,
-    required TResult Function(_InvalidRequestBodyException value)
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
         invalidRequestBodyException,
-    required TResult Function(_UnauthorizedException value)
+    required TResult Function(UnauthorizedException value)
         unauthorizedException,
-    required TResult Function(_JsonDeserializationException value)
+    required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
   }) {
     return jsonDeserializationException(this);
@@ -1344,14 +1388,14 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
   }) {
     return jsonDeserializationException?.call(this);
@@ -1360,14 +1404,14 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_NotFound value)? notFound,
-    TResult Function(_RequestException value)? requestException,
-    TResult Function(_ForbiddenException value)? forbiddenException,
-    TResult Function(_InternalException value)? internalException,
-    TResult Function(_InvalidRequestBodyException value)?
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(_UnauthorizedException value)? unauthorizedException,
-    TResult Function(_JsonDeserializationException value)?
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
     required TResult orElse(),
   }) {
@@ -1378,12 +1422,14 @@ class _$_JsonDeserializationException implements _JsonDeserializationException {
   }
 }
 
-abstract class _JsonDeserializationException implements DroneException {
-  const factory _JsonDeserializationException({String? message}) =
-      _$_JsonDeserializationException;
+abstract class JsonDeserializationException implements DroneException {
+  const factory JsonDeserializationException({String message}) =
+      _$JsonDeserializationException;
 
-  String? get message;
+  @override
+  String get message;
+  @override
   @JsonKey(ignore: true)
-  _$JsonDeserializationExceptionCopyWith<_JsonDeserializationException>
+  $JsonDeserializationExceptionCopyWith<JsonDeserializationException>
       get copyWith => throw _privateConstructorUsedError;
 }

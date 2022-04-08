@@ -10,6 +10,7 @@ class User with _$User {
     @Default('') String login,
     @Default('') String email,
     @Default('') String avatar,
+    @Default('') String token,
     @Default(0) int id,
     @Default(0) int synced,
     @Default(0) int created,
