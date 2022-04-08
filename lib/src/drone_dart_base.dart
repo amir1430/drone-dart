@@ -795,6 +795,7 @@ class DroneClient implements IDroneClient {
       path: Uri(
         path: '/api/user/token',
       ),
+      method: HttpMethod.post,
       parser: (d) => User.fromJson(d),
     );
   }
@@ -811,7 +812,6 @@ class DroneClient implements IDroneClient {
           'latest': latest,
         },
       ),
-      method: HttpMethod.post,
       parser: (d) => Repo.fromJson(d),
     );
   }
