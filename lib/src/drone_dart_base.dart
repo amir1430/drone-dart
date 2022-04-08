@@ -811,6 +811,7 @@ class DroneClient implements IDroneClient {
           'latest': latest,
         },
       ),
+      method: HttpMethod.post,
       parser: (d) => Repo.fromJson(d),
     );
   }
@@ -925,6 +926,7 @@ class DroneClient implements IDroneClient {
     HttpMethod method = HttpMethod.get,
   }) async {
     late final Response response;
+    print(path);
     try {
       response = await _dioClient.requestUri(
         path,
@@ -953,6 +955,7 @@ class DroneClient implements IDroneClient {
     }
 
     if (response.statusCode == 404 || response.statusCode == 405) {
+      print(response.statusCode);
       throw const DroneException.notFound();
     }
 
