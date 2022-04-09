@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:drone_dart/drone_dart.dart';
@@ -19,7 +20,7 @@ abstract class IDroneClient {
     required String name,
     String? commit,
     String? branch,
-    Map<String, dynamic>? parameters,
+    Map<String, String>? parameters,
   });
   void buildDecline({
     required String owner,
@@ -49,7 +50,7 @@ abstract class IDroneClient {
     required String repo,
     required int build,
     required String target,
-    Map<String, dynamic>? parameters,
+    Map<String, String>? parameters,
   });
   Future<Build> buildRestart({
     required String owner,
@@ -198,6 +199,9 @@ class DroneClient implements IDroneClient {
             Dio(BaseOptions(
               baseUrl: server,
               validateStatus: (_) => true,
+              sendTimeout: 10000,
+              connectTimeout: 10000,
+              receiveTimeout: 10000,
             ));
 
   DroneClient copyWith({
@@ -278,12 +282,12 @@ class DroneClient implements IDroneClient {
     required String name,
     String? commit,
     String? branch,
-    Map<String, dynamic>? parameters,
+    Map<String, String>? parameters,
   }) async {
     return await _request(
       path: Uri(
         path: '/api/repos/$namespace/$name/builds',
-        queryParameters: <String, dynamic>{
+        queryParameters: <String, String>{
           if (commit != null) 'commit': commit,
           if (branch != null) 'branch': branch,
           if (parameters != null) ...parameters,
@@ -359,12 +363,12 @@ class DroneClient implements IDroneClient {
     required String repo,
     required int build,
     required String target,
-    Map<String, dynamic>? parameters,
+    Map<String, String>? parameters,
   }) async {
     return await _request<Build, Build?>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build/promote',
-        queryParameters: <String, dynamic>{
+        queryParameters: <String, String>{
           'target': target,
           if (parameters != null) ...parameters,
         },
@@ -808,8 +812,8 @@ class DroneClient implements IDroneClient {
     return await _request<Repo, List<Repo>>(
       path: Uri(
         path: '/api/user/repos',
-        queryParameters: <String, dynamic>{
-          'latest': latest,
+        queryParameters: <String, String>{
+          'latest': '$latest',
         },
       ),
       parser: (d) => Repo.fromJson(d),
@@ -928,8 +932,8 @@ class DroneClient implements IDroneClient {
     late final Response response;
     print(path);
     try {
-      response = await _dioClient.requestUri(
-        path,
+      response = await _dioClient.request(
+        path.toString(),
         data: body,
         options: Options(
           method: method.name,
@@ -938,8 +942,14 @@ class DroneClient implements IDroneClient {
           },
         ),
       );
+      print(response);
+    } on SocketException {
+      throw const DroneException.requestException(
+          message: 'Please check your internet connection');
+    } on DioError catch (e) {
+      throw DroneException.requestException(message: e.message);
     } catch (e) {
-      throw DroneException.requestException(message: '$e');
+      throw const DroneException.requestException();
     }
 
     if (response.statusCode == 400) {
