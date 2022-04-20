@@ -9,12 +9,12 @@ const jsonData = {
 
 void main() {
   group('permissions model', () {
-    Permission createSubject({
+    DronePermission createSubject({
       bool read = true,
       bool write = true,
       bool admin = true,
     }) {
-      return Permission(
+      return DronePermission(
         read: read,
         write: write,
         admin: admin,
@@ -58,7 +58,7 @@ void main() {
 
     group('fromJson', () {
       test('works fine', () {
-        expect(Permission.fromJson(jsonData), equals(createSubject()));
+        expect(DronePermission.fromJson(jsonData), equals(createSubject()));
       });
     });
   });

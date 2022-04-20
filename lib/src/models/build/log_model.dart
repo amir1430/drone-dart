@@ -4,13 +4,13 @@ part 'log_model.freezed.dart';
 part 'log_model.g.dart';
 
 @freezed
-class LogModel with _$LogModel {
-  const factory LogModel({
+class DroneLog with _$DroneLog {
+  const factory DroneLog({
     required int time,
     required int pos,
     required String out,
-  }) = _LogModel;
+  }) = _DroneLog;
 
-  factory LogModel.fromJson(Map<String, dynamic> json) =>
-      _$LogModelFromJson(json);
+  factory DroneLog.fromJson(Map<String, dynamic> json) =>
+      _$DroneLogFromJson(json);
 }

@@ -6,8 +6,8 @@ part of 'cron_trigger_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_CronTrigger _$$_CronTriggerFromJson(Map<String, dynamic> json) =>
-    _$_CronTrigger(
+_$_DroneCronTrigger _$$_DroneCronTriggerFromJson(Map<String, dynamic> json) =>
+    _$_DroneCronTrigger(
       uid: json['uid'] as String? ?? '',
       namespace: json['namespace'] as String? ?? '',
       name: json['name'] as String? ?? '',
@@ -34,11 +34,12 @@ _$_CronTrigger _$$_CronTriggerFromJson(Map<String, dynamic> json) =>
       ignoreForks: json['ignore_forks'] as bool? ?? false,
       ignorePullRequests: json['ignore_pull_requests'] as bool? ?? false,
       permissions: json['permissions'] == null
-          ? const Permission()
-          : Permission.fromJson(json['permissions'] as Map<String, dynamic>),
+          ? const DronePermission()
+          : DronePermission.fromJson(
+              json['permissions'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_CronTriggerToJson(_$_CronTrigger instance) =>
+Map<String, dynamic> _$$_DroneCronTriggerToJson(_$_DroneCronTrigger instance) =>
     <String, dynamic>{
       'uid': instance.uid,
       'namespace': instance.namespace,

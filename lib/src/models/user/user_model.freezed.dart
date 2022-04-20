@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-User _$UserFromJson(Map<String, dynamic> json) {
-  return _User.fromJson(json);
+DroneUser _$DroneUserFromJson(Map<String, dynamic> json) {
+  return _DroneUser.fromJson(json);
 }
 
 /// @nodoc
-class _$UserTearOff {
-  const _$UserTearOff();
+class _$DroneUserTearOff {
+  const _$DroneUserTearOff();
 
-  _User call(
+  _DroneUser call(
       {String login = '',
       String email = '',
       String avatar = '',
@@ -36,7 +36,7 @@ class _$UserTearOff {
       bool admin = false,
       bool active = false,
       bool syncing = false}) {
-    return _User(
+    return _DroneUser(
       login: login,
       email: email,
       avatar: avatar,
@@ -53,16 +53,16 @@ class _$UserTearOff {
     );
   }
 
-  User fromJson(Map<String, Object?> json) {
-    return User.fromJson(json);
+  DroneUser fromJson(Map<String, Object?> json) {
+    return DroneUser.fromJson(json);
   }
 }
 
 /// @nodoc
-const $User = _$UserTearOff();
+const $DroneUser = _$DroneUserTearOff();
 
 /// @nodoc
-mixin _$User {
+mixin _$DroneUser {
   String get login => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get avatar => throw _privateConstructorUsedError;
@@ -79,13 +79,14 @@ mixin _$User {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
+  $DroneUserCopyWith<DroneUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserCopyWith<$Res> {
-  factory $UserCopyWith(User value, $Res Function(User) then) =
-      _$UserCopyWithImpl<$Res>;
+abstract class $DroneUserCopyWith<$Res> {
+  factory $DroneUserCopyWith(DroneUser value, $Res Function(DroneUser) then) =
+      _$DroneUserCopyWithImpl<$Res>;
   $Res call(
       {String login,
       String email,
@@ -103,12 +104,12 @@ abstract class $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
-  _$UserCopyWithImpl(this._value, this._then);
+class _$DroneUserCopyWithImpl<$Res> implements $DroneUserCopyWith<$Res> {
+  _$DroneUserCopyWithImpl(this._value, this._then);
 
-  final User _value;
+  final DroneUser _value;
   // ignore: unused_field
-  final $Res Function(User) _then;
+  final $Res Function(DroneUser) _then;
 
   @override
   $Res call({
@@ -184,9 +185,10 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
-  factory _$UserCopyWith(_User value, $Res Function(_User) then) =
-      __$UserCopyWithImpl<$Res>;
+abstract class _$DroneUserCopyWith<$Res> implements $DroneUserCopyWith<$Res> {
+  factory _$DroneUserCopyWith(
+          _DroneUser value, $Res Function(_DroneUser) then) =
+      __$DroneUserCopyWithImpl<$Res>;
   @override
   $Res call(
       {String login,
@@ -205,13 +207,13 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
-    implements _$UserCopyWith<$Res> {
-  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
-      : super(_value, (v) => _then(v as _User));
+class __$DroneUserCopyWithImpl<$Res> extends _$DroneUserCopyWithImpl<$Res>
+    implements _$DroneUserCopyWith<$Res> {
+  __$DroneUserCopyWithImpl(_DroneUser _value, $Res Function(_DroneUser) _then)
+      : super(_value, (v) => _then(v as _DroneUser));
 
   @override
-  _User get _value => super._value as _User;
+  _DroneUser get _value => super._value as _DroneUser;
 
   @override
   $Res call({
@@ -229,7 +231,7 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
     Object? active = freezed,
     Object? syncing = freezed,
   }) {
-    return _then(_User(
+    return _then(_DroneUser(
       login: login == freezed
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
@@ -289,8 +291,8 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_User implements _User {
-  const _$_User(
+class _$_DroneUser implements _DroneUser {
+  const _$_DroneUser(
       {this.login = '',
       this.email = '',
       this.avatar = '',
@@ -305,7 +307,8 @@ class _$_User implements _User {
       this.active = false,
       this.syncing = false});
 
-  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
+  factory _$_DroneUser.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneUserFromJson(json);
 
   @JsonKey()
   @override
@@ -349,14 +352,14 @@ class _$_User implements _User {
 
   @override
   String toString() {
-    return 'User(login: $login, email: $email, avatar: $avatar, token: $token, id: $id, synced: $synced, created: $created, updated: $updated, lastLogin: $lastLogin, machine: $machine, admin: $admin, active: $active, syncing: $syncing)';
+    return 'DroneUser(login: $login, email: $email, avatar: $avatar, token: $token, id: $id, synced: $synced, created: $created, updated: $updated, lastLogin: $lastLogin, machine: $machine, admin: $admin, active: $active, syncing: $syncing)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _User &&
+            other is _DroneUser &&
             const DeepCollectionEquality().equals(other.login, login) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.avatar, avatar) &&
@@ -391,17 +394,17 @@ class _$_User implements _User {
 
   @JsonKey(ignore: true)
   @override
-  _$UserCopyWith<_User> get copyWith =>
-      __$UserCopyWithImpl<_User>(this, _$identity);
+  _$DroneUserCopyWith<_DroneUser> get copyWith =>
+      __$DroneUserCopyWithImpl<_DroneUser>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserToJson(this);
+    return _$$_DroneUserToJson(this);
   }
 }
 
-abstract class _User implements User {
-  const factory _User(
+abstract class _DroneUser implements DroneUser {
+  const factory _DroneUser(
       {String login,
       String email,
       String avatar,
@@ -414,9 +417,10 @@ abstract class _User implements User {
       bool machine,
       bool admin,
       bool active,
-      bool syncing}) = _$_User;
+      bool syncing}) = _$_DroneUser;
 
-  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
+  factory _DroneUser.fromJson(Map<String, dynamic> json) =
+      _$_DroneUser.fromJson;
 
   @override
   String get login;
@@ -446,5 +450,6 @@ abstract class _User implements User {
   bool get syncing;
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
+  _$DroneUserCopyWith<_DroneUser> get copyWith =>
+      throw _privateConstructorUsedError;
 }

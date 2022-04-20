@@ -4,9 +4,9 @@ part 'cron_model.freezed.dart';
 part 'cron_model.g.dart';
 
 @freezed
-class Cron with _$Cron {
+class DroneCron with _$DroneCron {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Cron({
+  const factory DroneCron({
     @Default('') String name,
     @Default('') String expr,
     @Default('') String branch,
@@ -16,7 +16,8 @@ class Cron with _$Cron {
     @Default(0) int pref,
     @Default(0) int created,
     @Default(0) int updated,
-  }) = _Cron;
+  }) = _DroneCron;
 
-  factory Cron.fromJson(Map<String, dynamic> json) => _$CronFromJson(json);
+  factory DroneCron.fromJson(Map<String, dynamic> json) =>
+      _$DroneCronFromJson(json);
 }

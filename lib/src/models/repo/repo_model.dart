@@ -6,9 +6,9 @@ part 'repo_model.freezed.dart';
 part 'repo_model.g.dart';
 
 @freezed
-class Repo with _$Repo {
+class DroneRepo with _$DroneRepo {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Repo({
+  const factory DroneRepo({
     @Default('') String gitSshUrl,
     @Default('') String gitHttpUrl,
     @Default('') String defaultBranch,
@@ -38,9 +38,10 @@ class Repo with _$Repo {
     @Default(false) bool active,
     @Default(false) bool trusted,
     @Default(false) bool protected,
-    @Default(Permission()) Permission permissions,
-    @Default(Build()) Build build,
-  }) = _Repo;
+    @Default(null) DronePermission? permissions,
+    @Default(null) DroneBuild? build,
+  }) = _DroneRepo;
 
-  factory Repo.fromJson(Map<String, dynamic> json) => _$RepoFromJson(json);
+  factory DroneRepo.fromJson(Map<String, dynamic> json) =>
+      _$DroneRepoFromJson(json);
 }

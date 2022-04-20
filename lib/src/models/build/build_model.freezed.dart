@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Build _$BuildFromJson(Map<String, dynamic> json) {
-  return _Build.fromJson(json);
+DroneBuild _$DroneBuildFromJson(Map<String, dynamic> json) {
+  return _DroneBuild.fromJson(json);
 }
 
 /// @nodoc
-class _$BuildTearOff {
-  const _$BuildTearOff();
+class _$DroneBuildTearOff {
+  const _$DroneBuildTearOff();
 
-  _Build call(
+  _DroneBuild call(
       {String sourceRepo = '',
       String authorLogin = '',
       String authorName = '',
@@ -40,6 +40,7 @@ class _$BuildTearOff {
       String source = '',
       String target = '',
       String sender = '',
+      String? deployTo = null,
       int repoId = 0,
       int id = 0,
       int number = 0,
@@ -49,8 +50,8 @@ class _$BuildTearOff {
       int created = 0,
       int updated = 0,
       int version = 0,
-      List<Stage> stages = const []}) {
-    return _Build(
+      List<DroneStage> stages = const []}) {
+    return _DroneBuild(
       sourceRepo: sourceRepo,
       authorLogin: authorLogin,
       authorName: authorName,
@@ -68,6 +69,7 @@ class _$BuildTearOff {
       source: source,
       target: target,
       sender: sender,
+      deployTo: deployTo,
       repoId: repoId,
       id: id,
       number: number,
@@ -81,16 +83,16 @@ class _$BuildTearOff {
     );
   }
 
-  Build fromJson(Map<String, Object?> json) {
-    return Build.fromJson(json);
+  DroneBuild fromJson(Map<String, Object?> json) {
+    return DroneBuild.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Build = _$BuildTearOff();
+const $DroneBuild = _$DroneBuildTearOff();
 
 /// @nodoc
-mixin _$Build {
+mixin _$DroneBuild {
   String get sourceRepo => throw _privateConstructorUsedError;
   String get authorLogin => throw _privateConstructorUsedError;
   String get authorName => throw _privateConstructorUsedError;
@@ -108,6 +110,7 @@ mixin _$Build {
   String get source => throw _privateConstructorUsedError;
   String get target => throw _privateConstructorUsedError;
   String get sender => throw _privateConstructorUsedError;
+  String? get deployTo => throw _privateConstructorUsedError;
   int get repoId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   int get number => throw _privateConstructorUsedError;
@@ -117,17 +120,19 @@ mixin _$Build {
   int get created => throw _privateConstructorUsedError;
   int get updated => throw _privateConstructorUsedError;
   int get version => throw _privateConstructorUsedError;
-  List<Stage> get stages => throw _privateConstructorUsedError;
+  List<DroneStage> get stages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $BuildCopyWith<Build> get copyWith => throw _privateConstructorUsedError;
+  $DroneBuildCopyWith<DroneBuild> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $BuildCopyWith<$Res> {
-  factory $BuildCopyWith(Build value, $Res Function(Build) then) =
-      _$BuildCopyWithImpl<$Res>;
+abstract class $DroneBuildCopyWith<$Res> {
+  factory $DroneBuildCopyWith(
+          DroneBuild value, $Res Function(DroneBuild) then) =
+      _$DroneBuildCopyWithImpl<$Res>;
   $Res call(
       {String sourceRepo,
       String authorLogin,
@@ -146,6 +151,7 @@ abstract class $BuildCopyWith<$Res> {
       String source,
       String target,
       String sender,
+      String? deployTo,
       int repoId,
       int id,
       int number,
@@ -155,16 +161,16 @@ abstract class $BuildCopyWith<$Res> {
       int created,
       int updated,
       int version,
-      List<Stage> stages});
+      List<DroneStage> stages});
 }
 
 /// @nodoc
-class _$BuildCopyWithImpl<$Res> implements $BuildCopyWith<$Res> {
-  _$BuildCopyWithImpl(this._value, this._then);
+class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
+  _$DroneBuildCopyWithImpl(this._value, this._then);
 
-  final Build _value;
+  final DroneBuild _value;
   // ignore: unused_field
-  final $Res Function(Build) _then;
+  final $Res Function(DroneBuild) _then;
 
   @override
   $Res call({
@@ -185,6 +191,7 @@ class _$BuildCopyWithImpl<$Res> implements $BuildCopyWith<$Res> {
     Object? source = freezed,
     Object? target = freezed,
     Object? sender = freezed,
+    Object? deployTo = freezed,
     Object? repoId = freezed,
     Object? id = freezed,
     Object? number = freezed,
@@ -265,6 +272,10 @@ class _$BuildCopyWithImpl<$Res> implements $BuildCopyWith<$Res> {
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String,
+      deployTo: deployTo == freezed
+          ? _value.deployTo
+          : deployTo // ignore: cast_nullable_to_non_nullable
+              as String?,
       repoId: repoId == freezed
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
@@ -304,15 +315,16 @@ class _$BuildCopyWithImpl<$Res> implements $BuildCopyWith<$Res> {
       stages: stages == freezed
           ? _value.stages
           : stages // ignore: cast_nullable_to_non_nullable
-              as List<Stage>,
+              as List<DroneStage>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$BuildCopyWith<$Res> implements $BuildCopyWith<$Res> {
-  factory _$BuildCopyWith(_Build value, $Res Function(_Build) then) =
-      __$BuildCopyWithImpl<$Res>;
+abstract class _$DroneBuildCopyWith<$Res> implements $DroneBuildCopyWith<$Res> {
+  factory _$DroneBuildCopyWith(
+          _DroneBuild value, $Res Function(_DroneBuild) then) =
+      __$DroneBuildCopyWithImpl<$Res>;
   @override
   $Res call(
       {String sourceRepo,
@@ -332,6 +344,7 @@ abstract class _$BuildCopyWith<$Res> implements $BuildCopyWith<$Res> {
       String source,
       String target,
       String sender,
+      String? deployTo,
       int repoId,
       int id,
       int number,
@@ -341,17 +354,18 @@ abstract class _$BuildCopyWith<$Res> implements $BuildCopyWith<$Res> {
       int created,
       int updated,
       int version,
-      List<Stage> stages});
+      List<DroneStage> stages});
 }
 
 /// @nodoc
-class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
-    implements _$BuildCopyWith<$Res> {
-  __$BuildCopyWithImpl(_Build _value, $Res Function(_Build) _then)
-      : super(_value, (v) => _then(v as _Build));
+class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
+    implements _$DroneBuildCopyWith<$Res> {
+  __$DroneBuildCopyWithImpl(
+      _DroneBuild _value, $Res Function(_DroneBuild) _then)
+      : super(_value, (v) => _then(v as _DroneBuild));
 
   @override
-  _Build get _value => super._value as _Build;
+  _DroneBuild get _value => super._value as _DroneBuild;
 
   @override
   $Res call({
@@ -372,6 +386,7 @@ class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
     Object? source = freezed,
     Object? target = freezed,
     Object? sender = freezed,
+    Object? deployTo = freezed,
     Object? repoId = freezed,
     Object? id = freezed,
     Object? number = freezed,
@@ -383,7 +398,7 @@ class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
     Object? version = freezed,
     Object? stages = freezed,
   }) {
-    return _then(_Build(
+    return _then(_DroneBuild(
       sourceRepo: sourceRepo == freezed
           ? _value.sourceRepo
           : sourceRepo // ignore: cast_nullable_to_non_nullable
@@ -452,6 +467,10 @@ class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String,
+      deployTo: deployTo == freezed
+          ? _value.deployTo
+          : deployTo // ignore: cast_nullable_to_non_nullable
+              as String?,
       repoId: repoId == freezed
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
@@ -491,7 +510,7 @@ class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
       stages: stages == freezed
           ? _value.stages
           : stages // ignore: cast_nullable_to_non_nullable
-              as List<Stage>,
+              as List<DroneStage>,
     ));
   }
 }
@@ -499,8 +518,8 @@ class __$BuildCopyWithImpl<$Res> extends _$BuildCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_Build implements _Build {
-  const _$_Build(
+class _$_DroneBuild implements _DroneBuild {
+  const _$_DroneBuild(
       {this.sourceRepo = '',
       this.authorLogin = '',
       this.authorName = '',
@@ -518,6 +537,7 @@ class _$_Build implements _Build {
       this.source = '',
       this.target = '',
       this.sender = '',
+      this.deployTo = null,
       this.repoId = 0,
       this.id = 0,
       this.number = 0,
@@ -529,8 +549,8 @@ class _$_Build implements _Build {
       this.version = 0,
       this.stages = const []});
 
-  factory _$_Build.fromJson(Map<String, dynamic> json) =>
-      _$$_BuildFromJson(json);
+  factory _$_DroneBuild.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneBuildFromJson(json);
 
   @JsonKey()
   @override
@@ -585,6 +605,9 @@ class _$_Build implements _Build {
   final String sender;
   @JsonKey()
   @override
+  final String? deployTo;
+  @JsonKey()
+  @override
   final int repoId;
   @JsonKey()
   @override
@@ -612,18 +635,18 @@ class _$_Build implements _Build {
   final int version;
   @JsonKey()
   @override
-  final List<Stage> stages;
+  final List<DroneStage> stages;
 
   @override
   String toString() {
-    return 'Build(sourceRepo: $sourceRepo, authorLogin: $authorLogin, authorName: $authorName, authorEmail: $authorEmail, authorAvatar: $authorAvatar, trigger: $trigger, status: $status, event: $event, action: $action, link: $link, message: $message, before: $before, after: $after, ref: $ref, source: $source, target: $target, sender: $sender, repoId: $repoId, id: $id, number: $number, timestamp: $timestamp, started: $started, finished: $finished, created: $created, updated: $updated, version: $version, stages: $stages)';
+    return 'DroneBuild(sourceRepo: $sourceRepo, authorLogin: $authorLogin, authorName: $authorName, authorEmail: $authorEmail, authorAvatar: $authorAvatar, trigger: $trigger, status: $status, event: $event, action: $action, link: $link, message: $message, before: $before, after: $after, ref: $ref, source: $source, target: $target, sender: $sender, deployTo: $deployTo, repoId: $repoId, id: $id, number: $number, timestamp: $timestamp, started: $started, finished: $finished, created: $created, updated: $updated, version: $version, stages: $stages)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Build &&
+            other is _DroneBuild &&
             const DeepCollectionEquality()
                 .equals(other.sourceRepo, sourceRepo) &&
             const DeepCollectionEquality()
@@ -646,6 +669,7 @@ class _$_Build implements _Build {
             const DeepCollectionEquality().equals(other.source, source) &&
             const DeepCollectionEquality().equals(other.target, target) &&
             const DeepCollectionEquality().equals(other.sender, sender) &&
+            const DeepCollectionEquality().equals(other.deployTo, deployTo) &&
             const DeepCollectionEquality().equals(other.repoId, repoId) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.number, number) &&
@@ -678,6 +702,7 @@ class _$_Build implements _Build {
         const DeepCollectionEquality().hash(source),
         const DeepCollectionEquality().hash(target),
         const DeepCollectionEquality().hash(sender),
+        const DeepCollectionEquality().hash(deployTo),
         const DeepCollectionEquality().hash(repoId),
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(number),
@@ -692,17 +717,17 @@ class _$_Build implements _Build {
 
   @JsonKey(ignore: true)
   @override
-  _$BuildCopyWith<_Build> get copyWith =>
-      __$BuildCopyWithImpl<_Build>(this, _$identity);
+  _$DroneBuildCopyWith<_DroneBuild> get copyWith =>
+      __$DroneBuildCopyWithImpl<_DroneBuild>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_BuildToJson(this);
+    return _$$_DroneBuildToJson(this);
   }
 }
 
-abstract class _Build implements Build {
-  const factory _Build(
+abstract class _DroneBuild implements DroneBuild {
+  const factory _DroneBuild(
       {String sourceRepo,
       String authorLogin,
       String authorName,
@@ -720,6 +745,7 @@ abstract class _Build implements Build {
       String source,
       String target,
       String sender,
+      String? deployTo,
       int repoId,
       int id,
       int number,
@@ -729,9 +755,10 @@ abstract class _Build implements Build {
       int created,
       int updated,
       int version,
-      List<Stage> stages}) = _$_Build;
+      List<DroneStage> stages}) = _$_DroneBuild;
 
-  factory _Build.fromJson(Map<String, dynamic> json) = _$_Build.fromJson;
+  factory _DroneBuild.fromJson(Map<String, dynamic> json) =
+      _$_DroneBuild.fromJson;
 
   @override
   String get sourceRepo;
@@ -768,6 +795,8 @@ abstract class _Build implements Build {
   @override
   String get sender;
   @override
+  String? get deployTo;
+  @override
   int get repoId;
   @override
   int get id;
@@ -786,8 +815,9 @@ abstract class _Build implements Build {
   @override
   int get version;
   @override
-  List<Stage> get stages;
+  List<DroneStage> get stages;
   @override
   @JsonKey(ignore: true)
-  _$BuildCopyWith<_Build> get copyWith => throw _privateConstructorUsedError;
+  _$DroneBuildCopyWith<_DroneBuild> get copyWith =>
+      throw _privateConstructorUsedError;
 }

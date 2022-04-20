@@ -6,7 +6,7 @@ part of 'user_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+_$_DroneUser _$$_DroneUserFromJson(Map<String, dynamic> json) => _$_DroneUser(
       login: json['login'] as String? ?? '',
       email: json['email'] as String? ?? '',
       avatar: json['avatar'] as String? ?? '',
@@ -22,7 +22,8 @@ _$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
       syncing: json['syncing'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+Map<String, dynamic> _$$_DroneUserToJson(_$_DroneUser instance) =>
+    <String, dynamic>{
       'login': instance.login,
       'email': instance.email,
       'avatar': instance.avatar,

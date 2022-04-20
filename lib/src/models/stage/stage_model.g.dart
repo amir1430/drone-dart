@@ -6,7 +6,8 @@ part of 'stage_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Stage _$$_StageFromJson(Map<String, dynamic> json) => _$_Stage(
+_$_DroneStage _$$_DroneStageFromJson(Map<String, dynamic> json) =>
+    _$_DroneStage(
       name: json['name'] as String? ?? '',
       kind: json['kind'] as String? ?? '',
       type: json['type'] as String? ?? '',
@@ -28,12 +29,13 @@ _$_Stage _$$_StageFromJson(Map<String, dynamic> json) => _$_Stage(
       onFailure: json['on_failure'] as bool? ?? false,
       errignore: json['errignore'] as bool? ?? false,
       steps: (json['steps'] as List<dynamic>?)
-              ?.map((e) => Step.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => DroneStep.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$$_StageToJson(_$_Stage instance) => <String, dynamic>{
+Map<String, dynamic> _$$_DroneStageToJson(_$_DroneStage instance) =>
+    <String, dynamic>{
       'name': instance.name,
       'kind': instance.kind,
       'type': instance.type,

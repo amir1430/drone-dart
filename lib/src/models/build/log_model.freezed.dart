@@ -14,56 +14,56 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-LogModel _$LogModelFromJson(Map<String, dynamic> json) {
-  return _LogModel.fromJson(json);
+DroneLog _$DroneLogFromJson(Map<String, dynamic> json) {
+  return _DroneLog.fromJson(json);
 }
 
 /// @nodoc
-class _$LogModelTearOff {
-  const _$LogModelTearOff();
+class _$DroneLogTearOff {
+  const _$DroneLogTearOff();
 
-  _LogModel call({required int time, required int pos, required String out}) {
-    return _LogModel(
+  _DroneLog call({required int time, required int pos, required String out}) {
+    return _DroneLog(
       time: time,
       pos: pos,
       out: out,
     );
   }
 
-  LogModel fromJson(Map<String, Object?> json) {
-    return LogModel.fromJson(json);
+  DroneLog fromJson(Map<String, Object?> json) {
+    return DroneLog.fromJson(json);
   }
 }
 
 /// @nodoc
-const $LogModel = _$LogModelTearOff();
+const $DroneLog = _$DroneLogTearOff();
 
 /// @nodoc
-mixin _$LogModel {
+mixin _$DroneLog {
   int get time => throw _privateConstructorUsedError;
   int get pos => throw _privateConstructorUsedError;
   String get out => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $LogModelCopyWith<LogModel> get copyWith =>
+  $DroneLogCopyWith<DroneLog> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LogModelCopyWith<$Res> {
-  factory $LogModelCopyWith(LogModel value, $Res Function(LogModel) then) =
-      _$LogModelCopyWithImpl<$Res>;
+abstract class $DroneLogCopyWith<$Res> {
+  factory $DroneLogCopyWith(DroneLog value, $Res Function(DroneLog) then) =
+      _$DroneLogCopyWithImpl<$Res>;
   $Res call({int time, int pos, String out});
 }
 
 /// @nodoc
-class _$LogModelCopyWithImpl<$Res> implements $LogModelCopyWith<$Res> {
-  _$LogModelCopyWithImpl(this._value, this._then);
+class _$DroneLogCopyWithImpl<$Res> implements $DroneLogCopyWith<$Res> {
+  _$DroneLogCopyWithImpl(this._value, this._then);
 
-  final LogModel _value;
+  final DroneLog _value;
   // ignore: unused_field
-  final $Res Function(LogModel) _then;
+  final $Res Function(DroneLog) _then;
 
   @override
   $Res call({
@@ -89,21 +89,21 @@ class _$LogModelCopyWithImpl<$Res> implements $LogModelCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$LogModelCopyWith<$Res> implements $LogModelCopyWith<$Res> {
-  factory _$LogModelCopyWith(_LogModel value, $Res Function(_LogModel) then) =
-      __$LogModelCopyWithImpl<$Res>;
+abstract class _$DroneLogCopyWith<$Res> implements $DroneLogCopyWith<$Res> {
+  factory _$DroneLogCopyWith(_DroneLog value, $Res Function(_DroneLog) then) =
+      __$DroneLogCopyWithImpl<$Res>;
   @override
   $Res call({int time, int pos, String out});
 }
 
 /// @nodoc
-class __$LogModelCopyWithImpl<$Res> extends _$LogModelCopyWithImpl<$Res>
-    implements _$LogModelCopyWith<$Res> {
-  __$LogModelCopyWithImpl(_LogModel _value, $Res Function(_LogModel) _then)
-      : super(_value, (v) => _then(v as _LogModel));
+class __$DroneLogCopyWithImpl<$Res> extends _$DroneLogCopyWithImpl<$Res>
+    implements _$DroneLogCopyWith<$Res> {
+  __$DroneLogCopyWithImpl(_DroneLog _value, $Res Function(_DroneLog) _then)
+      : super(_value, (v) => _then(v as _DroneLog));
 
   @override
-  _LogModel get _value => super._value as _LogModel;
+  _DroneLog get _value => super._value as _DroneLog;
 
   @override
   $Res call({
@@ -111,7 +111,7 @@ class __$LogModelCopyWithImpl<$Res> extends _$LogModelCopyWithImpl<$Res>
     Object? pos = freezed,
     Object? out = freezed,
   }) {
-    return _then(_LogModel(
+    return _then(_DroneLog(
       time: time == freezed
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
@@ -130,11 +130,11 @@ class __$LogModelCopyWithImpl<$Res> extends _$LogModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_LogModel implements _LogModel {
-  const _$_LogModel({required this.time, required this.pos, required this.out});
+class _$_DroneLog implements _DroneLog {
+  const _$_DroneLog({required this.time, required this.pos, required this.out});
 
-  factory _$_LogModel.fromJson(Map<String, dynamic> json) =>
-      _$$_LogModelFromJson(json);
+  factory _$_DroneLog.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneLogFromJson(json);
 
   @override
   final int time;
@@ -145,14 +145,14 @@ class _$_LogModel implements _LogModel {
 
   @override
   String toString() {
-    return 'LogModel(time: $time, pos: $pos, out: $out)';
+    return 'DroneLog(time: $time, pos: $pos, out: $out)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _LogModel &&
+            other is _DroneLog &&
             const DeepCollectionEquality().equals(other.time, time) &&
             const DeepCollectionEquality().equals(other.pos, pos) &&
             const DeepCollectionEquality().equals(other.out, out));
@@ -167,20 +167,20 @@ class _$_LogModel implements _LogModel {
 
   @JsonKey(ignore: true)
   @override
-  _$LogModelCopyWith<_LogModel> get copyWith =>
-      __$LogModelCopyWithImpl<_LogModel>(this, _$identity);
+  _$DroneLogCopyWith<_DroneLog> get copyWith =>
+      __$DroneLogCopyWithImpl<_DroneLog>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_LogModelToJson(this);
+    return _$$_DroneLogToJson(this);
   }
 }
 
-abstract class _LogModel implements LogModel {
-  const factory _LogModel(
-      {required int time, required int pos, required String out}) = _$_LogModel;
+abstract class _DroneLog implements DroneLog {
+  const factory _DroneLog(
+      {required int time, required int pos, required String out}) = _$_DroneLog;
 
-  factory _LogModel.fromJson(Map<String, dynamic> json) = _$_LogModel.fromJson;
+  factory _DroneLog.fromJson(Map<String, dynamic> json) = _$_DroneLog.fromJson;
 
   @override
   int get time;
@@ -190,6 +190,6 @@ abstract class _LogModel implements LogModel {
   String get out;
   @override
   @JsonKey(ignore: true)
-  _$LogModelCopyWith<_LogModel> get copyWith =>
+  _$DroneLogCopyWith<_DroneLog> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -4,15 +4,16 @@ part 'secret_model.freezed.dart';
 part 'secret_model.g.dart';
 
 @freezed
-class Secret with _$Secret {
+class DroneSecret with _$DroneSecret {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Secret({
+  const factory DroneSecret({
     @Default('') String name,
     @Default('') String data,
     @Default(0) int repoId,
     @Default(0) int id,
     @Default(false) bool pullRequest,
-  }) = _Secret;
+  }) = _DroneSecret;
 
-  factory Secret.fromJson(Map<String, dynamic> json) => _$SecretFromJson(json);
+  factory DroneSecret.fromJson(Map<String, dynamic> json) =>
+      _$DroneSecretFromJson(json);
 }

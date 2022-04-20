@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-CronTrigger _$CronTriggerFromJson(Map<String, dynamic> json) {
-  return _CronTrigger.fromJson(json);
+DroneCronTrigger _$DroneCronTriggerFromJson(Map<String, dynamic> json) {
+  return _DroneCronTrigger.fromJson(json);
 }
 
 /// @nodoc
-class _$CronTriggerTearOff {
-  const _$CronTriggerTearOff();
+class _$DroneCronTriggerTearOff {
+  const _$DroneCronTriggerTearOff();
 
-  _CronTrigger call(
+  _DroneCronTrigger call(
       {String uid = '',
       String namespace = '',
       String name = '',
@@ -48,8 +48,8 @@ class _$CronTriggerTearOff {
       bool protected = false,
       bool ignoreForks = false,
       bool ignorePullRequests = false,
-      Permission permissions = const Permission()}) {
-    return _CronTrigger(
+      DronePermission permissions = const DronePermission()}) {
+    return _DroneCronTrigger(
       uid: uid,
       namespace: namespace,
       name: name,
@@ -79,16 +79,16 @@ class _$CronTriggerTearOff {
     );
   }
 
-  CronTrigger fromJson(Map<String, Object?> json) {
-    return CronTrigger.fromJson(json);
+  DroneCronTrigger fromJson(Map<String, Object?> json) {
+    return DroneCronTrigger.fromJson(json);
   }
 }
 
 /// @nodoc
-const $CronTrigger = _$CronTriggerTearOff();
+const $DroneCronTrigger = _$DroneCronTriggerTearOff();
 
 /// @nodoc
-mixin _$CronTrigger {
+mixin _$DroneCronTrigger {
   String get uid => throw _privateConstructorUsedError;
   String get namespace => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -114,19 +114,19 @@ mixin _$CronTrigger {
   bool get protected => throw _privateConstructorUsedError;
   bool get ignoreForks => throw _privateConstructorUsedError;
   bool get ignorePullRequests => throw _privateConstructorUsedError;
-  Permission get permissions => throw _privateConstructorUsedError;
+  DronePermission get permissions => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CronTriggerCopyWith<CronTrigger> get copyWith =>
+  $DroneCronTriggerCopyWith<DroneCronTrigger> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CronTriggerCopyWith<$Res> {
-  factory $CronTriggerCopyWith(
-          CronTrigger value, $Res Function(CronTrigger) then) =
-      _$CronTriggerCopyWithImpl<$Res>;
+abstract class $DroneCronTriggerCopyWith<$Res> {
+  factory $DroneCronTriggerCopyWith(
+          DroneCronTrigger value, $Res Function(DroneCronTrigger) then) =
+      _$DroneCronTriggerCopyWithImpl<$Res>;
   $Res call(
       {String uid,
       String namespace,
@@ -153,18 +153,19 @@ abstract class $CronTriggerCopyWith<$Res> {
       bool protected,
       bool ignoreForks,
       bool ignorePullRequests,
-      Permission permissions});
+      DronePermission permissions});
 
-  $PermissionCopyWith<$Res> get permissions;
+  $DronePermissionCopyWith<$Res> get permissions;
 }
 
 /// @nodoc
-class _$CronTriggerCopyWithImpl<$Res> implements $CronTriggerCopyWith<$Res> {
-  _$CronTriggerCopyWithImpl(this._value, this._then);
+class _$DroneCronTriggerCopyWithImpl<$Res>
+    implements $DroneCronTriggerCopyWith<$Res> {
+  _$DroneCronTriggerCopyWithImpl(this._value, this._then);
 
-  final CronTrigger _value;
+  final DroneCronTrigger _value;
   // ignore: unused_field
-  final $Res Function(CronTrigger) _then;
+  final $Res Function(DroneCronTrigger) _then;
 
   @override
   $Res call({
@@ -299,24 +300,24 @@ class _$CronTriggerCopyWithImpl<$Res> implements $CronTriggerCopyWith<$Res> {
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission,
+              as DronePermission,
     ));
   }
 
   @override
-  $PermissionCopyWith<$Res> get permissions {
-    return $PermissionCopyWith<$Res>(_value.permissions, (value) {
+  $DronePermissionCopyWith<$Res> get permissions {
+    return $DronePermissionCopyWith<$Res>(_value.permissions, (value) {
       return _then(_value.copyWith(permissions: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$CronTriggerCopyWith<$Res>
-    implements $CronTriggerCopyWith<$Res> {
-  factory _$CronTriggerCopyWith(
-          _CronTrigger value, $Res Function(_CronTrigger) then) =
-      __$CronTriggerCopyWithImpl<$Res>;
+abstract class _$DroneCronTriggerCopyWith<$Res>
+    implements $DroneCronTriggerCopyWith<$Res> {
+  factory _$DroneCronTriggerCopyWith(
+          _DroneCronTrigger value, $Res Function(_DroneCronTrigger) then) =
+      __$DroneCronTriggerCopyWithImpl<$Res>;
   @override
   $Res call(
       {String uid,
@@ -344,21 +345,22 @@ abstract class _$CronTriggerCopyWith<$Res>
       bool protected,
       bool ignoreForks,
       bool ignorePullRequests,
-      Permission permissions});
+      DronePermission permissions});
 
   @override
-  $PermissionCopyWith<$Res> get permissions;
+  $DronePermissionCopyWith<$Res> get permissions;
 }
 
 /// @nodoc
-class __$CronTriggerCopyWithImpl<$Res> extends _$CronTriggerCopyWithImpl<$Res>
-    implements _$CronTriggerCopyWith<$Res> {
-  __$CronTriggerCopyWithImpl(
-      _CronTrigger _value, $Res Function(_CronTrigger) _then)
-      : super(_value, (v) => _then(v as _CronTrigger));
+class __$DroneCronTriggerCopyWithImpl<$Res>
+    extends _$DroneCronTriggerCopyWithImpl<$Res>
+    implements _$DroneCronTriggerCopyWith<$Res> {
+  __$DroneCronTriggerCopyWithImpl(
+      _DroneCronTrigger _value, $Res Function(_DroneCronTrigger) _then)
+      : super(_value, (v) => _then(v as _DroneCronTrigger));
 
   @override
-  _CronTrigger get _value => super._value as _CronTrigger;
+  _DroneCronTrigger get _value => super._value as _DroneCronTrigger;
 
   @override
   $Res call({
@@ -389,7 +391,7 @@ class __$CronTriggerCopyWithImpl<$Res> extends _$CronTriggerCopyWithImpl<$Res>
     Object? ignorePullRequests = freezed,
     Object? permissions = freezed,
   }) {
-    return _then(_CronTrigger(
+    return _then(_DroneCronTrigger(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
@@ -493,7 +495,7 @@ class __$CronTriggerCopyWithImpl<$Res> extends _$CronTriggerCopyWithImpl<$Res>
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission,
+              as DronePermission,
     ));
   }
 }
@@ -501,8 +503,8 @@ class __$CronTriggerCopyWithImpl<$Res> extends _$CronTriggerCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_CronTrigger implements _CronTrigger {
-  const _$_CronTrigger(
+class _$_DroneCronTrigger implements _DroneCronTrigger {
+  const _$_DroneCronTrigger(
       {this.uid = '',
       this.namespace = '',
       this.name = '',
@@ -528,10 +530,10 @@ class _$_CronTrigger implements _CronTrigger {
       this.protected = false,
       this.ignoreForks = false,
       this.ignorePullRequests = false,
-      this.permissions = const Permission()});
+      this.permissions = const DronePermission()});
 
-  factory _$_CronTrigger.fromJson(Map<String, dynamic> json) =>
-      _$$_CronTriggerFromJson(json);
+  factory _$_DroneCronTrigger.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneCronTriggerFromJson(json);
 
   @JsonKey()
   @override
@@ -610,18 +612,18 @@ class _$_CronTrigger implements _CronTrigger {
   final bool ignorePullRequests;
   @JsonKey()
   @override
-  final Permission permissions;
+  final DronePermission permissions;
 
   @override
   String toString() {
-    return 'CronTrigger(uid: $uid, namespace: $namespace, name: $name, slug: $slug, scm: $scm, gitHttpUrl: $gitHttpUrl, gitSshUrl: $gitSshUrl, link: $link, defaultBranch: $defaultBranch, visibility: $visibility, configPath: $configPath, id: $id, userId: $userId, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, timeout: $timeout, private: $private, active: $active, trusted: $trusted, protected: $protected, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, permissions: $permissions)';
+    return 'DroneCronTrigger(uid: $uid, namespace: $namespace, name: $name, slug: $slug, scm: $scm, gitHttpUrl: $gitHttpUrl, gitSshUrl: $gitSshUrl, link: $link, defaultBranch: $defaultBranch, visibility: $visibility, configPath: $configPath, id: $id, userId: $userId, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, timeout: $timeout, private: $private, active: $active, trusted: $trusted, protected: $protected, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, permissions: $permissions)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CronTrigger &&
+            other is _DroneCronTrigger &&
             const DeepCollectionEquality().equals(other.uid, uid) &&
             const DeepCollectionEquality().equals(other.namespace, namespace) &&
             const DeepCollectionEquality().equals(other.name, name) &&
@@ -690,17 +692,17 @@ class _$_CronTrigger implements _CronTrigger {
 
   @JsonKey(ignore: true)
   @override
-  _$CronTriggerCopyWith<_CronTrigger> get copyWith =>
-      __$CronTriggerCopyWithImpl<_CronTrigger>(this, _$identity);
+  _$DroneCronTriggerCopyWith<_DroneCronTrigger> get copyWith =>
+      __$DroneCronTriggerCopyWithImpl<_DroneCronTrigger>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CronTriggerToJson(this);
+    return _$$_DroneCronTriggerToJson(this);
   }
 }
 
-abstract class _CronTrigger implements CronTrigger {
-  const factory _CronTrigger(
+abstract class _DroneCronTrigger implements DroneCronTrigger {
+  const factory _DroneCronTrigger(
       {String uid,
       String namespace,
       String name,
@@ -726,10 +728,10 @@ abstract class _CronTrigger implements CronTrigger {
       bool protected,
       bool ignoreForks,
       bool ignorePullRequests,
-      Permission permissions}) = _$_CronTrigger;
+      DronePermission permissions}) = _$_DroneCronTrigger;
 
-  factory _CronTrigger.fromJson(Map<String, dynamic> json) =
-      _$_CronTrigger.fromJson;
+  factory _DroneCronTrigger.fromJson(Map<String, dynamic> json) =
+      _$_DroneCronTrigger.fromJson;
 
   @override
   String get uid;
@@ -782,9 +784,9 @@ abstract class _CronTrigger implements CronTrigger {
   @override
   bool get ignorePullRequests;
   @override
-  Permission get permissions;
+  DronePermission get permissions;
   @override
   @JsonKey(ignore: true)
-  _$CronTriggerCopyWith<_CronTrigger> get copyWith =>
+  _$DroneCronTriggerCopyWith<_DroneCronTrigger> get copyWith =>
       throw _privateConstructorUsedError;
 }

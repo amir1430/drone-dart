@@ -6,7 +6,8 @@ part of 'build_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Build _$$_BuildFromJson(Map<String, dynamic> json) => _$_Build(
+_$_DroneBuild _$$_DroneBuildFromJson(Map<String, dynamic> json) =>
+    _$_DroneBuild(
       sourceRepo: json['source_repo'] as String? ?? '',
       authorLogin: json['author_login'] as String? ?? '',
       authorName: json['author_name'] as String? ?? '',
@@ -24,6 +25,7 @@ _$_Build _$$_BuildFromJson(Map<String, dynamic> json) => _$_Build(
       source: json['source'] as String? ?? '',
       target: json['target'] as String? ?? '',
       sender: json['sender'] as String? ?? '',
+      deployTo: json['deploy_to'] as String? ?? null,
       repoId: json['repo_id'] as int? ?? 0,
       id: json['id'] as int? ?? 0,
       number: json['number'] as int? ?? 0,
@@ -34,12 +36,13 @@ _$_Build _$$_BuildFromJson(Map<String, dynamic> json) => _$_Build(
       updated: json['updated'] as int? ?? 0,
       version: json['version'] as int? ?? 0,
       stages: (json['stages'] as List<dynamic>?)
-              ?.map((e) => Stage.fromJson(e as Map<String, dynamic>))
+              ?.map((e) => DroneStage.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],
     );
 
-Map<String, dynamic> _$$_BuildToJson(_$_Build instance) => <String, dynamic>{
+Map<String, dynamic> _$$_DroneBuildToJson(_$_DroneBuild instance) =>
+    <String, dynamic>{
       'source_repo': instance.sourceRepo,
       'author_login': instance.authorLogin,
       'author_name': instance.authorName,
@@ -57,6 +60,7 @@ Map<String, dynamic> _$$_BuildToJson(_$_Build instance) => <String, dynamic>{
       'source': instance.source,
       'target': instance.target,
       'sender': instance.sender,
+      'deploy_to': instance.deployTo,
       'repo_id': instance.repoId,
       'id': instance.id,
       'number': instance.number,

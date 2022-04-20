@@ -3,7 +3,8 @@ import 'dart:convert';
 
 import 'package:drone_dart/drone_dart.dart';
 
-class EventToRepoTransformer implements StreamTransformer<List<int>, Repo> {
+class EventToRepoTransformer
+    implements StreamTransformer<List<int>, DroneRepo> {
   EventToRepoTransformer() {
     _controller = StreamController.broadcast(
       onListen: () {
@@ -17,7 +18,7 @@ class EventToRepoTransformer implements StreamTransformer<List<int>, Repo> {
               if (data != null) {
                 final matcher = _removeEndingNewlineRegex.firstMatch(data!);
                 data = matcher?.group(1);
-                _controller.add(Repo.fromJson(jsonDecode(data!)));
+                _controller.add(DroneRepo.fromJson(jsonDecode(data!)));
               }
               data = null;
               return;
@@ -44,11 +45,11 @@ class EventToRepoTransformer implements StreamTransformer<List<int>, Repo> {
   static final _removeEndingNewlineRegex = RegExp(r'^((?:.|\n)*)\n$');
 
   late StreamSubscription _subscription;
-  late final StreamController<Repo> _controller;
+  late final StreamController<DroneRepo> _controller;
   late Stream<List<int>> _stream;
 
   @override
-  Stream<Repo> bind(Stream<List<int>> stream) {
+  Stream<DroneRepo> bind(Stream<List<int>> stream) {
     _stream = stream;
     return _controller.stream;
   }

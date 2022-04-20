@@ -6,9 +6,9 @@ part 'build_model.freezed.dart';
 part 'build_model.g.dart';
 
 @freezed
-class Build with _$Build {
+class DroneBuild with _$DroneBuild {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Build({
+  const factory DroneBuild({
     @Default('') String sourceRepo,
     @Default('') String authorLogin,
     @Default('') String authorName,
@@ -26,6 +26,7 @@ class Build with _$Build {
     @Default('') String source,
     @Default('') String target,
     @Default('') String sender,
+    @Default(null) String? deployTo,
     @Default(0) int repoId,
     @Default(0) int id,
     @Default(0) int number,
@@ -35,8 +36,9 @@ class Build with _$Build {
     @Default(0) int created,
     @Default(0) int updated,
     @Default(0) int version,
-    @Default([]) List<Stage> stages,
-  }) = _Build;
+    @Default([]) List<DroneStage> stages,
+  }) = _DroneBuild;
 
-  factory Build.fromJson(Map<String, dynamic> json) => _$BuildFromJson(json);
+  factory DroneBuild.fromJson(Map<String, dynamic> json) =>
+      _$DroneBuildFromJson(json);
 }

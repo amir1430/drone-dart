@@ -6,7 +6,7 @@ part of 'step_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Step _$$_StepFromJson(Map<String, dynamic> json) => _$_Step(
+_$_DroneStep _$$_DroneStepFromJson(Map<String, dynamic> json) => _$_DroneStep(
       name: json['name'] as String? ?? '',
       status: json['status'] as String? ?? '',
       stepId: json['step_id'] as int? ?? 0,
@@ -18,7 +18,8 @@ _$_Step _$$_StepFromJson(Map<String, dynamic> json) => _$_Step(
       version: json['version'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_StepToJson(_$_Step instance) => <String, dynamic>{
+Map<String, dynamic> _$$_DroneStepToJson(_$_DroneStep instance) =>
+    <String, dynamic>{
       'name': instance.name,
       'status': instance.status,
       'step_id': instance.stepId,

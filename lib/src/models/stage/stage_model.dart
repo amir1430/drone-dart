@@ -6,9 +6,9 @@ part 'stage_model.freezed.dart';
 part 'stage_model.g.dart';
 
 @freezed
-class Stage with _$Stage {
+class DroneStage with _$DroneStage {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Stage({
+  const factory DroneStage({
     @Default('') String name,
     @Default('') String kind,
     @Default('') String type,
@@ -29,8 +29,9 @@ class Stage with _$Stage {
     @Default(false) bool onSuccess,
     @Default(false) bool onFailure,
     @Default(false) bool errignore,
-    @Default([]) List<Step> steps,
-  }) = _Stage;
+    @Default([]) List<DroneStep> steps,
+  }) = _DroneStage;
 
-  factory Stage.fromJson(Map<String, dynamic> json) => _$StageFromJson(json);
+  factory DroneStage.fromJson(Map<String, dynamic> json) =>
+      _$DroneStageFromJson(json);
 }

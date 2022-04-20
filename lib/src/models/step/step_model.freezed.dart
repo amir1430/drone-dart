@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Step _$StepFromJson(Map<String, dynamic> json) {
-  return _Step.fromJson(json);
+DroneStep _$DroneStepFromJson(Map<String, dynamic> json) {
+  return _DroneStep.fromJson(json);
 }
 
 /// @nodoc
-class _$StepTearOff {
-  const _$StepTearOff();
+class _$DroneStepTearOff {
+  const _$DroneStepTearOff();
 
-  _Step call(
+  _DroneStep call(
       {String name = '',
       String status = '',
       int stepId = 0,
@@ -32,7 +32,7 @@ class _$StepTearOff {
       int started = 0,
       int stopped = 0,
       int version = 0}) {
-    return _Step(
+    return _DroneStep(
       name: name,
       status: status,
       stepId: stepId,
@@ -45,16 +45,16 @@ class _$StepTearOff {
     );
   }
 
-  Step fromJson(Map<String, Object?> json) {
-    return Step.fromJson(json);
+  DroneStep fromJson(Map<String, Object?> json) {
+    return DroneStep.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Step = _$StepTearOff();
+const $DroneStep = _$DroneStepTearOff();
 
 /// @nodoc
-mixin _$Step {
+mixin _$DroneStep {
   String get name => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
   int get stepId => throw _privateConstructorUsedError;
@@ -67,13 +67,14 @@ mixin _$Step {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $StepCopyWith<Step> get copyWith => throw _privateConstructorUsedError;
+  $DroneStepCopyWith<DroneStep> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StepCopyWith<$Res> {
-  factory $StepCopyWith(Step value, $Res Function(Step) then) =
-      _$StepCopyWithImpl<$Res>;
+abstract class $DroneStepCopyWith<$Res> {
+  factory $DroneStepCopyWith(DroneStep value, $Res Function(DroneStep) then) =
+      _$DroneStepCopyWithImpl<$Res>;
   $Res call(
       {String name,
       String status,
@@ -87,12 +88,12 @@ abstract class $StepCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$StepCopyWithImpl<$Res> implements $StepCopyWith<$Res> {
-  _$StepCopyWithImpl(this._value, this._then);
+class _$DroneStepCopyWithImpl<$Res> implements $DroneStepCopyWith<$Res> {
+  _$DroneStepCopyWithImpl(this._value, this._then);
 
-  final Step _value;
+  final DroneStep _value;
   // ignore: unused_field
-  final $Res Function(Step) _then;
+  final $Res Function(DroneStep) _then;
 
   @override
   $Res call({
@@ -148,9 +149,10 @@ class _$StepCopyWithImpl<$Res> implements $StepCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$StepCopyWith<$Res> implements $StepCopyWith<$Res> {
-  factory _$StepCopyWith(_Step value, $Res Function(_Step) then) =
-      __$StepCopyWithImpl<$Res>;
+abstract class _$DroneStepCopyWith<$Res> implements $DroneStepCopyWith<$Res> {
+  factory _$DroneStepCopyWith(
+          _DroneStep value, $Res Function(_DroneStep) then) =
+      __$DroneStepCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name,
@@ -165,13 +167,13 @@ abstract class _$StepCopyWith<$Res> implements $StepCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
-    implements _$StepCopyWith<$Res> {
-  __$StepCopyWithImpl(_Step _value, $Res Function(_Step) _then)
-      : super(_value, (v) => _then(v as _Step));
+class __$DroneStepCopyWithImpl<$Res> extends _$DroneStepCopyWithImpl<$Res>
+    implements _$DroneStepCopyWith<$Res> {
+  __$DroneStepCopyWithImpl(_DroneStep _value, $Res Function(_DroneStep) _then)
+      : super(_value, (v) => _then(v as _DroneStep));
 
   @override
-  _Step get _value => super._value as _Step;
+  _DroneStep get _value => super._value as _DroneStep;
 
   @override
   $Res call({
@@ -185,7 +187,7 @@ class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
     Object? stopped = freezed,
     Object? version = freezed,
   }) {
-    return _then(_Step(
+    return _then(_DroneStep(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -229,8 +231,8 @@ class __$StepCopyWithImpl<$Res> extends _$StepCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_Step implements _Step {
-  const _$_Step(
+class _$_DroneStep implements _DroneStep {
+  const _$_DroneStep(
       {this.name = '',
       this.status = '',
       this.stepId = 0,
@@ -241,7 +243,8 @@ class _$_Step implements _Step {
       this.stopped = 0,
       this.version = 0});
 
-  factory _$_Step.fromJson(Map<String, dynamic> json) => _$$_StepFromJson(json);
+  factory _$_DroneStep.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneStepFromJson(json);
 
   @JsonKey()
   @override
@@ -273,14 +276,14 @@ class _$_Step implements _Step {
 
   @override
   String toString() {
-    return 'Step(name: $name, status: $status, stepId: $stepId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, version: $version)';
+    return 'DroneStep(name: $name, status: $status, stepId: $stepId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, version: $version)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Step &&
+            other is _DroneStep &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality().equals(other.stepId, stepId) &&
@@ -307,17 +310,17 @@ class _$_Step implements _Step {
 
   @JsonKey(ignore: true)
   @override
-  _$StepCopyWith<_Step> get copyWith =>
-      __$StepCopyWithImpl<_Step>(this, _$identity);
+  _$DroneStepCopyWith<_DroneStep> get copyWith =>
+      __$DroneStepCopyWithImpl<_DroneStep>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StepToJson(this);
+    return _$$_DroneStepToJson(this);
   }
 }
 
-abstract class _Step implements Step {
-  const factory _Step(
+abstract class _DroneStep implements DroneStep {
+  const factory _DroneStep(
       {String name,
       String status,
       int stepId,
@@ -326,9 +329,10 @@ abstract class _Step implements Step {
       int number,
       int started,
       int stopped,
-      int version}) = _$_Step;
+      int version}) = _$_DroneStep;
 
-  factory _Step.fromJson(Map<String, dynamic> json) = _$_Step.fromJson;
+  factory _DroneStep.fromJson(Map<String, dynamic> json) =
+      _$_DroneStep.fromJson;
 
   @override
   String get name;
@@ -350,5 +354,6 @@ abstract class _Step implements Step {
   int get version;
   @override
   @JsonKey(ignore: true)
-  _$StepCopyWith<_Step> get copyWith => throw _privateConstructorUsedError;
+  _$DroneStepCopyWith<_DroneStep> get copyWith =>
+      throw _privateConstructorUsedError;
 }

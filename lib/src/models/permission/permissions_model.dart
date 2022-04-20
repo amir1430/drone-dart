@@ -4,13 +4,13 @@ part 'permissions_model.freezed.dart';
 part 'permissions_model.g.dart';
 
 @freezed
-class Permission with _$Permission {
-  const factory Permission({
+class DronePermission with _$DronePermission {
+  const factory DronePermission({
     @Default(false) bool read,
     @Default(false) bool write,
     @Default(false) bool admin,
-  }) = _Permission;
+  }) = _DronePermission;
 
-  factory Permission.fromJson(Map<String, dynamic> json) =>
-      _$PermissionFromJson(json);
+  factory DronePermission.fromJson(Map<String, dynamic> json) =>
+      _$DronePermissionFromJson(json);
 }

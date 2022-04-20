@@ -11,14 +11,14 @@ const jsonData = {
 
 void main() {
   group('repo request body', () {
-    RepoRequestBody createSubject({
+    DroneRepoRequestBody createSubject({
       String configPath = 'configPath',
       bool protected = true,
       bool trusted = true,
       int timeout = 12,
       String visibility = 'visibility',
     }) {
-      return RepoRequestBody(
+      return DroneRepoRequestBody(
         configPath: configPath,
         protected: protected,
         trusted: trusted,

@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Repo _$RepoFromJson(Map<String, dynamic> json) {
-  return _Repo.fromJson(json);
+DroneRepo _$DroneRepoFromJson(Map<String, dynamic> json) {
+  return _DroneRepo.fromJson(json);
 }
 
 /// @nodoc
-class _$RepoTearOff {
-  const _$RepoTearOff();
+class _$DroneRepoTearOff {
+  const _$DroneRepoTearOff();
 
-  _Repo call(
+  _DroneRepo call(
       {String gitSshUrl = '',
       String gitHttpUrl = '',
       String defaultBranch = '',
@@ -52,9 +52,9 @@ class _$RepoTearOff {
       bool active = false,
       bool trusted = false,
       bool protected = false,
-      Permission permissions = const Permission(),
-      Build build = const Build()}) {
-    return _Repo(
+      DronePermission? permissions = null,
+      DroneBuild? build = null}) {
+    return _DroneRepo(
       gitSshUrl: gitSshUrl,
       gitHttpUrl: gitHttpUrl,
       defaultBranch: defaultBranch,
@@ -89,16 +89,16 @@ class _$RepoTearOff {
     );
   }
 
-  Repo fromJson(Map<String, Object?> json) {
-    return Repo.fromJson(json);
+  DroneRepo fromJson(Map<String, Object?> json) {
+    return DroneRepo.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Repo = _$RepoTearOff();
+const $DroneRepo = _$DroneRepoTearOff();
 
 /// @nodoc
-mixin _$Repo {
+mixin _$DroneRepo {
   String get gitSshUrl => throw _privateConstructorUsedError;
   String get gitHttpUrl => throw _privateConstructorUsedError;
   String get defaultBranch => throw _privateConstructorUsedError;
@@ -128,18 +128,19 @@ mixin _$Repo {
   bool get active => throw _privateConstructorUsedError;
   bool get trusted => throw _privateConstructorUsedError;
   bool get protected => throw _privateConstructorUsedError;
-  Permission get permissions => throw _privateConstructorUsedError;
-  Build get build => throw _privateConstructorUsedError;
+  DronePermission? get permissions => throw _privateConstructorUsedError;
+  DroneBuild? get build => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $RepoCopyWith<Repo> get copyWith => throw _privateConstructorUsedError;
+  $DroneRepoCopyWith<DroneRepo> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RepoCopyWith<$Res> {
-  factory $RepoCopyWith(Repo value, $Res Function(Repo) then) =
-      _$RepoCopyWithImpl<$Res>;
+abstract class $DroneRepoCopyWith<$Res> {
+  factory $DroneRepoCopyWith(DroneRepo value, $Res Function(DroneRepo) then) =
+      _$DroneRepoCopyWithImpl<$Res>;
   $Res call(
       {String gitSshUrl,
       String gitHttpUrl,
@@ -170,20 +171,20 @@ abstract class $RepoCopyWith<$Res> {
       bool active,
       bool trusted,
       bool protected,
-      Permission permissions,
-      Build build});
+      DronePermission? permissions,
+      DroneBuild? build});
 
-  $PermissionCopyWith<$Res> get permissions;
-  $BuildCopyWith<$Res> get build;
+  $DronePermissionCopyWith<$Res>? get permissions;
+  $DroneBuildCopyWith<$Res>? get build;
 }
 
 /// @nodoc
-class _$RepoCopyWithImpl<$Res> implements $RepoCopyWith<$Res> {
-  _$RepoCopyWithImpl(this._value, this._then);
+class _$DroneRepoCopyWithImpl<$Res> implements $DroneRepoCopyWith<$Res> {
+  _$DroneRepoCopyWithImpl(this._value, this._then);
 
-  final Repo _value;
+  final DroneRepo _value;
   // ignore: unused_field
-  final $Res Function(Repo) _then;
+  final $Res Function(DroneRepo) _then;
 
   @override
   $Res call({
@@ -339,33 +340,42 @@ class _$RepoCopyWithImpl<$Res> implements $RepoCopyWith<$Res> {
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission,
+              as DronePermission?,
       build: build == freezed
           ? _value.build
           : build // ignore: cast_nullable_to_non_nullable
-              as Build,
+              as DroneBuild?,
     ));
   }
 
   @override
-  $PermissionCopyWith<$Res> get permissions {
-    return $PermissionCopyWith<$Res>(_value.permissions, (value) {
+  $DronePermissionCopyWith<$Res>? get permissions {
+    if (_value.permissions == null) {
+      return null;
+    }
+
+    return $DronePermissionCopyWith<$Res>(_value.permissions!, (value) {
       return _then(_value.copyWith(permissions: value));
     });
   }
 
   @override
-  $BuildCopyWith<$Res> get build {
-    return $BuildCopyWith<$Res>(_value.build, (value) {
+  $DroneBuildCopyWith<$Res>? get build {
+    if (_value.build == null) {
+      return null;
+    }
+
+    return $DroneBuildCopyWith<$Res>(_value.build!, (value) {
       return _then(_value.copyWith(build: value));
     });
   }
 }
 
 /// @nodoc
-abstract class _$RepoCopyWith<$Res> implements $RepoCopyWith<$Res> {
-  factory _$RepoCopyWith(_Repo value, $Res Function(_Repo) then) =
-      __$RepoCopyWithImpl<$Res>;
+abstract class _$DroneRepoCopyWith<$Res> implements $DroneRepoCopyWith<$Res> {
+  factory _$DroneRepoCopyWith(
+          _DroneRepo value, $Res Function(_DroneRepo) then) =
+      __$DroneRepoCopyWithImpl<$Res>;
   @override
   $Res call(
       {String gitSshUrl,
@@ -397,23 +407,23 @@ abstract class _$RepoCopyWith<$Res> implements $RepoCopyWith<$Res> {
       bool active,
       bool trusted,
       bool protected,
-      Permission permissions,
-      Build build});
+      DronePermission? permissions,
+      DroneBuild? build});
 
   @override
-  $PermissionCopyWith<$Res> get permissions;
+  $DronePermissionCopyWith<$Res>? get permissions;
   @override
-  $BuildCopyWith<$Res> get build;
+  $DroneBuildCopyWith<$Res>? get build;
 }
 
 /// @nodoc
-class __$RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
-    implements _$RepoCopyWith<$Res> {
-  __$RepoCopyWithImpl(_Repo _value, $Res Function(_Repo) _then)
-      : super(_value, (v) => _then(v as _Repo));
+class __$DroneRepoCopyWithImpl<$Res> extends _$DroneRepoCopyWithImpl<$Res>
+    implements _$DroneRepoCopyWith<$Res> {
+  __$DroneRepoCopyWithImpl(_DroneRepo _value, $Res Function(_DroneRepo) _then)
+      : super(_value, (v) => _then(v as _DroneRepo));
 
   @override
-  _Repo get _value => super._value as _Repo;
+  _DroneRepo get _value => super._value as _DroneRepo;
 
   @override
   $Res call({
@@ -449,7 +459,7 @@ class __$RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
     Object? permissions = freezed,
     Object? build = freezed,
   }) {
-    return _then(_Repo(
+    return _then(_DroneRepo(
       gitSshUrl: gitSshUrl == freezed
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
@@ -569,11 +579,11 @@ class __$RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
       permissions: permissions == freezed
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
-              as Permission,
+              as DronePermission?,
       build: build == freezed
           ? _value.build
           : build // ignore: cast_nullable_to_non_nullable
-              as Build,
+              as DroneBuild?,
     ));
   }
 }
@@ -581,8 +591,8 @@ class __$RepoCopyWithImpl<$Res> extends _$RepoCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_Repo implements _Repo {
-  const _$_Repo(
+class _$_DroneRepo implements _DroneRepo {
+  const _$_DroneRepo(
       {this.gitSshUrl = '',
       this.gitHttpUrl = '',
       this.defaultBranch = '',
@@ -612,10 +622,11 @@ class _$_Repo implements _Repo {
       this.active = false,
       this.trusted = false,
       this.protected = false,
-      this.permissions = const Permission(),
-      this.build = const Build()});
+      this.permissions = null,
+      this.build = null});
 
-  factory _$_Repo.fromJson(Map<String, dynamic> json) => _$$_RepoFromJson(json);
+  factory _$_DroneRepo.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneRepoFromJson(json);
 
   @JsonKey()
   @override
@@ -706,21 +717,21 @@ class _$_Repo implements _Repo {
   final bool protected;
   @JsonKey()
   @override
-  final Permission permissions;
+  final DronePermission? permissions;
   @JsonKey()
   @override
-  final Build build;
+  final DroneBuild? build;
 
   @override
   String toString() {
-    return 'Repo(gitSshUrl: $gitSshUrl, gitHttpUrl: $gitHttpUrl, defaultBranch: $defaultBranch, configPath: $configPath, uid: $uid, namespace: $namespace, name: $name, slug: $slug, scm: $scm, link: $link, visibility: $visibility, id: $id, userId: $userId, timeout: $timeout, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, autoCancelPullRequests: $autoCancelPullRequests, autoCancelPushes: $autoCancelPushes, autoCancelRunning: $autoCancelRunning, archived: $archived, private: $private, active: $active, trusted: $trusted, protected: $protected, permissions: $permissions, build: $build)';
+    return 'DroneRepo(gitSshUrl: $gitSshUrl, gitHttpUrl: $gitHttpUrl, defaultBranch: $defaultBranch, configPath: $configPath, uid: $uid, namespace: $namespace, name: $name, slug: $slug, scm: $scm, link: $link, visibility: $visibility, id: $id, userId: $userId, timeout: $timeout, counter: $counter, synced: $synced, created: $created, updated: $updated, version: $version, ignoreForks: $ignoreForks, ignorePullRequests: $ignorePullRequests, autoCancelPullRequests: $autoCancelPullRequests, autoCancelPushes: $autoCancelPushes, autoCancelRunning: $autoCancelRunning, archived: $archived, private: $private, active: $active, trusted: $trusted, protected: $protected, permissions: $permissions, build: $build)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Repo &&
+            other is _DroneRepo &&
             const DeepCollectionEquality().equals(other.gitSshUrl, gitSshUrl) &&
             const DeepCollectionEquality()
                 .equals(other.gitHttpUrl, gitHttpUrl) &&
@@ -802,17 +813,17 @@ class _$_Repo implements _Repo {
 
   @JsonKey(ignore: true)
   @override
-  _$RepoCopyWith<_Repo> get copyWith =>
-      __$RepoCopyWithImpl<_Repo>(this, _$identity);
+  _$DroneRepoCopyWith<_DroneRepo> get copyWith =>
+      __$DroneRepoCopyWithImpl<_DroneRepo>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RepoToJson(this);
+    return _$$_DroneRepoToJson(this);
   }
 }
 
-abstract class _Repo implements Repo {
-  const factory _Repo(
+abstract class _DroneRepo implements DroneRepo {
+  const factory _DroneRepo(
       {String gitSshUrl,
       String gitHttpUrl,
       String defaultBranch,
@@ -842,10 +853,11 @@ abstract class _Repo implements Repo {
       bool active,
       bool trusted,
       bool protected,
-      Permission permissions,
-      Build build}) = _$_Repo;
+      DronePermission? permissions,
+      DroneBuild? build}) = _$_DroneRepo;
 
-  factory _Repo.fromJson(Map<String, dynamic> json) = _$_Repo.fromJson;
+  factory _DroneRepo.fromJson(Map<String, dynamic> json) =
+      _$_DroneRepo.fromJson;
 
   @override
   String get gitSshUrl;
@@ -906,10 +918,11 @@ abstract class _Repo implements Repo {
   @override
   bool get protected;
   @override
-  Permission get permissions;
+  DronePermission? get permissions;
   @override
-  Build get build;
+  DroneBuild? get build;
   @override
   @JsonKey(ignore: true)
-  _$RepoCopyWith<_Repo> get copyWith => throw _privateConstructorUsedError;
+  _$DroneRepoCopyWith<_DroneRepo> get copyWith =>
+      throw _privateConstructorUsedError;
 }

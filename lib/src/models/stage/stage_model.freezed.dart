@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Stage _$StageFromJson(Map<String, dynamic> json) {
-  return _Stage.fromJson(json);
+DroneStage _$DroneStageFromJson(Map<String, dynamic> json) {
+  return _DroneStage.fromJson(json);
 }
 
 /// @nodoc
-class _$StageTearOff {
-  const _$StageTearOff();
+class _$DroneStageTearOff {
+  const _$DroneStageTearOff();
 
-  _Stage call(
+  _DroneStage call(
       {String name = '',
       String kind = '',
       String type = '',
@@ -43,8 +43,8 @@ class _$StageTearOff {
       bool onSuccess = false,
       bool onFailure = false,
       bool errignore = false,
-      List<Step> steps = const []}) {
-    return _Stage(
+      List<DroneStep> steps = const []}) {
+    return _DroneStage(
       name: name,
       kind: kind,
       type: type,
@@ -69,16 +69,16 @@ class _$StageTearOff {
     );
   }
 
-  Stage fromJson(Map<String, Object?> json) {
-    return Stage.fromJson(json);
+  DroneStage fromJson(Map<String, Object?> json) {
+    return DroneStage.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Stage = _$StageTearOff();
+const $DroneStage = _$DroneStageTearOff();
 
 /// @nodoc
-mixin _$Stage {
+mixin _$DroneStage {
   String get name => throw _privateConstructorUsedError;
   String get kind => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
@@ -99,17 +99,19 @@ mixin _$Stage {
   bool get onSuccess => throw _privateConstructorUsedError;
   bool get onFailure => throw _privateConstructorUsedError;
   bool get errignore => throw _privateConstructorUsedError;
-  List<Step> get steps => throw _privateConstructorUsedError;
+  List<DroneStep> get steps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $StageCopyWith<Stage> get copyWith => throw _privateConstructorUsedError;
+  $DroneStageCopyWith<DroneStage> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StageCopyWith<$Res> {
-  factory $StageCopyWith(Stage value, $Res Function(Stage) then) =
-      _$StageCopyWithImpl<$Res>;
+abstract class $DroneStageCopyWith<$Res> {
+  factory $DroneStageCopyWith(
+          DroneStage value, $Res Function(DroneStage) then) =
+      _$DroneStageCopyWithImpl<$Res>;
   $Res call(
       {String name,
       String kind,
@@ -131,16 +133,16 @@ abstract class $StageCopyWith<$Res> {
       bool onSuccess,
       bool onFailure,
       bool errignore,
-      List<Step> steps});
+      List<DroneStep> steps});
 }
 
 /// @nodoc
-class _$StageCopyWithImpl<$Res> implements $StageCopyWith<$Res> {
-  _$StageCopyWithImpl(this._value, this._then);
+class _$DroneStageCopyWithImpl<$Res> implements $DroneStageCopyWith<$Res> {
+  _$DroneStageCopyWithImpl(this._value, this._then);
 
-  final Stage _value;
+  final DroneStage _value;
   // ignore: unused_field
-  final $Res Function(Stage) _then;
+  final $Res Function(DroneStage) _then;
 
   @override
   $Res call({
@@ -250,15 +252,16 @@ class _$StageCopyWithImpl<$Res> implements $StageCopyWith<$Res> {
       steps: steps == freezed
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
-              as List<Step>,
+              as List<DroneStep>,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$StageCopyWith<$Res> implements $StageCopyWith<$Res> {
-  factory _$StageCopyWith(_Stage value, $Res Function(_Stage) then) =
-      __$StageCopyWithImpl<$Res>;
+abstract class _$DroneStageCopyWith<$Res> implements $DroneStageCopyWith<$Res> {
+  factory _$DroneStageCopyWith(
+          _DroneStage value, $Res Function(_DroneStage) then) =
+      __$DroneStageCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name,
@@ -281,17 +284,18 @@ abstract class _$StageCopyWith<$Res> implements $StageCopyWith<$Res> {
       bool onSuccess,
       bool onFailure,
       bool errignore,
-      List<Step> steps});
+      List<DroneStep> steps});
 }
 
 /// @nodoc
-class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
-    implements _$StageCopyWith<$Res> {
-  __$StageCopyWithImpl(_Stage _value, $Res Function(_Stage) _then)
-      : super(_value, (v) => _then(v as _Stage));
+class __$DroneStageCopyWithImpl<$Res> extends _$DroneStageCopyWithImpl<$Res>
+    implements _$DroneStageCopyWith<$Res> {
+  __$DroneStageCopyWithImpl(
+      _DroneStage _value, $Res Function(_DroneStage) _then)
+      : super(_value, (v) => _then(v as _DroneStage));
 
   @override
-  _Stage get _value => super._value as _Stage;
+  _DroneStage get _value => super._value as _DroneStage;
 
   @override
   $Res call({
@@ -317,7 +321,7 @@ class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
     Object? errignore = freezed,
     Object? steps = freezed,
   }) {
-    return _then(_Stage(
+    return _then(_DroneStage(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -401,7 +405,7 @@ class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
       steps: steps == freezed
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
-              as List<Step>,
+              as List<DroneStep>,
     ));
   }
 }
@@ -409,8 +413,8 @@ class __$StageCopyWithImpl<$Res> extends _$StageCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_Stage implements _Stage {
-  const _$_Stage(
+class _$_DroneStage implements _DroneStage {
+  const _$_DroneStage(
       {this.name = '',
       this.kind = '',
       this.type = '',
@@ -433,8 +437,8 @@ class _$_Stage implements _Stage {
       this.errignore = false,
       this.steps = const []});
 
-  factory _$_Stage.fromJson(Map<String, dynamic> json) =>
-      _$$_StageFromJson(json);
+  factory _$_DroneStage.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneStageFromJson(json);
 
   @JsonKey()
   @override
@@ -498,18 +502,18 @@ class _$_Stage implements _Stage {
   final bool errignore;
   @JsonKey()
   @override
-  final List<Step> steps;
+  final List<DroneStep> steps;
 
   @override
   String toString() {
-    return 'Stage(name: $name, kind: $kind, type: $type, status: $status, machine: $machine, os: $os, arch: $arch, repoId: $repoId, buildId: $buildId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, created: $created, updated: $updated, version: $version, onSuccess: $onSuccess, onFailure: $onFailure, errignore: $errignore, steps: $steps)';
+    return 'DroneStage(name: $name, kind: $kind, type: $type, status: $status, machine: $machine, os: $os, arch: $arch, repoId: $repoId, buildId: $buildId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, created: $created, updated: $updated, version: $version, onSuccess: $onSuccess, onFailure: $onFailure, errignore: $errignore, steps: $steps)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Stage &&
+            other is _DroneStage &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.kind, kind) &&
             const DeepCollectionEquality().equals(other.type, type) &&
@@ -561,17 +565,17 @@ class _$_Stage implements _Stage {
 
   @JsonKey(ignore: true)
   @override
-  _$StageCopyWith<_Stage> get copyWith =>
-      __$StageCopyWithImpl<_Stage>(this, _$identity);
+  _$DroneStageCopyWith<_DroneStage> get copyWith =>
+      __$DroneStageCopyWithImpl<_DroneStage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StageToJson(this);
+    return _$$_DroneStageToJson(this);
   }
 }
 
-abstract class _Stage implements Stage {
-  const factory _Stage(
+abstract class _DroneStage implements DroneStage {
+  const factory _DroneStage(
       {String name,
       String kind,
       String type,
@@ -592,9 +596,10 @@ abstract class _Stage implements Stage {
       bool onSuccess,
       bool onFailure,
       bool errignore,
-      List<Step> steps}) = _$_Stage;
+      List<DroneStep> steps}) = _$_DroneStage;
 
-  factory _Stage.fromJson(Map<String, dynamic> json) = _$_Stage.fromJson;
+  factory _DroneStage.fromJson(Map<String, dynamic> json) =
+      _$_DroneStage.fromJson;
 
   @override
   String get name;
@@ -637,8 +642,9 @@ abstract class _Stage implements Stage {
   @override
   bool get errignore;
   @override
-  List<Step> get steps;
+  List<DroneStep> get steps;
   @override
   @JsonKey(ignore: true)
-  _$StageCopyWith<_Stage> get copyWith => throw _privateConstructorUsedError;
+  _$DroneStageCopyWith<_DroneStage> get copyWith =>
+      throw _privateConstructorUsedError;
 }

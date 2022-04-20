@@ -1,5 +1,5 @@
-class RepoRequestBody {
-  const RepoRequestBody({
+class DroneRepoRequestBody {
+  const DroneRepoRequestBody({
     required this.configPath,
     required this.protected,
     required this.trusted,

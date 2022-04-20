@@ -18,7 +18,7 @@ final jsonData = {
 
 void main() {
   group('user model', () {
-    User createSubject({
+    DroneUser createSubject({
       int id = 1,
       String login = 'login',
       String email = 'email',
@@ -32,7 +32,7 @@ void main() {
       int updated = 123,
       int lastLogin = 1,
     }) {
-      return User(
+      return DroneUser(
         id: id,
         login: login,
         email: email,
@@ -86,7 +86,7 @@ void main() {
 
     group('fromJson', () {
       test('works fine', () {
-        expect(User.fromJson(jsonData), equals(createSubject()));
+        expect(DroneUser.fromJson(jsonData), equals(createSubject()));
       });
     });
   });

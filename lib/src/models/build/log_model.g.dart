@@ -6,13 +6,13 @@ part of 'log_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_LogModel _$$_LogModelFromJson(Map<String, dynamic> json) => _$_LogModel(
+_$_DroneLog _$$_DroneLogFromJson(Map<String, dynamic> json) => _$_DroneLog(
       time: json['time'] as int,
       pos: json['pos'] as int,
       out: json['out'] as String,
     );
 
-Map<String, dynamic> _$$_LogModelToJson(_$_LogModel instance) =>
+Map<String, dynamic> _$$_DroneLogToJson(_$_DroneLog instance) =>
     <String, dynamic>{
       'time': instance.time,
       'pos': instance.pos,

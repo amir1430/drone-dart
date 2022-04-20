@@ -4,9 +4,9 @@ part 'step_model.freezed.dart';
 part 'step_model.g.dart';
 
 @freezed
-class Step with _$Step {
+class DroneStep with _$DroneStep {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory Step({
+  const factory DroneStep({
     @Default('') String name,
     @Default('') String status,
     @Default(0) int stepId,
@@ -16,7 +16,8 @@ class Step with _$Step {
     @Default(0) int started,
     @Default(0) int stopped,
     @Default(0) int version,
-  }) = _Step;
+  }) = _DroneStep;
 
-  factory Step.fromJson(Map<String, dynamic> json) => _$StepFromJson(json);
+  factory DroneStep.fromJson(Map<String, dynamic> json) =>
+      _$DroneStepFromJson(json);
 }

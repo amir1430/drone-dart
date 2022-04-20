@@ -6,7 +6,7 @@ part of 'cron_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Cron _$$_CronFromJson(Map<String, dynamic> json) => _$_Cron(
+_$_DroneCron _$$_DroneCronFromJson(Map<String, dynamic> json) => _$_DroneCron(
       name: json['name'] as String? ?? '',
       expr: json['expr'] as String? ?? '',
       branch: json['branch'] as String? ?? '',
@@ -18,7 +18,8 @@ _$_Cron _$$_CronFromJson(Map<String, dynamic> json) => _$_Cron(
       updated: json['updated'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$$_CronToJson(_$_Cron instance) => <String, dynamic>{
+Map<String, dynamic> _$$_DroneCronToJson(_$_DroneCron instance) =>
+    <String, dynamic>{
       'name': instance.name,
       'expr': instance.expr,
       'branch': instance.branch,

@@ -14,15 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Cron _$CronFromJson(Map<String, dynamic> json) {
-  return _Cron.fromJson(json);
+DroneCron _$DroneCronFromJson(Map<String, dynamic> json) {
+  return _DroneCron.fromJson(json);
 }
 
 /// @nodoc
-class _$CronTearOff {
-  const _$CronTearOff();
+class _$DroneCronTearOff {
+  const _$DroneCronTearOff();
 
-  _Cron call(
+  _DroneCron call(
       {String name = '',
       String expr = '',
       String branch = '',
@@ -32,7 +32,7 @@ class _$CronTearOff {
       int pref = 0,
       int created = 0,
       int updated = 0}) {
-    return _Cron(
+    return _DroneCron(
       name: name,
       expr: expr,
       branch: branch,
@@ -45,16 +45,16 @@ class _$CronTearOff {
     );
   }
 
-  Cron fromJson(Map<String, Object?> json) {
-    return Cron.fromJson(json);
+  DroneCron fromJson(Map<String, Object?> json) {
+    return DroneCron.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Cron = _$CronTearOff();
+const $DroneCron = _$DroneCronTearOff();
 
 /// @nodoc
-mixin _$Cron {
+mixin _$DroneCron {
   String get name => throw _privateConstructorUsedError;
   String get expr => throw _privateConstructorUsedError;
   String get branch => throw _privateConstructorUsedError;
@@ -67,13 +67,14 @@ mixin _$Cron {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CronCopyWith<Cron> get copyWith => throw _privateConstructorUsedError;
+  $DroneCronCopyWith<DroneCron> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CronCopyWith<$Res> {
-  factory $CronCopyWith(Cron value, $Res Function(Cron) then) =
-      _$CronCopyWithImpl<$Res>;
+abstract class $DroneCronCopyWith<$Res> {
+  factory $DroneCronCopyWith(DroneCron value, $Res Function(DroneCron) then) =
+      _$DroneCronCopyWithImpl<$Res>;
   $Res call(
       {String name,
       String expr,
@@ -87,12 +88,12 @@ abstract class $CronCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$CronCopyWithImpl<$Res> implements $CronCopyWith<$Res> {
-  _$CronCopyWithImpl(this._value, this._then);
+class _$DroneCronCopyWithImpl<$Res> implements $DroneCronCopyWith<$Res> {
+  _$DroneCronCopyWithImpl(this._value, this._then);
 
-  final Cron _value;
+  final DroneCron _value;
   // ignore: unused_field
-  final $Res Function(Cron) _then;
+  final $Res Function(DroneCron) _then;
 
   @override
   $Res call({
@@ -148,9 +149,10 @@ class _$CronCopyWithImpl<$Res> implements $CronCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CronCopyWith<$Res> implements $CronCopyWith<$Res> {
-  factory _$CronCopyWith(_Cron value, $Res Function(_Cron) then) =
-      __$CronCopyWithImpl<$Res>;
+abstract class _$DroneCronCopyWith<$Res> implements $DroneCronCopyWith<$Res> {
+  factory _$DroneCronCopyWith(
+          _DroneCron value, $Res Function(_DroneCron) then) =
+      __$DroneCronCopyWithImpl<$Res>;
   @override
   $Res call(
       {String name,
@@ -165,13 +167,13 @@ abstract class _$CronCopyWith<$Res> implements $CronCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$CronCopyWithImpl<$Res> extends _$CronCopyWithImpl<$Res>
-    implements _$CronCopyWith<$Res> {
-  __$CronCopyWithImpl(_Cron _value, $Res Function(_Cron) _then)
-      : super(_value, (v) => _then(v as _Cron));
+class __$DroneCronCopyWithImpl<$Res> extends _$DroneCronCopyWithImpl<$Res>
+    implements _$DroneCronCopyWith<$Res> {
+  __$DroneCronCopyWithImpl(_DroneCron _value, $Res Function(_DroneCron) _then)
+      : super(_value, (v) => _then(v as _DroneCron));
 
   @override
-  _Cron get _value => super._value as _Cron;
+  _DroneCron get _value => super._value as _DroneCron;
 
   @override
   $Res call({
@@ -185,7 +187,7 @@ class __$CronCopyWithImpl<$Res> extends _$CronCopyWithImpl<$Res>
     Object? created = freezed,
     Object? updated = freezed,
   }) {
-    return _then(_Cron(
+    return _then(_DroneCron(
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -229,8 +231,8 @@ class __$CronCopyWithImpl<$Res> extends _$CronCopyWithImpl<$Res>
 /// @nodoc
 
 @JsonSerializable(fieldRename: FieldRename.snake)
-class _$_Cron implements _Cron {
-  const _$_Cron(
+class _$_DroneCron implements _DroneCron {
+  const _$_DroneCron(
       {this.name = '',
       this.expr = '',
       this.branch = '',
@@ -241,7 +243,8 @@ class _$_Cron implements _Cron {
       this.created = 0,
       this.updated = 0});
 
-  factory _$_Cron.fromJson(Map<String, dynamic> json) => _$$_CronFromJson(json);
+  factory _$_DroneCron.fromJson(Map<String, dynamic> json) =>
+      _$$_DroneCronFromJson(json);
 
   @JsonKey()
   @override
@@ -273,14 +276,14 @@ class _$_Cron implements _Cron {
 
   @override
   String toString() {
-    return 'Cron(name: $name, expr: $expr, branch: $branch, id: $id, repoId: $repoId, next: $next, pref: $pref, created: $created, updated: $updated)';
+    return 'DroneCron(name: $name, expr: $expr, branch: $branch, id: $id, repoId: $repoId, next: $next, pref: $pref, created: $created, updated: $updated)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Cron &&
+            other is _DroneCron &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.expr, expr) &&
             const DeepCollectionEquality().equals(other.branch, branch) &&
@@ -307,17 +310,17 @@ class _$_Cron implements _Cron {
 
   @JsonKey(ignore: true)
   @override
-  _$CronCopyWith<_Cron> get copyWith =>
-      __$CronCopyWithImpl<_Cron>(this, _$identity);
+  _$DroneCronCopyWith<_DroneCron> get copyWith =>
+      __$DroneCronCopyWithImpl<_DroneCron>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CronToJson(this);
+    return _$$_DroneCronToJson(this);
   }
 }
 
-abstract class _Cron implements Cron {
-  const factory _Cron(
+abstract class _DroneCron implements DroneCron {
+  const factory _DroneCron(
       {String name,
       String expr,
       String branch,
@@ -326,9 +329,10 @@ abstract class _Cron implements Cron {
       int next,
       int pref,
       int created,
-      int updated}) = _$_Cron;
+      int updated}) = _$_DroneCron;
 
-  factory _Cron.fromJson(Map<String, dynamic> json) = _$_Cron.fromJson;
+  factory _DroneCron.fromJson(Map<String, dynamic> json) =
+      _$_DroneCron.fromJson;
 
   @override
   String get name;
@@ -350,5 +354,6 @@ abstract class _Cron implements Cron {
   int get updated;
   @override
   @JsonKey(ignore: true)
-  _$CronCopyWith<_Cron> get copyWith => throw _privateConstructorUsedError;
+  _$DroneCronCopyWith<_DroneCron> get copyWith =>
+      throw _privateConstructorUsedError;
 }

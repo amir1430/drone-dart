@@ -4,9 +4,9 @@ part 'user_model.freezed.dart';
 part 'user_model.g.dart';
 
 @freezed
-class User with _$User {
+class DroneUser with _$DroneUser {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory User({
+  const factory DroneUser({
     @Default('') String login,
     @Default('') String email,
     @Default('') String avatar,
@@ -20,7 +20,8 @@ class User with _$User {
     @Default(false) bool admin,
     @Default(false) bool active,
     @Default(false) bool syncing,
-  }) = _User;
+  }) = _DroneUser;
 
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+  factory DroneUser.fromJson(Map<String, dynamic> json) =>
+      _$DroneUserFromJson(json);
 }

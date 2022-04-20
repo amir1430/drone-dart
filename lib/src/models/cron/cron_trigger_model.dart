@@ -5,9 +5,9 @@ part 'cron_trigger_model.freezed.dart';
 part 'cron_trigger_model.g.dart';
 
 @freezed
-class CronTrigger with _$CronTrigger {
+class DroneCronTrigger with _$DroneCronTrigger {
   @JsonSerializable(fieldRename: FieldRename.snake)
-  const factory CronTrigger({
+  const factory DroneCronTrigger({
     @Default('') String uid,
     @Default('') String namespace,
     @Default('') String name,
@@ -33,9 +33,9 @@ class CronTrigger with _$CronTrigger {
     @Default(false) bool protected,
     @Default(false) bool ignoreForks,
     @Default(false) bool ignorePullRequests,
-    @Default(Permission()) Permission permissions,
-  }) = _CronTrigger;
+    @Default(DronePermission()) DronePermission permissions,
+  }) = _DroneCronTrigger;
 
-  factory CronTrigger.fromJson(Map<String, dynamic> json) =>
-      _$CronTriggerFromJson(json);
+  factory DroneCronTrigger.fromJson(Map<String, dynamic> json) =>
+      _$DroneCronTriggerFromJson(json);
 }

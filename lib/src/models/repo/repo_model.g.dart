@@ -6,7 +6,7 @@ part of 'repo_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Repo _$$_RepoFromJson(Map<String, dynamic> json) => _$_Repo(
+_$_DroneRepo _$$_DroneRepoFromJson(Map<String, dynamic> json) => _$_DroneRepo(
       gitSshUrl: json['git_ssh_url'] as String? ?? '',
       gitHttpUrl: json['git_http_url'] as String? ?? '',
       defaultBranch: json['default_branch'] as String? ?? '',
@@ -38,14 +38,16 @@ _$_Repo _$$_RepoFromJson(Map<String, dynamic> json) => _$_Repo(
       trusted: json['trusted'] as bool? ?? false,
       protected: json['protected'] as bool? ?? false,
       permissions: json['permissions'] == null
-          ? const Permission()
-          : Permission.fromJson(json['permissions'] as Map<String, dynamic>),
+          ? null
+          : DronePermission.fromJson(
+              json['permissions'] as Map<String, dynamic>),
       build: json['build'] == null
-          ? const Build()
-          : Build.fromJson(json['build'] as Map<String, dynamic>),
+          ? null
+          : DroneBuild.fromJson(json['build'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$$_RepoToJson(_$_Repo instance) => <String, dynamic>{
+Map<String, dynamic> _$$_DroneRepoToJson(_$_DroneRepo instance) =>
+    <String, dynamic>{
       'git_ssh_url': instance.gitSshUrl,
       'git_http_url': instance.gitHttpUrl,
       'default_branch': instance.defaultBranch,

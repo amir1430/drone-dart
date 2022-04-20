@@ -14,58 +14,59 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Permission _$PermissionFromJson(Map<String, dynamic> json) {
-  return _Permission.fromJson(json);
+DronePermission _$DronePermissionFromJson(Map<String, dynamic> json) {
+  return _DronePermission.fromJson(json);
 }
 
 /// @nodoc
-class _$PermissionTearOff {
-  const _$PermissionTearOff();
+class _$DronePermissionTearOff {
+  const _$DronePermissionTearOff();
 
-  _Permission call(
+  _DronePermission call(
       {bool read = false, bool write = false, bool admin = false}) {
-    return _Permission(
+    return _DronePermission(
       read: read,
       write: write,
       admin: admin,
     );
   }
 
-  Permission fromJson(Map<String, Object?> json) {
-    return Permission.fromJson(json);
+  DronePermission fromJson(Map<String, Object?> json) {
+    return DronePermission.fromJson(json);
   }
 }
 
 /// @nodoc
-const $Permission = _$PermissionTearOff();
+const $DronePermission = _$DronePermissionTearOff();
 
 /// @nodoc
-mixin _$Permission {
+mixin _$DronePermission {
   bool get read => throw _privateConstructorUsedError;
   bool get write => throw _privateConstructorUsedError;
   bool get admin => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PermissionCopyWith<Permission> get copyWith =>
+  $DronePermissionCopyWith<DronePermission> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $PermissionCopyWith<$Res> {
-  factory $PermissionCopyWith(
-          Permission value, $Res Function(Permission) then) =
-      _$PermissionCopyWithImpl<$Res>;
+abstract class $DronePermissionCopyWith<$Res> {
+  factory $DronePermissionCopyWith(
+          DronePermission value, $Res Function(DronePermission) then) =
+      _$DronePermissionCopyWithImpl<$Res>;
   $Res call({bool read, bool write, bool admin});
 }
 
 /// @nodoc
-class _$PermissionCopyWithImpl<$Res> implements $PermissionCopyWith<$Res> {
-  _$PermissionCopyWithImpl(this._value, this._then);
+class _$DronePermissionCopyWithImpl<$Res>
+    implements $DronePermissionCopyWith<$Res> {
+  _$DronePermissionCopyWithImpl(this._value, this._then);
 
-  final Permission _value;
+  final DronePermission _value;
   // ignore: unused_field
-  final $Res Function(Permission) _then;
+  final $Res Function(DronePermission) _then;
 
   @override
   $Res call({
@@ -91,23 +92,25 @@ class _$PermissionCopyWithImpl<$Res> implements $PermissionCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$PermissionCopyWith<$Res> implements $PermissionCopyWith<$Res> {
-  factory _$PermissionCopyWith(
-          _Permission value, $Res Function(_Permission) then) =
-      __$PermissionCopyWithImpl<$Res>;
+abstract class _$DronePermissionCopyWith<$Res>
+    implements $DronePermissionCopyWith<$Res> {
+  factory _$DronePermissionCopyWith(
+          _DronePermission value, $Res Function(_DronePermission) then) =
+      __$DronePermissionCopyWithImpl<$Res>;
   @override
   $Res call({bool read, bool write, bool admin});
 }
 
 /// @nodoc
-class __$PermissionCopyWithImpl<$Res> extends _$PermissionCopyWithImpl<$Res>
-    implements _$PermissionCopyWith<$Res> {
-  __$PermissionCopyWithImpl(
-      _Permission _value, $Res Function(_Permission) _then)
-      : super(_value, (v) => _then(v as _Permission));
+class __$DronePermissionCopyWithImpl<$Res>
+    extends _$DronePermissionCopyWithImpl<$Res>
+    implements _$DronePermissionCopyWith<$Res> {
+  __$DronePermissionCopyWithImpl(
+      _DronePermission _value, $Res Function(_DronePermission) _then)
+      : super(_value, (v) => _then(v as _DronePermission));
 
   @override
-  _Permission get _value => super._value as _Permission;
+  _DronePermission get _value => super._value as _DronePermission;
 
   @override
   $Res call({
@@ -115,7 +118,7 @@ class __$PermissionCopyWithImpl<$Res> extends _$PermissionCopyWithImpl<$Res>
     Object? write = freezed,
     Object? admin = freezed,
   }) {
-    return _then(_Permission(
+    return _then(_DronePermission(
       read: read == freezed
           ? _value.read
           : read // ignore: cast_nullable_to_non_nullable
@@ -134,12 +137,12 @@ class __$PermissionCopyWithImpl<$Res> extends _$PermissionCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Permission implements _Permission {
-  const _$_Permission(
+class _$_DronePermission implements _DronePermission {
+  const _$_DronePermission(
       {this.read = false, this.write = false, this.admin = false});
 
-  factory _$_Permission.fromJson(Map<String, dynamic> json) =>
-      _$$_PermissionFromJson(json);
+  factory _$_DronePermission.fromJson(Map<String, dynamic> json) =>
+      _$$_DronePermissionFromJson(json);
 
   @JsonKey()
   @override
@@ -153,14 +156,14 @@ class _$_Permission implements _Permission {
 
   @override
   String toString() {
-    return 'Permission(read: $read, write: $write, admin: $admin)';
+    return 'DronePermission(read: $read, write: $write, admin: $admin)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Permission &&
+            other is _DronePermission &&
             const DeepCollectionEquality().equals(other.read, read) &&
             const DeepCollectionEquality().equals(other.write, write) &&
             const DeepCollectionEquality().equals(other.admin, admin));
@@ -175,21 +178,21 @@ class _$_Permission implements _Permission {
 
   @JsonKey(ignore: true)
   @override
-  _$PermissionCopyWith<_Permission> get copyWith =>
-      __$PermissionCopyWithImpl<_Permission>(this, _$identity);
+  _$DronePermissionCopyWith<_DronePermission> get copyWith =>
+      __$DronePermissionCopyWithImpl<_DronePermission>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_PermissionToJson(this);
+    return _$$_DronePermissionToJson(this);
   }
 }
 
-abstract class _Permission implements Permission {
-  const factory _Permission({bool read, bool write, bool admin}) =
-      _$_Permission;
+abstract class _DronePermission implements DronePermission {
+  const factory _DronePermission({bool read, bool write, bool admin}) =
+      _$_DronePermission;
 
-  factory _Permission.fromJson(Map<String, dynamic> json) =
-      _$_Permission.fromJson;
+  factory _DronePermission.fromJson(Map<String, dynamic> json) =
+      _$_DronePermission.fromJson;
 
   @override
   bool get read;
@@ -199,6 +202,6 @@ abstract class _Permission implements Permission {
   bool get admin;
   @override
   @JsonKey(ignore: true)
-  _$PermissionCopyWith<_Permission> get copyWith =>
+  _$DronePermissionCopyWith<_DronePermission> get copyWith =>
       throw _privateConstructorUsedError;
 }

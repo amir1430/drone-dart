@@ -6,14 +6,14 @@ part of 'permissions_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Permission _$$_PermissionFromJson(Map<String, dynamic> json) =>
-    _$_Permission(
+_$_DronePermission _$$_DronePermissionFromJson(Map<String, dynamic> json) =>
+    _$_DronePermission(
       read: json['read'] as bool? ?? false,
       write: json['write'] as bool? ?? false,
       admin: json['admin'] as bool? ?? false,
     );
 
-Map<String, dynamic> _$$_PermissionToJson(_$_Permission instance) =>
+Map<String, dynamic> _$$_DronePermissionToJson(_$_DronePermission instance) =>
     <String, dynamic>{
       'read': instance.read,
       'write': instance.write,
