@@ -1,11 +1,14 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:drone_dart/drone_dart.dart';
-import 'package:drone_dart/src/utils/api_worker.dart';
+import 'package:drone_dart/src/utils/isolate.dart';
 import 'utils/http_method.dart';
 
-abstract class IDroneClient {
+part './utils/api_worker.dart';
+
+abstract class _IDroneClient {
   // Stream<DroneRepo> stream();
 
   void buildApprove({
@@ -196,12 +199,15 @@ abstract class IDroneClient {
   });
 }
 
-class DroneClient extends ApiWorker implements IDroneClient {
+class DroneClient extends ApiWorker implements _IDroneClient {
   DroneClient({
-    required String token,
-    required String server,
-    Dio? dio,
-  }) : super(dio: dio, token: token, server: server);
+    required super.server,
+    required super.token,
+    super.dio,
+    super.sendTimeout = 10000,
+    super.connectTimeout = 10000,
+    super.receiveTimeout = 10000,
+  });
 
   // static DroneClient init({
   //   required String server,
@@ -240,7 +246,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
   //   }
   // }
 
-  /// POST /api/repos/{owner}/{repo}/builds/{build}/approve
+  /// POST
+  /// /api/repos/{owner}/{repo}/builds/{build}/approve
   @override
   void buildApprove({
     required String owner,
@@ -248,7 +255,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     required int build,
   }) {}
 
-  /// POST /api/repos/{namespace}/{name}/builds?branch={branch}&commit={commit}&{key=value}
+  /// POST
+  /// /api/repos/{namespace}/{name}/builds?branch={branch}&commit={commit}&{key=value}
   @override
   Future<DroneBuild> buildCreate({
     required String namespace,
@@ -257,7 +265,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
     String? branch,
     Map<String, String>? parameters,
   }) async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$namespace/$name/builds',
         queryParameters: <String, String>{
@@ -271,7 +279,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{repo}/builds/{build}/decline
+  /// POST
+  /// /api/repos/{owner}/{repo}/builds/{build}/decline
   @override
   void buildDecline({
     required String owner,
@@ -279,14 +288,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     required int build,
   }) {}
 
-  // GET /api/repos/{owner}/{repo}/builds/{build}
+  /// GET
+  /// /api/repos/{owner}/{repo}/builds/{build}
   @override
   Future<DroneBuild> buildInfo({
     required String owner,
     required int build,
     required String repo,
   }) async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
@@ -294,7 +304,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/builds
+  /// GET
+  /// /api/repos/{owner}/{repo}/builds
   @override
   Future<List<DroneBuild>> buildList({
     required String owner,
@@ -303,7 +314,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
     int perPage = 25,
   }) async {
     assert(perPage >= 0 && perPage <= 100);
-    return await apiCall<DroneBuild, List<DroneBuild>>(
+    return await request<DroneBuild, List<DroneBuild>>(
       path: Uri(path: '/api/repos/$owner/$repo/builds', queryParameters: {
         'page': '$page',
         'per_page': '$perPage',
@@ -312,7 +323,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/builds/{build}/logs/{stage}/{step}
+  /// GET
+  /// /api/repos/{owner}/{repo}/builds/{build}/logs/{stage}/{step}
   @override
   Future<List<DroneLog>> buildLog({
     required String owner,
@@ -321,7 +333,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
     required String stage,
     required String step,
   }) async {
-    return await apiCall<DroneLog, List<DroneLog>>(
+    return await request<DroneLog, List<DroneLog>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build/logs/$stage/$step',
       ),
@@ -329,7 +341,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{repo}/builds/{build}/promote?target={target}&{key=value}
+  /// POST
+  /// /api/repos/{owner}/{repo}/builds/{build}/promote?target={target}&{key=value}
   @override
   Future<DroneBuild?> buildPromote({
     required String owner,
@@ -338,7 +351,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
     required String target,
     Map<String, String>? parameters,
   }) async {
-    return await apiCall<DroneBuild, DroneBuild?>(
+    return await request<DroneBuild, DroneBuild?>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build/promote',
         queryParameters: <String, String>{
@@ -351,14 +364,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{repo}/builds/{build}
+  /// POST
+  /// /api/repos/{owner}/{repo}/builds/{build}
   @override
   Future<DroneBuild> buildRestart({
     required String owner,
     required String repo,
     required int build,
   }) async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
@@ -367,14 +381,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// DELETE /api/repos/{owner}/{repo}/builds/{build}
+  /// DELETE
+  /// /api/repos/{owner}/{repo}/builds/{build}
   @override
   Future<DroneBuild> buildStop({
     required String owner,
     required String repo,
     required int build,
   }) async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
@@ -383,13 +398,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/builds/branches
+  /// GET
+  /// /api/repos/{owner}/{repo}/builds/branches
   @override
   Future<List<DroneBuild>> buildBranches({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneBuild, List<DroneBuild>>(
+    return await request<DroneBuild, List<DroneBuild>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/branches',
       ),
@@ -397,13 +413,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/builds/deployments
+  /// GET
+  /// /api/repos/{owner}/{repo}/builds/deployments
   @override
   Future<List<DroneBuild>> buildDeployments({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneBuild, List<DroneBuild>>(
+    return await request<DroneBuild, List<DroneBuild>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/deployments',
       ),
@@ -411,7 +428,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{repo}/cron
+  /// POST
+  /// /api/repos/{owner}/{repo}/cron
   @override
   Future<DroneCron> cronCreate({
     required String owner,
@@ -424,7 +442,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
           requestBody.branch.isNotEmpty,
       'You should provide [name,expr,branch]',
     );
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron',
       ),
@@ -434,14 +452,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// DELETE /api/repos/{owner}/{repo}/cron/{name}
+  /// DELETE
+  /// /api/repos/{owner}/{repo}/cron/{name}
   @override
   Future<void> cronDelete({
     required String owner,
     required String repo,
     required String name,
   }) async {
-    await apiCall(
+    await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
@@ -449,14 +468,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/cron/{name}
+  /// GET
+  /// /api/repos/{owner}/{repo}/cron/{name}
   @override
   Future<DroneCron> cronInfo({
     required String owner,
     required String repo,
     required String name,
   }) async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
@@ -464,13 +484,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/cron
+  /// GET
+  /// /api/repos/{owner}/{repo}/cron
   @override
   Future<List<DroneCron>> cronList({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneCron, List<DroneCron>>(
+    return await request<DroneCron, List<DroneCron>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron',
       ),
@@ -478,14 +499,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  // POST /api/repos/{owner}/{repo}/cron/{name}
+  /// POST
+  /// /api/repos/{owner}/{repo}/cron/{name}
   @override
   Future<DroneCronTrigger?> cronTrigger({
     required String owner,
     required String repo,
     required String name,
   }) async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
@@ -494,7 +516,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  // PATCH /api/repos/{owner}/{repo}/cron/{name}
+  /// PATCH
+  /// /api/repos/{owner}/{repo}/cron/{name}
   @override
   Future<DroneCron> cronUpdate({
     required String owner,
@@ -502,7 +525,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
     required String name,
     required DroneCron requestBody,
   }) async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
@@ -512,13 +535,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{repo}/chown
+  /// POST
+  /// /api/repos/{owner}/{repo}/chown
   @override
   Future<DroneRepo> repoChown({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneRepo, DroneRepo>(
+    return await request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo/chown',
       ),
@@ -527,13 +551,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// DELETE /api/repos/{owner}/{repo}
+  /// DELETE
+  /// /api/repos/{owner}/{repo}
   @override
   Future<DroneRepo> repoDisable({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneRepo, DroneRepo>(
+    return await request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
@@ -542,13 +567,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{name}
+  /// POST
+  /// /api/repos/{owner}/{name}
   @override
   Future<DroneRepo> repoEnable({
     required String owner,
     required String name,
   }) async {
-    return await apiCall<DroneRepo, DroneRepo>(
+    return await request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$name',
       ),
@@ -557,13 +583,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}
+  /// GET
+  /// /api/repos/{owner}/{repo}
   @override
   Future<DroneRepo> repoInfo({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneRepo, DroneRepo>(
+    return await request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
@@ -571,10 +598,11 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/user/repos
+  /// GET
+  /// /api/user/repos
   @override
   Future<List<DroneRepo>> repoList() async {
-    return await apiCall<DroneRepo, List<DroneRepo>>(
+    return await request<DroneRepo, List<DroneRepo>>(
       path: Uri(
         path: '/api/user/repos',
       ),
@@ -582,13 +610,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{repo}/repair
+  /// POST
+  /// /api/repos/{owner}/{repo}/repair
   @override
   Future<DroneRepo> repoRepair({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneRepo, DroneRepo>(
+    return await request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo/repair',
       ),
@@ -597,14 +626,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// PATCH /api/repos/{owner}/{repo}
+  /// PATCH
+  /// /api/repos/{owner}/{repo}
   @override
   Future<DroneRepo> repoUpdate({
     required String owner,
     required String repo,
     required DroneRepoRequestBody requestBody,
   }) async {
-    return await apiCall<DroneRepo, DroneRepo>(
+    return await request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
@@ -614,7 +644,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/repos/{owner}/{repo}/secrets
+  /// POST
+  /// /api/repos/{owner}/{repo}/secrets
   @override
   Future<DroneSecret> secretCreate({
     required String owner,
@@ -626,7 +657,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
       'You should provide [name, data]',
     );
 
-    return await apiCall<DroneSecret, DroneSecret>(
+    return await request<DroneSecret, DroneSecret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets',
       ),
@@ -636,14 +667,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// DELETE /api/repos/{owner}/{repo}/secrets/{secret}
+  /// DELETE
+  /// /api/repos/{owner}/{repo}/secrets/{secret}
   @override
   Future<void> secretDelete({
     required String owner,
     required String repo,
     required String secret,
   }) async {
-    await apiCall(
+    await request(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
@@ -651,14 +683,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/secrets/{secret}
+  /// GET
+  /// /api/repos/{owner}/{repo}/secrets/{secret}
   @override
   Future<DroneSecret> secretInfo({
     required String owner,
     required String repo,
     required String secret,
   }) async {
-    return await apiCall<DroneSecret, DroneSecret>(
+    return await request<DroneSecret, DroneSecret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
@@ -666,13 +699,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/repos/{owner}/{repo}/secrets
+  /// GET
+  /// /api/repos/{owner}/{repo}/secrets
   @override
   Future<List<DroneSecret>> secretList({
     required String owner,
     required String repo,
   }) async {
-    return await apiCall<DroneSecret, List<DroneSecret>>(
+    return await request<DroneSecret, List<DroneSecret>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets',
       ),
@@ -680,7 +714,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// PATCH /api/repos/{owner}/{repo}/secrets/{secret}
+  /// PATCH
+  /// /api/repos/{owner}/{repo}/secrets/{secret}
   @override
   Future<DroneSecret> secretUpdate({
     required String owner,
@@ -692,7 +727,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
       requestBody.data.isNotEmpty,
       'You should provider [name]',
     );
-    return await apiCall<DroneSecret, DroneSecret>(
+    return await request<DroneSecret, DroneSecret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
@@ -702,7 +737,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/templates/
+  /// POST
+  /// /api/templates/
   @override
   Future<Template> templateCreate({
     required Template requestBody,
@@ -714,7 +750,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
       'You should provide [name, namespace, data]',
     );
 
-    return await apiCall<Template, Template>(
+    return await request<Template, Template>(
       path: Uri(
         path: '/api/templates/${requestBody.namespace}',
       ),
@@ -724,13 +760,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// DELETE /api/templates/{namespace}/{name}
+  /// DELETE
+  /// /api/templates/{namespace}/{name}
   @override
   Future<void> templateDelete({
     required String namespace,
     required String name,
   }) async {
-    await apiCall(
+    await request(
       path: Uri(
         path: '/api/templates/$namespace/$name',
       ),
@@ -738,13 +775,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  ///GET /api/templates/{namespace}/{name}
+  /// GET
+  /// api/templates/{namespace}/{name}
   @override
   Future<Template> templateInfo({
     required String namespace,
     required String name,
   }) async {
-    return await apiCall<Template, Template>(
+    return await request<Template, Template>(
       path: Uri(
         path: '/api/templates/$namespace/$name',
       ),
@@ -752,12 +790,13 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/templates/{namespace}
+  /// GET
+  /// /api/templates/{namespace}
   @override
   Future<List<Template>> templateList({
     required String namespace,
   }) async {
-    return await apiCall<Template, List<Template>>(
+    return await request<Template, List<Template>>(
       path: Uri(
         path: '/api/templates/$namespace',
       ),
@@ -765,14 +804,15 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// PATCH /api/templates/{namespace}/{name}
+  /// PATCH
+  /// /api/templates/{namespace}/{name}
   @override
   Future<Template> templateUpdate({
     required String namespace,
     required String name,
     required Template requestBody,
   }) async {
-    return await apiCall<Template, Template>(
+    return await request<Template, Template>(
       path: Uri(
         path: '/api/templates/$namespace/$name',
       ),
@@ -782,10 +822,11 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/user/builds
+  /// GET
+  /// /api/user/builds
   @override
   Future<List<DroneRepo>> userFeed() async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/user/builds',
       ),
@@ -793,10 +834,11 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/user
+  /// GET
+  /// /api/user
   @override
   Future<DroneUser> userInfo() async {
-    return await apiCall(
+    return await request(
       path: Uri(
         path: '/api/user/token',
       ),
@@ -805,12 +847,13 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/user/repos?latest=true
+  /// GET
+  /// /api/user/repos?latest=true
   @override
   Future<List<DroneRepo>> userRepos({
     bool latest = true,
   }) async {
-    return await apiCall<DroneRepo, List<DroneRepo>>(
+    return await request<DroneRepo, List<DroneRepo>>(
       path: Uri(
         path: '/api/user/repos',
         queryParameters: <String, String>{
@@ -821,10 +864,11 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// POST /api/user/repos
+  /// POST
+  /// /api/user/repos
   @override
   Future<List<DroneRepo>> userSync() async {
-    return await apiCall<DroneRepo, List<DroneRepo>>(
+    return await request<DroneRepo, List<DroneRepo>>(
       path: Uri(
         path: '/api/user/repos',
       ),
@@ -841,7 +885,8 @@ class DroneClient extends ApiWorker implements IDroneClient {
   ///   login: 'name',
   ///);
   /// ```
-  /// POST /api/users
+  /// POST
+  /// /api/users
   @override
   Future<DroneUser> usersCreate({
     required UserRequestBody requestBody,
@@ -853,7 +898,7 @@ class DroneClient extends ApiWorker implements IDroneClient {
       'You should provide [login, avatarUrl, email]',
     );
 
-    return await apiCall<DroneUser, DroneUser>(
+    return await request<DroneUser, DroneUser>(
       path: Uri(
         path: '/api/users',
       ),
@@ -863,12 +908,13 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// DELETE /api/users/{login}
+  /// DELETE
+  /// /api/users/{login}
   @override
   Future<void> usersDelete({
     required String login,
   }) async {
-    await apiCall(
+    await request(
       path: Uri(
         path: '/api/users/$login',
       ),
@@ -876,12 +922,13 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/users/{login}
+  /// GET
+  /// /api/users/{login}
   @override
   Future<DroneUser> usersInfo({
     required String login,
   }) {
-    return apiCall<DroneUser, DroneUser>(
+    return request<DroneUser, DroneUser>(
       path: Uri(
         path: '/api/users/$login',
       ),
@@ -889,10 +936,11 @@ class DroneClient extends ApiWorker implements IDroneClient {
     );
   }
 
-  /// GET /api/users
+  /// GET
+  /// /api/users
   @override
   Future<List<DroneUser>> usersList() async {
-    return await apiCall<DroneUser, List<DroneUser>>(
+    return await request<DroneUser, List<DroneUser>>(
       path: Uri(
         path: '/api/users',
       ),
@@ -908,13 +956,14 @@ class DroneClient extends ApiWorker implements IDroneClient {
   ///   email: 'example@gmail.com',
   ///);
   /// ```
-  /// PATCH /api/users/{login}
+  /// PATCH
+  /// /api/users/{login}
   @override
   Future<DroneUser> usersUpdate({
     required String login,
     required UserRequestBody requestBody,
   }) async {
-    return await apiCall<DroneUser, DroneUser>(
+    return await request<DroneUser, DroneUser>(
       path: Uri(
         path: '/api/users/$login',
       ),
@@ -925,30 +974,30 @@ class DroneClient extends ApiWorker implements IDroneClient {
   }
 }
 
-  // DroneClient copyWith({
-  //   String? server,
-  //   String? token,
-  //   Dio? dio,
-  // }) {
-  //   return DroneClient(
-  //     server: server ?? this.server,
-  //     token: token ?? this.token,
-  //     dio: dio ?? _dioClient,
-  //   );
-  // }
+// DroneClient copyWith({
+//   String? server,
+//   String? token,
+//   Dio? dio,
+// }) {
+//   return DroneClient(
+//     server: server ?? this.server,
+//     token: token ?? this.token,
+//     dio: dio ?? _dioClient,
+//   );
+// }
 
-  // DroneClient._(
-  //   this.server,
-  //   this.token, {
-  //   Dio? dioClient,
-  // }) : _dioClient = dioClient ??
-  //           Dio(
-  //             BaseOptions(
-  //               baseUrl: server,
-  //               validateStatus: (_) => true,
-  //             ),
-  //           );
+// DroneClient._(
+//   this.server,
+//   this.token, {
+//   Dio? dioClient,
+// }) : _dioClient = dioClient ??
+//           Dio(
+//             BaseOptions(
+//               baseUrl: server,
+//               validateStatus: (_) => true,
+//             ),
+//           );
 
-  // factory DroneClient() => instance;
-  // static late DroneClient _instance;
-  // static DroneClient get instance => _instance;
+// factory DroneClient() => instance;
+// static late DroneClient _instance;
+// static DroneClient get instance => _instance;

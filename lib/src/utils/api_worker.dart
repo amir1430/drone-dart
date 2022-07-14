@@ -1,30 +1,57 @@
-import 'dart:io';
-
-import 'package:dio/dio.dart';
-
-import 'package:drone_dart/drone_dart.dart';
-import 'package:drone_dart/src/utils/http_method.dart';
-import 'package:drone_dart/src/utils/isolate.dart';
+part of '../drone_dart_base.dart';
 
 abstract class ApiWorker {
   ApiWorker({
     required Dio? dio,
     required this.token,
     required this.server,
+    int? sendTimeout,
+    int? connectTimeout,
+    int? receiveTimeout,
   }) : _dio = dio ??
             Dio(BaseOptions(
               baseUrl: server,
               validateStatus: (_) => true,
-              sendTimeout: 10000,
-              connectTimeout: 10000,
-              receiveTimeout: 10000,
+              sendTimeout: sendTimeout,
+              connectTimeout: connectTimeout,
+              receiveTimeout: receiveTimeout,
             ));
 
   final Dio _dio;
   final String token;
   final String server;
 
-  Future<R> apiCall<T, R>({
+  // final CancelToken _cancelToken = CancelToken();
+
+  // Stream<DroneRepo> get stream => _stream();
+
+  // Stream<DroneRepo> stream() async* {
+  //   try {
+  //     final res = await Dio().request<ResponseBody>(
+  //       '$server/api/stream?access_token=$token',
+  //       options: Options(
+  //         responseType: ResponseType.stream,
+  //       ),
+  //       // cancelToken: _cancelToken,
+  //     );
+  //     final stream = res.data?.stream
+  //         .cast<List<int>>()
+  //         .transform(EventToRepoTransformer());
+  //     if (stream != null) {
+  //       await for (final event in stream) {
+  //         yield event;
+  //       }
+  //     }
+  //   } on DioError catch (e) {
+  //     if (CancelToken.isCancel(e)) {
+  //       log('Request cancelled');
+  //     }
+  //   } catch (_) {
+  //     rethrow;
+  //   }
+  // }
+
+  Future<R> request<T, R>({
     required Uri path,
     JsonParser<T>? parser,
     Map<String, dynamic>? body,
@@ -35,6 +62,7 @@ abstract class ApiWorker {
       response = await _dio.request(
         path.toString(),
         data: body,
+        // cancelToken: _cancelToken,
         options: Options(
           method: method.name,
           headers: {
@@ -46,6 +74,10 @@ abstract class ApiWorker {
       throw const DroneException.requestException(
           message: 'Please check your internet connection');
     } on DioError catch (e) {
+      // if (CancelToken.isCancel(e)) {
+      //   log('Request cancelled');
+      // } else {
+      // }
       throw DroneException.requestException(message: e.message);
     } catch (e) {
       throw const DroneException.requestException();
@@ -71,12 +103,15 @@ abstract class ApiWorker {
       throw DroneException.internalException(message: '${response.data}');
     }
 
+    if (parser == null) {
+      return response.data;
+    }
     try {
       if (response.data is List<dynamic> ||
           response.data is Map<String, dynamic>) {
         final jsonParserIsolate = JsonPareserIsolate<T, R>(
           data: response.data,
-          parser: parser!,
+          parser: parser,
         );
         final parsed = await jsonParserIsolate.parse();
         return parsed;
@@ -86,6 +121,10 @@ abstract class ApiWorker {
       throw DroneException.jsonDeserializationException(message: '$e');
     }
   }
+
+  // void cancel() {
+  //   _cancelToken.cancel('canceled');
+  // }
 
   @override
   String toString() => 'ApiWorker(token: $token, server: $server)';
