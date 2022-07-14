@@ -18,13 +18,13 @@ class JsonPareserIsolate<T, R> {
   }
 
   Future<void> _isolate(SendPort port) async {
+    late R model;
     if (data is List<dynamic>) {
-      final model = (data as List<dynamic>).map((e) => parser(e)).toList() as R;
-      Isolate.exit(port, model);
+      model = (data as List<dynamic>).map((e) => parser(e)).toList() as R;
     }
     if (data is Map<String, dynamic>) {
-      final model = parser(data as Map<String, dynamic>) as R;
-      Isolate.exit(port, model);
+      model = parser(data as Map<String, dynamic>) as R;
     }
+    Isolate.exit(port, model);
   }
 }
