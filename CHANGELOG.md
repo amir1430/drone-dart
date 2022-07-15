@@ -1,3 +1,9 @@
+## 1.1.2
+
+- Remove Drone stream.
+- Update readme
+- Add sections to client
+
 ## 1.1.1
 
 - Implement Drone stream api.
