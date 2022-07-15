@@ -7,6 +7,6 @@ void main() async {
     token: '<Your Token>',
   );
 
-  final user = await instance.userInfo();
+  final user = await instance.userSection.info();
   print(user);
 }
