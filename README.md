@@ -9,7 +9,7 @@
 For first step you need to initialize your `DroneClient` instance which need Server(Drone interface host, for example <https://drone.example.com>) and Token(Access token). You can retrieve an token in the Drone user interface by navigating to your user profile.
 
 ```dart
-  final instance = DroneClient.init(
+  final instance = DroneClient(
     server: '<Your Drone Server Address>',
     token: '<Your Token>',
   );
@@ -26,15 +26,15 @@ Methods below are available in _DroneClient_. Appellation and type of arguments 
 _Doc_: <https://docs.drone.io/api/builds/>
 
 ```dart
-  instance.buildApprove(owner,repo,build);
-  instance.buildCreate(namespace,name,commit,branch,parameters);
-  instance.buildDecline(owner,repo,build);
-  instance.buildInfo(owner,build,repo);
-  instance.buildList(owner,repo);
-  instance.buildLog(owner,repo,build,stage,step);
-  instance.buildPromote(owner,repo,build,target,parameters);
-  instance.buildRestart(owner,repo,build);
-  instance.buildStop(owner,repo,build);
+  instance.buildSection.approve(owner,repo,build);
+  instance.buildSection.create(namespace,name,commit,branch,parameters);
+  instance.buildSection.decline(owner,repo,build);
+  instance.buildSection.info(owner,build,repo);
+  instance.buildSection.list(owner,repo);
+  instance.buildSection.log(owner,repo,build,stage,step);
+  instance.buildSection.promote(owner,repo,build,target,parameters);
+  instance.buildSection.restart(owner,repo,build);
+  instance.buildSection.stop(owner,repo,build);
 ```
 
 ### Cron
@@ -42,12 +42,12 @@ _Doc_: <https://docs.drone.io/api/builds/>
 _Doc_: <https://docs.drone.io/api/cron/>
 
 ```dart
-  instance.cronCreate(owner,repo,cronRequestBody);
-  instance.cronDelete(owner,repo,name);
-  instance.cronInfo(owner,repo,name);
-  instance.cronList(owner,repo);
-  instance.cronTrigger(owner,repo,name);
-  instance.cronUpdate(owner,repo,name,requestBody);
+  instance.croneSection.create(owner,repo,cronRequestBody);
+  instance.croneSection.delete(owner,repo,name);
+  instance.croneSection.info(owner,repo,name);
+  instance.croneSection.list(owner,repo);
+  instance.croneSection.trigger(owner,repo,name);
+  instance.croneSection.update(owner,repo,name,requestBody);
 ```
 
 ### Repos
@@ -55,13 +55,13 @@ _Doc_: <https://docs.drone.io/api/cron/>
 _Doc_: <https://docs.drone.io/api/repos/>
 
 ```dart
-  instance.repoChown(owner,repo);
-  instance.repoDisable(owner,repo);
-  instance.repoEnable(owner,name);
-  instance.repoInfo(owner,repo);
-  instance.repoList();
-  instance.repoRepair(owner,repo);
-  instance.repoUpdate(owner,repo,requestBody);
+  instance.repoSection.chown(owner,repo);
+  instance.repoSection.disable(owner,repo);
+  instance.repoSection.enable(owner,name);
+  instance.repoSection.info(owner,repo);
+  instance.repoSection.list();
+  instance.repoSection.repair(owner,repo);
+  instance.repoSection.update(owner,repo,requestBody);
 ```
 
 ### Secrets
@@ -69,11 +69,11 @@ _Doc_: <https://docs.drone.io/api/repos/>
 _Doc_: <https://docs.drone.io/api/secrets/>
 
 ```dart
-  instance.secretCreate(owner,repo,requestBody);
-  instance.secretDelete(owner,repo,secret);
-  instance.secretInfo(owner,repo,secret);
-  instance.secretList(owner,repo);
-  instance.secretUpdate(owner,repo,secret,requestBody);
+  instance.secretSection.create(owner,repo,requestBody);
+  instance.secretSection.delete(owner,repo,secret);
+  instance.secretSection.info(owner,repo,secret);
+  instance.secretSection.list(owner,repo);
+  instance.secretSection.update(owner,repo,secret,requestBody);
 ```
 
 ### Templates
@@ -81,11 +81,11 @@ _Doc_: <https://docs.drone.io/api/secrets/>
 _Doc_: <https://docs.drone.io/api/templates/>
 
 ```dart
-  instance.templateCreate(requestBody);
-  instance.templateDelete(namespace,name);
-  instance.templateInfo(namespace,name);
-  instance.templateList(namespace);
-  instance.templateUpdate(namespace,name);
+  instance.templateSection.create(requestBody);
+  instance.templateSection.delete(namespace,name);
+  instance.templateSection.info(namespace,name);
+  instance.templateSection.list(namespace);
+  instance.templateSection.update(namespace,name);
 ```
 
 ### User
@@ -93,10 +93,10 @@ _Doc_: <https://docs.drone.io/api/templates/>
 _Doc_: <https://docs.drone.io/api/user/>
 
 ```dart
-  instance.userFeed();
-  instance.userRepos(latest);
-  instance.userInfo();
-  instance.userSync();
+  instance.userSection.feed();
+  instance.userSection.repos(latest);
+  instance.userSection.info();
+  instance.userSection.sync();
 ```
 
 ### Users
@@ -104,9 +104,9 @@ _Doc_: <https://docs.drone.io/api/user/>
 _Doc_: <https://docs.drone.io/api/users/>
 
 ```dart
-  instance.usersCreate(requestBody);
-  instance.usersDelete(login);
-  instance.usersInfo(login);
-  instance.usersList();
-  instance.usersUpdate(login,requestBody);
+  instance.userSection.create(requestBody);
+  instance.userSection.delete(login);
+  instance.userSection.info(login);
+  instance.userSection.list();
+  instance.userSection.update(login,requestBody);
 ```
