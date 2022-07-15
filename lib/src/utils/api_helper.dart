@@ -1,26 +1,6 @@
 part of '../drone_dart_base.dart';
 
-abstract class ApiWorker {
-  ApiWorker({
-    required Dio? dio,
-    required this.token,
-    required this.server,
-    int? sendTimeout,
-    int? connectTimeout,
-    int? receiveTimeout,
-  }) : _dio = dio ??
-            Dio(BaseOptions(
-              baseUrl: server,
-              validateStatus: (_) => true,
-              sendTimeout: sendTimeout,
-              connectTimeout: connectTimeout,
-              receiveTimeout: receiveTimeout,
-            ));
-
-  final Dio _dio;
-  final String token;
-  final String server;
-
+mixin ApiHelper {
   // final CancelToken _cancelToken = CancelToken();
 
   // Stream<DroneRepo> get stream => _stream();
@@ -52,6 +32,7 @@ abstract class ApiWorker {
   // }
 
   Future<R> request<T, R>({
+    required Dio dio,
     required Uri path,
     JsonParser<T>? parser,
     Map<String, dynamic>? body,
@@ -59,25 +40,17 @@ abstract class ApiWorker {
   }) async {
     late final Response response;
     try {
-      response = await _dio.request(
+      response = await dio.request(
         path.toString(),
         data: body,
-        // cancelToken: _cancelToken,
         options: Options(
           method: method.name,
-          headers: {
-            'Authorization': 'Bearer $token',
-          },
         ),
       );
     } on SocketException {
       throw const DroneException.requestException(
           message: 'Please check your internet connection');
     } on DioError catch (e) {
-      // if (CancelToken.isCancel(e)) {
-      //   log('Request cancelled');
-      // } else {
-      // }
       throw DroneException.requestException(message: e.message);
     } catch (e) {
       throw const DroneException.requestException();
@@ -121,11 +94,6 @@ abstract class ApiWorker {
       throw DroneException.jsonDeserializationException(message: '$e');
     }
   }
-
-  // void cancel() {
-  //   _cancelToken.cancel('canceled');
-  // }
-
-  @override
-  String toString() => 'ApiWorker(token: $token, server: $server)';
 }
+
+
