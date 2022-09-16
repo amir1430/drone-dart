@@ -101,14 +101,14 @@ class RepoSection with ApiHelper {
   Future<DroneRepo> update({
     required String owner,
     required String repo,
-    required DroneRepoRequestBody requestBody,
+    required DroneRepo droneRepo,
   }) async {
     return await request<DroneRepo, DroneRepo>(
       dio: _dio,
       path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
-      body: requestBody.toJson(),
+      body: droneRepo.toJson(),
       method: HttpMethod.patch,
       parser: (d) => DroneRepo.fromJson(d),
     );
