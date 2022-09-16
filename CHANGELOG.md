@@ -1,3 +1,7 @@
+## 1.1.3
+
+- Change visibility type from [String] to [Visibility]
+
 ## 1.1.2
 
 - Remove Drone stream.
