@@ -17,7 +17,9 @@ _$_DroneRepo _$$_DroneRepoFromJson(Map<String, dynamic> json) => _$_DroneRepo(
       slug: json['slug'] as String? ?? '',
       scm: json['scm'] as String? ?? '',
       link: json['link'] as String? ?? '',
-      visibility: json['visibility'] as String? ?? '',
+      visibility:
+          $enumDecodeNullable(_$VisibilityEnumMap, json['visibility']) ??
+              Visibility.private,
       id: json['id'] as int? ?? 0,
       userId: json['user_id'] as int? ?? 0,
       timeout: json['timeout'] as int? ?? 0,
@@ -58,7 +60,7 @@ Map<String, dynamic> _$$_DroneRepoToJson(_$_DroneRepo instance) =>
       'slug': instance.slug,
       'scm': instance.scm,
       'link': instance.link,
-      'visibility': instance.visibility,
+      'visibility': _$VisibilityEnumMap[instance.visibility],
       'id': instance.id,
       'user_id': instance.userId,
       'timeout': instance.timeout,
@@ -80,3 +82,9 @@ Map<String, dynamic> _$$_DroneRepoToJson(_$_DroneRepo instance) =>
       'permissions': instance.permissions,
       'build': instance.build,
     };
+
+const _$VisibilityEnumMap = {
+  Visibility.private: 'private',
+  Visibility.internal: 'internal',
+  Visibility.public: 'public',
+};

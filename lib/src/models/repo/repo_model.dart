@@ -19,7 +19,7 @@ class DroneRepo with _$DroneRepo {
     @Default('') String slug,
     @Default('') String scm,
     @Default('') String link,
-    @Default('') String visibility,
+    @Default(Visibility.private) Visibility visibility,
     @Default(0) int id,
     @Default(0) int userId,
     @Default(0) int timeout,
@@ -44,4 +44,17 @@ class DroneRepo with _$DroneRepo {
 
   factory DroneRepo.fromJson(Map<String, dynamic> json) =>
       _$DroneRepoFromJson(json);
+}
+
+@JsonEnum()
+enum Visibility {
+  @JsonValue('private')
+  private('private'),
+  @JsonValue('internal')
+  internal('internal'),
+  @JsonValue('public')
+  public('public');
+
+  const Visibility(this.visibility);
+  final String visibility;
 }

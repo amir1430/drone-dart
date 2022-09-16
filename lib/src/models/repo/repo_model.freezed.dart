@@ -33,7 +33,7 @@ class _$DroneRepoTearOff {
       String slug = '',
       String scm = '',
       String link = '',
-      String visibility = '',
+      Visibility visibility = Visibility.private,
       int id = 0,
       int userId = 0,
       int timeout = 0,
@@ -109,7 +109,7 @@ mixin _$DroneRepo {
   String get slug => throw _privateConstructorUsedError;
   String get scm => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
-  String get visibility => throw _privateConstructorUsedError;
+  Visibility get visibility => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   int get userId => throw _privateConstructorUsedError;
   int get timeout => throw _privateConstructorUsedError;
@@ -152,7 +152,7 @@ abstract class $DroneRepoCopyWith<$Res> {
       String slug,
       String scm,
       String link,
-      String visibility,
+      Visibility visibility,
       int id,
       int userId,
       int timeout,
@@ -264,7 +264,7 @@ class _$DroneRepoCopyWithImpl<$Res> implements $DroneRepoCopyWith<$Res> {
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Visibility,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -388,7 +388,7 @@ abstract class _$DroneRepoCopyWith<$Res> implements $DroneRepoCopyWith<$Res> {
       String slug,
       String scm,
       String link,
-      String visibility,
+      Visibility visibility,
       int id,
       int userId,
       int timeout,
@@ -503,7 +503,7 @@ class __$DroneRepoCopyWithImpl<$Res> extends _$DroneRepoCopyWithImpl<$Res>
       visibility: visibility == freezed
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as String,
+              as Visibility,
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -603,7 +603,7 @@ class _$_DroneRepo implements _DroneRepo {
       this.slug = '',
       this.scm = '',
       this.link = '',
-      this.visibility = '',
+      this.visibility = Visibility.private,
       this.id = 0,
       this.userId = 0,
       this.timeout = 0,
@@ -660,7 +660,7 @@ class _$_DroneRepo implements _DroneRepo {
   final String link;
   @JsonKey()
   @override
-  final String visibility;
+  final Visibility visibility;
   @JsonKey()
   @override
   final int id;
@@ -834,7 +834,7 @@ abstract class _DroneRepo implements DroneRepo {
       String slug,
       String scm,
       String link,
-      String visibility,
+      Visibility visibility,
       int id,
       int userId,
       int timeout,
@@ -880,7 +880,7 @@ abstract class _DroneRepo implements DroneRepo {
   @override
   String get link;
   @override
-  String get visibility;
+  Visibility get visibility;
   @override
   int get id;
   @override
