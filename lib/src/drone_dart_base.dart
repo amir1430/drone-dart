@@ -1,7 +1,9 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
+
+import 'package:drone_dart/src/utils/error_handler_interceptor.dart';
 
 import '../drone_dart.dart';
 import 'utils/http_method.dart';
@@ -20,29 +22,36 @@ class DroneClient {
   DroneClient({
     required this.server,
     required this.token,
+    DioService? dioService,
     int? sendTimeout = 10000,
     int? connectTimeout = 10000,
     int? receiveTimeout = 10000,
-  }) : _dio = Dio(BaseOptions(
-          baseUrl: server,
-          validateStatus: (_) => true,
-          sendTimeout: sendTimeout,
-          connectTimeout: connectTimeout,
-          receiveTimeout: receiveTimeout,
-          headers: {
-            'Authorization': 'Bearer $token',
-          },
-        )) {
-    _buildSection = BuildSection(_dio);
-    _croneSection = CroneSection(_dio);
-    _repoSection = RepoSection(_dio);
-    _secretSection = SecretSection(_dio);
-    _templateSection = TemplateSection(_dio);
-    _userSection = UserSection(_dio);
-    _usersSection = UsersSection(_dio);
+  }) : _dioService = dioService ??
+            DroneService(
+              dio: Dio(BaseOptions(
+                baseUrl: server,
+                validateStatus: (_) => true,
+                sendTimeout: sendTimeout,
+                connectTimeout: connectTimeout,
+                receiveTimeout: receiveTimeout,
+                headers: {
+                  'Authorization': 'Bearer $token',
+                },
+              ))
+                ..interceptors.addAll([
+                  ErrorHandlerInterceptor(),
+                ]),
+            ) {
+    _buildSection = BuildSection(_dioService);
+    _croneSection = CroneSection(_dioService);
+    _repoSection = RepoSection(_dioService);
+    _secretSection = SecretSection(_dioService);
+    _templateSection = TemplateSection(_dioService);
+    _userSection = UserSection(_dioService);
+    _usersSection = UsersSection(_dioService);
   }
 
-  final Dio _dio;
+  final DioService _dioService;
   final String token;
   final String server;
 
@@ -66,4 +75,16 @@ class DroneClient {
 
   late final UsersSection _usersSection;
   UsersSection get usersSection => _usersSection;
+
+  @override
+  bool operator ==(covariant DroneClient other) {
+    if (identical(this, other)) return true;
+
+    return other.token == token && other.server == server;
+  }
+
+  @override
+  int get hashCode {
+    return token.hashCode ^ server.hashCode;
+  }
 }
