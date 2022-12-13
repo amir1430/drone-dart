@@ -16,7 +16,6 @@ class DroneBuild with _$DroneBuild {
     @Default('') String authorAvatar,
     @Default('') String trigger,
     @Default('') String status,
-    @Default('') String event,
     @Default('') String action,
     @Default('') String link,
     @Default('') String message,
@@ -27,6 +26,8 @@ class DroneBuild with _$DroneBuild {
     @Default('') String target,
     @Default('') String sender,
     @Default(null) String? deployTo,
+    @Default(null) String? cron,
+    @Default(0) int parent,
     @Default(0) int repoId,
     @Default(0) int id,
     @Default(0) int number,
@@ -36,9 +37,23 @@ class DroneBuild with _$DroneBuild {
     @Default(0) int created,
     @Default(0) int updated,
     @Default(0) int version,
+    @JsonKey(unknownEnumValue: Event.push) @Default(Event.push) Event event,
     @Default([]) List<DroneStage> stages,
   }) = _DroneBuild;
 
   factory DroneBuild.fromJson(Map<String, dynamic> json) =>
       _$DroneBuildFromJson(json);
+}
+
+@JsonEnum(fieldRename: FieldRename.snake)
+enum Event {
+  pullRequest('pull_request'),
+  tag('tag'),
+  promote('promote'),
+  rollback('rollback'),
+  cron('cron'),
+  push('push');
+
+  const Event(this.event);
+  final String event;
 }

@@ -15,7 +15,6 @@ _$_DroneBuild _$$_DroneBuildFromJson(Map<String, dynamic> json) =>
       authorAvatar: json['author_avatar'] as String? ?? '',
       trigger: json['trigger'] as String? ?? '',
       status: json['status'] as String? ?? '',
-      event: json['event'] as String? ?? '',
       action: json['action'] as String? ?? '',
       link: json['link'] as String? ?? '',
       message: json['message'] as String? ?? '',
@@ -26,6 +25,8 @@ _$_DroneBuild _$$_DroneBuildFromJson(Map<String, dynamic> json) =>
       target: json['target'] as String? ?? '',
       sender: json['sender'] as String? ?? '',
       deployTo: json['deploy_to'] as String? ?? null,
+      cron: json['cron'] as String? ?? null,
+      parent: json['parent'] as int? ?? 0,
       repoId: json['repo_id'] as int? ?? 0,
       id: json['id'] as int? ?? 0,
       number: json['number'] as int? ?? 0,
@@ -35,6 +36,9 @@ _$_DroneBuild _$$_DroneBuildFromJson(Map<String, dynamic> json) =>
       created: json['created'] as int? ?? 0,
       updated: json['updated'] as int? ?? 0,
       version: json['version'] as int? ?? 0,
+      event: $enumDecodeNullable(_$EventEnumMap, json['event'],
+              unknownValue: Event.push) ??
+          Event.push,
       stages: (json['stages'] as List<dynamic>?)
               ?.map((e) => DroneStage.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -50,7 +54,6 @@ Map<String, dynamic> _$$_DroneBuildToJson(_$_DroneBuild instance) =>
       'author_avatar': instance.authorAvatar,
       'trigger': instance.trigger,
       'status': instance.status,
-      'event': instance.event,
       'action': instance.action,
       'link': instance.link,
       'message': instance.message,
@@ -61,6 +64,8 @@ Map<String, dynamic> _$$_DroneBuildToJson(_$_DroneBuild instance) =>
       'target': instance.target,
       'sender': instance.sender,
       'deploy_to': instance.deployTo,
+      'cron': instance.cron,
+      'parent': instance.parent,
       'repo_id': instance.repoId,
       'id': instance.id,
       'number': instance.number,
@@ -70,5 +75,15 @@ Map<String, dynamic> _$$_DroneBuildToJson(_$_DroneBuild instance) =>
       'created': instance.created,
       'updated': instance.updated,
       'version': instance.version,
+      'event': _$EventEnumMap[instance.event],
       'stages': instance.stages,
     };
+
+const _$EventEnumMap = {
+  Event.pullRequest: 'pull_request',
+  Event.tag: 'tag',
+  Event.promote: 'promote',
+  Event.rollback: 'rollback',
+  Event.cron: 'cron',
+  Event.push: 'push',
+};

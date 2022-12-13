@@ -30,7 +30,6 @@ class _$DroneBuildTearOff {
       String authorAvatar = '',
       String trigger = '',
       String status = '',
-      String event = '',
       String action = '',
       String link = '',
       String message = '',
@@ -41,6 +40,8 @@ class _$DroneBuildTearOff {
       String target = '',
       String sender = '',
       String? deployTo = null,
+      String? cron = null,
+      int parent = 0,
       int repoId = 0,
       int id = 0,
       int number = 0,
@@ -50,6 +51,7 @@ class _$DroneBuildTearOff {
       int created = 0,
       int updated = 0,
       int version = 0,
+      @JsonKey(unknownEnumValue: Event.push) Event event = Event.push,
       List<DroneStage> stages = const []}) {
     return _DroneBuild(
       sourceRepo: sourceRepo,
@@ -59,7 +61,6 @@ class _$DroneBuildTearOff {
       authorAvatar: authorAvatar,
       trigger: trigger,
       status: status,
-      event: event,
       action: action,
       link: link,
       message: message,
@@ -70,6 +71,8 @@ class _$DroneBuildTearOff {
       target: target,
       sender: sender,
       deployTo: deployTo,
+      cron: cron,
+      parent: parent,
       repoId: repoId,
       id: id,
       number: number,
@@ -79,6 +82,7 @@ class _$DroneBuildTearOff {
       created: created,
       updated: updated,
       version: version,
+      event: event,
       stages: stages,
     );
   }
@@ -100,7 +104,6 @@ mixin _$DroneBuild {
   String get authorAvatar => throw _privateConstructorUsedError;
   String get trigger => throw _privateConstructorUsedError;
   String get status => throw _privateConstructorUsedError;
-  String get event => throw _privateConstructorUsedError;
   String get action => throw _privateConstructorUsedError;
   String get link => throw _privateConstructorUsedError;
   String get message => throw _privateConstructorUsedError;
@@ -111,6 +114,8 @@ mixin _$DroneBuild {
   String get target => throw _privateConstructorUsedError;
   String get sender => throw _privateConstructorUsedError;
   String? get deployTo => throw _privateConstructorUsedError;
+  String? get cron => throw _privateConstructorUsedError;
+  int get parent => throw _privateConstructorUsedError;
   int get repoId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
   int get number => throw _privateConstructorUsedError;
@@ -120,6 +125,8 @@ mixin _$DroneBuild {
   int get created => throw _privateConstructorUsedError;
   int get updated => throw _privateConstructorUsedError;
   int get version => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: Event.push)
+  Event get event => throw _privateConstructorUsedError;
   List<DroneStage> get stages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -141,7 +148,6 @@ abstract class $DroneBuildCopyWith<$Res> {
       String authorAvatar,
       String trigger,
       String status,
-      String event,
       String action,
       String link,
       String message,
@@ -152,6 +158,8 @@ abstract class $DroneBuildCopyWith<$Res> {
       String target,
       String sender,
       String? deployTo,
+      String? cron,
+      int parent,
       int repoId,
       int id,
       int number,
@@ -161,6 +169,7 @@ abstract class $DroneBuildCopyWith<$Res> {
       int created,
       int updated,
       int version,
+      @JsonKey(unknownEnumValue: Event.push) Event event,
       List<DroneStage> stages});
 }
 
@@ -181,7 +190,6 @@ class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
     Object? authorAvatar = freezed,
     Object? trigger = freezed,
     Object? status = freezed,
-    Object? event = freezed,
     Object? action = freezed,
     Object? link = freezed,
     Object? message = freezed,
@@ -192,6 +200,8 @@ class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
     Object? target = freezed,
     Object? sender = freezed,
     Object? deployTo = freezed,
+    Object? cron = freezed,
+    Object? parent = freezed,
     Object? repoId = freezed,
     Object? id = freezed,
     Object? number = freezed,
@@ -201,6 +211,7 @@ class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
     Object? created = freezed,
     Object? updated = freezed,
     Object? version = freezed,
+    Object? event = freezed,
     Object? stages = freezed,
   }) {
     return _then(_value.copyWith(
@@ -232,10 +243,6 @@ class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      event: event == freezed
-          ? _value.event
-          : event // ignore: cast_nullable_to_non_nullable
-              as String,
       action: action == freezed
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
@@ -276,6 +283,14 @@ class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
           ? _value.deployTo
           : deployTo // ignore: cast_nullable_to_non_nullable
               as String?,
+      cron: cron == freezed
+          ? _value.cron
+          : cron // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parent: parent == freezed
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as int,
       repoId: repoId == freezed
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
@@ -312,6 +327,10 @@ class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
+      event: event == freezed
+          ? _value.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as Event,
       stages: stages == freezed
           ? _value.stages
           : stages // ignore: cast_nullable_to_non_nullable
@@ -334,7 +353,6 @@ abstract class _$DroneBuildCopyWith<$Res> implements $DroneBuildCopyWith<$Res> {
       String authorAvatar,
       String trigger,
       String status,
-      String event,
       String action,
       String link,
       String message,
@@ -345,6 +363,8 @@ abstract class _$DroneBuildCopyWith<$Res> implements $DroneBuildCopyWith<$Res> {
       String target,
       String sender,
       String? deployTo,
+      String? cron,
+      int parent,
       int repoId,
       int id,
       int number,
@@ -354,6 +374,7 @@ abstract class _$DroneBuildCopyWith<$Res> implements $DroneBuildCopyWith<$Res> {
       int created,
       int updated,
       int version,
+      @JsonKey(unknownEnumValue: Event.push) Event event,
       List<DroneStage> stages});
 }
 
@@ -376,7 +397,6 @@ class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
     Object? authorAvatar = freezed,
     Object? trigger = freezed,
     Object? status = freezed,
-    Object? event = freezed,
     Object? action = freezed,
     Object? link = freezed,
     Object? message = freezed,
@@ -387,6 +407,8 @@ class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
     Object? target = freezed,
     Object? sender = freezed,
     Object? deployTo = freezed,
+    Object? cron = freezed,
+    Object? parent = freezed,
     Object? repoId = freezed,
     Object? id = freezed,
     Object? number = freezed,
@@ -396,6 +418,7 @@ class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
     Object? created = freezed,
     Object? updated = freezed,
     Object? version = freezed,
+    Object? event = freezed,
     Object? stages = freezed,
   }) {
     return _then(_DroneBuild(
@@ -427,10 +450,6 @@ class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      event: event == freezed
-          ? _value.event
-          : event // ignore: cast_nullable_to_non_nullable
-              as String,
       action: action == freezed
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
@@ -471,6 +490,14 @@ class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
           ? _value.deployTo
           : deployTo // ignore: cast_nullable_to_non_nullable
               as String?,
+      cron: cron == freezed
+          ? _value.cron
+          : cron // ignore: cast_nullable_to_non_nullable
+              as String?,
+      parent: parent == freezed
+          ? _value.parent
+          : parent // ignore: cast_nullable_to_non_nullable
+              as int,
       repoId: repoId == freezed
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
@@ -507,6 +534,10 @@ class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
+      event: event == freezed
+          ? _value.event
+          : event // ignore: cast_nullable_to_non_nullable
+              as Event,
       stages: stages == freezed
           ? _value.stages
           : stages // ignore: cast_nullable_to_non_nullable
@@ -527,7 +558,6 @@ class _$_DroneBuild implements _DroneBuild {
       this.authorAvatar = '',
       this.trigger = '',
       this.status = '',
-      this.event = '',
       this.action = '',
       this.link = '',
       this.message = '',
@@ -538,6 +568,8 @@ class _$_DroneBuild implements _DroneBuild {
       this.target = '',
       this.sender = '',
       this.deployTo = null,
+      this.cron = null,
+      this.parent = 0,
       this.repoId = 0,
       this.id = 0,
       this.number = 0,
@@ -547,6 +579,7 @@ class _$_DroneBuild implements _DroneBuild {
       this.created = 0,
       this.updated = 0,
       this.version = 0,
+      @JsonKey(unknownEnumValue: Event.push) this.event = Event.push,
       this.stages = const []});
 
   factory _$_DroneBuild.fromJson(Map<String, dynamic> json) =>
@@ -573,9 +606,6 @@ class _$_DroneBuild implements _DroneBuild {
   @JsonKey()
   @override
   final String status;
-  @JsonKey()
-  @override
-  final String event;
   @JsonKey()
   @override
   final String action;
@@ -608,6 +638,12 @@ class _$_DroneBuild implements _DroneBuild {
   final String? deployTo;
   @JsonKey()
   @override
+  final String? cron;
+  @JsonKey()
+  @override
+  final int parent;
+  @JsonKey()
+  @override
   final int repoId;
   @JsonKey()
   @override
@@ -633,13 +669,16 @@ class _$_DroneBuild implements _DroneBuild {
   @JsonKey()
   @override
   final int version;
+  @override
+  @JsonKey(unknownEnumValue: Event.push)
+  final Event event;
   @JsonKey()
   @override
   final List<DroneStage> stages;
 
   @override
   String toString() {
-    return 'DroneBuild(sourceRepo: $sourceRepo, authorLogin: $authorLogin, authorName: $authorName, authorEmail: $authorEmail, authorAvatar: $authorAvatar, trigger: $trigger, status: $status, event: $event, action: $action, link: $link, message: $message, before: $before, after: $after, ref: $ref, source: $source, target: $target, sender: $sender, deployTo: $deployTo, repoId: $repoId, id: $id, number: $number, timestamp: $timestamp, started: $started, finished: $finished, created: $created, updated: $updated, version: $version, stages: $stages)';
+    return 'DroneBuild(sourceRepo: $sourceRepo, authorLogin: $authorLogin, authorName: $authorName, authorEmail: $authorEmail, authorAvatar: $authorAvatar, trigger: $trigger, status: $status, action: $action, link: $link, message: $message, before: $before, after: $after, ref: $ref, source: $source, target: $target, sender: $sender, deployTo: $deployTo, cron: $cron, parent: $parent, repoId: $repoId, id: $id, number: $number, timestamp: $timestamp, started: $started, finished: $finished, created: $created, updated: $updated, version: $version, event: $event, stages: $stages)';
   }
 
   @override
@@ -659,7 +698,6 @@ class _$_DroneBuild implements _DroneBuild {
                 .equals(other.authorAvatar, authorAvatar) &&
             const DeepCollectionEquality().equals(other.trigger, trigger) &&
             const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.event, event) &&
             const DeepCollectionEquality().equals(other.action, action) &&
             const DeepCollectionEquality().equals(other.link, link) &&
             const DeepCollectionEquality().equals(other.message, message) &&
@@ -670,6 +708,8 @@ class _$_DroneBuild implements _DroneBuild {
             const DeepCollectionEquality().equals(other.target, target) &&
             const DeepCollectionEquality().equals(other.sender, sender) &&
             const DeepCollectionEquality().equals(other.deployTo, deployTo) &&
+            const DeepCollectionEquality().equals(other.cron, cron) &&
+            const DeepCollectionEquality().equals(other.parent, parent) &&
             const DeepCollectionEquality().equals(other.repoId, repoId) &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.number, number) &&
@@ -679,6 +719,7 @@ class _$_DroneBuild implements _DroneBuild {
             const DeepCollectionEquality().equals(other.created, created) &&
             const DeepCollectionEquality().equals(other.updated, updated) &&
             const DeepCollectionEquality().equals(other.version, version) &&
+            const DeepCollectionEquality().equals(other.event, event) &&
             const DeepCollectionEquality().equals(other.stages, stages));
   }
 
@@ -692,7 +733,6 @@ class _$_DroneBuild implements _DroneBuild {
         const DeepCollectionEquality().hash(authorAvatar),
         const DeepCollectionEquality().hash(trigger),
         const DeepCollectionEquality().hash(status),
-        const DeepCollectionEquality().hash(event),
         const DeepCollectionEquality().hash(action),
         const DeepCollectionEquality().hash(link),
         const DeepCollectionEquality().hash(message),
@@ -703,6 +743,8 @@ class _$_DroneBuild implements _DroneBuild {
         const DeepCollectionEquality().hash(target),
         const DeepCollectionEquality().hash(sender),
         const DeepCollectionEquality().hash(deployTo),
+        const DeepCollectionEquality().hash(cron),
+        const DeepCollectionEquality().hash(parent),
         const DeepCollectionEquality().hash(repoId),
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(number),
@@ -712,6 +754,7 @@ class _$_DroneBuild implements _DroneBuild {
         const DeepCollectionEquality().hash(created),
         const DeepCollectionEquality().hash(updated),
         const DeepCollectionEquality().hash(version),
+        const DeepCollectionEquality().hash(event),
         const DeepCollectionEquality().hash(stages)
       ]);
 
@@ -735,7 +778,6 @@ abstract class _DroneBuild implements DroneBuild {
       String authorAvatar,
       String trigger,
       String status,
-      String event,
       String action,
       String link,
       String message,
@@ -746,6 +788,8 @@ abstract class _DroneBuild implements DroneBuild {
       String target,
       String sender,
       String? deployTo,
+      String? cron,
+      int parent,
       int repoId,
       int id,
       int number,
@@ -755,6 +799,7 @@ abstract class _DroneBuild implements DroneBuild {
       int created,
       int updated,
       int version,
+      @JsonKey(unknownEnumValue: Event.push) Event event,
       List<DroneStage> stages}) = _$_DroneBuild;
 
   factory _DroneBuild.fromJson(Map<String, dynamic> json) =
@@ -774,8 +819,6 @@ abstract class _DroneBuild implements DroneBuild {
   String get trigger;
   @override
   String get status;
-  @override
-  String get event;
   @override
   String get action;
   @override
@@ -797,6 +840,10 @@ abstract class _DroneBuild implements DroneBuild {
   @override
   String? get deployTo;
   @override
+  String? get cron;
+  @override
+  int get parent;
+  @override
   int get repoId;
   @override
   int get id;
@@ -814,6 +861,9 @@ abstract class _DroneBuild implements DroneBuild {
   int get updated;
   @override
   int get version;
+  @override
+  @JsonKey(unknownEnumValue: Event.push)
+  Event get event;
   @override
   List<DroneStage> get stages;
   @override
