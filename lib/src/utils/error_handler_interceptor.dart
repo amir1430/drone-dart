@@ -4,40 +4,52 @@ import 'package:drone_dart/drone_dart.dart';
 class ErrorHandlerInterceptor extends Interceptor {
   @override
   void onError(DioError err, ErrorInterceptorHandler handler) {
-    switch (err.type) {
-      case DioErrorType.sendTimeout:
-      case DioErrorType.connectTimeout:
-        throw const DroneException.requestException(
-            message: 'Please check your internet connection');
-      case DioErrorType.other:
-        throw DroneException.requestException(message: err.message);
-      default:
-        throw const DroneException.requestException();
+    late DroneException _droneException;
+    if (err.type == DioErrorType.sendTimeout ||
+        err.type == DioErrorType.sendTimeout) {
+      _droneException = const DroneException.requestException(
+        message: 'Please check your internet connection',
+      );
+    } else if (err.type == DioErrorType.other) {
+      _droneException = DroneException.requestException(message: err.message);
+    } else {
+      _droneException = const DroneException.requestException();
     }
+
+    handler.reject(
+      DioError(
+        requestOptions: err.requestOptions,
+        error: _droneException,
+      ),
+    );
   }
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
     final statusCode = response.statusCode;
     if (statusCode == 400) {
-      throw const DroneException.invalidRequestBodyException();
+      handler.reject(DioError(
+          requestOptions: response.requestOptions,
+          error: const DroneException.invalidRequestBodyException()));
+    } else if (statusCode == 401) {
+      handler.reject(DioError(
+          requestOptions: response.requestOptions,
+          error: const DroneException.unauthorizedException()));
+    } else if (statusCode == 403) {
+      handler.reject(DioError(
+          requestOptions: response.requestOptions,
+          error: const DroneException.forbiddenException()));
+    } else if (statusCode == 404 || statusCode == 405) {
+      handler.reject(DioError(
+          requestOptions: response.requestOptions,
+          error: const DroneException.notFound()));
+    } else if (statusCode! >= 500) {
+      handler.reject(DioError(
+          requestOptions: response.requestOptions,
+          error:
+              DroneException.internalException(message: '${response.data}')));
+    } else {
+      handler.next(response);
     }
-
-    if (statusCode == 401) {
-      throw const DroneException.unauthorizedException();
-    }
-
-    if (statusCode == 403) {
-      throw const DroneException.forbiddenException();
-    }
-
-    if (statusCode == 404 || statusCode == 405) {
-      throw const DroneException.notFound();
-    }
-
-    if (statusCode! >= 500) {
-      throw DroneException.internalException(message: '${response.data}');
-    }
-    handler.next(response);
   }
 }

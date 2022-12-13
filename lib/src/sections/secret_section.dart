@@ -1,9 +1,9 @@
 part of '../drone_dart_base.dart';
 
-class SecretSection with ApiHelper {
-  const SecretSection(this._dio);
+class SecretSection {
+  const SecretSection(this._dioService);
 
-  final Dio _dio;
+  final DioService _dioService;
 
   /// POST
   /// /api/repos/{owner}/{repo}/secrets
@@ -17,14 +17,12 @@ class SecretSection with ApiHelper {
       'You should provide [name, data]',
     );
 
-    return await request<DroneSecret, DroneSecret>(
-      dio: _dio,
+    return await _dioService.request<DroneSecret, DroneSecret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets',
       ),
       body: requestBody.toJson(),
       method: HttpMethod.post,
-      parser: (d) => DroneSecret.fromJson(d),
     );
   }
 
@@ -35,8 +33,7 @@ class SecretSection with ApiHelper {
     required String repo,
     required String secret,
   }) async {
-    await request(
-      dio: _dio,
+    await _dioService.request(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
@@ -51,12 +48,10 @@ class SecretSection with ApiHelper {
     required String repo,
     required String secret,
   }) async {
-    return await request<DroneSecret, DroneSecret>(
-      dio: _dio,
+    return await _dioService.request<DroneSecret, DroneSecret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
-      parser: (d) => DroneSecret.fromJson(d),
     );
   }
 
@@ -66,12 +61,10 @@ class SecretSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneSecret, List<DroneSecret>>(
-      dio: _dio,
+    return await _dioService.request<DroneSecret, List<DroneSecret>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets',
       ),
-      parser: (d) => DroneSecret.fromJson(d),
     );
   }
 
@@ -87,14 +80,12 @@ class SecretSection with ApiHelper {
       requestBody.data.isNotEmpty,
       'You should provider [name]',
     );
-    return await request<DroneSecret, DroneSecret>(
-      dio: _dio,
+    return await _dioService.request<DroneSecret, DroneSecret>(
       path: Uri(
         path: '/api/repos/$owner/$repo/secrets/$secret',
       ),
       body: requestBody.toJson(),
       method: HttpMethod.patch,
-      parser: (d) => DroneSecret.fromJson(d),
     );
   }
 }

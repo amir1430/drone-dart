@@ -1,9 +1,9 @@
 part of '../drone_dart_base.dart';
 
-class UsersSection with ApiHelper {
-  const UsersSection(this._dio);
+class UsersSection {
+  const UsersSection(this._dioService);
 
-  final Dio _dio;
+  final DioService _dioService;
 
   /// ``` dart
   /// const requestBody = UserRequestBody(
@@ -25,14 +25,12 @@ class UsersSection with ApiHelper {
       'You should provide [login, avatarUrl, email]',
     );
 
-    return await request<DroneUser, DroneUser>(
-      dio: _dio,
+    return await _dioService.request<DroneUser, DroneUser>(
       path: Uri(
         path: '/api/users',
       ),
       body: requestBody.toJson(),
       method: HttpMethod.post,
-      parser: (d) => DroneUser.fromJson(d),
     );
   }
 
@@ -41,8 +39,7 @@ class UsersSection with ApiHelper {
   Future<void> delete({
     required String login,
   }) async {
-    await request(
-      dio: _dio,
+    await _dioService.request(
       path: Uri(
         path: '/api/users/$login',
       ),
@@ -54,25 +51,21 @@ class UsersSection with ApiHelper {
   /// /api/users/{login}
   Future<DroneUser> info({
     required String login,
-  }) {
-    return request<DroneUser, DroneUser>(
-      dio: _dio,
+  }) async {
+    return await _dioService.request<DroneUser, DroneUser>(
       path: Uri(
         path: '/api/users/$login',
       ),
-      parser: (d) => DroneUser.fromJson(d),
     );
   }
 
   /// GET
   /// /api/users
   Future<List<DroneUser>> list() async {
-    return await request<DroneUser, List<DroneUser>>(
-      dio: _dio,
+    return await _dioService.request<DroneUser, List<DroneUser>>(
       path: Uri(
         path: '/api/users',
       ),
-      parser: (d) => DroneUser.fromJson(d),
     );
   }
 
@@ -90,14 +83,12 @@ class UsersSection with ApiHelper {
     required String login,
     required UserRequestBody requestBody,
   }) async {
-    return await request<DroneUser, DroneUser>(
-      dio: _dio,
+    return await _dioService.request<DroneUser, DroneUser>(
       path: Uri(
         path: '/api/users/$login',
       ),
       body: requestBody.toJson(),
       method: HttpMethod.patch,
-      parser: (d) => DroneUser.fromJson(d),
     );
   }
 }

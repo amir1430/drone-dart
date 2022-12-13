@@ -1,9 +1,9 @@
 part of '../drone_dart_base.dart';
 
-class RepoSection with ApiHelper {
-  const RepoSection(this._dio);
+class RepoSection {
+  const RepoSection(this._dioService);
 
-  final Dio _dio;
+  final DioService _dioService;
 
   /// POST
   /// /api/repos/{owner}/{repo}/chown
@@ -11,13 +11,11 @@ class RepoSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneRepo, DroneRepo>(
-      dio: _dio,
+    return await _dioService.request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo/chown',
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneRepo.fromJson(d),
     );
   }
 
@@ -27,13 +25,11 @@ class RepoSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneRepo, DroneRepo>(
-      dio: _dio,
+    return await _dioService.request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
       method: HttpMethod.delete,
-      parser: (d) => DroneRepo.fromJson(d),
     );
   }
 
@@ -43,13 +39,11 @@ class RepoSection with ApiHelper {
     required String owner,
     required String name,
   }) async {
-    return await request<DroneRepo, DroneRepo>(
-      dio: _dio,
+    return await _dioService.request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$name',
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneRepo.fromJson(d),
     );
   }
 
@@ -59,24 +53,20 @@ class RepoSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneRepo, DroneRepo>(
-      dio: _dio,
+    return await _dioService.request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
-      parser: (d) => DroneRepo.fromJson(d),
     );
   }
 
   /// GET
   /// /api/user/repos
   Future<List<DroneRepo>> list() async {
-    return await request<DroneRepo, List<DroneRepo>>(
-      dio: _dio,
+    return await _dioService.request<DroneRepo, List<DroneRepo>>(
       path: Uri(
         path: '/api/user/repos',
       ),
-      parser: (d) => DroneRepo.fromJson(d),
     );
   }
 
@@ -86,13 +76,11 @@ class RepoSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneRepo, DroneRepo>(
-      dio: _dio,
+    return await _dioService.request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo/repair',
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneRepo.fromJson(d),
     );
   }
 
@@ -103,14 +91,12 @@ class RepoSection with ApiHelper {
     required String repo,
     required DroneRepo droneRepo,
   }) async {
-    return await request<DroneRepo, DroneRepo>(
-      dio: _dio,
+    return await _dioService.request<DroneRepo, DroneRepo>(
       path: Uri(
         path: '/api/repos/$owner/$repo',
       ),
       body: droneRepo.toJson(),
       method: HttpMethod.patch,
-      parser: (d) => DroneRepo.fromJson(d),
     );
   }
 }

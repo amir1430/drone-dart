@@ -1,9 +1,9 @@
 part of '../drone_dart_base.dart';
 
-class BuildSection with ApiHelper {
-  const BuildSection(this._dio);
+class BuildSection {
+  const BuildSection(this._dioService);
 
-  final Dio _dio;
+  final DioService _dioService;
 
   /// POST
   /// /api/repos/{owner}/{repo}/builds/{build}/approve
@@ -22,8 +22,7 @@ class BuildSection with ApiHelper {
     String? branch,
     Map<String, String>? parameters,
   }) async {
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, DroneBuild>(
       path: Uri(
         path: '/api/repos/$namespace/$name/builds',
         queryParameters: <String, String>{
@@ -33,7 +32,6 @@ class BuildSection with ApiHelper {
         },
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 
@@ -52,12 +50,10 @@ class BuildSection with ApiHelper {
     required int build,
     required String repo,
   }) async {
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, DroneBuild>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 
@@ -70,13 +66,11 @@ class BuildSection with ApiHelper {
     int perPage = 25,
   }) async {
     assert(perPage >= 0 && perPage <= 100);
-    return await request<DroneBuild, List<DroneBuild>>(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, List<DroneBuild>>(
       path: Uri(path: '/api/repos/$owner/$repo/builds', queryParameters: {
         'page': '$page',
         'per_page': '$perPage',
       }),
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 
@@ -89,12 +83,10 @@ class BuildSection with ApiHelper {
     required String stage,
     required String step,
   }) async {
-    return await request<DroneLog, List<DroneLog>>(
-      dio: _dio,
+    return await _dioService.request<DroneLog, List<DroneLog>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build/logs/$stage/$step',
       ),
-      parser: (d) => DroneLog.fromJson(d),
     );
   }
 
@@ -107,8 +99,7 @@ class BuildSection with ApiHelper {
     required String target,
     Map<String, String>? parameters,
   }) async {
-    return await request<DroneBuild, DroneBuild?>(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, DroneBuild?>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build/promote',
         queryParameters: <String, String>{
@@ -117,7 +108,6 @@ class BuildSection with ApiHelper {
         },
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 
@@ -128,13 +118,11 @@ class BuildSection with ApiHelper {
     required String repo,
     required int build,
   }) async {
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, DroneBuild>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 
@@ -145,13 +133,11 @@ class BuildSection with ApiHelper {
     required String repo,
     required int build,
   }) async {
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, DroneBuild>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/$build',
       ),
       method: HttpMethod.delete,
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 
@@ -161,12 +147,10 @@ class BuildSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneBuild, List<DroneBuild>>(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, List<DroneBuild>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/branches',
       ),
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 
@@ -176,12 +160,10 @@ class BuildSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneBuild, List<DroneBuild>>(
-      dio: _dio,
+    return await _dioService.request<DroneBuild, List<DroneBuild>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/builds/deployments',
       ),
-      parser: (d) => DroneBuild.fromJson(d),
     );
   }
 }

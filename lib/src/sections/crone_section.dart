@@ -1,9 +1,9 @@
 part of '../drone_dart_base.dart';
 
-class CroneSection with ApiHelper {
-  const CroneSection(this._dio);
+class CroneSection {
+  const CroneSection(this._dioService);
 
-  final Dio _dio;
+  final DioService _dioService;
 
   /// POST
   /// /api/repos/{owner}/{repo}/cron
@@ -18,13 +18,11 @@ class CroneSection with ApiHelper {
           requestBody.branch.isNotEmpty,
       'You should provide [name,expr,branch]',
     );
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneCron, DroneCron>(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron',
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneCron.fromJson(d),
       body: requestBody.toJson(),
     );
   }
@@ -36,8 +34,7 @@ class CroneSection with ApiHelper {
     required String repo,
     required String name,
   }) async {
-    await request(
-      dio: _dio,
+    await _dioService.request<void, void>(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
@@ -52,12 +49,10 @@ class CroneSection with ApiHelper {
     required String repo,
     required String name,
   }) async {
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneCron, DroneCron>(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
-      parser: (d) => DroneCron.fromJson(d),
     );
   }
 
@@ -67,12 +62,10 @@ class CroneSection with ApiHelper {
     required String owner,
     required String repo,
   }) async {
-    return await request<DroneCron, List<DroneCron>>(
-      dio: _dio,
+    return await _dioService.request<DroneCron, List<DroneCron>>(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron',
       ),
-      parser: (d) => DroneCron.fromJson(d),
     );
   }
 
@@ -83,13 +76,11 @@ class CroneSection with ApiHelper {
     required String repo,
     required String name,
   }) async {
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneCron, DroneCronTrigger>(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
       method: HttpMethod.post,
-      parser: (d) => DroneCron.fromJson(d),
     );
   }
 
@@ -101,13 +92,11 @@ class CroneSection with ApiHelper {
     required String name,
     required DroneCron requestBody,
   }) async {
-    return await request(
-      dio: _dio,
+    return await _dioService.request<DroneCron, DroneCron>(
       path: Uri(
         path: '/api/repos/$owner/$repo/cron/$name',
       ),
       method: HttpMethod.patch,
-      parser: (d) => DroneCron.fromJson(d),
       body: requestBody.toJson(),
     );
   }
