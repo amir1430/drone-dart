@@ -1,84 +1,60 @@
 part of '../drone_dart_base.dart';
 
-mixin ApiHelper {
-  // final CancelToken _cancelToken = CancelToken();
+abstract class DioService {
+  const DioService({required this.dio});
 
-  // Stream<DroneRepo> get stream => _stream();
+  final Dio dio;
 
-  // Stream<DroneRepo> stream() async* {
-  //   try {
-  //     final res = await Dio().request<ResponseBody>(
-  //       '$server/api/stream?access_token=$token',
-  //       options: Options(
-  //         responseType: ResponseType.stream,
-  //       ),
-  //       // cancelToken: _cancelToken,
-  //     );
-  //     final stream = res.data?.stream
-  //         .cast<List<int>>()
-  //         .transform(EventToRepoTransformer());
-  //     if (stream != null) {
-  //       await for (final event in stream) {
-  //         yield event;
-  //       }
-  //     }
-  //   } on DioError catch (e) {
-  //     if (CancelToken.isCancel(e)) {
-  //       log('Request cancelled');
-  //     }
-  //   } catch (_) {
-  //     rethrow;
-  //   }
-  // }
+  Map<dynamic, JsonParser> get jsonParserMap => {};
 
   Future<R> request<T, R>({
-    required Dio dio,
     required Uri path,
-    JsonParser<T>? parser,
+    Map<String, dynamic>? body,
+    HttpMethod method = HttpMethod.get,
+  });
+}
+
+class DroneService extends DioService {
+  const DroneService({required super.dio});
+
+  @override
+  Map<Object, JsonParser<Object>> get jsonParserMap => {
+        DroneBuild: DroneBuild.fromJson,
+        DroneLog: DroneLog.fromJson,
+        DroneCron: DroneCron.fromJson,
+        DroneCronTrigger: DroneCronTrigger.fromJson,
+        DronePermission: DronePermission.fromJson,
+        DroneRepo: DroneRepo.fromJson,
+        DroneSecret: DroneSecret.fromJson,
+        DroneStage: DroneStage.fromJson,
+        DroneStep: DroneStep.fromJson,
+        DroneUser: DroneUser.fromJson,
+      };
+
+  @override
+  Future<R> request<T, R>({
+    required Uri path,
     Map<String, dynamic>? body,
     HttpMethod method = HttpMethod.get,
   }) async {
-    late final Response response;
+    late Response response;
     try {
       response = await dio.request(
         path.toString(),
         data: body,
-        options: Options(
-          method: method.name,
-        ),
+        options: Options(method: method.name),
       );
-    } on SocketException {
-      throw const DroneException.requestException(
-          message: 'Please check your internet connection');
     } on DioError catch (e) {
-      throw DroneException.requestException(message: e.message);
-    } catch (e) {
-      throw const DroneException.requestException();
+      throw e.error;
     }
 
-    if (response.statusCode == 400) {
-      throw const DroneException.invalidRequestBodyException();
-    }
-
-    if (response.statusCode == 401) {
-      throw const DroneException.unauthorizedException();
-    }
-
-    if (response.statusCode == 403) {
-      throw const DroneException.forbiddenException();
-    }
-
-    if (response.statusCode == 404 || response.statusCode == 405) {
-      throw const DroneException.notFound();
-    }
-
-    if (response.statusCode! >= 500) {
-      throw DroneException.internalException(message: '${response.data}');
-    }
-
-    if (parser == null) {
+    final parsercontainsKey = jsonParserMap.containsKey(T);
+    if (!parsercontainsKey) {
       return response.data;
     }
+
+    final parser = (jsonParserMap[T] as JsonParser<T>);
+
     try {
       if (response.data is List<dynamic> ||
           response.data is Map<String, dynamic>) {
@@ -95,5 +71,3 @@ mixin ApiHelper {
     }
   }
 }
-
-
