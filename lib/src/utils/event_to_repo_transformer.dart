@@ -22,7 +22,7 @@ class EventToRepoTransformer
                   _controller.add(DroneRepo.fromJson(jsonDecode(data!)));
                 } catch (e) {
                   _controller.addError(
-                      DroneException.jsonDeserializaلtionException(
+                      DroneException.jsonDeserializationException(
                           message: '$e'));
                 }
               }
