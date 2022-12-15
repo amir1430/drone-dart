@@ -1,9 +1,8 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-
 import 'package:drone_dart/src/utils/error_handler_interceptor.dart';
+import 'package:drone_dart/src/utils/event_to_repo_transformer.dart';
 
 import '../drone_dart.dart';
 import 'utils/http_method.dart';
@@ -17,6 +16,7 @@ part './sections/template_section.dart';
 part './sections/user_section.dart';
 part './sections/users_section.dart';
 part 'utils/api_helper.dart';
+part 'utils/event_source_stream.dart';
 
 class DroneClient {
   DroneClient({
@@ -26,6 +26,7 @@ class DroneClient {
     int? sendTimeout = 10000,
     int? connectTimeout = 10000,
     int? receiveTimeout = 10000,
+    this.streamRetry = 10000,
   }) : _dioService = dioService ??
             DroneService(
               dio: Dio(BaseOptions(
@@ -54,6 +55,7 @@ class DroneClient {
   final DioService _dioService;
   final String token;
   final String server;
+  final int streamRetry;
 
   late final BuildSection _buildSection;
   BuildSection get buildSection => _buildSection;
@@ -87,4 +89,10 @@ class DroneClient {
   int get hashCode {
     return token.hashCode ^ server.hashCode;
   }
+
+  Stream<DroneRepo> get stream => _StreamEventSource(
+        server: server,
+        token: token,
+        streamRetry: streamRetry,
+      );
 }
