@@ -90,7 +90,7 @@ class DroneClient {
     return token.hashCode ^ server.hashCode;
   }
 
-  Stream<DroneRepo> get stream => _StreamEventSource(
+  Stream<DroneEvent> get stream => _StreamEventSource(
         server: server,
         token: token,
         streamRetry: streamRetry,

@@ -1,14 +1,14 @@
 part of '../drone_dart_base.dart';
 
-class _StreamEventSource extends Stream<DroneRepo> {
+class _StreamEventSource extends Stream<DroneEvent> {
   _StreamEventSource({
     required this.server,
     required this.token,
     required this.streamRetry,
   }) : _cancelToken = CancelToken();
 
-  late StreamController<DroneRepo> _streamController;
-  late StreamSubscription<DroneRepo>? _streamSubscription;
+  late StreamController<DroneEvent> _streamController;
+  late StreamSubscription<DroneEvent>? _streamSubscription;
 
   final CancelToken _cancelToken;
 
@@ -16,8 +16,8 @@ class _StreamEventSource extends Stream<DroneRepo> {
   final int streamRetry;
 
   @override
-  StreamSubscription<DroneRepo> listen(
-    void Function(DroneRepo event)? onData, {
+  StreamSubscription<DroneEvent> listen(
+    void Function(DroneEvent event)? onData, {
     Function? onError,
     void Function()? onDone,
     bool? cancelOnError,
@@ -58,15 +58,13 @@ class _StreamEventSource extends Stream<DroneRepo> {
       } else {
         _streamSubscription = res.data!.stream
             .cast<List<int>>()
-            .transform(EventToRepoTransformer())
+            .transform(EventToRepoTransformer(server: server, token: token))
             .listen(
                 (event) {
-                  print('object');
                   _streamController.add(event);
                 },
                 cancelOnError: false,
                 onError: (e) async {
-                  print('gooooh');
                   await _retry(errorMessage: e);
                 },
                 onDone: () async {
@@ -79,7 +77,6 @@ class _StreamEventSource extends Stream<DroneRepo> {
   }
 
   Future<void> _retry({Object? errorMessage}) async {
-    print('_retry');
     if (errorMessage != null) {
       if (errorMessage is DroneException) {
         _streamController.addError(
