@@ -25,12 +25,11 @@ class _StreamEventSource extends Stream<DroneEvent> {
     _streamController = StreamController(
       onListen: _start,
       onCancel: () async {
-        _cancelToken.cancel();
-        try {
-          await _streamSubscription?.cancel();
-        } catch (e) {
-          print(e);
+        if (DroneClient.log) {
+          logger('Stream Subscription closed');
         }
+        await _streamSubscription?.cancel();
+        _cancelToken.cancel();
       },
       onPause: () => _streamSubscription?.pause(),
       onResume: () => _streamSubscription?.resume(),
@@ -45,6 +44,7 @@ class _StreamEventSource extends Stream<DroneEvent> {
   }
 
   Future<void> _start() async {
+    _streamSubscription = null;
     try {
       final res = await Dio(BaseOptions(
         responseType: ResponseType.stream,
@@ -52,7 +52,11 @@ class _StreamEventSource extends Stream<DroneEvent> {
         '$server/api/stream?access_token=$token',
         cancelToken: _cancelToken,
       );
-      print('${res.statusCode} ${'$server/api/stream?access_token=$token'}');
+      if (DroneClient.log) {
+        logger(
+          '${res.statusCode} ${'$server/api/stream?access_token=$token'}',
+        );
+      }
       if (res.statusCode != 200) {
         _streamController.addError(const DroneException.requestException());
       } else {
@@ -64,15 +68,27 @@ class _StreamEventSource extends Stream<DroneEvent> {
                   _streamController.add(event);
                 },
                 cancelOnError: false,
-                onError: (e) async {
+                onError: (e, s) async {
+                  if (DroneClient.log) {
+                    logger('Stream on Error', error: e, stackTrace: s);
+                  }
                   await _retry(errorMessage: e);
                 },
                 onDone: () async {
+                  if (DroneClient.log) {
+                    logger('Stream Subscription closed');
+                  }
                   await _streamSubscription?.cancel();
                 });
       }
     } catch (e) {
-      await _retry(errorMessage: e);
+      if (_cancelToken.isCancelled) {
+        if (DroneClient.log) {
+          logger('Requset has been terminated');
+        }
+      } else {
+        await _retry(errorMessage: e);
+      }
     }
   }
 
@@ -89,7 +105,14 @@ class _StreamEventSource extends Stream<DroneEvent> {
             DroneException.requestException(message: '$errorMessage'));
       }
     }
+
+    if (DroneClient.log) {
+      logger('Retrying started');
+    }
     await Future.delayed(Duration(milliseconds: streamRetry));
     await _start();
+    if (DroneClient.log) {
+      logger('Retrying Ended');
+    }
   }
 }

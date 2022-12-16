@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:dio/dio.dart';
 import 'package:drone_dart/src/utils/error_handler_interceptor.dart';
@@ -17,6 +18,19 @@ part './sections/user_section.dart';
 part './sections/users_section.dart';
 part 'utils/api_helper.dart';
 part 'utils/event_source_stream.dart';
+
+void logger(
+  String message, {
+  StackTrace? stackTrace,
+  Object? error,
+}) {
+  log(
+    message,
+    name: 'drone-dart',
+    stackTrace: stackTrace,
+    error: error,
+  );
+}
 
 class DroneClient {
   DroneClient({
@@ -51,6 +65,7 @@ class DroneClient {
     _userSection = UserSection(_dioService);
     _usersSection = UsersSection(_dioService);
   }
+  static bool log = false;
 
   final DioService _dioService;
   final String token;
