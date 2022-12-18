@@ -12,46 +12,11 @@ part of 'cron_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneCron _$DroneCronFromJson(Map<String, dynamic> json) {
   return _DroneCron.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneCronTearOff {
-  const _$DroneCronTearOff();
-
-  _DroneCron call(
-      {String name = '',
-      String expr = '',
-      String branch = '',
-      int id = 0,
-      int repoId = 0,
-      int next = 0,
-      int pref = 0,
-      int created = 0,
-      int updated = 0}) {
-    return _DroneCron(
-      name: name,
-      expr: expr,
-      branch: branch,
-      id: id,
-      repoId: repoId,
-      next: next,
-      pref: pref,
-      created: created,
-      updated: updated,
-    );
-  }
-
-  DroneCron fromJson(Map<String, Object?> json) {
-    return DroneCron.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneCron = _$DroneCronTearOff();
 
 /// @nodoc
 mixin _$DroneCron {
@@ -74,7 +39,8 @@ mixin _$DroneCron {
 /// @nodoc
 abstract class $DroneCronCopyWith<$Res> {
   factory $DroneCronCopyWith(DroneCron value, $Res Function(DroneCron) then) =
-      _$DroneCronCopyWithImpl<$Res>;
+      _$DroneCronCopyWithImpl<$Res, DroneCron>;
+  @useResult
   $Res call(
       {String name,
       String expr,
@@ -88,72 +54,76 @@ abstract class $DroneCronCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DroneCronCopyWithImpl<$Res> implements $DroneCronCopyWith<$Res> {
+class _$DroneCronCopyWithImpl<$Res, $Val extends DroneCron>
+    implements $DroneCronCopyWith<$Res> {
   _$DroneCronCopyWithImpl(this._value, this._then);
 
-  final DroneCron _value;
   // ignore: unused_field
-  final $Res Function(DroneCron) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? expr = freezed,
-    Object? branch = freezed,
-    Object? id = freezed,
-    Object? repoId = freezed,
-    Object? next = freezed,
-    Object? pref = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
+    Object? name = null,
+    Object? expr = null,
+    Object? branch = null,
+    Object? id = null,
+    Object? repoId = null,
+    Object? next = null,
+    Object? pref = null,
+    Object? created = null,
+    Object? updated = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      expr: expr == freezed
+      expr: null == expr
           ? _value.expr
           : expr // ignore: cast_nullable_to_non_nullable
               as String,
-      branch: branch == freezed
+      branch: null == branch
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      next: next == freezed
+      next: null == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
               as int,
-      pref: pref == freezed
+      pref: null == pref
           ? _value.pref
           : pref // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DroneCronCopyWith<$Res> implements $DroneCronCopyWith<$Res> {
-  factory _$DroneCronCopyWith(
-          _DroneCron value, $Res Function(_DroneCron) then) =
-      __$DroneCronCopyWithImpl<$Res>;
+abstract class _$$_DroneCronCopyWith<$Res> implements $DroneCronCopyWith<$Res> {
+  factory _$$_DroneCronCopyWith(
+          _$_DroneCron value, $Res Function(_$_DroneCron) then) =
+      __$$_DroneCronCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name,
       String expr,
@@ -167,60 +137,60 @@ abstract class _$DroneCronCopyWith<$Res> implements $DroneCronCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DroneCronCopyWithImpl<$Res> extends _$DroneCronCopyWithImpl<$Res>
-    implements _$DroneCronCopyWith<$Res> {
-  __$DroneCronCopyWithImpl(_DroneCron _value, $Res Function(_DroneCron) _then)
-      : super(_value, (v) => _then(v as _DroneCron));
+class __$$_DroneCronCopyWithImpl<$Res>
+    extends _$DroneCronCopyWithImpl<$Res, _$_DroneCron>
+    implements _$$_DroneCronCopyWith<$Res> {
+  __$$_DroneCronCopyWithImpl(
+      _$_DroneCron _value, $Res Function(_$_DroneCron) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneCron get _value => super._value as _DroneCron;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? expr = freezed,
-    Object? branch = freezed,
-    Object? id = freezed,
-    Object? repoId = freezed,
-    Object? next = freezed,
-    Object? pref = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
+    Object? name = null,
+    Object? expr = null,
+    Object? branch = null,
+    Object? id = null,
+    Object? repoId = null,
+    Object? next = null,
+    Object? pref = null,
+    Object? created = null,
+    Object? updated = null,
   }) {
-    return _then(_DroneCron(
-      name: name == freezed
+    return _then(_$_DroneCron(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      expr: expr == freezed
+      expr: null == expr
           ? _value.expr
           : expr // ignore: cast_nullable_to_non_nullable
               as String,
-      branch: branch == freezed
+      branch: null == branch
           ? _value.branch
           : branch // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      next: next == freezed
+      next: null == next
           ? _value.next
           : next // ignore: cast_nullable_to_non_nullable
               as int,
-      pref: pref == freezed
+      pref: null == pref
           ? _value.pref
           : pref // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
@@ -246,32 +216,32 @@ class _$_DroneCron implements _DroneCron {
   factory _$_DroneCron.fromJson(Map<String, dynamic> json) =>
       _$$_DroneCronFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String name;
-  @JsonKey()
   @override
+  @JsonKey()
   final String expr;
-  @JsonKey()
   @override
+  @JsonKey()
   final String branch;
-  @JsonKey()
   @override
+  @JsonKey()
   final int id;
-  @JsonKey()
   @override
+  @JsonKey()
   final int repoId;
-  @JsonKey()
   @override
+  @JsonKey()
   final int next;
-  @JsonKey()
   @override
+  @JsonKey()
   final int pref;
-  @JsonKey()
   @override
+  @JsonKey()
   final int created;
-  @JsonKey()
   @override
+  @JsonKey()
   final int updated;
 
   @override
@@ -283,53 +253,48 @@ class _$_DroneCron implements _DroneCron {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneCron &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.expr, expr) &&
-            const DeepCollectionEquality().equals(other.branch, branch) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.repoId, repoId) &&
-            const DeepCollectionEquality().equals(other.next, next) &&
-            const DeepCollectionEquality().equals(other.pref, pref) &&
-            const DeepCollectionEquality().equals(other.created, created) &&
-            const DeepCollectionEquality().equals(other.updated, updated));
+            other is _$_DroneCron &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.expr, expr) || other.expr == expr) &&
+            (identical(other.branch, branch) || other.branch == branch) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.repoId, repoId) || other.repoId == repoId) &&
+            (identical(other.next, next) || other.next == next) &&
+            (identical(other.pref, pref) || other.pref == pref) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.updated, updated) || other.updated == updated));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(expr),
-      const DeepCollectionEquality().hash(branch),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(repoId),
-      const DeepCollectionEquality().hash(next),
-      const DeepCollectionEquality().hash(pref),
-      const DeepCollectionEquality().hash(created),
-      const DeepCollectionEquality().hash(updated));
 
   @JsonKey(ignore: true)
   @override
-  _$DroneCronCopyWith<_DroneCron> get copyWith =>
-      __$DroneCronCopyWithImpl<_DroneCron>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, name, expr, branch, id, repoId,
+      next, pref, created, updated);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DroneCronCopyWith<_$_DroneCron> get copyWith =>
+      __$$_DroneCronCopyWithImpl<_$_DroneCron>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneCronToJson(this);
+    return _$$_DroneCronToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneCron implements DroneCron {
   const factory _DroneCron(
-      {String name,
-      String expr,
-      String branch,
-      int id,
-      int repoId,
-      int next,
-      int pref,
-      int created,
-      int updated}) = _$_DroneCron;
+      {final String name,
+      final String expr,
+      final String branch,
+      final int id,
+      final int repoId,
+      final int next,
+      final int pref,
+      final int created,
+      final int updated}) = _$_DroneCron;
 
   factory _DroneCron.fromJson(Map<String, dynamic> json) =
       _$_DroneCron.fromJson;
@@ -354,6 +319,6 @@ abstract class _DroneCron implements DroneCron {
   int get updated;
   @override
   @JsonKey(ignore: true)
-  _$DroneCronCopyWith<_DroneCron> get copyWith =>
+  _$$_DroneCronCopyWith<_$_DroneCron> get copyWith =>
       throw _privateConstructorUsedError;
 }

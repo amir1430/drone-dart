@@ -12,71 +12,11 @@ part of 'drone_exception.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$DroneExceptionTearOff {
-  const _$DroneExceptionTearOff();
-
-  NotFound notFound(
-      {String message =
-          'Not Found 404. The requested resource could not be found.'}) {
-    return NotFound(
-      message: message,
-    );
-  }
-
-  RequestException requestException(
-      {String message = 'Http request Exception'}) {
-    return RequestException(
-      message: message,
-    );
-  }
-
-  ForbiddenException forbiddenException(
-      {String message =
-          'Forbidden 403. The requested resource is forbidden.'}) {
-    return ForbiddenException(
-      message: message,
-    );
-  }
-
-  InternalException internalException(
-      {String message = 'Internal 500. An internal server error occurred.'}) {
-    return InternalException(
-      message: message,
-    );
-  }
-
-  InvalidRequestBodyException invalidRequestBodyException(
-      {String message = 'Invalid 400. You missed some fields.'}) {
-    return InvalidRequestBodyException(
-      message: message,
-    );
-  }
-
-  UnauthorizedException unauthorizedException(
-      {String message = 'Unauthorized'}) {
-    return UnauthorizedException(
-      message: message,
-    );
-  }
-
-  JsonDeserializationException jsonDeserializationException(
-      {String message = 'Exception on deserializing json'}) {
-    return JsonDeserializationException(
-      message: message,
-    );
-  }
-}
-
-/// @nodoc
-const $DroneException = _$DroneExceptionTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$DroneException {
   String get message => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(String message) notFound,
@@ -86,17 +26,19 @@ mixin _$DroneException {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,6 +50,7 @@ mixin _$DroneException {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -123,19 +66,21 @@ mixin _$DroneException {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -149,6 +94,7 @@ mixin _$DroneException {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -162,56 +108,60 @@ mixin _$DroneException {
 abstract class $DroneExceptionCopyWith<$Res> {
   factory $DroneExceptionCopyWith(
           DroneException value, $Res Function(DroneException) then) =
-      _$DroneExceptionCopyWithImpl<$Res>;
+      _$DroneExceptionCopyWithImpl<$Res, DroneException>;
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$DroneExceptionCopyWithImpl<$Res>
+class _$DroneExceptionCopyWithImpl<$Res, $Val extends DroneException>
     implements $DroneExceptionCopyWith<$Res> {
   _$DroneExceptionCopyWithImpl(this._value, this._then);
 
-  final DroneException _value;
   // ignore: unused_field
-  final $Res Function(DroneException) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
     return _then(_value.copyWith(
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class $NotFoundCopyWith<$Res>
+abstract class _$$NotFoundCopyWith<$Res>
     implements $DroneExceptionCopyWith<$Res> {
-  factory $NotFoundCopyWith(NotFound value, $Res Function(NotFound) then) =
-      _$NotFoundCopyWithImpl<$Res>;
+  factory _$$NotFoundCopyWith(
+          _$NotFound value, $Res Function(_$NotFound) then) =
+      __$$NotFoundCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$NotFoundCopyWithImpl<$Res> extends _$DroneExceptionCopyWithImpl<$Res>
-    implements $NotFoundCopyWith<$Res> {
-  _$NotFoundCopyWithImpl(NotFound _value, $Res Function(NotFound) _then)
-      : super(_value, (v) => _then(v as NotFound));
+class __$$NotFoundCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$NotFound>
+    implements _$$NotFoundCopyWith<$Res> {
+  __$$NotFoundCopyWithImpl(_$NotFound _value, $Res Function(_$NotFound) _then)
+      : super(_value, _then);
 
-  @override
-  NotFound get _value => super._value as NotFound;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(NotFound(
-      message: message == freezed
+    return _then(_$NotFound(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -226,8 +176,8 @@ class _$NotFound implements NotFound {
       {this.message =
           'Not Found 404. The requested resource could not be found.'});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -239,18 +189,18 @@ class _$NotFound implements NotFound {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is NotFound &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$NotFound &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $NotFoundCopyWith<NotFound> get copyWith =>
-      _$NotFoundCopyWithImpl<NotFound>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$NotFoundCopyWith<_$NotFound> get copyWith =>
+      __$$NotFoundCopyWithImpl<_$NotFound>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -262,6 +212,7 @@ class _$NotFound implements NotFound {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) {
     return notFound(message);
   }
@@ -269,13 +220,14 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) {
     return notFound?.call(message);
   }
@@ -290,6 +242,7 @@ class _$NotFound implements NotFound {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -311,6 +264,7 @@ class _$NotFound implements NotFound {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) {
     return notFound(this);
   }
@@ -318,15 +272,16 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) {
     return notFound?.call(this);
   }
@@ -343,6 +298,7 @@ class _$NotFound implements NotFound {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) {
     if (notFound != null) {
@@ -353,43 +309,42 @@ class _$NotFound implements NotFound {
 }
 
 abstract class NotFound implements DroneException {
-  const factory NotFound({String message}) = _$NotFound;
+  const factory NotFound({final String message}) = _$NotFound;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  $NotFoundCopyWith<NotFound> get copyWith =>
+  _$$NotFoundCopyWith<_$NotFound> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $RequestExceptionCopyWith<$Res>
+abstract class _$$RequestExceptionCopyWith<$Res>
     implements $DroneExceptionCopyWith<$Res> {
-  factory $RequestExceptionCopyWith(
-          RequestException value, $Res Function(RequestException) then) =
-      _$RequestExceptionCopyWithImpl<$Res>;
+  factory _$$RequestExceptionCopyWith(
+          _$RequestException value, $Res Function(_$RequestException) then) =
+      __$$RequestExceptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$RequestExceptionCopyWithImpl<$Res>
-    extends _$DroneExceptionCopyWithImpl<$Res>
-    implements $RequestExceptionCopyWith<$Res> {
-  _$RequestExceptionCopyWithImpl(
-      RequestException _value, $Res Function(RequestException) _then)
-      : super(_value, (v) => _then(v as RequestException));
+class __$$RequestExceptionCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$RequestException>
+    implements _$$RequestExceptionCopyWith<$Res> {
+  __$$RequestExceptionCopyWithImpl(
+      _$RequestException _value, $Res Function(_$RequestException) _then)
+      : super(_value, _then);
 
-  @override
-  RequestException get _value => super._value as RequestException;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(RequestException(
-      message: message == freezed
+    return _then(_$RequestException(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -402,8 +357,8 @@ class _$RequestExceptionCopyWithImpl<$Res>
 class _$RequestException implements RequestException {
   const _$RequestException({this.message = 'Http request Exception'});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -415,18 +370,18 @@ class _$RequestException implements RequestException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is RequestException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$RequestException &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $RequestExceptionCopyWith<RequestException> get copyWith =>
-      _$RequestExceptionCopyWithImpl<RequestException>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$RequestExceptionCopyWith<_$RequestException> get copyWith =>
+      __$$RequestExceptionCopyWithImpl<_$RequestException>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -438,6 +393,7 @@ class _$RequestException implements RequestException {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) {
     return requestException(message);
   }
@@ -445,13 +401,14 @@ class _$RequestException implements RequestException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) {
     return requestException?.call(message);
   }
@@ -466,6 +423,7 @@ class _$RequestException implements RequestException {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) {
     if (requestException != null) {
@@ -487,6 +445,7 @@ class _$RequestException implements RequestException {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) {
     return requestException(this);
   }
@@ -494,15 +453,16 @@ class _$RequestException implements RequestException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) {
     return requestException?.call(this);
   }
@@ -519,6 +479,7 @@ class _$RequestException implements RequestException {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) {
     if (requestException != null) {
@@ -529,43 +490,42 @@ class _$RequestException implements RequestException {
 }
 
 abstract class RequestException implements DroneException {
-  const factory RequestException({String message}) = _$RequestException;
+  const factory RequestException({final String message}) = _$RequestException;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  $RequestExceptionCopyWith<RequestException> get copyWith =>
+  _$$RequestExceptionCopyWith<_$RequestException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ForbiddenExceptionCopyWith<$Res>
+abstract class _$$ForbiddenExceptionCopyWith<$Res>
     implements $DroneExceptionCopyWith<$Res> {
-  factory $ForbiddenExceptionCopyWith(
-          ForbiddenException value, $Res Function(ForbiddenException) then) =
-      _$ForbiddenExceptionCopyWithImpl<$Res>;
+  factory _$$ForbiddenExceptionCopyWith(_$ForbiddenException value,
+          $Res Function(_$ForbiddenException) then) =
+      __$$ForbiddenExceptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$ForbiddenExceptionCopyWithImpl<$Res>
-    extends _$DroneExceptionCopyWithImpl<$Res>
-    implements $ForbiddenExceptionCopyWith<$Res> {
-  _$ForbiddenExceptionCopyWithImpl(
-      ForbiddenException _value, $Res Function(ForbiddenException) _then)
-      : super(_value, (v) => _then(v as ForbiddenException));
+class __$$ForbiddenExceptionCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$ForbiddenException>
+    implements _$$ForbiddenExceptionCopyWith<$Res> {
+  __$$ForbiddenExceptionCopyWithImpl(
+      _$ForbiddenException _value, $Res Function(_$ForbiddenException) _then)
+      : super(_value, _then);
 
-  @override
-  ForbiddenException get _value => super._value as ForbiddenException;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(ForbiddenException(
-      message: message == freezed
+    return _then(_$ForbiddenException(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -579,8 +539,8 @@ class _$ForbiddenException implements ForbiddenException {
   const _$ForbiddenException(
       {this.message = 'Forbidden 403. The requested resource is forbidden.'});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -592,18 +552,19 @@ class _$ForbiddenException implements ForbiddenException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is ForbiddenException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$ForbiddenException &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $ForbiddenExceptionCopyWith<ForbiddenException> get copyWith =>
-      _$ForbiddenExceptionCopyWithImpl<ForbiddenException>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$ForbiddenExceptionCopyWith<_$ForbiddenException> get copyWith =>
+      __$$ForbiddenExceptionCopyWithImpl<_$ForbiddenException>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -615,6 +576,7 @@ class _$ForbiddenException implements ForbiddenException {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) {
     return forbiddenException(message);
   }
@@ -622,13 +584,14 @@ class _$ForbiddenException implements ForbiddenException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) {
     return forbiddenException?.call(message);
   }
@@ -643,6 +606,7 @@ class _$ForbiddenException implements ForbiddenException {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) {
     if (forbiddenException != null) {
@@ -664,6 +628,7 @@ class _$ForbiddenException implements ForbiddenException {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) {
     return forbiddenException(this);
   }
@@ -671,15 +636,16 @@ class _$ForbiddenException implements ForbiddenException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) {
     return forbiddenException?.call(this);
   }
@@ -696,6 +662,7 @@ class _$ForbiddenException implements ForbiddenException {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) {
     if (forbiddenException != null) {
@@ -706,43 +673,43 @@ class _$ForbiddenException implements ForbiddenException {
 }
 
 abstract class ForbiddenException implements DroneException {
-  const factory ForbiddenException({String message}) = _$ForbiddenException;
+  const factory ForbiddenException({final String message}) =
+      _$ForbiddenException;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  $ForbiddenExceptionCopyWith<ForbiddenException> get copyWith =>
+  _$$ForbiddenExceptionCopyWith<_$ForbiddenException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InternalExceptionCopyWith<$Res>
+abstract class _$$InternalExceptionCopyWith<$Res>
     implements $DroneExceptionCopyWith<$Res> {
-  factory $InternalExceptionCopyWith(
-          InternalException value, $Res Function(InternalException) then) =
-      _$InternalExceptionCopyWithImpl<$Res>;
+  factory _$$InternalExceptionCopyWith(
+          _$InternalException value, $Res Function(_$InternalException) then) =
+      __$$InternalExceptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$InternalExceptionCopyWithImpl<$Res>
-    extends _$DroneExceptionCopyWithImpl<$Res>
-    implements $InternalExceptionCopyWith<$Res> {
-  _$InternalExceptionCopyWithImpl(
-      InternalException _value, $Res Function(InternalException) _then)
-      : super(_value, (v) => _then(v as InternalException));
+class __$$InternalExceptionCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$InternalException>
+    implements _$$InternalExceptionCopyWith<$Res> {
+  __$$InternalExceptionCopyWithImpl(
+      _$InternalException _value, $Res Function(_$InternalException) _then)
+      : super(_value, _then);
 
-  @override
-  InternalException get _value => super._value as InternalException;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(InternalException(
-      message: message == freezed
+    return _then(_$InternalException(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -756,8 +723,8 @@ class _$InternalException implements InternalException {
   const _$InternalException(
       {this.message = 'Internal 500. An internal server error occurred.'});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -769,18 +736,18 @@ class _$InternalException implements InternalException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is InternalException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$InternalException &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $InternalExceptionCopyWith<InternalException> get copyWith =>
-      _$InternalExceptionCopyWithImpl<InternalException>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$InternalExceptionCopyWith<_$InternalException> get copyWith =>
+      __$$InternalExceptionCopyWithImpl<_$InternalException>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -792,6 +759,7 @@ class _$InternalException implements InternalException {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) {
     return internalException(message);
   }
@@ -799,13 +767,14 @@ class _$InternalException implements InternalException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) {
     return internalException?.call(message);
   }
@@ -820,6 +789,7 @@ class _$InternalException implements InternalException {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) {
     if (internalException != null) {
@@ -841,6 +811,7 @@ class _$InternalException implements InternalException {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) {
     return internalException(this);
   }
@@ -848,15 +819,16 @@ class _$InternalException implements InternalException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) {
     return internalException?.call(this);
   }
@@ -873,6 +845,7 @@ class _$InternalException implements InternalException {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) {
     if (internalException != null) {
@@ -883,45 +856,44 @@ class _$InternalException implements InternalException {
 }
 
 abstract class InternalException implements DroneException {
-  const factory InternalException({String message}) = _$InternalException;
+  const factory InternalException({final String message}) = _$InternalException;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  $InternalExceptionCopyWith<InternalException> get copyWith =>
+  _$$InternalExceptionCopyWith<_$InternalException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $InvalidRequestBodyExceptionCopyWith<$Res>
+abstract class _$$InvalidRequestBodyExceptionCopyWith<$Res>
     implements $DroneExceptionCopyWith<$Res> {
-  factory $InvalidRequestBodyExceptionCopyWith(
-          InvalidRequestBodyException value,
-          $Res Function(InvalidRequestBodyException) then) =
-      _$InvalidRequestBodyExceptionCopyWithImpl<$Res>;
+  factory _$$InvalidRequestBodyExceptionCopyWith(
+          _$InvalidRequestBodyException value,
+          $Res Function(_$InvalidRequestBodyException) then) =
+      __$$InvalidRequestBodyExceptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$InvalidRequestBodyExceptionCopyWithImpl<$Res>
-    extends _$DroneExceptionCopyWithImpl<$Res>
-    implements $InvalidRequestBodyExceptionCopyWith<$Res> {
-  _$InvalidRequestBodyExceptionCopyWithImpl(InvalidRequestBodyException _value,
-      $Res Function(InvalidRequestBodyException) _then)
-      : super(_value, (v) => _then(v as InvalidRequestBodyException));
+class __$$InvalidRequestBodyExceptionCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$InvalidRequestBodyException>
+    implements _$$InvalidRequestBodyExceptionCopyWith<$Res> {
+  __$$InvalidRequestBodyExceptionCopyWithImpl(
+      _$InvalidRequestBodyException _value,
+      $Res Function(_$InvalidRequestBodyException) _then)
+      : super(_value, _then);
 
-  @override
-  InvalidRequestBodyException get _value =>
-      super._value as InvalidRequestBodyException;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(InvalidRequestBodyException(
-      message: message == freezed
+    return _then(_$InvalidRequestBodyException(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -935,8 +907,8 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
   const _$InvalidRequestBodyException(
       {this.message = 'Invalid 400. You missed some fields.'});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -948,19 +920,19 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is InvalidRequestBodyException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$InvalidRequestBodyException &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $InvalidRequestBodyExceptionCopyWith<InvalidRequestBodyException>
-      get copyWith => _$InvalidRequestBodyExceptionCopyWithImpl<
-          InvalidRequestBodyException>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$InvalidRequestBodyExceptionCopyWith<_$InvalidRequestBodyException>
+      get copyWith => __$$InvalidRequestBodyExceptionCopyWithImpl<
+          _$InvalidRequestBodyException>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -972,6 +944,7 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) {
     return invalidRequestBodyException(message);
   }
@@ -979,13 +952,14 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) {
     return invalidRequestBodyException?.call(message);
   }
@@ -1000,6 +974,7 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) {
     if (invalidRequestBodyException != null) {
@@ -1021,6 +996,7 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) {
     return invalidRequestBodyException(this);
   }
@@ -1028,15 +1004,16 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) {
     return invalidRequestBodyException?.call(this);
   }
@@ -1053,6 +1030,7 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) {
     if (invalidRequestBodyException != null) {
@@ -1063,44 +1041,43 @@ class _$InvalidRequestBodyException implements InvalidRequestBodyException {
 }
 
 abstract class InvalidRequestBodyException implements DroneException {
-  const factory InvalidRequestBodyException({String message}) =
+  const factory InvalidRequestBodyException({final String message}) =
       _$InvalidRequestBodyException;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  $InvalidRequestBodyExceptionCopyWith<InvalidRequestBodyException>
+  _$$InvalidRequestBodyExceptionCopyWith<_$InvalidRequestBodyException>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UnauthorizedExceptionCopyWith<$Res>
+abstract class _$$UnauthorizedExceptionCopyWith<$Res>
     implements $DroneExceptionCopyWith<$Res> {
-  factory $UnauthorizedExceptionCopyWith(UnauthorizedException value,
-          $Res Function(UnauthorizedException) then) =
-      _$UnauthorizedExceptionCopyWithImpl<$Res>;
+  factory _$$UnauthorizedExceptionCopyWith(_$UnauthorizedException value,
+          $Res Function(_$UnauthorizedException) then) =
+      __$$UnauthorizedExceptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$UnauthorizedExceptionCopyWithImpl<$Res>
-    extends _$DroneExceptionCopyWithImpl<$Res>
-    implements $UnauthorizedExceptionCopyWith<$Res> {
-  _$UnauthorizedExceptionCopyWithImpl(
-      UnauthorizedException _value, $Res Function(UnauthorizedException) _then)
-      : super(_value, (v) => _then(v as UnauthorizedException));
+class __$$UnauthorizedExceptionCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$UnauthorizedException>
+    implements _$$UnauthorizedExceptionCopyWith<$Res> {
+  __$$UnauthorizedExceptionCopyWithImpl(_$UnauthorizedException _value,
+      $Res Function(_$UnauthorizedException) _then)
+      : super(_value, _then);
 
-  @override
-  UnauthorizedException get _value => super._value as UnauthorizedException;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(UnauthorizedException(
-      message: message == freezed
+    return _then(_$UnauthorizedException(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1113,8 +1090,8 @@ class _$UnauthorizedExceptionCopyWithImpl<$Res>
 class _$UnauthorizedException implements UnauthorizedException {
   const _$UnauthorizedException({this.message = 'Unauthorized'});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -1126,18 +1103,18 @@ class _$UnauthorizedException implements UnauthorizedException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is UnauthorizedException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$UnauthorizedException &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $UnauthorizedExceptionCopyWith<UnauthorizedException> get copyWith =>
-      _$UnauthorizedExceptionCopyWithImpl<UnauthorizedException>(
+  @pragma('vm:prefer-inline')
+  _$$UnauthorizedExceptionCopyWith<_$UnauthorizedException> get copyWith =>
+      __$$UnauthorizedExceptionCopyWithImpl<_$UnauthorizedException>(
           this, _$identity);
 
   @override
@@ -1150,6 +1127,7 @@ class _$UnauthorizedException implements UnauthorizedException {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) {
     return unauthorizedException(message);
   }
@@ -1157,13 +1135,14 @@ class _$UnauthorizedException implements UnauthorizedException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) {
     return unauthorizedException?.call(message);
   }
@@ -1178,6 +1157,7 @@ class _$UnauthorizedException implements UnauthorizedException {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) {
     if (unauthorizedException != null) {
@@ -1199,6 +1179,7 @@ class _$UnauthorizedException implements UnauthorizedException {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) {
     return unauthorizedException(this);
   }
@@ -1206,15 +1187,16 @@ class _$UnauthorizedException implements UnauthorizedException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) {
     return unauthorizedException?.call(this);
   }
@@ -1231,6 +1213,7 @@ class _$UnauthorizedException implements UnauthorizedException {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) {
     if (unauthorizedException != null) {
@@ -1241,47 +1224,45 @@ class _$UnauthorizedException implements UnauthorizedException {
 }
 
 abstract class UnauthorizedException implements DroneException {
-  const factory UnauthorizedException({String message}) =
+  const factory UnauthorizedException({final String message}) =
       _$UnauthorizedException;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  $UnauthorizedExceptionCopyWith<UnauthorizedException> get copyWith =>
+  _$$UnauthorizedExceptionCopyWith<_$UnauthorizedException> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $JsonDeserializationExceptionCopyWith<$Res>
+abstract class _$$JsonDeserializationExceptionCopyWith<$Res>
     implements $DroneExceptionCopyWith<$Res> {
-  factory $JsonDeserializationExceptionCopyWith(
-          JsonDeserializationException value,
-          $Res Function(JsonDeserializationException) then) =
-      _$JsonDeserializationExceptionCopyWithImpl<$Res>;
+  factory _$$JsonDeserializationExceptionCopyWith(
+          _$JsonDeserializationException value,
+          $Res Function(_$JsonDeserializationException) then) =
+      __$$JsonDeserializationExceptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class _$JsonDeserializationExceptionCopyWithImpl<$Res>
-    extends _$DroneExceptionCopyWithImpl<$Res>
-    implements $JsonDeserializationExceptionCopyWith<$Res> {
-  _$JsonDeserializationExceptionCopyWithImpl(
-      JsonDeserializationException _value,
-      $Res Function(JsonDeserializationException) _then)
-      : super(_value, (v) => _then(v as JsonDeserializationException));
+class __$$JsonDeserializationExceptionCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$JsonDeserializationException>
+    implements _$$JsonDeserializationExceptionCopyWith<$Res> {
+  __$$JsonDeserializationExceptionCopyWithImpl(
+      _$JsonDeserializationException _value,
+      $Res Function(_$JsonDeserializationException) _then)
+      : super(_value, _then);
 
-  @override
-  JsonDeserializationException get _value =>
-      super._value as JsonDeserializationException;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? message = freezed,
+    Object? message = null,
   }) {
-    return _then(JsonDeserializationException(
-      message: message == freezed
+    return _then(_$JsonDeserializationException(
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1295,8 +1276,8 @@ class _$JsonDeserializationException implements JsonDeserializationException {
   const _$JsonDeserializationException(
       {this.message = 'Exception on deserializing json'});
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
 
   @override
@@ -1308,19 +1289,19 @@ class _$JsonDeserializationException implements JsonDeserializationException {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is JsonDeserializationException &&
-            const DeepCollectionEquality().equals(other.message, message));
+            other is _$JsonDeserializationException &&
+            (identical(other.message, message) || other.message == message));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+  int get hashCode => Object.hash(runtimeType, message);
 
   @JsonKey(ignore: true)
   @override
-  $JsonDeserializationExceptionCopyWith<JsonDeserializationException>
-      get copyWith => _$JsonDeserializationExceptionCopyWithImpl<
-          JsonDeserializationException>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$JsonDeserializationExceptionCopyWith<_$JsonDeserializationException>
+      get copyWith => __$$JsonDeserializationExceptionCopyWithImpl<
+          _$JsonDeserializationException>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1332,6 +1313,7 @@ class _$JsonDeserializationException implements JsonDeserializationException {
     required TResult Function(String message) invalidRequestBodyException,
     required TResult Function(String message) unauthorizedException,
     required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
   }) {
     return jsonDeserializationException(message);
   }
@@ -1339,13 +1321,14 @@ class _$JsonDeserializationException implements JsonDeserializationException {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String message)? notFound,
-    TResult Function(String message)? requestException,
-    TResult Function(String message)? forbiddenException,
-    TResult Function(String message)? internalException,
-    TResult Function(String message)? invalidRequestBodyException,
-    TResult Function(String message)? unauthorizedException,
-    TResult Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
   }) {
     return jsonDeserializationException?.call(message);
   }
@@ -1360,6 +1343,7 @@ class _$JsonDeserializationException implements JsonDeserializationException {
     TResult Function(String message)? invalidRequestBodyException,
     TResult Function(String message)? unauthorizedException,
     TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
     required TResult orElse(),
   }) {
     if (jsonDeserializationException != null) {
@@ -1381,6 +1365,7 @@ class _$JsonDeserializationException implements JsonDeserializationException {
         unauthorizedException,
     required TResult Function(JsonDeserializationException value)
         jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
   }) {
     return jsonDeserializationException(this);
   }
@@ -1388,15 +1373,16 @@ class _$JsonDeserializationException implements JsonDeserializationException {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NotFound value)? notFound,
-    TResult Function(RequestException value)? requestException,
-    TResult Function(ForbiddenException value)? forbiddenException,
-    TResult Function(InternalException value)? internalException,
-    TResult Function(InvalidRequestBodyException value)?
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
         invalidRequestBodyException,
-    TResult Function(UnauthorizedException value)? unauthorizedException,
-    TResult Function(JsonDeserializationException value)?
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
   }) {
     return jsonDeserializationException?.call(this);
   }
@@ -1413,6 +1399,7 @@ class _$JsonDeserializationException implements JsonDeserializationException {
     TResult Function(UnauthorizedException value)? unauthorizedException,
     TResult Function(JsonDeserializationException value)?
         jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
     required TResult orElse(),
   }) {
     if (jsonDeserializationException != null) {
@@ -1423,13 +1410,196 @@ class _$JsonDeserializationException implements JsonDeserializationException {
 }
 
 abstract class JsonDeserializationException implements DroneException {
-  const factory JsonDeserializationException({String message}) =
+  const factory JsonDeserializationException({final String message}) =
       _$JsonDeserializationException;
 
   @override
   String get message;
   @override
   @JsonKey(ignore: true)
-  $JsonDeserializationExceptionCopyWith<JsonDeserializationException>
+  _$$JsonDeserializationExceptionCopyWith<_$JsonDeserializationException>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$StreamEOFExceptionCopyWith<$Res>
+    implements $DroneExceptionCopyWith<$Res> {
+  factory _$$StreamEOFExceptionCopyWith(_$StreamEOFException value,
+          $Res Function(_$StreamEOFException) then) =
+      __$$StreamEOFExceptionCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$StreamEOFExceptionCopyWithImpl<$Res>
+    extends _$DroneExceptionCopyWithImpl<$Res, _$StreamEOFException>
+    implements _$$StreamEOFExceptionCopyWith<$Res> {
+  __$$StreamEOFExceptionCopyWithImpl(
+      _$StreamEOFException _value, $Res Function(_$StreamEOFException) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$StreamEOFException(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$StreamEOFException implements StreamEOFException {
+  const _$StreamEOFException({this.message = 'End of file'});
+
+  @override
+  @JsonKey()
+  final String message;
+
+  @override
+  String toString() {
+    return 'DroneException.streamEOFException(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$StreamEOFException &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$StreamEOFExceptionCopyWith<_$StreamEOFException> get copyWith =>
+      __$$StreamEOFExceptionCopyWithImpl<_$StreamEOFException>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) notFound,
+    required TResult Function(String message) requestException,
+    required TResult Function(String message) forbiddenException,
+    required TResult Function(String message) internalException,
+    required TResult Function(String message) invalidRequestBodyException,
+    required TResult Function(String message) unauthorizedException,
+    required TResult Function(String message) jsonDeserializationException,
+    required TResult Function(String message) streamEOFException,
+  }) {
+    return streamEOFException(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String message)? notFound,
+    TResult? Function(String message)? requestException,
+    TResult? Function(String message)? forbiddenException,
+    TResult? Function(String message)? internalException,
+    TResult? Function(String message)? invalidRequestBodyException,
+    TResult? Function(String message)? unauthorizedException,
+    TResult? Function(String message)? jsonDeserializationException,
+    TResult? Function(String message)? streamEOFException,
+  }) {
+    return streamEOFException?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? notFound,
+    TResult Function(String message)? requestException,
+    TResult Function(String message)? forbiddenException,
+    TResult Function(String message)? internalException,
+    TResult Function(String message)? invalidRequestBodyException,
+    TResult Function(String message)? unauthorizedException,
+    TResult Function(String message)? jsonDeserializationException,
+    TResult Function(String message)? streamEOFException,
+    required TResult orElse(),
+  }) {
+    if (streamEOFException != null) {
+      return streamEOFException(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(RequestException value) requestException,
+    required TResult Function(ForbiddenException value) forbiddenException,
+    required TResult Function(InternalException value) internalException,
+    required TResult Function(InvalidRequestBodyException value)
+        invalidRequestBodyException,
+    required TResult Function(UnauthorizedException value)
+        unauthorizedException,
+    required TResult Function(JsonDeserializationException value)
+        jsonDeserializationException,
+    required TResult Function(StreamEOFException value) streamEOFException,
+  }) {
+    return streamEOFException(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(NotFound value)? notFound,
+    TResult? Function(RequestException value)? requestException,
+    TResult? Function(ForbiddenException value)? forbiddenException,
+    TResult? Function(InternalException value)? internalException,
+    TResult? Function(InvalidRequestBodyException value)?
+        invalidRequestBodyException,
+    TResult? Function(UnauthorizedException value)? unauthorizedException,
+    TResult? Function(JsonDeserializationException value)?
+        jsonDeserializationException,
+    TResult? Function(StreamEOFException value)? streamEOFException,
+  }) {
+    return streamEOFException?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(NotFound value)? notFound,
+    TResult Function(RequestException value)? requestException,
+    TResult Function(ForbiddenException value)? forbiddenException,
+    TResult Function(InternalException value)? internalException,
+    TResult Function(InvalidRequestBodyException value)?
+        invalidRequestBodyException,
+    TResult Function(UnauthorizedException value)? unauthorizedException,
+    TResult Function(JsonDeserializationException value)?
+        jsonDeserializationException,
+    TResult Function(StreamEOFException value)? streamEOFException,
+    required TResult orElse(),
+  }) {
+    if (streamEOFException != null) {
+      return streamEOFException(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StreamEOFException implements DroneException {
+  const factory StreamEOFException({final String message}) =
+      _$StreamEOFException;
+
+  @override
+  String get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$StreamEOFExceptionCopyWith<_$StreamEOFException> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -75,7 +75,7 @@ Map<String, dynamic> _$$_DroneBuildToJson(_$_DroneBuild instance) =>
       'created': instance.created,
       'updated': instance.updated,
       'version': instance.version,
-      'event': _$EventEnumMap[instance.event],
+      'event': _$EventEnumMap[instance.event]!,
       'stages': instance.stages,
     };
 

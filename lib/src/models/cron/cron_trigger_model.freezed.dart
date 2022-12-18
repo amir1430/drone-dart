@@ -12,80 +12,11 @@ part of 'cron_trigger_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneCronTrigger _$DroneCronTriggerFromJson(Map<String, dynamic> json) {
   return _DroneCronTrigger.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneCronTriggerTearOff {
-  const _$DroneCronTriggerTearOff();
-
-  _DroneCronTrigger call(
-      {String uid = '',
-      String namespace = '',
-      String name = '',
-      String slug = '',
-      String scm = '',
-      String gitHttpUrl = '',
-      String gitSshUrl = '',
-      String link = '',
-      String defaultBranch = '',
-      String visibility = '',
-      String configPath = '',
-      int id = 0,
-      int userId = 0,
-      int counter = 0,
-      int synced = 0,
-      int created = 0,
-      int updated = 0,
-      int version = 0,
-      int timeout = 0,
-      bool private = false,
-      bool active = false,
-      bool trusted = false,
-      bool protected = false,
-      bool ignoreForks = false,
-      bool ignorePullRequests = false,
-      DronePermission permissions = const DronePermission()}) {
-    return _DroneCronTrigger(
-      uid: uid,
-      namespace: namespace,
-      name: name,
-      slug: slug,
-      scm: scm,
-      gitHttpUrl: gitHttpUrl,
-      gitSshUrl: gitSshUrl,
-      link: link,
-      defaultBranch: defaultBranch,
-      visibility: visibility,
-      configPath: configPath,
-      id: id,
-      userId: userId,
-      counter: counter,
-      synced: synced,
-      created: created,
-      updated: updated,
-      version: version,
-      timeout: timeout,
-      private: private,
-      active: active,
-      trusted: trusted,
-      protected: protected,
-      ignoreForks: ignoreForks,
-      ignorePullRequests: ignorePullRequests,
-      permissions: permissions,
-    );
-  }
-
-  DroneCronTrigger fromJson(Map<String, Object?> json) {
-    return DroneCronTrigger.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneCronTrigger = _$DroneCronTriggerTearOff();
 
 /// @nodoc
 mixin _$DroneCronTrigger {
@@ -126,7 +57,8 @@ mixin _$DroneCronTrigger {
 abstract class $DroneCronTriggerCopyWith<$Res> {
   factory $DroneCronTriggerCopyWith(
           DroneCronTrigger value, $Res Function(DroneCronTrigger) then) =
-      _$DroneCronTriggerCopyWithImpl<$Res>;
+      _$DroneCronTriggerCopyWithImpl<$Res, DroneCronTrigger>;
+  @useResult
   $Res call(
       {String uid,
       String namespace,
@@ -159,166 +91,170 @@ abstract class $DroneCronTriggerCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DroneCronTriggerCopyWithImpl<$Res>
+class _$DroneCronTriggerCopyWithImpl<$Res, $Val extends DroneCronTrigger>
     implements $DroneCronTriggerCopyWith<$Res> {
   _$DroneCronTriggerCopyWithImpl(this._value, this._then);
 
-  final DroneCronTrigger _value;
   // ignore: unused_field
-  final $Res Function(DroneCronTrigger) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
-    Object? namespace = freezed,
-    Object? name = freezed,
-    Object? slug = freezed,
-    Object? scm = freezed,
-    Object? gitHttpUrl = freezed,
-    Object? gitSshUrl = freezed,
-    Object? link = freezed,
-    Object? defaultBranch = freezed,
-    Object? visibility = freezed,
-    Object? configPath = freezed,
-    Object? id = freezed,
-    Object? userId = freezed,
-    Object? counter = freezed,
-    Object? synced = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? version = freezed,
-    Object? timeout = freezed,
-    Object? private = freezed,
-    Object? active = freezed,
-    Object? trusted = freezed,
-    Object? protected = freezed,
-    Object? ignoreForks = freezed,
-    Object? ignorePullRequests = freezed,
-    Object? permissions = freezed,
+    Object? uid = null,
+    Object? namespace = null,
+    Object? name = null,
+    Object? slug = null,
+    Object? scm = null,
+    Object? gitHttpUrl = null,
+    Object? gitSshUrl = null,
+    Object? link = null,
+    Object? defaultBranch = null,
+    Object? visibility = null,
+    Object? configPath = null,
+    Object? id = null,
+    Object? userId = null,
+    Object? counter = null,
+    Object? synced = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? version = null,
+    Object? timeout = null,
+    Object? private = null,
+    Object? active = null,
+    Object? trusted = null,
+    Object? protected = null,
+    Object? ignoreForks = null,
+    Object? ignorePullRequests = null,
+    Object? permissions = null,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      namespace: namespace == freezed
+      namespace: null == namespace
           ? _value.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      slug: slug == freezed
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
-      scm: scm == freezed
+      scm: null == scm
           ? _value.scm
           : scm // ignore: cast_nullable_to_non_nullable
               as String,
-      gitHttpUrl: gitHttpUrl == freezed
+      gitHttpUrl: null == gitHttpUrl
           ? _value.gitHttpUrl
           : gitHttpUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      gitSshUrl: gitSshUrl == freezed
+      gitSshUrl: null == gitSshUrl
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
+      link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String,
-      defaultBranch: defaultBranch == freezed
+      defaultBranch: null == defaultBranch
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
               as String,
-      visibility: visibility == freezed
+      visibility: null == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as String,
-      configPath: configPath == freezed
+      configPath: null == configPath
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: userId == freezed
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
-      counter: counter == freezed
+      counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
-      synced: synced == freezed
+      synced: null == synced
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      timeout: timeout == freezed
+      timeout: null == timeout
           ? _value.timeout
           : timeout // ignore: cast_nullable_to_non_nullable
               as int,
-      private: private == freezed
+      private: null == private
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
               as bool,
-      active: active == freezed
+      active: null == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool,
-      trusted: trusted == freezed
+      trusted: null == trusted
           ? _value.trusted
           : trusted // ignore: cast_nullable_to_non_nullable
               as bool,
-      protected: protected == freezed
+      protected: null == protected
           ? _value.protected
           : protected // ignore: cast_nullable_to_non_nullable
               as bool,
-      ignoreForks: ignoreForks == freezed
+      ignoreForks: null == ignoreForks
           ? _value.ignoreForks
           : ignoreForks // ignore: cast_nullable_to_non_nullable
               as bool,
-      ignorePullRequests: ignorePullRequests == freezed
+      ignorePullRequests: null == ignorePullRequests
           ? _value.ignorePullRequests
           : ignorePullRequests // ignore: cast_nullable_to_non_nullable
               as bool,
-      permissions: permissions == freezed
+      permissions: null == permissions
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as DronePermission,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $DronePermissionCopyWith<$Res> get permissions {
     return $DronePermissionCopyWith<$Res>(_value.permissions, (value) {
-      return _then(_value.copyWith(permissions: value));
+      return _then(_value.copyWith(permissions: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$DroneCronTriggerCopyWith<$Res>
+abstract class _$$_DroneCronTriggerCopyWith<$Res>
     implements $DroneCronTriggerCopyWith<$Res> {
-  factory _$DroneCronTriggerCopyWith(
-          _DroneCronTrigger value, $Res Function(_DroneCronTrigger) then) =
-      __$DroneCronTriggerCopyWithImpl<$Res>;
+  factory _$$_DroneCronTriggerCopyWith(
+          _$_DroneCronTrigger value, $Res Function(_$_DroneCronTrigger) then) =
+      __$$_DroneCronTriggerCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String uid,
       String namespace,
@@ -352,147 +288,145 @@ abstract class _$DroneCronTriggerCopyWith<$Res>
 }
 
 /// @nodoc
-class __$DroneCronTriggerCopyWithImpl<$Res>
-    extends _$DroneCronTriggerCopyWithImpl<$Res>
-    implements _$DroneCronTriggerCopyWith<$Res> {
-  __$DroneCronTriggerCopyWithImpl(
-      _DroneCronTrigger _value, $Res Function(_DroneCronTrigger) _then)
-      : super(_value, (v) => _then(v as _DroneCronTrigger));
+class __$$_DroneCronTriggerCopyWithImpl<$Res>
+    extends _$DroneCronTriggerCopyWithImpl<$Res, _$_DroneCronTrigger>
+    implements _$$_DroneCronTriggerCopyWith<$Res> {
+  __$$_DroneCronTriggerCopyWithImpl(
+      _$_DroneCronTrigger _value, $Res Function(_$_DroneCronTrigger) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneCronTrigger get _value => super._value as _DroneCronTrigger;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
-    Object? namespace = freezed,
-    Object? name = freezed,
-    Object? slug = freezed,
-    Object? scm = freezed,
-    Object? gitHttpUrl = freezed,
-    Object? gitSshUrl = freezed,
-    Object? link = freezed,
-    Object? defaultBranch = freezed,
-    Object? visibility = freezed,
-    Object? configPath = freezed,
-    Object? id = freezed,
-    Object? userId = freezed,
-    Object? counter = freezed,
-    Object? synced = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? version = freezed,
-    Object? timeout = freezed,
-    Object? private = freezed,
-    Object? active = freezed,
-    Object? trusted = freezed,
-    Object? protected = freezed,
-    Object? ignoreForks = freezed,
-    Object? ignorePullRequests = freezed,
-    Object? permissions = freezed,
+    Object? uid = null,
+    Object? namespace = null,
+    Object? name = null,
+    Object? slug = null,
+    Object? scm = null,
+    Object? gitHttpUrl = null,
+    Object? gitSshUrl = null,
+    Object? link = null,
+    Object? defaultBranch = null,
+    Object? visibility = null,
+    Object? configPath = null,
+    Object? id = null,
+    Object? userId = null,
+    Object? counter = null,
+    Object? synced = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? version = null,
+    Object? timeout = null,
+    Object? private = null,
+    Object? active = null,
+    Object? trusted = null,
+    Object? protected = null,
+    Object? ignoreForks = null,
+    Object? ignorePullRequests = null,
+    Object? permissions = null,
   }) {
-    return _then(_DroneCronTrigger(
-      uid: uid == freezed
+    return _then(_$_DroneCronTrigger(
+      uid: null == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
-      namespace: namespace == freezed
+      namespace: null == namespace
           ? _value.namespace
           : namespace // ignore: cast_nullable_to_non_nullable
               as String,
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      slug: slug == freezed
+      slug: null == slug
           ? _value.slug
           : slug // ignore: cast_nullable_to_non_nullable
               as String,
-      scm: scm == freezed
+      scm: null == scm
           ? _value.scm
           : scm // ignore: cast_nullable_to_non_nullable
               as String,
-      gitHttpUrl: gitHttpUrl == freezed
+      gitHttpUrl: null == gitHttpUrl
           ? _value.gitHttpUrl
           : gitHttpUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      gitSshUrl: gitSshUrl == freezed
+      gitSshUrl: null == gitSshUrl
           ? _value.gitSshUrl
           : gitSshUrl // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
+      link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String,
-      defaultBranch: defaultBranch == freezed
+      defaultBranch: null == defaultBranch
           ? _value.defaultBranch
           : defaultBranch // ignore: cast_nullable_to_non_nullable
               as String,
-      visibility: visibility == freezed
+      visibility: null == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
               as String,
-      configPath: configPath == freezed
+      configPath: null == configPath
           ? _value.configPath
           : configPath // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      userId: userId == freezed
+      userId: null == userId
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
               as int,
-      counter: counter == freezed
+      counter: null == counter
           ? _value.counter
           : counter // ignore: cast_nullable_to_non_nullable
               as int,
-      synced: synced == freezed
+      synced: null == synced
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      timeout: timeout == freezed
+      timeout: null == timeout
           ? _value.timeout
           : timeout // ignore: cast_nullable_to_non_nullable
               as int,
-      private: private == freezed
+      private: null == private
           ? _value.private
           : private // ignore: cast_nullable_to_non_nullable
               as bool,
-      active: active == freezed
+      active: null == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool,
-      trusted: trusted == freezed
+      trusted: null == trusted
           ? _value.trusted
           : trusted // ignore: cast_nullable_to_non_nullable
               as bool,
-      protected: protected == freezed
+      protected: null == protected
           ? _value.protected
           : protected // ignore: cast_nullable_to_non_nullable
               as bool,
-      ignoreForks: ignoreForks == freezed
+      ignoreForks: null == ignoreForks
           ? _value.ignoreForks
           : ignoreForks // ignore: cast_nullable_to_non_nullable
               as bool,
-      ignorePullRequests: ignorePullRequests == freezed
+      ignorePullRequests: null == ignorePullRequests
           ? _value.ignorePullRequests
           : ignorePullRequests // ignore: cast_nullable_to_non_nullable
               as bool,
-      permissions: permissions == freezed
+      permissions: null == permissions
           ? _value.permissions
           : permissions // ignore: cast_nullable_to_non_nullable
               as DronePermission,
@@ -535,83 +469,83 @@ class _$_DroneCronTrigger implements _DroneCronTrigger {
   factory _$_DroneCronTrigger.fromJson(Map<String, dynamic> json) =>
       _$$_DroneCronTriggerFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String uid;
-  @JsonKey()
   @override
+  @JsonKey()
   final String namespace;
-  @JsonKey()
   @override
+  @JsonKey()
   final String name;
-  @JsonKey()
   @override
+  @JsonKey()
   final String slug;
-  @JsonKey()
   @override
+  @JsonKey()
   final String scm;
-  @JsonKey()
   @override
+  @JsonKey()
   final String gitHttpUrl;
-  @JsonKey()
   @override
+  @JsonKey()
   final String gitSshUrl;
-  @JsonKey()
   @override
+  @JsonKey()
   final String link;
-  @JsonKey()
   @override
+  @JsonKey()
   final String defaultBranch;
-  @JsonKey()
   @override
+  @JsonKey()
   final String visibility;
-  @JsonKey()
   @override
+  @JsonKey()
   final String configPath;
-  @JsonKey()
   @override
+  @JsonKey()
   final int id;
-  @JsonKey()
   @override
+  @JsonKey()
   final int userId;
-  @JsonKey()
   @override
+  @JsonKey()
   final int counter;
-  @JsonKey()
   @override
+  @JsonKey()
   final int synced;
-  @JsonKey()
   @override
+  @JsonKey()
   final int created;
-  @JsonKey()
   @override
+  @JsonKey()
   final int updated;
-  @JsonKey()
   @override
+  @JsonKey()
   final int version;
-  @JsonKey()
   @override
+  @JsonKey()
   final int timeout;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool private;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool active;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool trusted;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool protected;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool ignoreForks;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool ignorePullRequests;
-  @JsonKey()
   @override
+  @JsonKey()
   final DronePermission permissions;
 
   @override
@@ -623,112 +557,119 @@ class _$_DroneCronTrigger implements _DroneCronTrigger {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneCronTrigger &&
-            const DeepCollectionEquality().equals(other.uid, uid) &&
-            const DeepCollectionEquality().equals(other.namespace, namespace) &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.slug, slug) &&
-            const DeepCollectionEquality().equals(other.scm, scm) &&
-            const DeepCollectionEquality()
-                .equals(other.gitHttpUrl, gitHttpUrl) &&
-            const DeepCollectionEquality().equals(other.gitSshUrl, gitSshUrl) &&
-            const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality()
-                .equals(other.defaultBranch, defaultBranch) &&
-            const DeepCollectionEquality()
-                .equals(other.visibility, visibility) &&
-            const DeepCollectionEquality()
-                .equals(other.configPath, configPath) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.userId, userId) &&
-            const DeepCollectionEquality().equals(other.counter, counter) &&
-            const DeepCollectionEquality().equals(other.synced, synced) &&
-            const DeepCollectionEquality().equals(other.created, created) &&
-            const DeepCollectionEquality().equals(other.updated, updated) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.timeout, timeout) &&
-            const DeepCollectionEquality().equals(other.private, private) &&
-            const DeepCollectionEquality().equals(other.active, active) &&
-            const DeepCollectionEquality().equals(other.trusted, trusted) &&
-            const DeepCollectionEquality().equals(other.protected, protected) &&
-            const DeepCollectionEquality()
-                .equals(other.ignoreForks, ignoreForks) &&
-            const DeepCollectionEquality()
-                .equals(other.ignorePullRequests, ignorePullRequests) &&
-            const DeepCollectionEquality()
-                .equals(other.permissions, permissions));
+            other is _$_DroneCronTrigger &&
+            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.namespace, namespace) ||
+                other.namespace == namespace) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.slug, slug) || other.slug == slug) &&
+            (identical(other.scm, scm) || other.scm == scm) &&
+            (identical(other.gitHttpUrl, gitHttpUrl) ||
+                other.gitHttpUrl == gitHttpUrl) &&
+            (identical(other.gitSshUrl, gitSshUrl) ||
+                other.gitSshUrl == gitSshUrl) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.defaultBranch, defaultBranch) ||
+                other.defaultBranch == defaultBranch) &&
+            (identical(other.visibility, visibility) ||
+                other.visibility == visibility) &&
+            (identical(other.configPath, configPath) ||
+                other.configPath == configPath) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.userId, userId) || other.userId == userId) &&
+            (identical(other.counter, counter) || other.counter == counter) &&
+            (identical(other.synced, synced) || other.synced == synced) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.updated, updated) || other.updated == updated) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.timeout, timeout) || other.timeout == timeout) &&
+            (identical(other.private, private) || other.private == private) &&
+            (identical(other.active, active) || other.active == active) &&
+            (identical(other.trusted, trusted) || other.trusted == trusted) &&
+            (identical(other.protected, protected) ||
+                other.protected == protected) &&
+            (identical(other.ignoreForks, ignoreForks) ||
+                other.ignoreForks == ignoreForks) &&
+            (identical(other.ignorePullRequests, ignorePullRequests) ||
+                other.ignorePullRequests == ignorePullRequests) &&
+            (identical(other.permissions, permissions) ||
+                other.permissions == permissions));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(uid),
-        const DeepCollectionEquality().hash(namespace),
-        const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(slug),
-        const DeepCollectionEquality().hash(scm),
-        const DeepCollectionEquality().hash(gitHttpUrl),
-        const DeepCollectionEquality().hash(gitSshUrl),
-        const DeepCollectionEquality().hash(link),
-        const DeepCollectionEquality().hash(defaultBranch),
-        const DeepCollectionEquality().hash(visibility),
-        const DeepCollectionEquality().hash(configPath),
-        const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(userId),
-        const DeepCollectionEquality().hash(counter),
-        const DeepCollectionEquality().hash(synced),
-        const DeepCollectionEquality().hash(created),
-        const DeepCollectionEquality().hash(updated),
-        const DeepCollectionEquality().hash(version),
-        const DeepCollectionEquality().hash(timeout),
-        const DeepCollectionEquality().hash(private),
-        const DeepCollectionEquality().hash(active),
-        const DeepCollectionEquality().hash(trusted),
-        const DeepCollectionEquality().hash(protected),
-        const DeepCollectionEquality().hash(ignoreForks),
-        const DeepCollectionEquality().hash(ignorePullRequests),
-        const DeepCollectionEquality().hash(permissions)
+        uid,
+        namespace,
+        name,
+        slug,
+        scm,
+        gitHttpUrl,
+        gitSshUrl,
+        link,
+        defaultBranch,
+        visibility,
+        configPath,
+        id,
+        userId,
+        counter,
+        synced,
+        created,
+        updated,
+        version,
+        timeout,
+        private,
+        active,
+        trusted,
+        protected,
+        ignoreForks,
+        ignorePullRequests,
+        permissions
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$DroneCronTriggerCopyWith<_DroneCronTrigger> get copyWith =>
-      __$DroneCronTriggerCopyWithImpl<_DroneCronTrigger>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DroneCronTriggerCopyWith<_$_DroneCronTrigger> get copyWith =>
+      __$$_DroneCronTriggerCopyWithImpl<_$_DroneCronTrigger>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneCronTriggerToJson(this);
+    return _$$_DroneCronTriggerToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneCronTrigger implements DroneCronTrigger {
   const factory _DroneCronTrigger(
-      {String uid,
-      String namespace,
-      String name,
-      String slug,
-      String scm,
-      String gitHttpUrl,
-      String gitSshUrl,
-      String link,
-      String defaultBranch,
-      String visibility,
-      String configPath,
-      int id,
-      int userId,
-      int counter,
-      int synced,
-      int created,
-      int updated,
-      int version,
-      int timeout,
-      bool private,
-      bool active,
-      bool trusted,
-      bool protected,
-      bool ignoreForks,
-      bool ignorePullRequests,
-      DronePermission permissions}) = _$_DroneCronTrigger;
+      {final String uid,
+      final String namespace,
+      final String name,
+      final String slug,
+      final String scm,
+      final String gitHttpUrl,
+      final String gitSshUrl,
+      final String link,
+      final String defaultBranch,
+      final String visibility,
+      final String configPath,
+      final int id,
+      final int userId,
+      final int counter,
+      final int synced,
+      final int created,
+      final int updated,
+      final int version,
+      final int timeout,
+      final bool private,
+      final bool active,
+      final bool trusted,
+      final bool protected,
+      final bool ignoreForks,
+      final bool ignorePullRequests,
+      final DronePermission permissions}) = _$_DroneCronTrigger;
 
   factory _DroneCronTrigger.fromJson(Map<String, dynamic> json) =
       _$_DroneCronTrigger.fromJson;
@@ -787,6 +728,6 @@ abstract class _DroneCronTrigger implements DroneCronTrigger {
   DronePermission get permissions;
   @override
   @JsonKey(ignore: true)
-  _$DroneCronTriggerCopyWith<_DroneCronTrigger> get copyWith =>
+  _$$_DroneCronTriggerCopyWith<_$_DroneCronTrigger> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,32 +12,11 @@ part of 'permissions_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DronePermission _$DronePermissionFromJson(Map<String, dynamic> json) {
   return _DronePermission.fromJson(json);
 }
-
-/// @nodoc
-class _$DronePermissionTearOff {
-  const _$DronePermissionTearOff();
-
-  _DronePermission call(
-      {bool read = false, bool write = false, bool admin = false}) {
-    return _DronePermission(
-      read: read,
-      write: write,
-      admin: admin,
-    );
-  }
-
-  DronePermission fromJson(Map<String, Object?> json) {
-    return DronePermission.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DronePermission = _$DronePermissionTearOff();
 
 /// @nodoc
 mixin _$DronePermission {
@@ -55,79 +34,81 @@ mixin _$DronePermission {
 abstract class $DronePermissionCopyWith<$Res> {
   factory $DronePermissionCopyWith(
           DronePermission value, $Res Function(DronePermission) then) =
-      _$DronePermissionCopyWithImpl<$Res>;
+      _$DronePermissionCopyWithImpl<$Res, DronePermission>;
+  @useResult
   $Res call({bool read, bool write, bool admin});
 }
 
 /// @nodoc
-class _$DronePermissionCopyWithImpl<$Res>
+class _$DronePermissionCopyWithImpl<$Res, $Val extends DronePermission>
     implements $DronePermissionCopyWith<$Res> {
   _$DronePermissionCopyWithImpl(this._value, this._then);
 
-  final DronePermission _value;
   // ignore: unused_field
-  final $Res Function(DronePermission) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? read = freezed,
-    Object? write = freezed,
-    Object? admin = freezed,
+    Object? read = null,
+    Object? write = null,
+    Object? admin = null,
   }) {
     return _then(_value.copyWith(
-      read: read == freezed
+      read: null == read
           ? _value.read
           : read // ignore: cast_nullable_to_non_nullable
               as bool,
-      write: write == freezed
+      write: null == write
           ? _value.write
           : write // ignore: cast_nullable_to_non_nullable
               as bool,
-      admin: admin == freezed
+      admin: null == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DronePermissionCopyWith<$Res>
+abstract class _$$_DronePermissionCopyWith<$Res>
     implements $DronePermissionCopyWith<$Res> {
-  factory _$DronePermissionCopyWith(
-          _DronePermission value, $Res Function(_DronePermission) then) =
-      __$DronePermissionCopyWithImpl<$Res>;
+  factory _$$_DronePermissionCopyWith(
+          _$_DronePermission value, $Res Function(_$_DronePermission) then) =
+      __$$_DronePermissionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({bool read, bool write, bool admin});
 }
 
 /// @nodoc
-class __$DronePermissionCopyWithImpl<$Res>
-    extends _$DronePermissionCopyWithImpl<$Res>
-    implements _$DronePermissionCopyWith<$Res> {
-  __$DronePermissionCopyWithImpl(
-      _DronePermission _value, $Res Function(_DronePermission) _then)
-      : super(_value, (v) => _then(v as _DronePermission));
+class __$$_DronePermissionCopyWithImpl<$Res>
+    extends _$DronePermissionCopyWithImpl<$Res, _$_DronePermission>
+    implements _$$_DronePermissionCopyWith<$Res> {
+  __$$_DronePermissionCopyWithImpl(
+      _$_DronePermission _value, $Res Function(_$_DronePermission) _then)
+      : super(_value, _then);
 
-  @override
-  _DronePermission get _value => super._value as _DronePermission;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? read = freezed,
-    Object? write = freezed,
-    Object? admin = freezed,
+    Object? read = null,
+    Object? write = null,
+    Object? admin = null,
   }) {
-    return _then(_DronePermission(
-      read: read == freezed
+    return _then(_$_DronePermission(
+      read: null == read
           ? _value.read
           : read // ignore: cast_nullable_to_non_nullable
               as bool,
-      write: write == freezed
+      write: null == write
           ? _value.write
           : write // ignore: cast_nullable_to_non_nullable
               as bool,
-      admin: admin == freezed
+      admin: null == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -144,14 +125,14 @@ class _$_DronePermission implements _DronePermission {
   factory _$_DronePermission.fromJson(Map<String, dynamic> json) =>
       _$$_DronePermissionFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final bool read;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool write;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool admin;
 
   @override
@@ -163,33 +144,35 @@ class _$_DronePermission implements _DronePermission {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DronePermission &&
-            const DeepCollectionEquality().equals(other.read, read) &&
-            const DeepCollectionEquality().equals(other.write, write) &&
-            const DeepCollectionEquality().equals(other.admin, admin));
+            other is _$_DronePermission &&
+            (identical(other.read, read) || other.read == read) &&
+            (identical(other.write, write) || other.write == write) &&
+            (identical(other.admin, admin) || other.admin == admin));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(read),
-      const DeepCollectionEquality().hash(write),
-      const DeepCollectionEquality().hash(admin));
 
   @JsonKey(ignore: true)
   @override
-  _$DronePermissionCopyWith<_DronePermission> get copyWith =>
-      __$DronePermissionCopyWithImpl<_DronePermission>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, read, write, admin);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DronePermissionCopyWith<_$_DronePermission> get copyWith =>
+      __$$_DronePermissionCopyWithImpl<_$_DronePermission>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DronePermissionToJson(this);
+    return _$$_DronePermissionToJson(
+      this,
+    );
   }
 }
 
 abstract class _DronePermission implements DronePermission {
-  const factory _DronePermission({bool read, bool write, bool admin}) =
-      _$_DronePermission;
+  const factory _DronePermission(
+      {final bool read,
+      final bool write,
+      final bool admin}) = _$_DronePermission;
 
   factory _DronePermission.fromJson(Map<String, dynamic> json) =
       _$_DronePermission.fromJson;
@@ -202,6 +185,6 @@ abstract class _DronePermission implements DronePermission {
   bool get admin;
   @override
   @JsonKey(ignore: true)
-  _$DronePermissionCopyWith<_DronePermission> get copyWith =>
+  _$$_DronePermissionCopyWith<_$_DronePermission> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,70 +12,11 @@ part of 'stage_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneStage _$DroneStageFromJson(Map<String, dynamic> json) {
   return _DroneStage.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneStageTearOff {
-  const _$DroneStageTearOff();
-
-  _DroneStage call(
-      {String name = '',
-      String kind = '',
-      String type = '',
-      String status = '',
-      String machine = '',
-      String os = '',
-      String arch = '',
-      int repoId = 0,
-      int buildId = 0,
-      int exitCode = 0,
-      int id = 0,
-      int number = 0,
-      int started = 0,
-      int stopped = 0,
-      int created = 0,
-      int updated = 0,
-      int version = 0,
-      bool onSuccess = false,
-      bool onFailure = false,
-      bool errignore = false,
-      List<DroneStep> steps = const []}) {
-    return _DroneStage(
-      name: name,
-      kind: kind,
-      type: type,
-      status: status,
-      machine: machine,
-      os: os,
-      arch: arch,
-      repoId: repoId,
-      buildId: buildId,
-      exitCode: exitCode,
-      id: id,
-      number: number,
-      started: started,
-      stopped: stopped,
-      created: created,
-      updated: updated,
-      version: version,
-      onSuccess: onSuccess,
-      onFailure: onFailure,
-      errignore: errignore,
-      steps: steps,
-    );
-  }
-
-  DroneStage fromJson(Map<String, Object?> json) {
-    return DroneStage.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneStage = _$DroneStageTearOff();
 
 /// @nodoc
 mixin _$DroneStage {
@@ -111,7 +52,8 @@ mixin _$DroneStage {
 abstract class $DroneStageCopyWith<$Res> {
   factory $DroneStageCopyWith(
           DroneStage value, $Res Function(DroneStage) then) =
-      _$DroneStageCopyWithImpl<$Res>;
+      _$DroneStageCopyWithImpl<$Res, DroneStage>;
+  @useResult
   $Res call(
       {String name,
       String kind,
@@ -137,132 +79,137 @@ abstract class $DroneStageCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DroneStageCopyWithImpl<$Res> implements $DroneStageCopyWith<$Res> {
+class _$DroneStageCopyWithImpl<$Res, $Val extends DroneStage>
+    implements $DroneStageCopyWith<$Res> {
   _$DroneStageCopyWithImpl(this._value, this._then);
 
-  final DroneStage _value;
   // ignore: unused_field
-  final $Res Function(DroneStage) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? kind = freezed,
-    Object? type = freezed,
-    Object? status = freezed,
-    Object? machine = freezed,
-    Object? os = freezed,
-    Object? arch = freezed,
-    Object? repoId = freezed,
-    Object? buildId = freezed,
-    Object? exitCode = freezed,
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? started = freezed,
-    Object? stopped = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? version = freezed,
-    Object? onSuccess = freezed,
-    Object? onFailure = freezed,
-    Object? errignore = freezed,
-    Object? steps = freezed,
+    Object? name = null,
+    Object? kind = null,
+    Object? type = null,
+    Object? status = null,
+    Object? machine = null,
+    Object? os = null,
+    Object? arch = null,
+    Object? repoId = null,
+    Object? buildId = null,
+    Object? exitCode = null,
+    Object? id = null,
+    Object? number = null,
+    Object? started = null,
+    Object? stopped = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? version = null,
+    Object? onSuccess = null,
+    Object? onFailure = null,
+    Object? errignore = null,
+    Object? steps = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      kind: kind == freezed
+      kind: null == kind
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      machine: machine == freezed
+      machine: null == machine
           ? _value.machine
           : machine // ignore: cast_nullable_to_non_nullable
               as String,
-      os: os == freezed
+      os: null == os
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      arch: arch == freezed
+      arch: null == arch
           ? _value.arch
           : arch // ignore: cast_nullable_to_non_nullable
               as String,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      buildId: buildId == freezed
+      buildId: null == buildId
           ? _value.buildId
           : buildId // ignore: cast_nullable_to_non_nullable
               as int,
-      exitCode: exitCode == freezed
+      exitCode: null == exitCode
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      started: started == freezed
+      started: null == started
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
               as int,
-      stopped: stopped == freezed
+      stopped: null == stopped
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      onSuccess: onSuccess == freezed
+      onSuccess: null == onSuccess
           ? _value.onSuccess
           : onSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      onFailure: onFailure == freezed
+      onFailure: null == onFailure
           ? _value.onFailure
           : onFailure // ignore: cast_nullable_to_non_nullable
               as bool,
-      errignore: errignore == freezed
+      errignore: null == errignore
           ? _value.errignore
           : errignore // ignore: cast_nullable_to_non_nullable
               as bool,
-      steps: steps == freezed
+      steps: null == steps
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
               as List<DroneStep>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DroneStageCopyWith<$Res> implements $DroneStageCopyWith<$Res> {
-  factory _$DroneStageCopyWith(
-          _DroneStage value, $Res Function(_DroneStage) then) =
-      __$DroneStageCopyWithImpl<$Res>;
+abstract class _$$_DroneStageCopyWith<$Res>
+    implements $DroneStageCopyWith<$Res> {
+  factory _$$_DroneStageCopyWith(
+          _$_DroneStage value, $Res Function(_$_DroneStage) then) =
+      __$$_DroneStageCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name,
       String kind,
@@ -288,122 +235,121 @@ abstract class _$DroneStageCopyWith<$Res> implements $DroneStageCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DroneStageCopyWithImpl<$Res> extends _$DroneStageCopyWithImpl<$Res>
-    implements _$DroneStageCopyWith<$Res> {
-  __$DroneStageCopyWithImpl(
-      _DroneStage _value, $Res Function(_DroneStage) _then)
-      : super(_value, (v) => _then(v as _DroneStage));
+class __$$_DroneStageCopyWithImpl<$Res>
+    extends _$DroneStageCopyWithImpl<$Res, _$_DroneStage>
+    implements _$$_DroneStageCopyWith<$Res> {
+  __$$_DroneStageCopyWithImpl(
+      _$_DroneStage _value, $Res Function(_$_DroneStage) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneStage get _value => super._value as _DroneStage;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? kind = freezed,
-    Object? type = freezed,
-    Object? status = freezed,
-    Object? machine = freezed,
-    Object? os = freezed,
-    Object? arch = freezed,
-    Object? repoId = freezed,
-    Object? buildId = freezed,
-    Object? exitCode = freezed,
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? started = freezed,
-    Object? stopped = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? version = freezed,
-    Object? onSuccess = freezed,
-    Object? onFailure = freezed,
-    Object? errignore = freezed,
-    Object? steps = freezed,
+    Object? name = null,
+    Object? kind = null,
+    Object? type = null,
+    Object? status = null,
+    Object? machine = null,
+    Object? os = null,
+    Object? arch = null,
+    Object? repoId = null,
+    Object? buildId = null,
+    Object? exitCode = null,
+    Object? id = null,
+    Object? number = null,
+    Object? started = null,
+    Object? stopped = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? version = null,
+    Object? onSuccess = null,
+    Object? onFailure = null,
+    Object? errignore = null,
+    Object? steps = null,
   }) {
-    return _then(_DroneStage(
-      name: name == freezed
+    return _then(_$_DroneStage(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      kind: kind == freezed
+      kind: null == kind
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
               as String,
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      machine: machine == freezed
+      machine: null == machine
           ? _value.machine
           : machine // ignore: cast_nullable_to_non_nullable
               as String,
-      os: os == freezed
+      os: null == os
           ? _value.os
           : os // ignore: cast_nullable_to_non_nullable
               as String,
-      arch: arch == freezed
+      arch: null == arch
           ? _value.arch
           : arch // ignore: cast_nullable_to_non_nullable
               as String,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      buildId: buildId == freezed
+      buildId: null == buildId
           ? _value.buildId
           : buildId // ignore: cast_nullable_to_non_nullable
               as int,
-      exitCode: exitCode == freezed
+      exitCode: null == exitCode
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      started: started == freezed
+      started: null == started
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
               as int,
-      stopped: stopped == freezed
+      stopped: null == stopped
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      onSuccess: onSuccess == freezed
+      onSuccess: null == onSuccess
           ? _value.onSuccess
           : onSuccess // ignore: cast_nullable_to_non_nullable
               as bool,
-      onFailure: onFailure == freezed
+      onFailure: null == onFailure
           ? _value.onFailure
           : onFailure // ignore: cast_nullable_to_non_nullable
               as bool,
-      errignore: errignore == freezed
+      errignore: null == errignore
           ? _value.errignore
           : errignore // ignore: cast_nullable_to_non_nullable
               as bool,
-      steps: steps == freezed
-          ? _value.steps
+      steps: null == steps
+          ? _value._steps
           : steps // ignore: cast_nullable_to_non_nullable
               as List<DroneStep>,
     ));
@@ -435,74 +381,79 @@ class _$_DroneStage implements _DroneStage {
       this.onSuccess = false,
       this.onFailure = false,
       this.errignore = false,
-      this.steps = const []});
+      final List<DroneStep> steps = const []})
+      : _steps = steps;
 
   factory _$_DroneStage.fromJson(Map<String, dynamic> json) =>
       _$$_DroneStageFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String name;
-  @JsonKey()
   @override
+  @JsonKey()
   final String kind;
-  @JsonKey()
   @override
+  @JsonKey()
   final String type;
-  @JsonKey()
   @override
+  @JsonKey()
   final String status;
-  @JsonKey()
   @override
+  @JsonKey()
   final String machine;
-  @JsonKey()
   @override
+  @JsonKey()
   final String os;
-  @JsonKey()
   @override
+  @JsonKey()
   final String arch;
-  @JsonKey()
   @override
+  @JsonKey()
   final int repoId;
-  @JsonKey()
   @override
+  @JsonKey()
   final int buildId;
-  @JsonKey()
   @override
+  @JsonKey()
   final int exitCode;
-  @JsonKey()
   @override
+  @JsonKey()
   final int id;
-  @JsonKey()
   @override
+  @JsonKey()
   final int number;
-  @JsonKey()
   @override
+  @JsonKey()
   final int started;
-  @JsonKey()
   @override
+  @JsonKey()
   final int stopped;
-  @JsonKey()
   @override
+  @JsonKey()
   final int created;
-  @JsonKey()
   @override
+  @JsonKey()
   final int updated;
-  @JsonKey()
   @override
+  @JsonKey()
   final int version;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool onSuccess;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool onFailure;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool errignore;
-  @JsonKey()
+  final List<DroneStep> _steps;
   @override
-  final List<DroneStep> steps;
+  @JsonKey()
+  List<DroneStep> get steps {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_steps);
+  }
 
   @override
   String toString() {
@@ -513,90 +464,98 @@ class _$_DroneStage implements _DroneStage {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneStage &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.kind, kind) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.machine, machine) &&
-            const DeepCollectionEquality().equals(other.os, os) &&
-            const DeepCollectionEquality().equals(other.arch, arch) &&
-            const DeepCollectionEquality().equals(other.repoId, repoId) &&
-            const DeepCollectionEquality().equals(other.buildId, buildId) &&
-            const DeepCollectionEquality().equals(other.exitCode, exitCode) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.started, started) &&
-            const DeepCollectionEquality().equals(other.stopped, stopped) &&
-            const DeepCollectionEquality().equals(other.created, created) &&
-            const DeepCollectionEquality().equals(other.updated, updated) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.onSuccess, onSuccess) &&
-            const DeepCollectionEquality().equals(other.onFailure, onFailure) &&
-            const DeepCollectionEquality().equals(other.errignore, errignore) &&
-            const DeepCollectionEquality().equals(other.steps, steps));
+            other is _$_DroneStage &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.kind, kind) || other.kind == kind) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.machine, machine) || other.machine == machine) &&
+            (identical(other.os, os) || other.os == os) &&
+            (identical(other.arch, arch) || other.arch == arch) &&
+            (identical(other.repoId, repoId) || other.repoId == repoId) &&
+            (identical(other.buildId, buildId) || other.buildId == buildId) &&
+            (identical(other.exitCode, exitCode) ||
+                other.exitCode == exitCode) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.started, started) || other.started == started) &&
+            (identical(other.stopped, stopped) || other.stopped == stopped) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.updated, updated) || other.updated == updated) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.onSuccess, onSuccess) ||
+                other.onSuccess == onSuccess) &&
+            (identical(other.onFailure, onFailure) ||
+                other.onFailure == onFailure) &&
+            (identical(other.errignore, errignore) ||
+                other.errignore == errignore) &&
+            const DeepCollectionEquality().equals(other._steps, _steps));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(name),
-        const DeepCollectionEquality().hash(kind),
-        const DeepCollectionEquality().hash(type),
-        const DeepCollectionEquality().hash(status),
-        const DeepCollectionEquality().hash(machine),
-        const DeepCollectionEquality().hash(os),
-        const DeepCollectionEquality().hash(arch),
-        const DeepCollectionEquality().hash(repoId),
-        const DeepCollectionEquality().hash(buildId),
-        const DeepCollectionEquality().hash(exitCode),
-        const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(number),
-        const DeepCollectionEquality().hash(started),
-        const DeepCollectionEquality().hash(stopped),
-        const DeepCollectionEquality().hash(created),
-        const DeepCollectionEquality().hash(updated),
-        const DeepCollectionEquality().hash(version),
-        const DeepCollectionEquality().hash(onSuccess),
-        const DeepCollectionEquality().hash(onFailure),
-        const DeepCollectionEquality().hash(errignore),
-        const DeepCollectionEquality().hash(steps)
+        name,
+        kind,
+        type,
+        status,
+        machine,
+        os,
+        arch,
+        repoId,
+        buildId,
+        exitCode,
+        id,
+        number,
+        started,
+        stopped,
+        created,
+        updated,
+        version,
+        onSuccess,
+        onFailure,
+        errignore,
+        const DeepCollectionEquality().hash(_steps)
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$DroneStageCopyWith<_DroneStage> get copyWith =>
-      __$DroneStageCopyWithImpl<_DroneStage>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DroneStageCopyWith<_$_DroneStage> get copyWith =>
+      __$$_DroneStageCopyWithImpl<_$_DroneStage>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneStageToJson(this);
+    return _$$_DroneStageToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneStage implements DroneStage {
   const factory _DroneStage(
-      {String name,
-      String kind,
-      String type,
-      String status,
-      String machine,
-      String os,
-      String arch,
-      int repoId,
-      int buildId,
-      int exitCode,
-      int id,
-      int number,
-      int started,
-      int stopped,
-      int created,
-      int updated,
-      int version,
-      bool onSuccess,
-      bool onFailure,
-      bool errignore,
-      List<DroneStep> steps}) = _$_DroneStage;
+      {final String name,
+      final String kind,
+      final String type,
+      final String status,
+      final String machine,
+      final String os,
+      final String arch,
+      final int repoId,
+      final int buildId,
+      final int exitCode,
+      final int id,
+      final int number,
+      final int started,
+      final int stopped,
+      final int created,
+      final int updated,
+      final int version,
+      final bool onSuccess,
+      final bool onFailure,
+      final bool errignore,
+      final List<DroneStep> steps}) = _$_DroneStage;
 
   factory _DroneStage.fromJson(Map<String, dynamic> json) =
       _$_DroneStage.fromJson;
@@ -645,6 +604,6 @@ abstract class _DroneStage implements DroneStage {
   List<DroneStep> get steps;
   @override
   @JsonKey(ignore: true)
-  _$DroneStageCopyWith<_DroneStage> get copyWith =>
+  _$$_DroneStageCopyWith<_$_DroneStage> get copyWith =>
       throw _privateConstructorUsedError;
 }

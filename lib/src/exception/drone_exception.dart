@@ -29,4 +29,7 @@ class DroneException with _$DroneException implements Exception {
   const factory DroneException.jsonDeserializationException(
           {@Default('Exception on deserializing json') String message}) =
       JsonDeserializationException;
+
+  const factory DroneException.streamEOFException(
+      {@Default('End of file') String message}) = StreamEOFException;
 }
