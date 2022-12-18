@@ -60,7 +60,7 @@ Map<String, dynamic> _$$_DroneRepoToJson(_$_DroneRepo instance) =>
       'slug': instance.slug,
       'scm': instance.scm,
       'link': instance.link,
-      'visibility': _$VisibilityEnumMap[instance.visibility],
+      'visibility': _$VisibilityEnumMap[instance.visibility]!,
       'id': instance.id,
       'user_id': instance.userId,
       'timeout': instance.timeout,

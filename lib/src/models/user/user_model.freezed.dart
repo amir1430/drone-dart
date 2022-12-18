@@ -12,54 +12,11 @@ part of 'user_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneUser _$DroneUserFromJson(Map<String, dynamic> json) {
   return _DroneUser.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneUserTearOff {
-  const _$DroneUserTearOff();
-
-  _DroneUser call(
-      {String login = '',
-      String email = '',
-      String avatar = '',
-      String token = '',
-      int id = 0,
-      int synced = 0,
-      int created = 0,
-      int updated = 0,
-      int lastLogin = 0,
-      bool machine = false,
-      bool admin = false,
-      bool active = false,
-      bool syncing = false}) {
-    return _DroneUser(
-      login: login,
-      email: email,
-      avatar: avatar,
-      token: token,
-      id: id,
-      synced: synced,
-      created: created,
-      updated: updated,
-      lastLogin: lastLogin,
-      machine: machine,
-      admin: admin,
-      active: active,
-      syncing: syncing,
-    );
-  }
-
-  DroneUser fromJson(Map<String, Object?> json) {
-    return DroneUser.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneUser = _$DroneUserTearOff();
 
 /// @nodoc
 mixin _$DroneUser {
@@ -86,7 +43,8 @@ mixin _$DroneUser {
 /// @nodoc
 abstract class $DroneUserCopyWith<$Res> {
   factory $DroneUserCopyWith(DroneUser value, $Res Function(DroneUser) then) =
-      _$DroneUserCopyWithImpl<$Res>;
+      _$DroneUserCopyWithImpl<$Res, DroneUser>;
+  @useResult
   $Res call(
       {String login,
       String email,
@@ -104,92 +62,96 @@ abstract class $DroneUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DroneUserCopyWithImpl<$Res> implements $DroneUserCopyWith<$Res> {
+class _$DroneUserCopyWithImpl<$Res, $Val extends DroneUser>
+    implements $DroneUserCopyWith<$Res> {
   _$DroneUserCopyWithImpl(this._value, this._then);
 
-  final DroneUser _value;
   // ignore: unused_field
-  final $Res Function(DroneUser) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? login = freezed,
-    Object? email = freezed,
-    Object? avatar = freezed,
-    Object? token = freezed,
-    Object? id = freezed,
-    Object? synced = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? lastLogin = freezed,
-    Object? machine = freezed,
-    Object? admin = freezed,
-    Object? active = freezed,
-    Object? syncing = freezed,
+    Object? login = null,
+    Object? email = null,
+    Object? avatar = null,
+    Object? token = null,
+    Object? id = null,
+    Object? synced = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? lastLogin = null,
+    Object? machine = null,
+    Object? admin = null,
+    Object? active = null,
+    Object? syncing = null,
   }) {
     return _then(_value.copyWith(
-      login: login == freezed
+      login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      avatar: avatar == freezed
+      avatar: null == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as String,
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      synced: synced == freezed
+      synced: null == synced
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      lastLogin: lastLogin == freezed
+      lastLogin: null == lastLogin
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as int,
-      machine: machine == freezed
+      machine: null == machine
           ? _value.machine
           : machine // ignore: cast_nullable_to_non_nullable
               as bool,
-      admin: admin == freezed
+      admin: null == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
               as bool,
-      active: active == freezed
+      active: null == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool,
-      syncing: syncing == freezed
+      syncing: null == syncing
           ? _value.syncing
           : syncing // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DroneUserCopyWith<$Res> implements $DroneUserCopyWith<$Res> {
-  factory _$DroneUserCopyWith(
-          _DroneUser value, $Res Function(_DroneUser) then) =
-      __$DroneUserCopyWithImpl<$Res>;
+abstract class _$$_DroneUserCopyWith<$Res> implements $DroneUserCopyWith<$Res> {
+  factory _$$_DroneUserCopyWith(
+          _$_DroneUser value, $Res Function(_$_DroneUser) then) =
+      __$$_DroneUserCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String login,
       String email,
@@ -207,80 +169,80 @@ abstract class _$DroneUserCopyWith<$Res> implements $DroneUserCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DroneUserCopyWithImpl<$Res> extends _$DroneUserCopyWithImpl<$Res>
-    implements _$DroneUserCopyWith<$Res> {
-  __$DroneUserCopyWithImpl(_DroneUser _value, $Res Function(_DroneUser) _then)
-      : super(_value, (v) => _then(v as _DroneUser));
+class __$$_DroneUserCopyWithImpl<$Res>
+    extends _$DroneUserCopyWithImpl<$Res, _$_DroneUser>
+    implements _$$_DroneUserCopyWith<$Res> {
+  __$$_DroneUserCopyWithImpl(
+      _$_DroneUser _value, $Res Function(_$_DroneUser) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneUser get _value => super._value as _DroneUser;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? login = freezed,
-    Object? email = freezed,
-    Object? avatar = freezed,
-    Object? token = freezed,
-    Object? id = freezed,
-    Object? synced = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? lastLogin = freezed,
-    Object? machine = freezed,
-    Object? admin = freezed,
-    Object? active = freezed,
-    Object? syncing = freezed,
+    Object? login = null,
+    Object? email = null,
+    Object? avatar = null,
+    Object? token = null,
+    Object? id = null,
+    Object? synced = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? lastLogin = null,
+    Object? machine = null,
+    Object? admin = null,
+    Object? active = null,
+    Object? syncing = null,
   }) {
-    return _then(_DroneUser(
-      login: login == freezed
+    return _then(_$_DroneUser(
+      login: null == login
           ? _value.login
           : login // ignore: cast_nullable_to_non_nullable
               as String,
-      email: email == freezed
+      email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      avatar: avatar == freezed
+      avatar: null == avatar
           ? _value.avatar
           : avatar // ignore: cast_nullable_to_non_nullable
               as String,
-      token: token == freezed
+      token: null == token
           ? _value.token
           : token // ignore: cast_nullable_to_non_nullable
               as String,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      synced: synced == freezed
+      synced: null == synced
           ? _value.synced
           : synced // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      lastLogin: lastLogin == freezed
+      lastLogin: null == lastLogin
           ? _value.lastLogin
           : lastLogin // ignore: cast_nullable_to_non_nullable
               as int,
-      machine: machine == freezed
+      machine: null == machine
           ? _value.machine
           : machine // ignore: cast_nullable_to_non_nullable
               as bool,
-      admin: admin == freezed
+      admin: null == admin
           ? _value.admin
           : admin // ignore: cast_nullable_to_non_nullable
               as bool,
-      active: active == freezed
+      active: null == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
               as bool,
-      syncing: syncing == freezed
+      syncing: null == syncing
           ? _value.syncing
           : syncing // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -310,44 +272,44 @@ class _$_DroneUser implements _DroneUser {
   factory _$_DroneUser.fromJson(Map<String, dynamic> json) =>
       _$$_DroneUserFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String login;
-  @JsonKey()
   @override
+  @JsonKey()
   final String email;
-  @JsonKey()
   @override
+  @JsonKey()
   final String avatar;
-  @JsonKey()
   @override
+  @JsonKey()
   final String token;
-  @JsonKey()
   @override
+  @JsonKey()
   final int id;
-  @JsonKey()
   @override
+  @JsonKey()
   final int synced;
-  @JsonKey()
   @override
+  @JsonKey()
   final int created;
-  @JsonKey()
   @override
+  @JsonKey()
   final int updated;
-  @JsonKey()
   @override
+  @JsonKey()
   final int lastLogin;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool machine;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool admin;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool active;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool syncing;
 
   @override
@@ -359,65 +321,57 @@ class _$_DroneUser implements _DroneUser {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneUser &&
-            const DeepCollectionEquality().equals(other.login, login) &&
-            const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.avatar, avatar) &&
-            const DeepCollectionEquality().equals(other.token, token) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.synced, synced) &&
-            const DeepCollectionEquality().equals(other.created, created) &&
-            const DeepCollectionEquality().equals(other.updated, updated) &&
-            const DeepCollectionEquality().equals(other.lastLogin, lastLogin) &&
-            const DeepCollectionEquality().equals(other.machine, machine) &&
-            const DeepCollectionEquality().equals(other.admin, admin) &&
-            const DeepCollectionEquality().equals(other.active, active) &&
-            const DeepCollectionEquality().equals(other.syncing, syncing));
+            other is _$_DroneUser &&
+            (identical(other.login, login) || other.login == login) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.avatar, avatar) || other.avatar == avatar) &&
+            (identical(other.token, token) || other.token == token) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.synced, synced) || other.synced == synced) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.updated, updated) || other.updated == updated) &&
+            (identical(other.lastLogin, lastLogin) ||
+                other.lastLogin == lastLogin) &&
+            (identical(other.machine, machine) || other.machine == machine) &&
+            (identical(other.admin, admin) || other.admin == admin) &&
+            (identical(other.active, active) || other.active == active) &&
+            (identical(other.syncing, syncing) || other.syncing == syncing));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(login),
-      const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(avatar),
-      const DeepCollectionEquality().hash(token),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(synced),
-      const DeepCollectionEquality().hash(created),
-      const DeepCollectionEquality().hash(updated),
-      const DeepCollectionEquality().hash(lastLogin),
-      const DeepCollectionEquality().hash(machine),
-      const DeepCollectionEquality().hash(admin),
-      const DeepCollectionEquality().hash(active),
-      const DeepCollectionEquality().hash(syncing));
 
   @JsonKey(ignore: true)
   @override
-  _$DroneUserCopyWith<_DroneUser> get copyWith =>
-      __$DroneUserCopyWithImpl<_DroneUser>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, login, email, avatar, token, id,
+      synced, created, updated, lastLogin, machine, admin, active, syncing);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DroneUserCopyWith<_$_DroneUser> get copyWith =>
+      __$$_DroneUserCopyWithImpl<_$_DroneUser>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneUserToJson(this);
+    return _$$_DroneUserToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneUser implements DroneUser {
   const factory _DroneUser(
-      {String login,
-      String email,
-      String avatar,
-      String token,
-      int id,
-      int synced,
-      int created,
-      int updated,
-      int lastLogin,
-      bool machine,
-      bool admin,
-      bool active,
-      bool syncing}) = _$_DroneUser;
+      {final String login,
+      final String email,
+      final String avatar,
+      final String token,
+      final int id,
+      final int synced,
+      final int created,
+      final int updated,
+      final int lastLogin,
+      final bool machine,
+      final bool admin,
+      final bool active,
+      final bool syncing}) = _$_DroneUser;
 
   factory _DroneUser.fromJson(Map<String, dynamic> json) =
       _$_DroneUser.fromJson;
@@ -450,6 +404,6 @@ abstract class _DroneUser implements DroneUser {
   bool get syncing;
   @override
   @JsonKey(ignore: true)
-  _$DroneUserCopyWith<_DroneUser> get copyWith =>
+  _$$_DroneUserCopyWith<_$_DroneUser> get copyWith =>
       throw _privateConstructorUsedError;
 }

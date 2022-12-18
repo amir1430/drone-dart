@@ -12,38 +12,11 @@ part of 'secret_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneSecret _$DroneSecretFromJson(Map<String, dynamic> json) {
   return _DroneSecret.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneSecretTearOff {
-  const _$DroneSecretTearOff();
-
-  _DroneSecret call(
-      {String name = '',
-      String data = '',
-      int repoId = 0,
-      int id = 0,
-      bool pullRequest = false}) {
-    return _DroneSecret(
-      name: name,
-      data: data,
-      repoId: repoId,
-      id: id,
-      pullRequest: pullRequest,
-    );
-  }
-
-  DroneSecret fromJson(Map<String, Object?> json) {
-    return DroneSecret.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneSecret = _$DroneSecretTearOff();
 
 /// @nodoc
 mixin _$DroneSecret {
@@ -63,97 +36,101 @@ mixin _$DroneSecret {
 abstract class $DroneSecretCopyWith<$Res> {
   factory $DroneSecretCopyWith(
           DroneSecret value, $Res Function(DroneSecret) then) =
-      _$DroneSecretCopyWithImpl<$Res>;
+      _$DroneSecretCopyWithImpl<$Res, DroneSecret>;
+  @useResult
   $Res call({String name, String data, int repoId, int id, bool pullRequest});
 }
 
 /// @nodoc
-class _$DroneSecretCopyWithImpl<$Res> implements $DroneSecretCopyWith<$Res> {
+class _$DroneSecretCopyWithImpl<$Res, $Val extends DroneSecret>
+    implements $DroneSecretCopyWith<$Res> {
   _$DroneSecretCopyWithImpl(this._value, this._then);
 
-  final DroneSecret _value;
   // ignore: unused_field
-  final $Res Function(DroneSecret) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? data = freezed,
-    Object? repoId = freezed,
-    Object? id = freezed,
-    Object? pullRequest = freezed,
+    Object? name = null,
+    Object? data = null,
+    Object? repoId = null,
+    Object? id = null,
+    Object? pullRequest = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      pullRequest: pullRequest == freezed
+      pullRequest: null == pullRequest
           ? _value.pullRequest
           : pullRequest // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DroneSecretCopyWith<$Res>
+abstract class _$$_DroneSecretCopyWith<$Res>
     implements $DroneSecretCopyWith<$Res> {
-  factory _$DroneSecretCopyWith(
-          _DroneSecret value, $Res Function(_DroneSecret) then) =
-      __$DroneSecretCopyWithImpl<$Res>;
+  factory _$$_DroneSecretCopyWith(
+          _$_DroneSecret value, $Res Function(_$_DroneSecret) then) =
+      __$$_DroneSecretCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String name, String data, int repoId, int id, bool pullRequest});
 }
 
 /// @nodoc
-class __$DroneSecretCopyWithImpl<$Res> extends _$DroneSecretCopyWithImpl<$Res>
-    implements _$DroneSecretCopyWith<$Res> {
-  __$DroneSecretCopyWithImpl(
-      _DroneSecret _value, $Res Function(_DroneSecret) _then)
-      : super(_value, (v) => _then(v as _DroneSecret));
+class __$$_DroneSecretCopyWithImpl<$Res>
+    extends _$DroneSecretCopyWithImpl<$Res, _$_DroneSecret>
+    implements _$$_DroneSecretCopyWith<$Res> {
+  __$$_DroneSecretCopyWithImpl(
+      _$_DroneSecret _value, $Res Function(_$_DroneSecret) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneSecret get _value => super._value as _DroneSecret;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? data = freezed,
-    Object? repoId = freezed,
-    Object? id = freezed,
-    Object? pullRequest = freezed,
+    Object? name = null,
+    Object? data = null,
+    Object? repoId = null,
+    Object? id = null,
+    Object? pullRequest = null,
   }) {
-    return _then(_DroneSecret(
-      name: name == freezed
+    return _then(_$_DroneSecret(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      data: data == freezed
+      data: null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as String,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      pullRequest: pullRequest == freezed
+      pullRequest: null == pullRequest
           ? _value.pullRequest
           : pullRequest // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -175,20 +152,20 @@ class _$_DroneSecret implements _DroneSecret {
   factory _$_DroneSecret.fromJson(Map<String, dynamic> json) =>
       _$$_DroneSecretFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String name;
-  @JsonKey()
   @override
+  @JsonKey()
   final String data;
-  @JsonKey()
   @override
+  @JsonKey()
   final int repoId;
-  @JsonKey()
   @override
+  @JsonKey()
   final int id;
-  @JsonKey()
   @override
+  @JsonKey()
   final bool pullRequest;
 
   @override
@@ -200,42 +177,41 @@ class _$_DroneSecret implements _DroneSecret {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneSecret &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.data, data) &&
-            const DeepCollectionEquality().equals(other.repoId, repoId) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.pullRequest, pullRequest));
+            other is _$_DroneSecret &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.data, data) || other.data == data) &&
+            (identical(other.repoId, repoId) || other.repoId == repoId) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.pullRequest, pullRequest) ||
+                other.pullRequest == pullRequest));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(data),
-      const DeepCollectionEquality().hash(repoId),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(pullRequest));
 
   @JsonKey(ignore: true)
   @override
-  _$DroneSecretCopyWith<_DroneSecret> get copyWith =>
-      __$DroneSecretCopyWithImpl<_DroneSecret>(this, _$identity);
+  int get hashCode =>
+      Object.hash(runtimeType, name, data, repoId, id, pullRequest);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DroneSecretCopyWith<_$_DroneSecret> get copyWith =>
+      __$$_DroneSecretCopyWithImpl<_$_DroneSecret>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneSecretToJson(this);
+    return _$$_DroneSecretToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneSecret implements DroneSecret {
   const factory _DroneSecret(
-      {String name,
-      String data,
-      int repoId,
-      int id,
-      bool pullRequest}) = _$_DroneSecret;
+      {final String name,
+      final String data,
+      final int repoId,
+      final int id,
+      final bool pullRequest}) = _$_DroneSecret;
 
   factory _DroneSecret.fromJson(Map<String, dynamic> json) =
       _$_DroneSecret.fromJson;
@@ -252,6 +228,6 @@ abstract class _DroneSecret implements DroneSecret {
   bool get pullRequest;
   @override
   @JsonKey(ignore: true)
-  _$DroneSecretCopyWith<_DroneSecret> get copyWith =>
+  _$$_DroneSecretCopyWith<_$_DroneSecret> get copyWith =>
       throw _privateConstructorUsedError;
 }

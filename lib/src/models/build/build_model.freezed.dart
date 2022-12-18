@@ -12,88 +12,11 @@ part of 'build_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneBuild _$DroneBuildFromJson(Map<String, dynamic> json) {
   return _DroneBuild.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneBuildTearOff {
-  const _$DroneBuildTearOff();
-
-  _DroneBuild call(
-      {String sourceRepo = '',
-      String authorLogin = '',
-      String authorName = '',
-      String authorEmail = '',
-      String authorAvatar = '',
-      String trigger = '',
-      String status = '',
-      String action = '',
-      String link = '',
-      String message = '',
-      String before = '',
-      String after = '',
-      String ref = '',
-      String source = '',
-      String target = '',
-      String sender = '',
-      String? deployTo = null,
-      String? cron = null,
-      int parent = 0,
-      int repoId = 0,
-      int id = 0,
-      int number = 0,
-      int timestamp = 0,
-      int started = 0,
-      int finished = 0,
-      int created = 0,
-      int updated = 0,
-      int version = 0,
-      @JsonKey(unknownEnumValue: Event.push) Event event = Event.push,
-      List<DroneStage> stages = const []}) {
-    return _DroneBuild(
-      sourceRepo: sourceRepo,
-      authorLogin: authorLogin,
-      authorName: authorName,
-      authorEmail: authorEmail,
-      authorAvatar: authorAvatar,
-      trigger: trigger,
-      status: status,
-      action: action,
-      link: link,
-      message: message,
-      before: before,
-      after: after,
-      ref: ref,
-      source: source,
-      target: target,
-      sender: sender,
-      deployTo: deployTo,
-      cron: cron,
-      parent: parent,
-      repoId: repoId,
-      id: id,
-      number: number,
-      timestamp: timestamp,
-      started: started,
-      finished: finished,
-      created: created,
-      updated: updated,
-      version: version,
-      event: event,
-      stages: stages,
-    );
-  }
-
-  DroneBuild fromJson(Map<String, Object?> json) {
-    return DroneBuild.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneBuild = _$DroneBuildTearOff();
 
 /// @nodoc
 mixin _$DroneBuild {
@@ -139,7 +62,8 @@ mixin _$DroneBuild {
 abstract class $DroneBuildCopyWith<$Res> {
   factory $DroneBuildCopyWith(
           DroneBuild value, $Res Function(DroneBuild) then) =
-      _$DroneBuildCopyWithImpl<$Res>;
+      _$DroneBuildCopyWithImpl<$Res, DroneBuild>;
+  @useResult
   $Res call(
       {String sourceRepo,
       String authorLogin,
@@ -174,177 +98,182 @@ abstract class $DroneBuildCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DroneBuildCopyWithImpl<$Res> implements $DroneBuildCopyWith<$Res> {
+class _$DroneBuildCopyWithImpl<$Res, $Val extends DroneBuild>
+    implements $DroneBuildCopyWith<$Res> {
   _$DroneBuildCopyWithImpl(this._value, this._then);
 
-  final DroneBuild _value;
   // ignore: unused_field
-  final $Res Function(DroneBuild) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sourceRepo = freezed,
-    Object? authorLogin = freezed,
-    Object? authorName = freezed,
-    Object? authorEmail = freezed,
-    Object? authorAvatar = freezed,
-    Object? trigger = freezed,
-    Object? status = freezed,
-    Object? action = freezed,
-    Object? link = freezed,
-    Object? message = freezed,
-    Object? before = freezed,
-    Object? after = freezed,
-    Object? ref = freezed,
-    Object? source = freezed,
-    Object? target = freezed,
-    Object? sender = freezed,
+    Object? sourceRepo = null,
+    Object? authorLogin = null,
+    Object? authorName = null,
+    Object? authorEmail = null,
+    Object? authorAvatar = null,
+    Object? trigger = null,
+    Object? status = null,
+    Object? action = null,
+    Object? link = null,
+    Object? message = null,
+    Object? before = null,
+    Object? after = null,
+    Object? ref = null,
+    Object? source = null,
+    Object? target = null,
+    Object? sender = null,
     Object? deployTo = freezed,
     Object? cron = freezed,
-    Object? parent = freezed,
-    Object? repoId = freezed,
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? timestamp = freezed,
-    Object? started = freezed,
-    Object? finished = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? version = freezed,
-    Object? event = freezed,
-    Object? stages = freezed,
+    Object? parent = null,
+    Object? repoId = null,
+    Object? id = null,
+    Object? number = null,
+    Object? timestamp = null,
+    Object? started = null,
+    Object? finished = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? version = null,
+    Object? event = null,
+    Object? stages = null,
   }) {
     return _then(_value.copyWith(
-      sourceRepo: sourceRepo == freezed
+      sourceRepo: null == sourceRepo
           ? _value.sourceRepo
           : sourceRepo // ignore: cast_nullable_to_non_nullable
               as String,
-      authorLogin: authorLogin == freezed
+      authorLogin: null == authorLogin
           ? _value.authorLogin
           : authorLogin // ignore: cast_nullable_to_non_nullable
               as String,
-      authorName: authorName == freezed
+      authorName: null == authorName
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
               as String,
-      authorEmail: authorEmail == freezed
+      authorEmail: null == authorEmail
           ? _value.authorEmail
           : authorEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      authorAvatar: authorAvatar == freezed
+      authorAvatar: null == authorAvatar
           ? _value.authorAvatar
           : authorAvatar // ignore: cast_nullable_to_non_nullable
               as String,
-      trigger: trigger == freezed
+      trigger: null == trigger
           ? _value.trigger
           : trigger // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      action: action == freezed
+      action: null == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
+      link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String,
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      before: before == freezed
+      before: null == before
           ? _value.before
           : before // ignore: cast_nullable_to_non_nullable
               as String,
-      after: after == freezed
+      after: null == after
           ? _value.after
           : after // ignore: cast_nullable_to_non_nullable
               as String,
-      ref: ref == freezed
+      ref: null == ref
           ? _value.ref
           : ref // ignore: cast_nullable_to_non_nullable
               as String,
-      source: source == freezed
+      source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
-      target: target == freezed
+      target: null == target
           ? _value.target
           : target // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String,
-      deployTo: deployTo == freezed
+      deployTo: freezed == deployTo
           ? _value.deployTo
           : deployTo // ignore: cast_nullable_to_non_nullable
               as String?,
-      cron: cron == freezed
+      cron: freezed == cron
           ? _value.cron
           : cron // ignore: cast_nullable_to_non_nullable
               as String?,
-      parent: parent == freezed
+      parent: null == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
               as int,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      timestamp: timestamp == freezed
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as int,
-      started: started == freezed
+      started: null == started
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
               as int,
-      finished: finished == freezed
+      finished: null == finished
           ? _value.finished
           : finished // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      event: event == freezed
+      event: null == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
               as Event,
-      stages: stages == freezed
+      stages: null == stages
           ? _value.stages
           : stages // ignore: cast_nullable_to_non_nullable
               as List<DroneStage>,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DroneBuildCopyWith<$Res> implements $DroneBuildCopyWith<$Res> {
-  factory _$DroneBuildCopyWith(
-          _DroneBuild value, $Res Function(_DroneBuild) then) =
-      __$DroneBuildCopyWithImpl<$Res>;
+abstract class _$$_DroneBuildCopyWith<$Res>
+    implements $DroneBuildCopyWith<$Res> {
+  factory _$$_DroneBuildCopyWith(
+          _$_DroneBuild value, $Res Function(_$_DroneBuild) then) =
+      __$$_DroneBuildCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String sourceRepo,
       String authorLogin,
@@ -379,167 +308,166 @@ abstract class _$DroneBuildCopyWith<$Res> implements $DroneBuildCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DroneBuildCopyWithImpl<$Res> extends _$DroneBuildCopyWithImpl<$Res>
-    implements _$DroneBuildCopyWith<$Res> {
-  __$DroneBuildCopyWithImpl(
-      _DroneBuild _value, $Res Function(_DroneBuild) _then)
-      : super(_value, (v) => _then(v as _DroneBuild));
+class __$$_DroneBuildCopyWithImpl<$Res>
+    extends _$DroneBuildCopyWithImpl<$Res, _$_DroneBuild>
+    implements _$$_DroneBuildCopyWith<$Res> {
+  __$$_DroneBuildCopyWithImpl(
+      _$_DroneBuild _value, $Res Function(_$_DroneBuild) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneBuild get _value => super._value as _DroneBuild;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sourceRepo = freezed,
-    Object? authorLogin = freezed,
-    Object? authorName = freezed,
-    Object? authorEmail = freezed,
-    Object? authorAvatar = freezed,
-    Object? trigger = freezed,
-    Object? status = freezed,
-    Object? action = freezed,
-    Object? link = freezed,
-    Object? message = freezed,
-    Object? before = freezed,
-    Object? after = freezed,
-    Object? ref = freezed,
-    Object? source = freezed,
-    Object? target = freezed,
-    Object? sender = freezed,
+    Object? sourceRepo = null,
+    Object? authorLogin = null,
+    Object? authorName = null,
+    Object? authorEmail = null,
+    Object? authorAvatar = null,
+    Object? trigger = null,
+    Object? status = null,
+    Object? action = null,
+    Object? link = null,
+    Object? message = null,
+    Object? before = null,
+    Object? after = null,
+    Object? ref = null,
+    Object? source = null,
+    Object? target = null,
+    Object? sender = null,
     Object? deployTo = freezed,
     Object? cron = freezed,
-    Object? parent = freezed,
-    Object? repoId = freezed,
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? timestamp = freezed,
-    Object? started = freezed,
-    Object? finished = freezed,
-    Object? created = freezed,
-    Object? updated = freezed,
-    Object? version = freezed,
-    Object? event = freezed,
-    Object? stages = freezed,
+    Object? parent = null,
+    Object? repoId = null,
+    Object? id = null,
+    Object? number = null,
+    Object? timestamp = null,
+    Object? started = null,
+    Object? finished = null,
+    Object? created = null,
+    Object? updated = null,
+    Object? version = null,
+    Object? event = null,
+    Object? stages = null,
   }) {
-    return _then(_DroneBuild(
-      sourceRepo: sourceRepo == freezed
+    return _then(_$_DroneBuild(
+      sourceRepo: null == sourceRepo
           ? _value.sourceRepo
           : sourceRepo // ignore: cast_nullable_to_non_nullable
               as String,
-      authorLogin: authorLogin == freezed
+      authorLogin: null == authorLogin
           ? _value.authorLogin
           : authorLogin // ignore: cast_nullable_to_non_nullable
               as String,
-      authorName: authorName == freezed
+      authorName: null == authorName
           ? _value.authorName
           : authorName // ignore: cast_nullable_to_non_nullable
               as String,
-      authorEmail: authorEmail == freezed
+      authorEmail: null == authorEmail
           ? _value.authorEmail
           : authorEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      authorAvatar: authorAvatar == freezed
+      authorAvatar: null == authorAvatar
           ? _value.authorAvatar
           : authorAvatar // ignore: cast_nullable_to_non_nullable
               as String,
-      trigger: trigger == freezed
+      trigger: null == trigger
           ? _value.trigger
           : trigger // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      action: action == freezed
+      action: null == action
           ? _value.action
           : action // ignore: cast_nullable_to_non_nullable
               as String,
-      link: link == freezed
+      link: null == link
           ? _value.link
           : link // ignore: cast_nullable_to_non_nullable
               as String,
-      message: message == freezed
+      message: null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
               as String,
-      before: before == freezed
+      before: null == before
           ? _value.before
           : before // ignore: cast_nullable_to_non_nullable
               as String,
-      after: after == freezed
+      after: null == after
           ? _value.after
           : after // ignore: cast_nullable_to_non_nullable
               as String,
-      ref: ref == freezed
+      ref: null == ref
           ? _value.ref
           : ref // ignore: cast_nullable_to_non_nullable
               as String,
-      source: source == freezed
+      source: null == source
           ? _value.source
           : source // ignore: cast_nullable_to_non_nullable
               as String,
-      target: target == freezed
+      target: null == target
           ? _value.target
           : target // ignore: cast_nullable_to_non_nullable
               as String,
-      sender: sender == freezed
+      sender: null == sender
           ? _value.sender
           : sender // ignore: cast_nullable_to_non_nullable
               as String,
-      deployTo: deployTo == freezed
+      deployTo: freezed == deployTo
           ? _value.deployTo
           : deployTo // ignore: cast_nullable_to_non_nullable
               as String?,
-      cron: cron == freezed
+      cron: freezed == cron
           ? _value.cron
           : cron // ignore: cast_nullable_to_non_nullable
               as String?,
-      parent: parent == freezed
+      parent: null == parent
           ? _value.parent
           : parent // ignore: cast_nullable_to_non_nullable
               as int,
-      repoId: repoId == freezed
+      repoId: null == repoId
           ? _value.repoId
           : repoId // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      timestamp: timestamp == freezed
+      timestamp: null == timestamp
           ? _value.timestamp
           : timestamp // ignore: cast_nullable_to_non_nullable
               as int,
-      started: started == freezed
+      started: null == started
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
               as int,
-      finished: finished == freezed
+      finished: null == finished
           ? _value.finished
           : finished // ignore: cast_nullable_to_non_nullable
               as int,
-      created: created == freezed
+      created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
               as int,
-      updated: updated == freezed
+      updated: null == updated
           ? _value.updated
           : updated // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-      event: event == freezed
+      event: null == event
           ? _value.event
           : event // ignore: cast_nullable_to_non_nullable
               as Event,
-      stages: stages == freezed
-          ? _value.stages
+      stages: null == stages
+          ? _value._stages
           : stages // ignore: cast_nullable_to_non_nullable
               as List<DroneStage>,
     ));
@@ -580,101 +508,106 @@ class _$_DroneBuild implements _DroneBuild {
       this.updated = 0,
       this.version = 0,
       @JsonKey(unknownEnumValue: Event.push) this.event = Event.push,
-      this.stages = const []});
+      final List<DroneStage> stages = const []})
+      : _stages = stages;
 
   factory _$_DroneBuild.fromJson(Map<String, dynamic> json) =>
       _$$_DroneBuildFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String sourceRepo;
-  @JsonKey()
   @override
+  @JsonKey()
   final String authorLogin;
-  @JsonKey()
   @override
+  @JsonKey()
   final String authorName;
-  @JsonKey()
   @override
+  @JsonKey()
   final String authorEmail;
-  @JsonKey()
   @override
+  @JsonKey()
   final String authorAvatar;
-  @JsonKey()
   @override
+  @JsonKey()
   final String trigger;
-  @JsonKey()
   @override
+  @JsonKey()
   final String status;
-  @JsonKey()
   @override
+  @JsonKey()
   final String action;
-  @JsonKey()
   @override
+  @JsonKey()
   final String link;
-  @JsonKey()
   @override
+  @JsonKey()
   final String message;
-  @JsonKey()
   @override
+  @JsonKey()
   final String before;
-  @JsonKey()
   @override
+  @JsonKey()
   final String after;
-  @JsonKey()
   @override
+  @JsonKey()
   final String ref;
-  @JsonKey()
   @override
+  @JsonKey()
   final String source;
-  @JsonKey()
   @override
+  @JsonKey()
   final String target;
-  @JsonKey()
   @override
+  @JsonKey()
   final String sender;
-  @JsonKey()
   @override
+  @JsonKey()
   final String? deployTo;
-  @JsonKey()
   @override
+  @JsonKey()
   final String? cron;
-  @JsonKey()
   @override
+  @JsonKey()
   final int parent;
-  @JsonKey()
   @override
+  @JsonKey()
   final int repoId;
-  @JsonKey()
   @override
+  @JsonKey()
   final int id;
-  @JsonKey()
   @override
+  @JsonKey()
   final int number;
-  @JsonKey()
   @override
+  @JsonKey()
   final int timestamp;
-  @JsonKey()
   @override
+  @JsonKey()
   final int started;
-  @JsonKey()
   @override
+  @JsonKey()
   final int finished;
-  @JsonKey()
   @override
+  @JsonKey()
   final int created;
-  @JsonKey()
   @override
+  @JsonKey()
   final int updated;
-  @JsonKey()
   @override
+  @JsonKey()
   final int version;
   @override
   @JsonKey(unknownEnumValue: Event.push)
   final Event event;
-  @JsonKey()
+  final List<DroneStage> _stages;
   @override
-  final List<DroneStage> stages;
+  @JsonKey()
+  List<DroneStage> get stages {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_stages);
+  }
 
   @override
   String toString() {
@@ -685,122 +618,129 @@ class _$_DroneBuild implements _DroneBuild {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneBuild &&
-            const DeepCollectionEquality()
-                .equals(other.sourceRepo, sourceRepo) &&
-            const DeepCollectionEquality()
-                .equals(other.authorLogin, authorLogin) &&
-            const DeepCollectionEquality()
-                .equals(other.authorName, authorName) &&
-            const DeepCollectionEquality()
-                .equals(other.authorEmail, authorEmail) &&
-            const DeepCollectionEquality()
-                .equals(other.authorAvatar, authorAvatar) &&
-            const DeepCollectionEquality().equals(other.trigger, trigger) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.action, action) &&
-            const DeepCollectionEquality().equals(other.link, link) &&
-            const DeepCollectionEquality().equals(other.message, message) &&
-            const DeepCollectionEquality().equals(other.before, before) &&
-            const DeepCollectionEquality().equals(other.after, after) &&
-            const DeepCollectionEquality().equals(other.ref, ref) &&
-            const DeepCollectionEquality().equals(other.source, source) &&
-            const DeepCollectionEquality().equals(other.target, target) &&
-            const DeepCollectionEquality().equals(other.sender, sender) &&
-            const DeepCollectionEquality().equals(other.deployTo, deployTo) &&
-            const DeepCollectionEquality().equals(other.cron, cron) &&
-            const DeepCollectionEquality().equals(other.parent, parent) &&
-            const DeepCollectionEquality().equals(other.repoId, repoId) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.timestamp, timestamp) &&
-            const DeepCollectionEquality().equals(other.started, started) &&
-            const DeepCollectionEquality().equals(other.finished, finished) &&
-            const DeepCollectionEquality().equals(other.created, created) &&
-            const DeepCollectionEquality().equals(other.updated, updated) &&
-            const DeepCollectionEquality().equals(other.version, version) &&
-            const DeepCollectionEquality().equals(other.event, event) &&
-            const DeepCollectionEquality().equals(other.stages, stages));
+            other is _$_DroneBuild &&
+            (identical(other.sourceRepo, sourceRepo) ||
+                other.sourceRepo == sourceRepo) &&
+            (identical(other.authorLogin, authorLogin) ||
+                other.authorLogin == authorLogin) &&
+            (identical(other.authorName, authorName) ||
+                other.authorName == authorName) &&
+            (identical(other.authorEmail, authorEmail) ||
+                other.authorEmail == authorEmail) &&
+            (identical(other.authorAvatar, authorAvatar) ||
+                other.authorAvatar == authorAvatar) &&
+            (identical(other.trigger, trigger) || other.trigger == trigger) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.action, action) || other.action == action) &&
+            (identical(other.link, link) || other.link == link) &&
+            (identical(other.message, message) || other.message == message) &&
+            (identical(other.before, before) || other.before == before) &&
+            (identical(other.after, after) || other.after == after) &&
+            (identical(other.ref, ref) || other.ref == ref) &&
+            (identical(other.source, source) || other.source == source) &&
+            (identical(other.target, target) || other.target == target) &&
+            (identical(other.sender, sender) || other.sender == sender) &&
+            (identical(other.deployTo, deployTo) ||
+                other.deployTo == deployTo) &&
+            (identical(other.cron, cron) || other.cron == cron) &&
+            (identical(other.parent, parent) || other.parent == parent) &&
+            (identical(other.repoId, repoId) || other.repoId == repoId) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp) &&
+            (identical(other.started, started) || other.started == started) &&
+            (identical(other.finished, finished) ||
+                other.finished == finished) &&
+            (identical(other.created, created) || other.created == created) &&
+            (identical(other.updated, updated) || other.updated == updated) &&
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.event, event) || other.event == event) &&
+            const DeepCollectionEquality().equals(other._stages, _stages));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
-        const DeepCollectionEquality().hash(sourceRepo),
-        const DeepCollectionEquality().hash(authorLogin),
-        const DeepCollectionEquality().hash(authorName),
-        const DeepCollectionEquality().hash(authorEmail),
-        const DeepCollectionEquality().hash(authorAvatar),
-        const DeepCollectionEquality().hash(trigger),
-        const DeepCollectionEquality().hash(status),
-        const DeepCollectionEquality().hash(action),
-        const DeepCollectionEquality().hash(link),
-        const DeepCollectionEquality().hash(message),
-        const DeepCollectionEquality().hash(before),
-        const DeepCollectionEquality().hash(after),
-        const DeepCollectionEquality().hash(ref),
-        const DeepCollectionEquality().hash(source),
-        const DeepCollectionEquality().hash(target),
-        const DeepCollectionEquality().hash(sender),
-        const DeepCollectionEquality().hash(deployTo),
-        const DeepCollectionEquality().hash(cron),
-        const DeepCollectionEquality().hash(parent),
-        const DeepCollectionEquality().hash(repoId),
-        const DeepCollectionEquality().hash(id),
-        const DeepCollectionEquality().hash(number),
-        const DeepCollectionEquality().hash(timestamp),
-        const DeepCollectionEquality().hash(started),
-        const DeepCollectionEquality().hash(finished),
-        const DeepCollectionEquality().hash(created),
-        const DeepCollectionEquality().hash(updated),
-        const DeepCollectionEquality().hash(version),
-        const DeepCollectionEquality().hash(event),
-        const DeepCollectionEquality().hash(stages)
+        sourceRepo,
+        authorLogin,
+        authorName,
+        authorEmail,
+        authorAvatar,
+        trigger,
+        status,
+        action,
+        link,
+        message,
+        before,
+        after,
+        ref,
+        source,
+        target,
+        sender,
+        deployTo,
+        cron,
+        parent,
+        repoId,
+        id,
+        number,
+        timestamp,
+        started,
+        finished,
+        created,
+        updated,
+        version,
+        event,
+        const DeepCollectionEquality().hash(_stages)
       ]);
 
   @JsonKey(ignore: true)
   @override
-  _$DroneBuildCopyWith<_DroneBuild> get copyWith =>
-      __$DroneBuildCopyWithImpl<_DroneBuild>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_DroneBuildCopyWith<_$_DroneBuild> get copyWith =>
+      __$$_DroneBuildCopyWithImpl<_$_DroneBuild>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneBuildToJson(this);
+    return _$$_DroneBuildToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneBuild implements DroneBuild {
   const factory _DroneBuild(
-      {String sourceRepo,
-      String authorLogin,
-      String authorName,
-      String authorEmail,
-      String authorAvatar,
-      String trigger,
-      String status,
-      String action,
-      String link,
-      String message,
-      String before,
-      String after,
-      String ref,
-      String source,
-      String target,
-      String sender,
-      String? deployTo,
-      String? cron,
-      int parent,
-      int repoId,
-      int id,
-      int number,
-      int timestamp,
-      int started,
-      int finished,
-      int created,
-      int updated,
-      int version,
-      @JsonKey(unknownEnumValue: Event.push) Event event,
-      List<DroneStage> stages}) = _$_DroneBuild;
+      {final String sourceRepo,
+      final String authorLogin,
+      final String authorName,
+      final String authorEmail,
+      final String authorAvatar,
+      final String trigger,
+      final String status,
+      final String action,
+      final String link,
+      final String message,
+      final String before,
+      final String after,
+      final String ref,
+      final String source,
+      final String target,
+      final String sender,
+      final String? deployTo,
+      final String? cron,
+      final int parent,
+      final int repoId,
+      final int id,
+      final int number,
+      final int timestamp,
+      final int started,
+      final int finished,
+      final int created,
+      final int updated,
+      final int version,
+      @JsonKey(unknownEnumValue: Event.push) final Event event,
+      final List<DroneStage> stages}) = _$_DroneBuild;
 
   factory _DroneBuild.fromJson(Map<String, dynamic> json) =
       _$_DroneBuild.fromJson;
@@ -868,6 +808,6 @@ abstract class _DroneBuild implements DroneBuild {
   List<DroneStage> get stages;
   @override
   @JsonKey(ignore: true)
-  _$DroneBuildCopyWith<_DroneBuild> get copyWith =>
+  _$$_DroneBuildCopyWith<_$_DroneBuild> get copyWith =>
       throw _privateConstructorUsedError;
 }

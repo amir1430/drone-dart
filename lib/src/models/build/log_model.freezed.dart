@@ -12,31 +12,11 @@ part of 'log_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneLog _$DroneLogFromJson(Map<String, dynamic> json) {
   return _DroneLog.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneLogTearOff {
-  const _$DroneLogTearOff();
-
-  _DroneLog call({required int time, required int pos, required String out}) {
-    return _DroneLog(
-      time: time,
-      pos: pos,
-      out: out,
-    );
-  }
-
-  DroneLog fromJson(Map<String, Object?> json) {
-    return DroneLog.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneLog = _$DroneLogTearOff();
 
 /// @nodoc
 mixin _$DroneLog {
@@ -53,74 +33,80 @@ mixin _$DroneLog {
 /// @nodoc
 abstract class $DroneLogCopyWith<$Res> {
   factory $DroneLogCopyWith(DroneLog value, $Res Function(DroneLog) then) =
-      _$DroneLogCopyWithImpl<$Res>;
+      _$DroneLogCopyWithImpl<$Res, DroneLog>;
+  @useResult
   $Res call({int time, int pos, String out});
 }
 
 /// @nodoc
-class _$DroneLogCopyWithImpl<$Res> implements $DroneLogCopyWith<$Res> {
+class _$DroneLogCopyWithImpl<$Res, $Val extends DroneLog>
+    implements $DroneLogCopyWith<$Res> {
   _$DroneLogCopyWithImpl(this._value, this._then);
 
-  final DroneLog _value;
   // ignore: unused_field
-  final $Res Function(DroneLog) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
-    Object? pos = freezed,
-    Object? out = freezed,
+    Object? time = null,
+    Object? pos = null,
+    Object? out = null,
   }) {
     return _then(_value.copyWith(
-      time: time == freezed
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as int,
-      pos: pos == freezed
+      pos: null == pos
           ? _value.pos
           : pos // ignore: cast_nullable_to_non_nullable
               as int,
-      out: out == freezed
+      out: null == out
           ? _value.out
           : out // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DroneLogCopyWith<$Res> implements $DroneLogCopyWith<$Res> {
-  factory _$DroneLogCopyWith(_DroneLog value, $Res Function(_DroneLog) then) =
-      __$DroneLogCopyWithImpl<$Res>;
+abstract class _$$_DroneLogCopyWith<$Res> implements $DroneLogCopyWith<$Res> {
+  factory _$$_DroneLogCopyWith(
+          _$_DroneLog value, $Res Function(_$_DroneLog) then) =
+      __$$_DroneLogCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int time, int pos, String out});
 }
 
 /// @nodoc
-class __$DroneLogCopyWithImpl<$Res> extends _$DroneLogCopyWithImpl<$Res>
-    implements _$DroneLogCopyWith<$Res> {
-  __$DroneLogCopyWithImpl(_DroneLog _value, $Res Function(_DroneLog) _then)
-      : super(_value, (v) => _then(v as _DroneLog));
+class __$$_DroneLogCopyWithImpl<$Res>
+    extends _$DroneLogCopyWithImpl<$Res, _$_DroneLog>
+    implements _$$_DroneLogCopyWith<$Res> {
+  __$$_DroneLogCopyWithImpl(
+      _$_DroneLog _value, $Res Function(_$_DroneLog) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneLog get _value => super._value as _DroneLog;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? time = freezed,
-    Object? pos = freezed,
-    Object? out = freezed,
+    Object? time = null,
+    Object? pos = null,
+    Object? out = null,
   }) {
-    return _then(_DroneLog(
-      time: time == freezed
+    return _then(_$_DroneLog(
+      time: null == time
           ? _value.time
           : time // ignore: cast_nullable_to_non_nullable
               as int,
-      pos: pos == freezed
+      pos: null == pos
           ? _value.pos
           : pos // ignore: cast_nullable_to_non_nullable
               as int,
-      out: out == freezed
+      out: null == out
           ? _value.out
           : out // ignore: cast_nullable_to_non_nullable
               as String,
@@ -152,33 +138,35 @@ class _$_DroneLog implements _DroneLog {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneLog &&
-            const DeepCollectionEquality().equals(other.time, time) &&
-            const DeepCollectionEquality().equals(other.pos, pos) &&
-            const DeepCollectionEquality().equals(other.out, out));
+            other is _$_DroneLog &&
+            (identical(other.time, time) || other.time == time) &&
+            (identical(other.pos, pos) || other.pos == pos) &&
+            (identical(other.out, out) || other.out == out));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(time),
-      const DeepCollectionEquality().hash(pos),
-      const DeepCollectionEquality().hash(out));
 
   @JsonKey(ignore: true)
   @override
-  _$DroneLogCopyWith<_DroneLog> get copyWith =>
-      __$DroneLogCopyWithImpl<_DroneLog>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, time, pos, out);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DroneLogCopyWith<_$_DroneLog> get copyWith =>
+      __$$_DroneLogCopyWithImpl<_$_DroneLog>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneLogToJson(this);
+    return _$$_DroneLogToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneLog implements DroneLog {
   const factory _DroneLog(
-      {required int time, required int pos, required String out}) = _$_DroneLog;
+      {required final int time,
+      required final int pos,
+      required final String out}) = _$_DroneLog;
 
   factory _DroneLog.fromJson(Map<String, dynamic> json) = _$_DroneLog.fromJson;
 
@@ -190,6 +178,6 @@ abstract class _DroneLog implements DroneLog {
   String get out;
   @override
   @JsonKey(ignore: true)
-  _$DroneLogCopyWith<_DroneLog> get copyWith =>
+  _$$_DroneLogCopyWith<_$_DroneLog> get copyWith =>
       throw _privateConstructorUsedError;
 }

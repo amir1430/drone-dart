@@ -12,46 +12,11 @@ part of 'step_model.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 DroneStep _$DroneStepFromJson(Map<String, dynamic> json) {
   return _DroneStep.fromJson(json);
 }
-
-/// @nodoc
-class _$DroneStepTearOff {
-  const _$DroneStepTearOff();
-
-  _DroneStep call(
-      {String name = '',
-      String status = '',
-      int stepId = 0,
-      int exitCode = 0,
-      int id = 0,
-      int number = 0,
-      int started = 0,
-      int stopped = 0,
-      int version = 0}) {
-    return _DroneStep(
-      name: name,
-      status: status,
-      stepId: stepId,
-      exitCode: exitCode,
-      id: id,
-      number: number,
-      started: started,
-      stopped: stopped,
-      version: version,
-    );
-  }
-
-  DroneStep fromJson(Map<String, Object?> json) {
-    return DroneStep.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $DroneStep = _$DroneStepTearOff();
 
 /// @nodoc
 mixin _$DroneStep {
@@ -74,7 +39,8 @@ mixin _$DroneStep {
 /// @nodoc
 abstract class $DroneStepCopyWith<$Res> {
   factory $DroneStepCopyWith(DroneStep value, $Res Function(DroneStep) then) =
-      _$DroneStepCopyWithImpl<$Res>;
+      _$DroneStepCopyWithImpl<$Res, DroneStep>;
+  @useResult
   $Res call(
       {String name,
       String status,
@@ -88,72 +54,76 @@ abstract class $DroneStepCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DroneStepCopyWithImpl<$Res> implements $DroneStepCopyWith<$Res> {
+class _$DroneStepCopyWithImpl<$Res, $Val extends DroneStep>
+    implements $DroneStepCopyWith<$Res> {
   _$DroneStepCopyWithImpl(this._value, this._then);
 
-  final DroneStep _value;
   // ignore: unused_field
-  final $Res Function(DroneStep) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? status = freezed,
-    Object? stepId = freezed,
-    Object? exitCode = freezed,
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? started = freezed,
-    Object? stopped = freezed,
-    Object? version = freezed,
+    Object? name = null,
+    Object? status = null,
+    Object? stepId = null,
+    Object? exitCode = null,
+    Object? id = null,
+    Object? number = null,
+    Object? started = null,
+    Object? stopped = null,
+    Object? version = null,
   }) {
     return _then(_value.copyWith(
-      name: name == freezed
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      stepId: stepId == freezed
+      stepId: null == stepId
           ? _value.stepId
           : stepId // ignore: cast_nullable_to_non_nullable
               as int,
-      exitCode: exitCode == freezed
+      exitCode: null == exitCode
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      started: started == freezed
+      started: null == started
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
               as int,
-      stopped: stopped == freezed
+      stopped: null == stopped
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$DroneStepCopyWith<$Res> implements $DroneStepCopyWith<$Res> {
-  factory _$DroneStepCopyWith(
-          _DroneStep value, $Res Function(_DroneStep) then) =
-      __$DroneStepCopyWithImpl<$Res>;
+abstract class _$$_DroneStepCopyWith<$Res> implements $DroneStepCopyWith<$Res> {
+  factory _$$_DroneStepCopyWith(
+          _$_DroneStep value, $Res Function(_$_DroneStep) then) =
+      __$$_DroneStepCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String name,
       String status,
@@ -167,60 +137,60 @@ abstract class _$DroneStepCopyWith<$Res> implements $DroneStepCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$DroneStepCopyWithImpl<$Res> extends _$DroneStepCopyWithImpl<$Res>
-    implements _$DroneStepCopyWith<$Res> {
-  __$DroneStepCopyWithImpl(_DroneStep _value, $Res Function(_DroneStep) _then)
-      : super(_value, (v) => _then(v as _DroneStep));
+class __$$_DroneStepCopyWithImpl<$Res>
+    extends _$DroneStepCopyWithImpl<$Res, _$_DroneStep>
+    implements _$$_DroneStepCopyWith<$Res> {
+  __$$_DroneStepCopyWithImpl(
+      _$_DroneStep _value, $Res Function(_$_DroneStep) _then)
+      : super(_value, _then);
 
-  @override
-  _DroneStep get _value => super._value as _DroneStep;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? name = freezed,
-    Object? status = freezed,
-    Object? stepId = freezed,
-    Object? exitCode = freezed,
-    Object? id = freezed,
-    Object? number = freezed,
-    Object? started = freezed,
-    Object? stopped = freezed,
-    Object? version = freezed,
+    Object? name = null,
+    Object? status = null,
+    Object? stepId = null,
+    Object? exitCode = null,
+    Object? id = null,
+    Object? number = null,
+    Object? started = null,
+    Object? stopped = null,
+    Object? version = null,
   }) {
-    return _then(_DroneStep(
-      name: name == freezed
+    return _then(_$_DroneStep(
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      status: status == freezed
+      status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as String,
-      stepId: stepId == freezed
+      stepId: null == stepId
           ? _value.stepId
           : stepId // ignore: cast_nullable_to_non_nullable
               as int,
-      exitCode: exitCode == freezed
+      exitCode: null == exitCode
           ? _value.exitCode
           : exitCode // ignore: cast_nullable_to_non_nullable
               as int,
-      id: id == freezed
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-      started: started == freezed
+      started: null == started
           ? _value.started
           : started // ignore: cast_nullable_to_non_nullable
               as int,
-      stopped: stopped == freezed
+      stopped: null == stopped
           ? _value.stopped
           : stopped // ignore: cast_nullable_to_non_nullable
               as int,
-      version: version == freezed
+      version: null == version
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
@@ -246,32 +216,32 @@ class _$_DroneStep implements _DroneStep {
   factory _$_DroneStep.fromJson(Map<String, dynamic> json) =>
       _$$_DroneStepFromJson(json);
 
-  @JsonKey()
   @override
+  @JsonKey()
   final String name;
-  @JsonKey()
   @override
+  @JsonKey()
   final String status;
-  @JsonKey()
   @override
+  @JsonKey()
   final int stepId;
-  @JsonKey()
   @override
+  @JsonKey()
   final int exitCode;
-  @JsonKey()
   @override
+  @JsonKey()
   final int id;
-  @JsonKey()
   @override
+  @JsonKey()
   final int number;
-  @JsonKey()
   @override
+  @JsonKey()
   final int started;
-  @JsonKey()
   @override
+  @JsonKey()
   final int stopped;
-  @JsonKey()
   @override
+  @JsonKey()
   final int version;
 
   @override
@@ -283,53 +253,49 @@ class _$_DroneStep implements _DroneStep {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _DroneStep &&
-            const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.stepId, stepId) &&
-            const DeepCollectionEquality().equals(other.exitCode, exitCode) &&
-            const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.number, number) &&
-            const DeepCollectionEquality().equals(other.started, started) &&
-            const DeepCollectionEquality().equals(other.stopped, stopped) &&
-            const DeepCollectionEquality().equals(other.version, version));
+            other is _$_DroneStep &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.status, status) || other.status == status) &&
+            (identical(other.stepId, stepId) || other.stepId == stepId) &&
+            (identical(other.exitCode, exitCode) ||
+                other.exitCode == exitCode) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.number, number) || other.number == number) &&
+            (identical(other.started, started) || other.started == started) &&
+            (identical(other.stopped, stopped) || other.stopped == stopped) &&
+            (identical(other.version, version) || other.version == version));
   }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(stepId),
-      const DeepCollectionEquality().hash(exitCode),
-      const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(number),
-      const DeepCollectionEquality().hash(started),
-      const DeepCollectionEquality().hash(stopped),
-      const DeepCollectionEquality().hash(version));
 
   @JsonKey(ignore: true)
   @override
-  _$DroneStepCopyWith<_DroneStep> get copyWith =>
-      __$DroneStepCopyWithImpl<_DroneStep>(this, _$identity);
+  int get hashCode => Object.hash(runtimeType, name, status, stepId, exitCode,
+      id, number, started, stopped, version);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_DroneStepCopyWith<_$_DroneStep> get copyWith =>
+      __$$_DroneStepCopyWithImpl<_$_DroneStep>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DroneStepToJson(this);
+    return _$$_DroneStepToJson(
+      this,
+    );
   }
 }
 
 abstract class _DroneStep implements DroneStep {
   const factory _DroneStep(
-      {String name,
-      String status,
-      int stepId,
-      int exitCode,
-      int id,
-      int number,
-      int started,
-      int stopped,
-      int version}) = _$_DroneStep;
+      {final String name,
+      final String status,
+      final int stepId,
+      final int exitCode,
+      final int id,
+      final int number,
+      final int started,
+      final int stopped,
+      final int version}) = _$_DroneStep;
 
   factory _DroneStep.fromJson(Map<String, dynamic> json) =
       _$_DroneStep.fromJson;
@@ -354,6 +320,6 @@ abstract class _DroneStep implements DroneStep {
   int get version;
   @override
   @JsonKey(ignore: true)
-  _$DroneStepCopyWith<_DroneStep> get copyWith =>
+  _$$_DroneStepCopyWith<_$_DroneStep> get copyWith =>
       throw _privateConstructorUsedError;
 }
