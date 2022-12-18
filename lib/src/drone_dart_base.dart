@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:dio/dio.dart';
@@ -110,4 +111,22 @@ class DroneClient {
         token: token,
         streamRetry: streamRetry,
       );
+  Stream<DroneLogEvent> logStream({
+    required String repoName,
+    required String stage,
+    required String step,
+    required String nameSpace,
+    required String build,
+  }) {
+    return _StreamLogEventSource(
+      server: server,
+      token: token,
+      repoName: repoName,
+      stage: stage,
+      step: step,
+      nameSpace: nameSpace,
+      build: build,
+      streamRetry: streamRetry,
+    );
+  }
 }
