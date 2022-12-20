@@ -211,6 +211,8 @@ class _StreamLogEventSource extends Stream<DroneLogEvent> {
                     if (DroneClient.log) {
                       logger('EOF Error');
                     }
+                    _streamController.addError(e);
+                    await _streamSubscription?.cancel();
                   } else {
                     await _retry(errorMessage: e);
                   }
