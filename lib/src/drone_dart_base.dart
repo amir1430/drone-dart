@@ -42,6 +42,7 @@ class DroneClient {
     int? connectTimeout = 10000,
     int? receiveTimeout = 10000,
     this.streamRetry = 10000,
+    Iterable<Interceptor>? interceptors,
   }) : _dioService = dioService ??
             DroneService(
               dio: Dio(BaseOptions(
@@ -54,9 +55,8 @@ class DroneClient {
                   'Authorization': 'Bearer $token',
                 },
               ))
-                ..interceptors.addAll([
-                  ErrorHandlerInterceptor(),
-                ]),
+                ..interceptors
+                    .addAll([ErrorHandlerInterceptor(), ...interceptors ?? []]),
             ) {
     _buildSection = BuildSection(_dioService);
     _croneSection = CroneSection(_dioService);
