@@ -1,3 +1,11 @@
+## 1.2.0
+
+- Add equality to [DroneClient] 
+- Change event from [String] to [Event] enum
+- Add stream to get new builds and logs
+- Add logger
+
+
 ## 1.1.3
 
 - Change visibility type from [String] to [Visibility]

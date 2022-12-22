@@ -110,3 +110,19 @@ _Doc_: <https://docs.drone.io/api/users/>
   instance.userSection.list();
   instance.userSection.update(login,requestBody);
 ```
+### Stream
+
+```dart
+  instance.stream.listen((event) => print(event));
+
+  instance
+    .logStream(
+        repoName: 'repoName',
+        stage: 'stage',
+        step: 'step',
+        nameSpace: 'nameSpace',
+        build: 'build')
+    .listen(
+  (event) => print(event)
+  );
+```
