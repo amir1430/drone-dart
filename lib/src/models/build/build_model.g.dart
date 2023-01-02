@@ -14,7 +14,6 @@ _$_DroneBuild _$$_DroneBuildFromJson(Map<String, dynamic> json) =>
       authorEmail: json['author_email'] as String? ?? '',
       authorAvatar: json['author_avatar'] as String? ?? '',
       trigger: json['trigger'] as String? ?? '',
-      status: json['status'] as String? ?? '',
       action: json['action'] as String? ?? '',
       link: json['link'] as String? ?? '',
       message: json['message'] as String? ?? '',
@@ -36,6 +35,9 @@ _$_DroneBuild _$$_DroneBuildFromJson(Map<String, dynamic> json) =>
       created: json['created'] as int? ?? 0,
       updated: json['updated'] as int? ?? 0,
       version: json['version'] as int? ?? 0,
+      status: $enumDecodeNullable(_$DroneStatusEnumMap, json['status'],
+              unknownValue: DroneStatus.unknown) ??
+          DroneStatus.unknown,
       event: $enumDecodeNullable(_$EventEnumMap, json['event'],
               unknownValue: Event.push) ??
           Event.push,
@@ -53,7 +55,6 @@ Map<String, dynamic> _$$_DroneBuildToJson(_$_DroneBuild instance) =>
       'author_email': instance.authorEmail,
       'author_avatar': instance.authorAvatar,
       'trigger': instance.trigger,
-      'status': instance.status,
       'action': instance.action,
       'link': instance.link,
       'message': instance.message,
@@ -75,9 +76,24 @@ Map<String, dynamic> _$$_DroneBuildToJson(_$_DroneBuild instance) =>
       'created': instance.created,
       'updated': instance.updated,
       'version': instance.version,
+      'status': _$DroneStatusEnumMap[instance.status]!,
       'event': _$EventEnumMap[instance.event]!,
       'stages': instance.stages,
     };
+
+const _$DroneStatusEnumMap = {
+  DroneStatus.running: 'running',
+  DroneStatus.success: 'success',
+  DroneStatus.failure: 'failure',
+  DroneStatus.error: 'error',
+  DroneStatus.killed: 'killed',
+  DroneStatus.pending: 'pending',
+  DroneStatus.declined: 'declined',
+  DroneStatus.skipped: 'skipped',
+  DroneStatus.waitingOnDependencies: 'waiting_on_dependencies',
+  DroneStatus.blocked: 'blocked',
+  DroneStatus.unknown: 'unknown',
+};
 
 const _$EventEnumMap = {
   Event.pullRequest: 'pull_request',

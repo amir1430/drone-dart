@@ -15,7 +15,6 @@ class DroneBuild with _$DroneBuild {
     @Default('') String authorEmail,
     @Default('') String authorAvatar,
     @Default('') String trigger,
-    @Default('') String status,
     @Default('') String action,
     @Default('') String link,
     @Default('') String message,
@@ -37,6 +36,9 @@ class DroneBuild with _$DroneBuild {
     @Default(0) int created,
     @Default(0) int updated,
     @Default(0) int version,
+    @JsonKey(unknownEnumValue: DroneStatus.unknown)
+    @Default(DroneStatus.unknown)
+        DroneStatus status,
     @JsonKey(unknownEnumValue: Event.push) @Default(Event.push) Event event,
     @Default([]) List<DroneStage> stages,
   }) = _DroneBuild;
@@ -56,4 +58,22 @@ enum Event {
 
   const Event(this.event);
   final String event;
+}
+
+@JsonEnum(fieldRename: FieldRename.snake)
+enum DroneStatus {
+  running('running'),
+  success('success'),
+  failure('failure'),
+  error('error'),
+  killed('killed'),
+  pending('pending'),
+  declined('declined'),
+  skipped('skipped'),
+  waitingOnDependencies('waiting on dependencies'),
+  blocked('blocked'),
+  unknown('unknown');
+
+  const DroneStatus(this.status);
+  final String status;
 }
