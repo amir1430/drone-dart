@@ -11,7 +11,6 @@ _$_DroneStage _$$_DroneStageFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String? ?? '',
       kind: json['kind'] as String? ?? '',
       type: json['type'] as String? ?? '',
-      status: json['status'] as String? ?? '',
       machine: json['machine'] as String? ?? '',
       os: json['os'] as String? ?? '',
       arch: json['arch'] as String? ?? '',
@@ -28,6 +27,9 @@ _$_DroneStage _$$_DroneStageFromJson(Map<String, dynamic> json) =>
       onSuccess: json['on_success'] as bool? ?? false,
       onFailure: json['on_failure'] as bool? ?? false,
       errignore: json['errignore'] as bool? ?? false,
+      status: $enumDecodeNullable(_$DroneStatusEnumMap, json['status'],
+              unknownValue: DroneStatus.unknown) ??
+          DroneStatus.unknown,
       steps: (json['steps'] as List<dynamic>?)
               ?.map((e) => DroneStep.fromJson(e as Map<String, dynamic>))
               .toList() ??
@@ -39,7 +41,6 @@ Map<String, dynamic> _$$_DroneStageToJson(_$_DroneStage instance) =>
       'name': instance.name,
       'kind': instance.kind,
       'type': instance.type,
-      'status': instance.status,
       'machine': instance.machine,
       'os': instance.os,
       'arch': instance.arch,
@@ -56,5 +57,20 @@ Map<String, dynamic> _$$_DroneStageToJson(_$_DroneStage instance) =>
       'on_success': instance.onSuccess,
       'on_failure': instance.onFailure,
       'errignore': instance.errignore,
+      'status': _$DroneStatusEnumMap[instance.status]!,
       'steps': instance.steps,
     };
+
+const _$DroneStatusEnumMap = {
+  DroneStatus.running: 'running',
+  DroneStatus.success: 'success',
+  DroneStatus.failure: 'failure',
+  DroneStatus.error: 'error',
+  DroneStatus.killed: 'killed',
+  DroneStatus.pending: 'pending',
+  DroneStatus.declined: 'declined',
+  DroneStatus.skipped: 'skipped',
+  DroneStatus.waitingOnDependencies: 'waiting_on_dependencies',
+  DroneStatus.blocked: 'blocked',
+  DroneStatus.unknown: 'unknown',
+};

@@ -12,7 +12,6 @@ class DroneStage with _$DroneStage {
     @Default('') String name,
     @Default('') String kind,
     @Default('') String type,
-    @Default('') String status,
     @Default('') String machine,
     @Default('') String os,
     @Default('') String arch,
@@ -29,6 +28,9 @@ class DroneStage with _$DroneStage {
     @Default(false) bool onSuccess,
     @Default(false) bool onFailure,
     @Default(false) bool errignore,
+    @JsonKey(unknownEnumValue: DroneStatus.unknown)
+    @Default(DroneStatus.unknown)
+        DroneStatus status,
     @Default([]) List<DroneStep> steps,
   }) = _DroneStage;
 

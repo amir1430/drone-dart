@@ -23,7 +23,6 @@ mixin _$DroneStage {
   String get name => throw _privateConstructorUsedError;
   String get kind => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
   String get machine => throw _privateConstructorUsedError;
   String get os => throw _privateConstructorUsedError;
   String get arch => throw _privateConstructorUsedError;
@@ -40,6 +39,8 @@ mixin _$DroneStage {
   bool get onSuccess => throw _privateConstructorUsedError;
   bool get onFailure => throw _privateConstructorUsedError;
   bool get errignore => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: DroneStatus.unknown)
+  DroneStatus get status => throw _privateConstructorUsedError;
   List<DroneStep> get steps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -58,7 +59,6 @@ abstract class $DroneStageCopyWith<$Res> {
       {String name,
       String kind,
       String type,
-      String status,
       String machine,
       String os,
       String arch,
@@ -75,6 +75,7 @@ abstract class $DroneStageCopyWith<$Res> {
       bool onSuccess,
       bool onFailure,
       bool errignore,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown) DroneStatus status,
       List<DroneStep> steps});
 }
 
@@ -94,7 +95,6 @@ class _$DroneStageCopyWithImpl<$Res, $Val extends DroneStage>
     Object? name = null,
     Object? kind = null,
     Object? type = null,
-    Object? status = null,
     Object? machine = null,
     Object? os = null,
     Object? arch = null,
@@ -111,6 +111,7 @@ class _$DroneStageCopyWithImpl<$Res, $Val extends DroneStage>
     Object? onSuccess = null,
     Object? onFailure = null,
     Object? errignore = null,
+    Object? status = null,
     Object? steps = null,
   }) {
     return _then(_value.copyWith(
@@ -125,10 +126,6 @@ class _$DroneStageCopyWithImpl<$Res, $Val extends DroneStage>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
               as String,
       machine: null == machine
           ? _value.machine
@@ -194,6 +191,10 @@ class _$DroneStageCopyWithImpl<$Res, $Val extends DroneStage>
           ? _value.errignore
           : errignore // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as DroneStatus,
       steps: null == steps
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -214,7 +215,6 @@ abstract class _$$_DroneStageCopyWith<$Res>
       {String name,
       String kind,
       String type,
-      String status,
       String machine,
       String os,
       String arch,
@@ -231,6 +231,7 @@ abstract class _$$_DroneStageCopyWith<$Res>
       bool onSuccess,
       bool onFailure,
       bool errignore,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown) DroneStatus status,
       List<DroneStep> steps});
 }
 
@@ -248,7 +249,6 @@ class __$$_DroneStageCopyWithImpl<$Res>
     Object? name = null,
     Object? kind = null,
     Object? type = null,
-    Object? status = null,
     Object? machine = null,
     Object? os = null,
     Object? arch = null,
@@ -265,6 +265,7 @@ class __$$_DroneStageCopyWithImpl<$Res>
     Object? onSuccess = null,
     Object? onFailure = null,
     Object? errignore = null,
+    Object? status = null,
     Object? steps = null,
   }) {
     return _then(_$_DroneStage(
@@ -279,10 +280,6 @@ class __$$_DroneStageCopyWithImpl<$Res>
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
               as String,
       machine: null == machine
           ? _value.machine
@@ -348,6 +345,10 @@ class __$$_DroneStageCopyWithImpl<$Res>
           ? _value.errignore
           : errignore // ignore: cast_nullable_to_non_nullable
               as bool,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as DroneStatus,
       steps: null == steps
           ? _value._steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -364,7 +365,6 @@ class _$_DroneStage implements _DroneStage {
       {this.name = '',
       this.kind = '',
       this.type = '',
-      this.status = '',
       this.machine = '',
       this.os = '',
       this.arch = '',
@@ -381,6 +381,8 @@ class _$_DroneStage implements _DroneStage {
       this.onSuccess = false,
       this.onFailure = false,
       this.errignore = false,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown)
+          this.status = DroneStatus.unknown,
       final List<DroneStep> steps = const []})
       : _steps = steps;
 
@@ -396,9 +398,6 @@ class _$_DroneStage implements _DroneStage {
   @override
   @JsonKey()
   final String type;
-  @override
-  @JsonKey()
-  final String status;
   @override
   @JsonKey()
   final String machine;
@@ -447,6 +446,9 @@ class _$_DroneStage implements _DroneStage {
   @override
   @JsonKey()
   final bool errignore;
+  @override
+  @JsonKey(unknownEnumValue: DroneStatus.unknown)
+  final DroneStatus status;
   final List<DroneStep> _steps;
   @override
   @JsonKey()
@@ -457,7 +459,7 @@ class _$_DroneStage implements _DroneStage {
 
   @override
   String toString() {
-    return 'DroneStage(name: $name, kind: $kind, type: $type, status: $status, machine: $machine, os: $os, arch: $arch, repoId: $repoId, buildId: $buildId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, created: $created, updated: $updated, version: $version, onSuccess: $onSuccess, onFailure: $onFailure, errignore: $errignore, steps: $steps)';
+    return 'DroneStage(name: $name, kind: $kind, type: $type, machine: $machine, os: $os, arch: $arch, repoId: $repoId, buildId: $buildId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, created: $created, updated: $updated, version: $version, onSuccess: $onSuccess, onFailure: $onFailure, errignore: $errignore, status: $status, steps: $steps)';
   }
 
   @override
@@ -468,7 +470,6 @@ class _$_DroneStage implements _DroneStage {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.kind, kind) || other.kind == kind) &&
             (identical(other.type, type) || other.type == type) &&
-            (identical(other.status, status) || other.status == status) &&
             (identical(other.machine, machine) || other.machine == machine) &&
             (identical(other.os, os) || other.os == os) &&
             (identical(other.arch, arch) || other.arch == arch) &&
@@ -489,6 +490,7 @@ class _$_DroneStage implements _DroneStage {
                 other.onFailure == onFailure) &&
             (identical(other.errignore, errignore) ||
                 other.errignore == errignore) &&
+            (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._steps, _steps));
   }
 
@@ -499,7 +501,6 @@ class _$_DroneStage implements _DroneStage {
         name,
         kind,
         type,
-        status,
         machine,
         os,
         arch,
@@ -516,6 +517,7 @@ class _$_DroneStage implements _DroneStage {
         onSuccess,
         onFailure,
         errignore,
+        status,
         const DeepCollectionEquality().hash(_steps)
       ]);
 
@@ -538,7 +540,6 @@ abstract class _DroneStage implements DroneStage {
       {final String name,
       final String kind,
       final String type,
-      final String status,
       final String machine,
       final String os,
       final String arch,
@@ -555,6 +556,7 @@ abstract class _DroneStage implements DroneStage {
       final bool onSuccess,
       final bool onFailure,
       final bool errignore,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown) final DroneStatus status,
       final List<DroneStep> steps}) = _$_DroneStage;
 
   factory _DroneStage.fromJson(Map<String, dynamic> json) =
@@ -566,8 +568,6 @@ abstract class _DroneStage implements DroneStage {
   String get kind;
   @override
   String get type;
-  @override
-  String get status;
   @override
   String get machine;
   @override
@@ -600,6 +600,9 @@ abstract class _DroneStage implements DroneStage {
   bool get onFailure;
   @override
   bool get errignore;
+  @override
+  @JsonKey(unknownEnumValue: DroneStatus.unknown)
+  DroneStatus get status;
   @override
   List<DroneStep> get steps;
   @override

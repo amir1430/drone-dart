@@ -11,3 +11,4 @@ export 'step/step_model.dart';
 export 'template_request_body_model.dart';
 export 'user/user_model.dart';
 export 'user_request_body_model.dart';
+export 'status/status.dart';

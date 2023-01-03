@@ -21,7 +21,6 @@ DroneStep _$DroneStepFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$DroneStep {
   String get name => throw _privateConstructorUsedError;
-  String get status => throw _privateConstructorUsedError;
   int get stepId => throw _privateConstructorUsedError;
   int get exitCode => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
@@ -29,6 +28,8 @@ mixin _$DroneStep {
   int get started => throw _privateConstructorUsedError;
   int get stopped => throw _privateConstructorUsedError;
   int get version => throw _privateConstructorUsedError;
+  @JsonKey(unknownEnumValue: DroneStatus.unknown)
+  DroneStatus get status => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,14 +44,14 @@ abstract class $DroneStepCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
-      String status,
       int stepId,
       int exitCode,
       int id,
       int number,
       int started,
       int stopped,
-      int version});
+      int version,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown) DroneStatus status});
 }
 
 /// @nodoc
@@ -67,7 +68,6 @@ class _$DroneStepCopyWithImpl<$Res, $Val extends DroneStep>
   @override
   $Res call({
     Object? name = null,
-    Object? status = null,
     Object? stepId = null,
     Object? exitCode = null,
     Object? id = null,
@@ -75,15 +75,12 @@ class _$DroneStepCopyWithImpl<$Res, $Val extends DroneStep>
     Object? started = null,
     Object? stopped = null,
     Object? version = null,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
               as String,
       stepId: null == stepId
           ? _value.stepId
@@ -113,6 +110,10 @@ class _$DroneStepCopyWithImpl<$Res, $Val extends DroneStep>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as DroneStatus,
     ) as $Val);
   }
 }
@@ -126,14 +127,14 @@ abstract class _$$_DroneStepCopyWith<$Res> implements $DroneStepCopyWith<$Res> {
   @useResult
   $Res call(
       {String name,
-      String status,
       int stepId,
       int exitCode,
       int id,
       int number,
       int started,
       int stopped,
-      int version});
+      int version,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown) DroneStatus status});
 }
 
 /// @nodoc
@@ -148,7 +149,6 @@ class __$$_DroneStepCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = null,
-    Object? status = null,
     Object? stepId = null,
     Object? exitCode = null,
     Object? id = null,
@@ -156,15 +156,12 @@ class __$$_DroneStepCopyWithImpl<$Res>
     Object? started = null,
     Object? stopped = null,
     Object? version = null,
+    Object? status = null,
   }) {
     return _then(_$_DroneStep(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
               as String,
       stepId: null == stepId
           ? _value.stepId
@@ -194,6 +191,10 @@ class __$$_DroneStepCopyWithImpl<$Res>
           ? _value.version
           : version // ignore: cast_nullable_to_non_nullable
               as int,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as DroneStatus,
     ));
   }
 }
@@ -204,14 +205,15 @@ class __$$_DroneStepCopyWithImpl<$Res>
 class _$_DroneStep implements _DroneStep {
   const _$_DroneStep(
       {this.name = '',
-      this.status = '',
       this.stepId = 0,
       this.exitCode = 0,
       this.id = 0,
       this.number = 0,
       this.started = 0,
       this.stopped = 0,
-      this.version = 0});
+      this.version = 0,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown)
+          this.status = DroneStatus.unknown});
 
   factory _$_DroneStep.fromJson(Map<String, dynamic> json) =>
       _$$_DroneStepFromJson(json);
@@ -219,9 +221,6 @@ class _$_DroneStep implements _DroneStep {
   @override
   @JsonKey()
   final String name;
-  @override
-  @JsonKey()
-  final String status;
   @override
   @JsonKey()
   final int stepId;
@@ -243,10 +242,13 @@ class _$_DroneStep implements _DroneStep {
   @override
   @JsonKey()
   final int version;
+  @override
+  @JsonKey(unknownEnumValue: DroneStatus.unknown)
+  final DroneStatus status;
 
   @override
   String toString() {
-    return 'DroneStep(name: $name, status: $status, stepId: $stepId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, version: $version)';
+    return 'DroneStep(name: $name, stepId: $stepId, exitCode: $exitCode, id: $id, number: $number, started: $started, stopped: $stopped, version: $version, status: $status)';
   }
 
   @override
@@ -255,7 +257,6 @@ class _$_DroneStep implements _DroneStep {
         (other.runtimeType == runtimeType &&
             other is _$_DroneStep &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.status, status) || other.status == status) &&
             (identical(other.stepId, stepId) || other.stepId == stepId) &&
             (identical(other.exitCode, exitCode) ||
                 other.exitCode == exitCode) &&
@@ -263,13 +264,14 @@ class _$_DroneStep implements _DroneStep {
             (identical(other.number, number) || other.number == number) &&
             (identical(other.started, started) || other.started == started) &&
             (identical(other.stopped, stopped) || other.stopped == stopped) &&
-            (identical(other.version, version) || other.version == version));
+            (identical(other.version, version) || other.version == version) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, name, status, stepId, exitCode,
-      id, number, started, stopped, version);
+  int get hashCode => Object.hash(runtimeType, name, stepId, exitCode, id,
+      number, started, stopped, version, status);
 
   @JsonKey(ignore: true)
   @override
@@ -288,22 +290,21 @@ class _$_DroneStep implements _DroneStep {
 abstract class _DroneStep implements DroneStep {
   const factory _DroneStep(
       {final String name,
-      final String status,
       final int stepId,
       final int exitCode,
       final int id,
       final int number,
       final int started,
       final int stopped,
-      final int version}) = _$_DroneStep;
+      final int version,
+      @JsonKey(unknownEnumValue: DroneStatus.unknown)
+          final DroneStatus status}) = _$_DroneStep;
 
   factory _DroneStep.fromJson(Map<String, dynamic> json) =
       _$_DroneStep.fromJson;
 
   @override
   String get name;
-  @override
-  String get status;
   @override
   int get stepId;
   @override
@@ -318,6 +319,9 @@ abstract class _DroneStep implements DroneStep {
   int get stopped;
   @override
   int get version;
+  @override
+  @JsonKey(unknownEnumValue: DroneStatus.unknown)
+  DroneStatus get status;
   @override
   @JsonKey(ignore: true)
   _$$_DroneStepCopyWith<_$_DroneStep> get copyWith =>

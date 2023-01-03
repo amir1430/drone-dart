@@ -1,3 +1,4 @@
+import 'package:drone_dart/src/models/models.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'step_model.freezed.dart';
@@ -8,7 +9,6 @@ class DroneStep with _$DroneStep {
   @JsonSerializable(fieldRename: FieldRename.snake)
   const factory DroneStep({
     @Default('') String name,
-    @Default('') String status,
     @Default(0) int stepId,
     @Default(0) int exitCode,
     @Default(0) int id,
@@ -16,6 +16,9 @@ class DroneStep with _$DroneStep {
     @Default(0) int started,
     @Default(0) int stopped,
     @Default(0) int version,
+    @JsonKey(unknownEnumValue: DroneStatus.unknown)
+    @Default(DroneStatus.unknown)
+        DroneStatus status,
   }) = _DroneStep;
 
   factory DroneStep.fromJson(Map<String, dynamic> json) =>
