@@ -1,3 +1,8 @@
+## 1.2.1
+
+- change stage and step status from [String] to [DroneStatus]
+
+
 ## 1.2.0
 
 - Add equality to [DroneClient] 
