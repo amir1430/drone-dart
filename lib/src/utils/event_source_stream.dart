@@ -177,10 +177,12 @@ class _StreamLogEventSource extends Stream<DroneLogEvent> {
         '$server/api/stream/$nameSpace/$repoName/$build/$stage/$step?access_token=$token',
         cancelToken: _cancelToken,
       );
+      final path =
+          '$server/api/stream/$nameSpace/$repoName/$build/$stage/$step?access_token=$token';
 
       if (DroneClient.log) {
         logger(
-          '${res.statusCode} ${'$server/api/stream/$nameSpace/$repoName/$build/$stage/$step?access_token=$token'}',
+          '${res.statusCode} $path',
         );
       }
 
